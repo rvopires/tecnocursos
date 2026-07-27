@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@paper-design/shaders": "^0.0.71",
+    "framer-motion": "^11.18.2",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "scripts": {
+    "build:normas": "esbuild src/NormasSection.jsx --bundle --outfile=normas-section.bundle.js --format=iife --global-name=NormasApp --jsx=automatic --minify --target=es2020",
+    "build:presenca": "esbuild src/PresencaSection.jsx --bundle --outfile=presenca-section.bundle.js --format=iife --global-name=PresencaApp --jsx=automatic --minify --target=es2020",
+    "build:sections": "npm run build:normas && npm run build:presenca",
+    "start": "npx --yes serve -l 5173"
+  }
+}

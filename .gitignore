@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+servicos/node_modules/
+
+# Arquivos grandes / locais
+uploads/VÍDEO APRESENTAÇÃO NOVA LOGO TECNOCURSOS.mp4
+site - servicos aba/
+site - servicos aba.zip
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
+.env
+.env.*
