@@ -98,11 +98,18 @@ sc-for{display:contents}
 .tc-nav-mobile-sub{padding:4px 0 10px 12px;display:flex;flex-direction:column;gap:2px;border-bottom:1px solid rgba(255,255,255,.1)}
 .tc-nav-mobile-sub span{font-size:17px;font-weight:500;color:rgba(255,255,255,.72);padding:10px 0;cursor:pointer}
 .tc-nav-mobile-sub span:hover{color:#6ABB8C}
+.tc-stats-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc-stats-card{background:linear-gradient(160deg,rgba(27,40,72,.95),rgba(0,92,139,.55));border:1px solid rgba(106,187,140,.28);border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 12px 36px rgba(0,0,0,.28),inset 0 1px 0 rgba(106,187,140,.15)}
+.tc-stats-card-num{font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#32AD78;line-height:1;letter-spacing:-.03em}
+.tc-stats-card-label{font-size:15px;font-weight:500;color:rgba(255,255,255,.72);margin-top:12px;line-height:1.4}
 @media(max-width:900px){
   [data-navlinks]{display:none!important}
   [data-burger]{display:flex!important}
   .tc-nav-shell{padding:14px 14px 0}
   .tc-nav-pill{height:58px;padding:0 10px 0 16px}
+}
+@media(max-width:720px){
+  .tc-stats-cards{grid-template-columns:1fr!important}
 }
 @media(max-width:620px){
   [data-hide-sm]{display:none!important}
@@ -192,29 +199,26 @@ sc-for{display:contents}
           <button onClick="{{ goServicos }}" style="font-family:inherit;border:none;cursor:pointer;background:#10ffcb;color:#070F1E;font-size:13px;font-weight:600;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(68,229,231,.36);transition:transform .2s,background .2s" style-hover="background:#0de0b3;transform:translateY(-2px)">Conheça nossos serviços</button>
           <button onClick="{{ goContato }}" style="font-family:inherit;cursor:pointer;background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.26);font-size:13px;font-weight:600;padding:12px 22px;border-radius:10px;transition:background .2s,transform .2s" style-hover="background:rgba(255,255,255,.16);transform:translateY(-2px)">Fale com a gente</button>
         </div>
-        <div class="tc-stats-row" style="display:flex;gap:40px;margin-top:44px;flex-wrap:wrap;justify-content:center;animation:tcSlideUp .7s cubic-bezier(.22,.61,.36,1) .62s both">
-          <div style="text-align:center"><div data-counter="20" data-counter-prefix="+" data-counter-suffix=" anos" style="font-size:28px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em">+20 anos</div><div style="font-size:13.5px;color:rgba(255,255,255,.65);margin-top:6px">de experiência</div></div>
-          <div class="tc-stat-sep" style="width:1px;background:rgba(255,255,255,.18);align-self:stretch"></div>
-          <div style="text-align:center"><div data-counter="320" data-counter-prefix="+" data-counter-suffix=" mil" style="font-size:28px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em">+320 mil</div><div style="font-size:13.5px;color:rgba(255,255,255,.65);margin-top:6px">inscritos em treinamentos</div></div>
-          <div class="tc-stat-sep" style="width:1px;background:rgba(255,255,255,.18);align-self:stretch"></div>
-          <div style="text-align:center"><div data-counter="250" data-counter-prefix="+" data-counter-suffix=" mil" style="font-size:28px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em">+250 mil</div><div style="font-size:13.5px;color:rgba(255,255,255,.65);margin-top:6px">capacitados</div></div>
-        </div>
       </div>
     </section>
 
-    <!-- PARTNERS -->
-    <section style="position:relative;overflow:hidden;padding:clamp(40px,5vw,62px) 0;background:linear-gradient(180deg,#03060A 0%,#03060A 55%,#070C16 100%)">
-
-      <!-- título -->
-      <p data-reveal style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin:0 0 36px;opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Empresas que confiam na TecnoCursos</p>
-
-      <!-- marquee edge-to-edge -->
-      <div class="tc-marquee-wrap" onMouseEnter="{{ pauseMarquee }}" onMouseLeave="{{ resumeMarquee }}" style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%)">
-        <div class="tc-marquee-track" style="display:flex;width:max-content;align-items:center;animation:tcmarquee 76s linear infinite;will-change:transform">
-          <div style="display:flex;align-items:center;flex:none">{{ partnerNodes }}</div>
-          <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesB }}</div>
-          <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesC }}</div>
-          <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesD }}</div>
+    <!-- NÚMEROS EM CARDS -->
+    <section style="position:relative;padding:clamp(56px,7vw,96px) 0;background:linear-gradient(180deg,#070C16 0%,#0A1326 100%);overflow:hidden">
+      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 60% at 50% 0%,rgba(50,173,120,.14),transparent 60%)"></div>
+      <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px">
+        <div class="tc-stats-cards">
+          <div class="tc-stats-card">
+            <div class="tc-stats-card-num" data-counter="20" data-counter-prefix="+" data-counter-suffix=" anos" data-counter-duration="1600">+0 anos</div>
+            <div class="tc-stats-card-label">de experiência</div>
+          </div>
+          <div class="tc-stats-card">
+            <div class="tc-stats-card-num" data-counter="320" data-counter-prefix="+" data-counter-suffix=" mil" data-counter-duration="1600">+0 mil</div>
+            <div class="tc-stats-card-label">inscritos em treinamentos</div>
+          </div>
+          <div class="tc-stats-card">
+            <div class="tc-stats-card-num" data-counter="250" data-counter-prefix="+" data-counter-suffix=" mil" data-counter-duration="1600">+0 mil</div>
+            <div class="tc-stats-card-label">capacitados</div>
+          </div>
         </div>
       </div>
     </section>
@@ -513,6 +517,19 @@ sc-for{display:contents}
             <button data-reveal-pop data-delay="120" onClick="{{ goContato }}" style="font-family:inherit;border:none;cursor:pointer;background:#10ffcb;color:#070F1E;font-size:16px;font-weight:600;padding:15px 28px;border-radius:12px;box-shadow:0 10px 30px rgba(68,229,231,.32);transition:background .2s,transform .2s,box-shadow .2s" style-hover="background:#0de0b3;transform:translateY(-2px) scale(1.03);box-shadow:0 16px 38px rgba(68,229,231,.4)">Fale com a gente</button>
             <button data-reveal-pop data-delay="260" onClick="{{ goServicos }}" style="font-family:inherit;cursor:pointer;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:16px;font-weight:600;padding:15px 28px;border-radius:12px;transition:background .2s,transform .2s" style-hover="background:rgba(255,255,255,.2);transform:translateY(-2px) scale(1.03)">Ver serviços</button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section style="position:relative;overflow:hidden;padding:clamp(40px,5vw,62px) 0;background:linear-gradient(180deg,#070F1E 0%,#03060A 100%)">
+      <p data-reveal style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin:0 0 36px;opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Empresas que confiam na TecnoCursos</p>
+      <div class="tc-marquee-wrap" onMouseEnter="{{ pauseMarquee }}" onMouseLeave="{{ resumeMarquee }}" style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%)">
+        <div class="tc-marquee-track" style="display:flex;width:max-content;align-items:center;animation:tcmarquee 76s linear infinite;will-change:transform">
+          <div style="display:flex;align-items:center;flex:none">{{ partnerNodes }}</div>
+          <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesB }}</div>
+          <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesC }}</div>
+          <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesD }}</div>
         </div>
       </div>
     </section>
@@ -1021,12 +1038,6 @@ sc-for{display:contents}
         <span>© 2026 todos os direitos reservados.</span>
         <span>Tecnologia · Treinamento · Segurança</span>
       </div>
-    </div>
-
-    <!-- marca d'água: logo gigante -->
-    <div style="position:relative;z-index:1;width:100%;display:flex;justify-content:center;align-items:flex-end;padding-top:8px;overflow:hidden">
-      <img src="uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%202.png" alt="" aria-hidden="true"
-           style="width:90%;max-width:1100px;height:auto;opacity:.07;display:block;pointer-events:none;user-select:none;filter:grayscale(1) brightness(2)"/>
     </div>
 
   </footer>
@@ -1733,7 +1744,7 @@ class Component extends DCLogic {
           const target = +el.dataset.counter;
           const prefix = el.dataset.counterPrefix || '';
           const suffix = el.dataset.counterSuffix || '';
-          const duration = 3500;
+          const duration = +(el.dataset.counterDuration || 3500);
           const startTime = performance.now();
           el.style.display = 'inline-block';
           el.style.transformOrigin = 'left center';
@@ -1914,9 +1925,27 @@ class Component extends DCLogic {
     const partnerNodesD = partners.map((p, i) => mkPartner(p, i, 'd'));
 
     const offerings = [
-      { title: 'Treinamentos Teóricos e Práticos', icon: 'treino', img: 'uploads/img1home.png', points: ['Plataforma digital com vídeo aulas e materiais', 'Instrutores especializados in loco', 'Alinhamento com as principais NRs'], onClick: () => this.go('servicos') },
-      { title: 'Normas Regulamentadoras', icon: 'nr', img: 'uploads/img3home.png', points: ['Auditoria e conformidade normativa', 'NR5, NR6, NR10, NR11, NR12, NR13, NR17, NR18, NR23, NR33, NR34 e NR35', 'Online e presencial, com suporte em Libras'], onClick: () => this.go('servicos') },
-      { title: 'Lista de Presença Digital', icon: 'presenca', img: 'uploads/img2home.png', points: ['Totalmente sem papel', 'Controle automático de validade das capacitações', 'Relatórios detalhados e acompanhamento de desempenho'], onClick: () => this.go('servicos') },
+      {
+        title: 'Tecnologia',
+        icon: 'plataforma',
+        img: 'uploads/img2home.png',
+        points: ['Plataforma digital com vídeo aulas e materiais', 'Lista de presença digital sem papel', 'Relatórios, validades e certificados em um só lugar'],
+        onClick: () => { window.location.href = 'servicos/#plataforma'; },
+      },
+      {
+        title: 'Treinamento',
+        icon: 'treino',
+        img: 'uploads/img1home.png',
+        points: ['Teoria online e prática na sua empresa', 'Instrutores especializados in loco', 'Alinhamento com as principais NRs'],
+        onClick: () => { window.location.href = 'servicos/#normas-root'; },
+      },
+      {
+        title: 'Segurança',
+        icon: 'nr',
+        img: 'uploads/img3home.png',
+        points: ['Conformidade com as Normas Regulamentadoras', 'Gestão de capacitações e evidências', 'Cultura de segurança com acompanhamento contínuo'],
+        onClick: () => { window.location.href = 'servicos/#presenca-root'; },
+      },
     ].map(o => ({
       ...o,
       pointsNode: React.createElement(React.Fragment, null,
