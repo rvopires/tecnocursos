@@ -25,11 +25,33 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 @keyframes tcpop{0%{opacity:0;transform:translateY(14px) scale(.96)}100%{opacity:1;transform:none}}
 [data-offering-card]{opacity:0;transform:translateY(44px) scale(.88);filter:blur(6px);transition:opacity 1.2s ease,transform 1.4s cubic-bezier(.34,1.18,.64,1),filter 1.1s ease}
 [data-offering-card].tc-svc-on{opacity:1;transform:none;filter:blur(0)}
-[data-offering-card]:hover{transform:translateY(-5px)!important;box-shadow:0 20px 48px rgba(0,0,0,.38),0 0 0 1px rgba(68,229,231,.3),0 0 24px rgba(68,229,231,.08)!important;border-color:rgba(68,229,231,.45)!important}
-.tc-offering-points-wrap{display:grid;grid-template-rows:0fr;opacity:0;margin-bottom:0;transition:grid-template-rows .45s cubic-bezier(.22,.61,.36,1),opacity .35s ease,margin-bottom .45s cubic-bezier(.22,.61,.36,1)}
-.tc-offering-points-wrap>ul{overflow:hidden;min-height:0}
-[data-offering-card]:hover .tc-offering-points-wrap{grid-template-rows:1fr;opacity:1;margin-bottom:18px}
-[data-offering-card]:hover .tc-offering-shade{background:linear-gradient(0deg,rgba(5,9,18,.98) 0%,rgba(5,9,18,.96) 46%,rgba(5,9,18,.7) 74%,rgba(5,9,18,.32) 100%)}
+.tc-sol-panels{display:flex;flex-direction:column;gap:24px;margin-top:clamp(40px,5vw,64px)}
+.tc-sol-panel{display:grid;grid-template-columns:1.05fr .95fr;min-height:clamp(420px,58vh,560px);overflow:hidden;cursor:pointer;position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.035) 0%,rgba(255,255,255,.012) 100%);border:1px solid rgba(255,255,255,.1);border-radius:22px;box-shadow:0 24px 48px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.07);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .35s ease,box-shadow .35s ease,transform .35s ease}
+.tc-sol-panel::before{content:"";position:absolute;top:0;left:18%;right:18%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);z-index:4;pointer-events:none}
+.tc-sol-panel:hover{border-color:rgba(106,187,140,.42);transform:translateY(-3px);box-shadow:0 32px 64px rgba(0,0,0,.4),0 0 0 1px rgba(50,173,120,.14),0 0 48px rgba(50,173,120,.1),inset 0 1px 0 rgba(255,255,255,.1)}
+.tc-sol-panel--reverse .tc-sol-panel-media{order:2}
+.tc-sol-panel--reverse .tc-sol-panel-copy{order:1}
+.tc-sol-panel-media{position:relative;min-height:280px;overflow:hidden}
+.tc-sol-panel-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.tc-sol-panel:hover .tc-sol-panel-media img{transform:scale(1.06)}
+.tc-sol-panel-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,11,18,.35),rgba(7,11,18,.06));pointer-events:none}
+.tc-sol-panel--reverse .tc-sol-panel-media::after{background:linear-gradient(270deg,rgba(7,11,18,.35),rgba(7,11,18,.06))}
+.tc-sol-panel-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,5vw,64px) clamp(28px,4vw,56px);position:relative;background:linear-gradient(165deg,rgba(7,11,18,.94) 0%,rgba(14,22,32,.88) 55%,rgba(8,14,20,.96) 100%)}
+.tc-sol-panel-copy::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:radial-gradient(ellipse 85% 110% at 25% 120%,rgba(50,173,120,.22),transparent 68%);pointer-events:none;z-index:0}
+.tc-sol-panel-copy > *{position:relative;z-index:1}
+.tc-sol-panel-copy h3{font-size:clamp(32px,4.2vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05;color:#fff;margin:0}
+.tc-sol-panel-copy h3::after{content:"";display:block;width:36px;height:2px;margin-top:16px;border-radius:2px;background:#32AD78;box-shadow:0 0 12px rgba(50,173,120,.45)}
+.tc-sol-panel-copy p{font-size:clamp(15px,1.5vw,18px);line-height:1.65;color:rgba(255,255,255,.64);margin:18px 0 0;max-width:420px}
+.tc-sol-panel-cta{font-family:inherit;margin-top:28px;align-self:flex-start;cursor:pointer;display:inline-flex;align-items:center;gap:8px;background:#32AD78;color:#fff;border:1px solid #32AD78;font-size:15px;font-weight:700;padding:14px 26px;border-radius:12px;box-shadow:0 10px 28px rgba(50,173,120,.38);backdrop-filter:none;animation:tcCtaPulse 2s ease-in-out infinite;transition:background .2s,border-color .2s,color .2s,transform .2s,box-shadow .2s}
+.tc-sol-panel-cta:hover{background:#6ABB8C;border-color:#6ABB8C;color:#fff;transform:translateY(-2px);box-shadow:0 16px 36px rgba(50,173,120,.48);animation:none}
+.tc-sol-panel:hover .tc-sol-panel-cta{box-shadow:0 14px 32px rgba(50,173,120,.42)}
+@keyframes tcCtaPulse{0%,100%{box-shadow:0 10px 28px rgba(50,173,120,.38),0 0 0 0 rgba(50,173,120,.45);transform:scale(1)}50%{box-shadow:0 12px 32px rgba(50,173,120,.5),0 0 0 12px rgba(50,173,120,0);transform:scale(1.03)}}
+@media(prefers-reduced-motion:reduce){.tc-sol-panel-cta{animation:none}}
+@media(max-width:860px){
+  .tc-sol-panel{grid-template-columns:1fr;min-height:auto}
+  .tc-sol-panel-media,.tc-sol-panel--reverse .tc-sol-panel-media{order:0;min-height:240px}
+  .tc-sol-panel-copy,.tc-sol-panel--reverse .tc-sol-panel-copy{order:1}
+}
 .tc-pillar-row{transition:padding-left .35s cubic-bezier(.22,.61,.36,1)}
 .tc-pillar-row:hover{padding-left:16px}
 .tc-shine-text{background:linear-gradient(100deg,#070F1E 25%,#070F1E 42%,#0d9488 50%,#070F1E 58%,#070F1E 75%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:tcShine 6s linear infinite}
@@ -98,10 +120,20 @@ sc-for{display:contents}
 .tc-nav-mobile-sub{padding:4px 0 10px 12px;display:flex;flex-direction:column;gap:2px;border-bottom:1px solid rgba(255,255,255,.1)}
 .tc-nav-mobile-sub span{font-size:17px;font-weight:500;color:rgba(255,255,255,.72);padding:10px 0;cursor:pointer}
 .tc-nav-mobile-sub span:hover{color:#6ABB8C}
-.tc-stats-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tc-stats-card{background:linear-gradient(160deg,rgba(27,40,72,.95),rgba(0,92,139,.55));border:1px solid rgba(106,187,140,.28);border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 12px 36px rgba(0,0,0,.28),inset 0 1px 0 rgba(106,187,140,.15)}
-.tc-stats-card-num{font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#32AD78;line-height:1;letter-spacing:-.03em}
-.tc-stats-card-label{font-size:15px;font-weight:500;color:rgba(255,255,255,.72);margin-top:12px;line-height:1.4}
+.tc-stats-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tc-stats-card{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.045) 0%,rgba(255,255,255,.015) 100%);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:42px 28px 36px;text-align:center;box-shadow:0 24px 48px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transform:translateY(28px) scale(.98);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1),border-color .35s ease,box-shadow .35s ease}
+.tc-stats-card::before{content:"";position:absolute;top:0;left:18%;right:18%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);z-index:2}
+.tc-stats-card::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:radial-gradient(ellipse 70% 90% at 50% 120%,rgba(50,173,120,.18),transparent 70%);pointer-events:none;z-index:0;opacity:.55;transition:opacity .45s ease}
+.tc-stats-card.tc-stats-on{opacity:1;transform:none}
+.tc-stats-card.tc-stats-live{border-color:rgba(106,187,140,.38);box-shadow:0 28px 56px rgba(0,0,0,.32),0 0 0 1px rgba(50,173,120,.12),inset 0 1px 0 rgba(255,255,255,.1)}
+.tc-stats-card.tc-stats-live::after{opacity:1}
+.tc-stats-card:hover{border-color:rgba(106,187,140,.42);transform:translateY(-4px);box-shadow:0 32px 64px rgba(0,0,0,.36),0 0 40px rgba(50,173,120,.08)}
+.tc-stats-card-num{position:relative;z-index:1;font-size:clamp(40px,5vw,56px);font-weight:800;color:#fff;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;text-shadow:0 0 40px rgba(50,173,120,.25)}
+.tc-stats-card-num span[data-counter-accent]{color:#32AD78}
+.tc-stats-card-label{position:relative;z-index:1;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-top:16px;line-height:1.4}
+.tc-stats-card-bar{position:relative;z-index:1;width:48px;height:2px;margin:18px auto 0;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden}
+.tc-stats-card-bar>i{display:block;width:0;height:100%;background:linear-gradient(90deg,#005C8B,#32AD78);border-radius:2px;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
+.tc-stats-card.tc-stats-live .tc-stats-card-bar>i{width:100%}
 @media(max-width:900px){
   [data-navlinks]{display:none!important}
   [data-burger]{display:flex!important}
@@ -113,15 +145,6 @@ sc-for{display:contents}
 }
 @media(max-width:620px){
   [data-hide-sm]{display:none!important}
-}
-.tc-offering-grid [data-offering-card]:first-child{grid-column:1/-1;min-height:360px}
-.tc-offering-grid [data-offering-card]:nth-child(2),
-.tc-offering-grid [data-offering-card]:nth-child(3){min-height:360px}
-@media(max-width:860px){
-  .tc-offering-grid{grid-template-columns:1fr!important}
-  .tc-offering-grid [data-offering-card]:first-child{grid-column:1/-1!important;min-height:340px!important}
-  .tc-offering-grid [data-offering-card]:nth-child(2),
-  .tc-offering-grid [data-offering-card]:nth-child(3){min-height:340px!important}
 }
 </style>
 </helmet>
@@ -203,55 +226,51 @@ sc-for{display:contents}
     </section>
 
     <!-- NÚMEROS EM CARDS -->
-    <section style="position:relative;padding:clamp(56px,7vw,96px) 0;background:linear-gradient(180deg,#070C16 0%,#0A1326 100%);overflow:hidden">
-      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 60% at 50% 0%,rgba(50,173,120,.14),transparent 60%)"></div>
+    <section style="position:relative;padding:clamp(56px,7vw,96px) 0;background:linear-gradient(180deg,#05080F 0%,#0A1326 100%);overflow:hidden">
+      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 70% at 50% -10%,rgba(0,92,139,.28),transparent 58%),radial-gradient(40% 50% at 80% 80%,rgba(50,173,120,.1),transparent 60%)"></div>
       <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px">
         <div class="tc-stats-cards">
           <div class="tc-stats-card">
-            <div class="tc-stats-card-num" data-counter="20" data-counter-prefix="+" data-counter-suffix=" anos" data-counter-duration="1600">+0 anos</div>
+            <div class="tc-stats-card-num" data-counter="20" data-counter-prefix="+" data-counter-suffix=" anos" data-counter-duration="1400" data-counter-delay="0">+0 anos</div>
             <div class="tc-stats-card-label">de experiência</div>
+            <div class="tc-stats-card-bar" aria-hidden="true"><i></i></div>
           </div>
           <div class="tc-stats-card">
-            <div class="tc-stats-card-num" data-counter="320" data-counter-prefix="+" data-counter-suffix=" mil" data-counter-duration="1600">+0 mil</div>
+            <div class="tc-stats-card-num" data-counter="320" data-counter-prefix="+" data-counter-suffix=" mil" data-counter-duration="1500" data-counter-delay="160">+0 mil</div>
             <div class="tc-stats-card-label">inscritos em treinamentos</div>
+            <div class="tc-stats-card-bar" aria-hidden="true"><i></i></div>
           </div>
           <div class="tc-stats-card">
-            <div class="tc-stats-card-num" data-counter="250" data-counter-prefix="+" data-counter-suffix=" mil" data-counter-duration="1600">+0 mil</div>
+            <div class="tc-stats-card-num" data-counter="250" data-counter-prefix="+" data-counter-suffix=" mil" data-counter-duration="1600" data-counter-delay="320">+0 mil</div>
             <div class="tc-stats-card-label">capacitados</div>
+            <div class="tc-stats-card-bar" aria-hidden="true"><i></i></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- O QUE OFERECEMOS -->
-    <section data-cards-pin style="position:relative;background:linear-gradient(180deg,#070C16 0%,#0A1326 45%,#0C1C36 100%);padding:clamp(76px,9vw,128px) 0;overflow:hidden">
-      
-      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 64% at 22% 18%,rgba(50,173,120,.2),transparent 60%),radial-gradient(54% 70% at 92% 96%,rgba(0,92,139,.4),transparent 62%)"></div>
+    <section style="position:relative;background:linear-gradient(180deg,#05070B 0%,#0A0F14 50%,#070B10 100%);padding:clamp(72px,9vw,120px) 0;overflow:hidden">
+      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 60% at 15% 20%,rgba(50,173,120,.1),transparent 58%),radial-gradient(45% 50% at 90% 80%,rgba(50,173,120,.06),transparent 60%)"></div>
       <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
         <div style="max-width:720px">
-          <h2 data-tw style="font-family:inherit;font-size:clamp(26px,3.6vw,42px);line-height:1.15;letter-spacing:-.01em;font-weight:600;color:#fff;margin:0;opacity:0;white-space:nowrap">O que <span style="color:#10ffcb">oferecemos?</span></h2>
-          <h3 data-reveal data-delay="110" style="font-size:clamp(18px,2.2vw,26px);line-height:1.35;letter-spacing:.01em;font-weight:400;color:rgba(255,255,255,.78);margin:20px 0 0;opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)">Treinamento, tecnologia e gestão — em <span style="color:#10ffcb;font-weight:500">um só lugar.</span></h3>
-          <p data-reveal data-delay="200" style="font-size:18px;line-height:1.6;color:rgba(255,255,255,.62);margin:16px 0 0;max-width:540px;opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)">A parte teórica acontece na nossa plataforma digital; a prática, na sua empresa, com instrutores especializados.</p>
+          <h2 data-tw style="font-family:inherit;font-size:clamp(26px,3.6vw,42px);line-height:1.15;letter-spacing:-.01em;font-weight:600;color:#fff;margin:0;opacity:0;white-space:nowrap">O que <span style="color:#32AD78">oferecemos?</span></h2>
+          <p data-reveal data-delay="120" style="font-size:18px;line-height:1.6;color:rgba(255,255,255,.62);margin:16px 0 0;max-width:540px;opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)">Tecnologia, treinamento e segurança — em um só lugar.</p>
         </div>
-        <div class="tc-offering-grid" style="display:grid;gap:22px;grid-template-columns:repeat(2,1fr);margin-top:54px">
-          <sc-for list="{{ offerings }}" as="s" hint-placeholder-count="3">
-            <div data-tilt data-offering-card data-reveal style="position:relative;border-radius:20px;padding:0;cursor:pointer;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,.4);display:flex;flex-direction:column" onClick="{{ s.onClick }}">
-              <!-- top accent line -->
-              <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#10ffcb,#44e5e7);z-index:3"></div>
-              <!-- foto de fundo -->
-              <img src="{{ s.img }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .5s cubic-bezier(.22,.61,.36,1)"/>
-              <!-- degradê para legibilidade do texto -->
-              <div class="tc-offering-shade" style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,9,18,.96) 0%,rgba(5,9,18,.82) 34%,rgba(5,9,18,.25) 62%,rgba(5,9,18,.15) 100%);transition:background .45s cubic-bezier(.22,.61,.36,1);z-index:1"></div>
-              <!-- conteúdo -->
-              <div style="position:relative;z-index:2;margin-top:auto;padding:26px 26px 24px">
-                <div style="width:42px;height:42px;border-radius:12px;background:rgba(16,255,203,.14);border:1px solid rgba(16,255,203,.3);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;margin-bottom:14px" data-svg="{{ s.icon }}" data-stroke="#10ffcb"></div>
-                <h4 style="font-family:inherit;font-size:20px;font-weight:700;color:#fff;margin:0 0 12px;line-height:1.25;text-shadow:0 2px 12px rgba(0,0,0,.5)">{{ s.title }}</h4>
-                <div class="tc-offering-points-wrap"><ul style="list-style:none;padding:0;margin:0">{{ s.pointsNode }}</ul></div>
-                <button onClick="{{ s.onClick }}" style="font-family:inherit;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;background:#10ffcb;color:#070F1E;font-size:13px;font-weight:600;padding:11px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(68,229,231,.28);transition:background .2s,transform .2s" style-hover="background:#0de0b3;transform:translateY(-2px)">Conheça <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-              </div>
+      </div>
+      <div class="tc-sol-panels" style="position:relative;z-index:2;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 24px">
+        <sc-for list="{{ offerings }}" as="s" hint-placeholder-count="3">
+          <article class="tc-sol-panel {{ s.reverseClass }}" data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)" onClick="{{ s.onClick }}">
+            <div class="tc-sol-panel-media">
+              <img src="{{ s.img }}" alt="{{ s.title }}"/>
             </div>
-          </sc-for>
-        </div>
+            <div class="tc-sol-panel-copy">
+              <h3>{{ s.title }}</h3>
+              <p>{{ s.desc }}</p>
+              <button class="tc-sol-panel-cta" type="button" onClick="{{ s.onClick }}">Conheça <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            </div>
+          </article>
+        </sc-for>
       </div>
     </section>
 
@@ -1544,7 +1563,7 @@ class Component extends DCLogic {
   }
 
   scanReveal() {
-    document.querySelectorAll('[data-offering-card]').forEach((el, i) => { el.dataset.delay = String(i * 280); });
+    document.querySelectorAll('.tc-sol-panel').forEach((el, i) => { el.dataset.delay = String(i * 160); });
     document.querySelectorAll('[data-nr-card]').forEach((el, i) => { el.dataset.delay = String(i * 130); });
     const els = document.querySelectorAll('[data-reveal]:not([data-feat]),[data-reveal-pop],[data-reveal-plain]');
     if (!this.io) { els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }); return; }
@@ -1738,6 +1757,7 @@ class Component extends DCLogic {
     document.querySelectorAll('[data-counter]').forEach(el => {
       if (el.dataset.counterInit) return;
       el.dataset.counterInit = '1';
+      const card = el.closest('.tc-stats-card');
       const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
@@ -1745,30 +1765,41 @@ class Component extends DCLogic {
           const prefix = el.dataset.counterPrefix || '';
           const suffix = el.dataset.counterSuffix || '';
           const duration = +(el.dataset.counterDuration || 3500);
-          const startTime = performance.now();
-          el.style.display = 'inline-block';
-          el.style.transformOrigin = 'left center';
-          const tick = (now) => {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-            el.textContent = prefix + Math.round(ease * target) + suffix;
-            const scale = 0.55 + ease * 0.45;
-            el.style.transform = 'scale(' + scale.toFixed(3) + ')';
-            el.style.opacity = (0.25 + ease * 0.75).toFixed(3);
-            if (progress < 1) {
-              requestAnimationFrame(tick);
-            } else {
-              el.style.transition = 'transform .3s ease,opacity .3s ease';
-              el.style.transform = 'scale(1)';
-              el.style.opacity = '1';
-              setTimeout(() => { el.style.transition = ''; el.style.transform = ''; el.style.opacity = ''; }, 320);
+          const delay = +(el.dataset.counterDelay || 0);
+          const startAnim = () => {
+            if (card) {
+              card.classList.add('tc-stats-on');
+              requestAnimationFrame(() => card.classList.add('tc-stats-live'));
             }
+            const startTime = performance.now();
+            el.style.display = 'inline-block';
+            el.style.transformOrigin = 'center center';
+            el.style.opacity = '0.35';
+            const tick = (now) => {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const ease = 1 - Math.pow(1 - progress, 3);
+              el.textContent = prefix + Math.round(ease * target) + suffix;
+              el.style.opacity = String(0.35 + ease * 0.65);
+              if (progress < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                el.textContent = prefix + target + suffix;
+                el.style.transition = 'transform .45s cubic-bezier(.22,1.4,.36,1),opacity .25s ease';
+                el.style.transform = 'scale(1.06)';
+                el.style.opacity = '1';
+                requestAnimationFrame(() => {
+                  requestAnimationFrame(() => { el.style.transform = 'scale(1)'; });
+                });
+                setTimeout(() => { el.style.transition = ''; el.style.transform = ''; el.style.opacity = ''; }, 500);
+              }
+            };
+            requestAnimationFrame(tick);
           };
-          requestAnimationFrame(tick);
+          delay ? setTimeout(startAnim, delay) : startAnim();
           io.unobserve(el);
         });
-      }, { threshold: 0.6 });
+      }, { threshold: 0.45 });
       io.observe(el);
     });
   }
@@ -1927,37 +1958,26 @@ class Component extends DCLogic {
     const offerings = [
       {
         title: 'Tecnologia',
-        icon: 'plataforma',
+        desc: 'Plataforma digital para gerir treinamentos, lista de presença, validades e certificados — sem papel e sem planilha.',
         img: 'uploads/img2home.png',
-        points: ['Plataforma digital com vídeo aulas e materiais', 'Lista de presença digital sem papel', 'Relatórios, validades e certificados em um só lugar'],
+        reverseClass: '',
         onClick: () => { window.location.href = 'servicos/#plataforma'; },
       },
       {
         title: 'Treinamento',
-        icon: 'treino',
+        desc: 'Teoria online e prática na sua empresa, com instrutores especializados e alinhamento às principais NRs.',
         img: 'uploads/img1home.png',
-        points: ['Teoria online e prática na sua empresa', 'Instrutores especializados in loco', 'Alinhamento com as principais NRs'],
+        reverseClass: 'tc-sol-panel--reverse',
         onClick: () => { window.location.href = 'servicos/#normas-root'; },
       },
       {
         title: 'Segurança',
-        icon: 'nr',
+        desc: 'Conformidade normativa e cultura de segurança com gestão completa das capacitações da sua equipe.',
         img: 'uploads/img3home.png',
-        points: ['Conformidade com as Normas Regulamentadoras', 'Gestão de capacitações e evidências', 'Cultura de segurança com acompanhamento contínuo'],
+        reverseClass: '',
         onClick: () => { window.location.href = 'servicos/#presenca-root'; },
       },
-    ].map(o => ({
-      ...o,
-      pointsNode: React.createElement(React.Fragment, null,
-        ...o.points.map((pt, i) => React.createElement('li', {
-          key: i,
-          style: { display: 'flex', alignItems: 'flex-start', gap: '11px', marginBottom: i < o.points.length - 1 ? '13px' : '0', fontSize: '14.5px', lineHeight: '1.55', color: 'rgba(255,255,255,0.72)' }
-        },
-          React.createElement('span', { style: { color: '#10ffcb', fontWeight: 700, flexShrink: 0, fontSize: '15px', marginTop: '1px' } }, '✓'),
-          React.createElement('span', null, pt)
-        ))
-      )
-    }));
+    ];
 
     const platformBenefits = [
       'Eliminação do papel na gestão de turmas',
