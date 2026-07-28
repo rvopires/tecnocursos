@@ -112,21 +112,49 @@ sc-for{display:contents}
 [data-rail]::-webkit-scrollbar{display:none}
 [data-nr-track]::-webkit-scrollbar{display:none}
 [data-anim-grad]{background-size:200% 200%;animation:tcgrad 14s ease infinite}
-.tc-nav-shell{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 20px 0;pointer-events:none}
-.tc-nav-pill{pointer-events:auto;max-width:1120px;margin:0 auto;height:64px;padding:0 12px 0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:linear-gradient(135deg,rgba(27,40,72,.88) 0%,rgba(0,92,139,.72) 55%,rgba(27,40,72,.9) 100%);border:1px solid rgba(106,187,140,.35);box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 10px rgba(0,92,139,.25),inset 0 1px 0 rgba(106,187,140,.28),inset 0 -1px 0 rgba(0,0,0,.2);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px)}
+.tc-nav-shell{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 20px 0;pointer-events:none;overflow:visible}
+.tc-nav-shell:has(.tc-nav-dd:hover),.tc-nav-shell:has(.tc-nav-dd:focus-within){pointer-events:auto}
+.tc-nav-pill{pointer-events:auto;max-width:1120px;margin:0 auto;height:64px;padding:0 12px 0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:linear-gradient(135deg,rgba(27,40,72,.88) 0%,rgba(0,92,139,.72) 55%,rgba(27,40,72,.9) 100%);border:1px solid rgba(106,187,140,.35);box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 10px rgba(0,92,139,.25),inset 0 1px 0 rgba(106,187,140,.28),inset 0 -1px 0 rgba(0,0,0,.2);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);overflow:visible}
 .tc-nav-link{position:relative;font-size:14.5px;font-weight:500;cursor:pointer;padding:8px 2px;color:rgba(255,255,255,.88);transition:color .2s ease}
 .tc-nav-link:hover{color:#6ABB8C!important}
 .tc-nav-cta{font-family:inherit;border:none;cursor:pointer;background:#32AD78;color:#FFFFFF;font-size:14px;font-weight:700;padding:11px 22px;border-radius:999px;box-shadow:0 6px 20px rgba(50,173,120,.4);transition:background .2s,transform .2s,box-shadow .2s}
 .tc-nav-cta:hover{background:#6ABB8C;transform:translateY(-1px);box-shadow:0 10px 28px rgba(50,173,120,.5)}
-.tc-nav-dd{position:relative;display:flex;align-items:center;height:100%}
-.tc-nav-dd::after{content:"";position:absolute;left:-12px;right:-12px;top:100%;height:22px}
-.tc-nav-dd-panel{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(8px);opacity:0;visibility:hidden;pointer-events:none;min-width:220px;padding:10px;border-radius:18px;background:linear-gradient(160deg,rgba(27,40,72,.96),rgba(0,92,139,.9));border:1px solid rgba(106,187,140,.35);box-shadow:0 16px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(106,187,140,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;flex-direction:column;gap:4px;z-index:130;transition:opacity .22s ease,transform .22s ease,visibility .22s}
+.tc-nav-dd{position:relative;display:flex;align-items:center;height:100%;z-index:140}
+.tc-nav-dd-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;min-width:220px;padding:14px 0 0;border:none;background:transparent;box-shadow:none;display:flex;flex-direction:column;z-index:150;transition:opacity .18s ease,transform .18s ease,visibility .18s}
+.tc-nav-dd-panel::before{content:"";position:absolute;left:0;right:0;top:14px;bottom:0;border-radius:18px;background:linear-gradient(160deg,rgba(27,40,72,.98),rgba(0,92,139,.94));border:1px solid rgba(106,187,140,.35);box-shadow:0 16px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(106,187,140,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:0;pointer-events:none}
 .tc-nav-dd:hover .tc-nav-dd-panel,.tc-nav-dd:focus-within .tc-nav-dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.tc-nav-dd-item{font-family:inherit;border:none;cursor:pointer;text-align:left;background:transparent;color:rgba(255,255,255,.9);font-size:14px;font-weight:600;padding:12px 14px;border-radius:12px;transition:background .18s,color .18s}
+.tc-nav-dd-item{position:relative;z-index:1;font-family:inherit;border:none;cursor:pointer;text-align:left;background:transparent;color:rgba(255,255,255,.9);font-size:14px;font-weight:600;padding:12px 14px;margin:0 10px;border-radius:12px;transition:background .18s,color .18s}
+.tc-nav-dd-item:first-child{margin-top:10px}
+.tc-nav-dd-item:last-child{margin-bottom:10px}
 .tc-nav-dd-item:hover{background:rgba(50,173,120,.18);color:#6ABB8C}
 .tc-nav-mobile-sub{padding:4px 0 10px 12px;display:flex;flex-direction:column;gap:2px;border-bottom:1px solid rgba(255,255,255,.1)}
 .tc-nav-mobile-sub span{font-size:17px;font-weight:500;color:rgba(255,255,255,.72);padding:10px 0;cursor:pointer}
 .tc-nav-mobile-sub span:hover{color:#6ABB8C}
+/* Cosmic parallax CTA */
+:root{--animation-iteration:infinite}
+@keyframes animStar{from{transform:translateY(0)}to{transform:translateY(-2000px)}}
+@keyframes animDont{0%,15%{transform:translateY(-18px);opacity:0}35%,80%{transform:translateY(0);opacity:1}92%,100%{transform:translateY(-4px);opacity:0}}
+@keyframes animLet{0%,25%{transform:translateY(-18px);opacity:0}45%,80%{transform:translateY(0);opacity:1}92%,100%{transform:translateY(-4px);opacity:0}}
+@keyframes animGo{0%,35%{transform:translateY(-18px);opacity:0}55%,80%{transform:translateY(0);opacity:1}92%,100%{transform:translateY(-4px);opacity:0}}
+.tc-cta-cosmic{position:relative;overflow:hidden;min-height:clamp(480px,70vh,640px);width:100%;background:radial-gradient(ellipse at bottom,#1B2735 0%,#090A0F 100%)}
+.tc-cta-cosmic .cosmic-stars,.tc-cta-cosmic .cosmic-stars-medium,.tc-cta-cosmic .cosmic-stars-large{position:absolute;top:0;left:0;background:transparent;border-radius:50%;pointer-events:none}
+.tc-cta-cosmic .cosmic-stars{width:1px;height:1px;animation:animStar 50s linear var(--animation-iteration)}
+.tc-cta-cosmic .cosmic-stars::after{content:"";position:absolute;top:2000px;width:1px;height:1px;box-shadow:inherit}
+.tc-cta-cosmic .cosmic-stars-medium{width:2px;height:2px;animation:animStar 100s linear var(--animation-iteration)}
+.tc-cta-cosmic .cosmic-stars-medium::after{content:"";position:absolute;top:2000px;width:2px;height:2px;box-shadow:inherit}
+.tc-cta-cosmic .cosmic-stars-large{width:3px;height:3px;animation:animStar 150s linear var(--animation-iteration)}
+.tc-cta-cosmic .cosmic-stars-large::after{content:"";position:absolute;top:2000px;width:3px;height:3px;box-shadow:inherit}
+.tc-cta-cosmic .tc-cta-horizon{position:absolute;left:0;right:0;bottom:22%;height:2px;background:linear-gradient(90deg,transparent,rgba(106,187,140,.55),transparent);z-index:2;pointer-events:none}
+.tc-cta-cosmic .tc-cta-horizon-glow{position:absolute;left:8%;right:8%;top:-48px;height:96px;background:radial-gradient(ellipse at center,rgba(50,173,120,.38),transparent 70%);filter:blur(10px)}
+.tc-cta-cosmic .tc-cta-earth{position:absolute;left:-12%;right:-12%;bottom:-42%;height:62%;border-radius:50%;background:radial-gradient(ellipse at top,#0C1A30 0%,#05070B 55%,#000 100%);box-shadow:0 -24px 70px rgba(50,173,120,.14);z-index:1;pointer-events:none}
+.tc-cta-cosmic .tc-cta-copy{position:relative;z-index:5;max-width:780px;margin:0 auto;text-align:center;padding:clamp(72px,10vw,120px) 24px}
+.tc-cta-cosmic .tc-cta-subparts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin:0 0 32px;font-size:clamp(11px,1.2vw,13px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(16,255,203,.75)}
+.tc-cta-cosmic .tc-cta-subparts span:nth-child(1){animation:animDont 8s ease-in-out var(--animation-iteration)}
+.tc-cta-cosmic .tc-cta-subparts span:nth-child(2){animation:animLet 8s ease-in-out var(--animation-iteration)}
+.tc-cta-cosmic .tc-cta-subparts span:nth-child(3){animation:animGo 8s ease-in-out var(--animation-iteration)}
+@media(prefers-reduced-motion:reduce){
+  .tc-cta-cosmic .cosmic-stars,.tc-cta-cosmic .cosmic-stars-medium,.tc-cta-cosmic .cosmic-stars-large,.tc-cta-cosmic .tc-cta-subparts span{animation:none!important;opacity:1;transform:none}
+}
 .tc-stats-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .tc-stats-card{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(165deg,#1B2848 0%,#16324f 45%,#0f2438 100%);border:1.5px solid rgba(106,187,140,.32);border-radius:22px;padding:48px 28px 40px;text-align:center;box-shadow:0 22px 48px rgba(27,40,72,.22),0 4px 16px rgba(50,173,120,.1),inset 0 1px 0 rgba(255,255,255,.1);opacity:0;transform:translateY(28px) scale(.98);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1),border-color .35s ease,box-shadow .35s ease}
 .tc-stats-card::before{content:"";position:absolute;top:0;left:12%;right:12%;height:2px;background:linear-gradient(90deg,transparent,#32AD78,transparent);z-index:2;box-shadow:0 0 16px rgba(50,173,120,.5)}
@@ -227,8 +255,8 @@ sc-for{display:contents}
       </div>
 
       <div data-hero-pad style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center">
-        <h1 style="font-size:clamp(30px,4.8vw,54px);line-height:1.06;letter-spacing:-.03em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.6),0 0 60px rgba(0,0,0,.35);animation:tcSlideUp .82s cubic-bezier(.22,.61,.36,1) .18s both">A <span style="color:#10ffcb">plataforma</span> que gerencia seus treinamentos de <span style="color:#10ffcb">ponta a ponta.</span></h1>
-        <p style="font-size:clamp(14px,1.55vw,16px);line-height:1.65;color:rgba(255,255,255,.74);margin:20px 0 0;max-width:460px;text-shadow:0 1px 12px rgba(0,0,0,.7);animation:tcSlideUp .7s cubic-bezier(.22,.61,.36,1) .34s both">Teoria na nossa plataforma digital, prática na sua empresa. Lista de presença digital, gestão de validades e capacitação nas principais Normas Regulamentadoras.</p>
+        <h1 style="font-size:clamp(30px,4.8vw,54px);line-height:1.06;letter-spacing:-.03em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.6),0 0 60px rgba(0,0,0,.35);animation:tcSlideUp .82s cubic-bezier(.22,.61,.36,1) .18s both"><span style="color:#10ffcb">Tecnologia</span> que conecta pessoas, processos e <span style="color:#10ffcb">conformidade.</span></h1>
+        <p style="font-size:clamp(14px,1.55vw,16px);line-height:1.65;color:rgba(255,255,255,.74);margin:20px 0 0;max-width:460px;text-shadow:0 1px 12px rgba(0,0,0,.7);animation:tcSlideUp .7s cubic-bezier(.22,.61,.36,1) .34s both">Mais inovação, menos burocracia. Gestão inteligente para empresas modernas.</p>
         <div style="display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:28px;animation:tcSlideUp .7s cubic-bezier(.22,.61,.36,1) .48s both">
           <button onClick="{{ goServicos }}" style="font-family:inherit;border:none;cursor:pointer;background:#10ffcb;color:#070F1E;font-size:13px;font-weight:600;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(68,229,231,.36);transition:transform .2s,background .2s" style-hover="background:#0de0b3;transform:translateY(-2px)">Conheça nossos serviços</button>
           <button onClick="{{ goContato }}" style="font-family:inherit;cursor:pointer;background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.26);font-size:13px;font-weight:600;padding:12px 22px;border-radius:10px;transition:background .2s,transform .2s" style-hover="background:rgba(255,255,255,.16);transform:translateY(-2px)">Fale com a gente</button>
@@ -537,22 +565,6 @@ sc-for{display:contents}
       </div>
     </section>
 
-    <!-- CTA -->
-    <section style="background:linear-gradient(180deg,#0A1326,#070F1E);padding:clamp(72px,9vw,120px) 24px clamp(72px,9vw,120px)">
-      <div data-reveal style="max-width:1200px;margin:0 auto;background:linear-gradient(120deg,#0C1A30,#005C8B);border-radius:26px;padding:clamp(48px,7vw,82px) clamp(28px,5vw,72px);position:relative;overflow:hidden;opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)">
-        <div style="position:absolute;bottom:-40%;right:-5%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(50,173,120,.32),transparent 68%)"></div>
-        
-        <div style="position:relative;max-width:640px">
-          <h2 style="font-size:clamp(28px,4.4vw,46px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0">Pronto para digitalizar a segurança do trabalho?</h2>
-          <p style="font-size:18px;line-height:1.6;color:rgba(255,255,255,.78);margin:18px 0 34px">Fale com nosso time e veja a plataforma funcionando com os treinamentos da sua empresa.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:14px">
-            <button data-reveal-pop data-delay="120" onClick="{{ goContato }}" style="font-family:inherit;border:none;cursor:pointer;background:#10ffcb;color:#070F1E;font-size:16px;font-weight:600;padding:15px 28px;border-radius:12px;box-shadow:0 10px 30px rgba(68,229,231,.32);transition:background .2s,transform .2s,box-shadow .2s" style-hover="background:#0de0b3;transform:translateY(-2px) scale(1.03);box-shadow:0 16px 38px rgba(68,229,231,.4)">Fale com a gente</button>
-            <button data-reveal-pop data-delay="260" onClick="{{ goServicos }}" style="font-family:inherit;cursor:pointer;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:16px;font-weight:600;padding:15px 28px;border-radius:12px;transition:background .2s,transform .2s" style-hover="background:rgba(255,255,255,.2);transform:translateY(-2px) scale(1.03)">Ver serviços</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- PARTNERS -->
     <section style="position:relative;overflow:hidden;padding:clamp(40px,5vw,62px) 0;background:linear-gradient(180deg,#070F1E 0%,#03060A 100%)">
       <p data-reveal style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin:0 0 36px;opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Empresas que confiam na TecnoCursos</p>
@@ -562,6 +574,27 @@ sc-for{display:contents}
           <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesB }}</div>
           <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesC }}</div>
           <div style="display:flex;align-items:center;flex:none" aria-hidden="true">{{ partnerNodesD }}</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CÓSMICO -->
+    <section data-reveal class="tc-cta-cosmic" style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)">
+      <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
+      <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
+      <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>
+      <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
+      <div class="tc-cta-earth" aria-hidden="true"></div>
+      <div class="tc-cta-copy">
+        <h2 style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Pronto para transformar a gestão da sua empresa?</h2>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 14px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança.</p>
+        <div class="tc-cta-subparts" aria-hidden="true">
+          <span>digitalizar processos</span>
+          <span>capacitar equipes</span>
+          <span>fortalecer a segurança</span>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <button data-reveal-pop data-delay="120" onClick="{{ goContato }}" style="font-family:inherit;border:none;cursor:pointer;background:#10ffcb;color:#070F1E;font-size:16px;font-weight:700;padding:16px 30px;border-radius:12px;box-shadow:0 10px 30px rgba(68,229,231,.32);transition:background .2s,transform .2s,box-shadow .2s" style-hover="background:#0de0b3;transform:translateY(-2px) scale(1.03);box-shadow:0 16px 38px rgba(68,229,231,.4)">Falar com um especialista</button>
         </div>
       </div>
     </section>
@@ -1143,7 +1176,7 @@ class Component extends DCLogic {
   static getPageFromUrl() {
     const valid = ['home', 'sobre', 'servicos', 'catalogo', 'blog', 'contato'];
     const h = (location.hash || '').replace('#', '');
-    if (h === 'servicos') { window.location.href = 'servicos/'; return 'home'; }
+    if (h === 'servicos') { window.location.href = 'servicos/tecnologia/'; return 'home'; }
     if (h.indexOf('nr-') === 0) return 'nrDetail';
     return valid.includes(h) ? h : 'home';
   }
@@ -1286,6 +1319,7 @@ class Component extends DCLogic {
     this.initPopText();
     this.initVideoFallbacks();
     this.initNativeVideoAttrs();
+    this.initCosmicStars();
 
     this._cardOver = (e) => { const c = e.target.closest && e.target.closest('[data-card]'); if (!c) return; const pl = c.querySelector('[data-play]'); if (pl) { pl.style.opacity = '1'; pl.style.transform = 'scale(1)'; } };
     this._cardOut = (e) => { const c = e.target.closest && e.target.closest('[data-card]'); if (!c) return; if (e.relatedTarget && c.contains(e.relatedTarget)) return; const pl = c.querySelector('[data-play]'); if (pl) { pl.style.opacity = '0'; pl.style.transform = 'scale(.8)'; } };
@@ -1396,7 +1430,7 @@ class Component extends DCLogic {
     this.initBrazilMap();
   }
 
-  componentDidUpdate() { this.scanReveal(); this.paintSvgs(); this.drawConnectors(); this.initTypewriters(); this.initPopText(); this.initCounters(); this.initVideoFallbacks(); this.initNativeVideoAttrs(); this.initNrCarousel(); this.setupFeatScroll(); this.initOfferingReveal(); this.initBrazilMap(); }
+  componentDidUpdate() { this.scanReveal(); this.paintSvgs(); this.drawConnectors(); this.initTypewriters(); this.initPopText(); this.initCounters(); this.initVideoFallbacks(); this.initNativeVideoAttrs(); this.initNrCarousel(); this.setupFeatScroll(); this.initOfferingReveal(); this.initCosmicStars(); this.initBrazilMap(); }
 
   componentWillUnmount() {
     cancelAnimationFrame(this.raf);
@@ -1574,6 +1608,23 @@ class Component extends DCLogic {
       });
     }, { threshold: 0.28 });
     this._featIO.observe(section);
+  }
+
+  initCosmicStars() {
+    const gen = (count) => {
+      const parts = [];
+      for (let i = 0; i < count; i++) {
+        parts.push(`${Math.floor(Math.random() * 2000)}px ${Math.floor(Math.random() * 2000)}px #FFF`);
+      }
+      return parts.join(', ');
+    };
+    document.querySelectorAll('[data-cosmic-stars]').forEach((el) => {
+      if (el.dataset.starsReady) return;
+      el.dataset.starsReady = '1';
+      const kind = el.getAttribute('data-cosmic-stars');
+      const count = kind === 'small' ? 500 : kind === 'medium' ? 160 : 80;
+      el.style.boxShadow = gen(count);
+    });
   }
 
   scanReveal() {
@@ -1901,7 +1952,7 @@ class Component extends DCLogic {
   }
 
   go = (p) => {
-    if (p === 'servicos') { window.location.href = 'servicos/'; return; }
+    if (p === 'servicos') { window.location.href = 'servicos/tecnologia/'; return; }
     this.setState({ page: p, menu: false });
     window.scrollTo(0, 0);
     if (location.hash.replace('#', '') !== p) location.hash = p;
@@ -1929,14 +1980,14 @@ class Component extends DCLogic {
       { key: 'contato', label: 'Contato' },
     ];
     const solucaoSubs = [
-      { label: 'Tecnologia', onClick: () => { window.location.href = 'servicos/#plataforma'; } },
-      { label: 'Treinamento', onClick: () => { window.location.href = 'servicos/#normas-root'; } },
-      { label: 'Segurança', onClick: () => { window.location.href = 'servicos/#presenca-root'; } },
+      { label: 'Tecnologia', onClick: () => { window.location.href = 'servicos/tecnologia/'; } },
+      { label: 'Treinamento', onClick: () => { window.location.href = 'servicos/treinamento/'; } },
+      { label: 'Segurança', onClick: () => { window.location.href = 'servicos/tecnologia/#presenca-root'; } },
     ];
     const navItems = nav.map(n => ({ label: n.label, active: page === n.key, onClick: () => this.go(n.key) }));
     const mobileNavItems = nav.map(n => ({
       label: n.label,
-      onClick: () => this.go(n.key),
+      onClick: n.key === 'servicos' ? () => {} : () => this.go(n.key),
       subs: n.key === 'servicos' ? solucaoSubs : null,
     }));
     const navLinksNode = React.createElement(React.Fragment, null,
@@ -1951,7 +2002,6 @@ class Component extends DCLogic {
           return React.createElement('div', { className: 'tc-nav-dd', key: n.key },
             React.createElement('span', {
               className: 'tc-nav-link',
-              onClick: () => this.go('servicos'),
               style: { color, fontWeight: weight },
             }, n.label, underline),
             React.createElement('div', { className: 'tc-nav-dd-panel', role: 'menu' },
@@ -2004,19 +2054,19 @@ class Component extends DCLogic {
         title: 'Tecnologia',
         desc: 'Plataforma digital para gerir treinamentos, lista de presença, validades e certificados — sem papel e sem planilha.',
         img: 'img/tecnologia.png',
-        onClick: () => { window.location.href = 'servicos/#plataforma'; },
+        onClick: () => { window.location.href = 'servicos/tecnologia/'; },
       },
       {
         title: 'Treinamento',
         desc: 'Teoria online e prática na sua empresa, com instrutores especializados e alinhamento às principais NRs.',
         img: 'img/treinamento.png',
-        onClick: () => { window.location.href = 'servicos/#normas-root'; },
+        onClick: () => { window.location.href = 'servicos/treinamento/'; },
       },
       {
         title: 'Segurança',
         desc: 'Conformidade normativa e cultura de segurança com gestão completa das capacitações da sua equipe.',
         img: 'img/seguranca.png',
-        onClick: () => { window.location.href = 'servicos/#presenca-root'; },
+        onClick: () => { window.location.href = 'servicos/tecnologia/#presenca-root'; },
       },
     ];
 
