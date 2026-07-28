@@ -2316,6 +2316,7 @@
       #plataforma::before { animation: none; }
     }
   </style>
+  <link rel="stylesheet" href="./tc-cta-cosmic.css" />
 </head>
 <body>
   
@@ -2365,7 +2366,7 @@
           <div class="tc-nav-dd-panel" role="menu">
             <button type="button" class="tc-nav-dd-item" onclick="location.href='tecnologia/'">Tecnologia</button>
             <button type="button" class="tc-nav-dd-item" onclick="location.href='treinamento/'">Treinamento</button>
-            <button type="button" class="tc-nav-dd-item" onclick="location.href='tecnologia/#presenca-root'">Segurança</button>
+            <button type="button" class="tc-nav-dd-item" onclick="location.href='seguranca/'">Segurança</button>
           </div>
         </div>
         <span class="tc-nav-link" onclick="location.href='../index.html#catalogo'" style="color:rgba(255,255,255,.88);font-weight:500">Catálogo</span>
@@ -2389,7 +2390,7 @@
     <div class="tc-nav-mobile-sub">
       <span onclick="location.href='tecnologia/';document.getElementById('tc-shared-mobile-menu').style.display='none'">Tecnologia</span>
       <span onclick="location.href='treinamento/';document.getElementById('tc-shared-mobile-menu').style.display='none'">Treinamento</span>
-      <span onclick="location.href='tecnologia/#presenca-root';document.getElementById('tc-shared-mobile-menu').style.display='none'">Segurança</span>
+      <span onclick="location.href='seguranca/';document.getElementById('tc-shared-mobile-menu').style.display='none'">Segurança</span>
     </div>
     <span onclick="location.href='../index.html#catalogo'" style="font-size:24px;font-weight:600;color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer">Catálogo</span>
     <span onclick="location.href='../index.html#contato'" style="font-size:24px;font-weight:600;color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer">Contato</span>
@@ -2564,21 +2565,23 @@
     <!-- ========== BLOCO 03 — LISTA DE PRESENÇA DIGITAL (React + Framer Motion) ========== -->
     <div id="presenca-root"></div>
 
-    <!-- ========== CTA FINAL ========== -->
-    <section class="cta-final" aria-labelledby="cta-final-title">
-      <div class="container">
-        <div class="cta-final-card">
-          <h2 id="cta-final-title" class="display-2">Mais que uma plataforma, um parceiro para a segurança da sua empresa</h2>
-          <p class="lead subheadline">Treinamento, conformidade e comprovação em um só lugar — para você focar no que importa: proteger pessoas.</p>
-          <div class="cta-final-actions">
-            <!-- TODO: trocar o href pelo link da página de contato -->
-            <a href="contato.html" class="btn btn-primary" aria-label="Fale conosco">
-              Fale conosco
-              <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+    <!-- ========== CTA CÓSMICO (home) ========== -->
+    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title">
+      <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
+      <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
+      <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>
+      <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
+      <div class="tc-cta-earth" aria-hidden="true"></div>
+      <div class="tc-cta-copy">
+        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Pronto para transformar a gestão da sua empresa?</h2>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 14px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança.</p>
+        <div class="tc-cta-subparts" aria-hidden="true">
+          <span>digitalizar processos</span>
+          <span>capacitar equipes</span>
+          <span>fortalecer a segurança</span>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <a class="tc-cta-btn" href="../index.html#contato">Falar com um especialista</a>
         </div>
       </div>
     </section>
@@ -2767,5 +2770,6 @@
       window.PresencaApp.mountPresenca(document.getElementById('presenca-root'));
     }
   </script>
+  <script src="./tc-cta-cosmic.js"></script>
 </body>
 </html>

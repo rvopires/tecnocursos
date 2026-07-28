@@ -1,0 +1,194 @@
+/* TecnoCursos — CTA cósmico (mesmo da home) */
+:root { --animation-iteration: infinite; }
+@keyframes animStar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2000px); }
+}
+@keyframes animDont {
+  0%, 15% { transform: translateY(-18px); opacity: 0; }
+  35%, 80% { transform: translateY(0); opacity: 1; }
+  92%, 100% { transform: translateY(-4px); opacity: 0; }
+}
+@keyframes animLet {
+  0%, 25% { transform: translateY(-18px); opacity: 0; }
+  45%, 80% { transform: translateY(0); opacity: 1; }
+  92%, 100% { transform: translateY(-4px); opacity: 0; }
+}
+@keyframes animGo {
+  0%, 35% { transform: translateY(-18px); opacity: 0; }
+  55%, 80% { transform: translateY(0); opacity: 1; }
+  92%, 100% { transform: translateY(-4px); opacity: 0; }
+}
+@keyframes tcEarthShift {
+  0% { background-position: 0% 40%, 50% 0%; }
+  50% { background-position: 100% 60%, 50% 0%; }
+  100% { background-position: 0% 40%, 50% 0%; }
+}
+.tc-cta-cosmic {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(480px, 70vh, 640px);
+  width: 100%;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+.tc-cta-cosmic .cosmic-stars,
+.tc-cta-cosmic .cosmic-stars-medium,
+.tc-cta-cosmic .cosmic-stars-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.tc-cta-cosmic .cosmic-stars {
+  width: 1px;
+  height: 1px;
+  animation: animStar 50s linear var(--animation-iteration);
+}
+.tc-cta-cosmic .cosmic-stars::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  box-shadow: inherit;
+}
+.tc-cta-cosmic .cosmic-stars-medium {
+  width: 2px;
+  height: 2px;
+  animation: animStar 100s linear var(--animation-iteration);
+}
+.tc-cta-cosmic .cosmic-stars-medium::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  box-shadow: inherit;
+}
+.tc-cta-cosmic .cosmic-stars-large {
+  width: 3px;
+  height: 3px;
+  animation: animStar 150s linear var(--animation-iteration);
+}
+.tc-cta-cosmic .cosmic-stars-large::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  box-shadow: inherit;
+}
+.tc-cta-cosmic .tc-cta-horizon,
+.tc-cta-cosmic .tc-cta-horizon-glow { display: none; }
+.tc-cta-cosmic .tc-cta-earth {
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  bottom: -42%;
+  height: 62%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(16, 255, 203, .55) 0%, rgba(50, 173, 120, .28) 22%, transparent 58%),
+    radial-gradient(ellipse at top, #0C2A4A 0%, #0A3A5C 28%, #123D32 52%, #071018 78%, #000 100%);
+  background-size: 180% 180%, 100% 100%;
+  box-shadow:
+    0 -24px 70px rgba(50, 173, 120, .22),
+    0 -8px 40px rgba(0, 92, 139, .18),
+    inset 0 12px 40px rgba(16, 255, 203, .12);
+  z-index: 1;
+  pointer-events: none;
+  animation: tcEarthShift 10s ease-in-out infinite;
+}
+.tc-cta-cosmic .tc-cta-earth::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(115deg, rgba(0, 92, 139, .45) 0%, rgba(50, 173, 120, .35) 40%, rgba(16, 255, 203, .25) 70%, rgba(0, 92, 139, .4) 100%);
+  background-size: 220% 220%;
+  opacity: .55;
+  animation: tcEarthShift 14s ease-in-out infinite reverse;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+.tc-cta-cosmic .tc-cta-earth::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 0;
+  height: 28%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(106, 187, 140, .5), rgba(16, 255, 203, .15) 45%, transparent 70%);
+  filter: blur(6px);
+  animation: tcEarthShift 8s ease-in-out infinite;
+  pointer-events: none;
+}
+.tc-cta-cosmic .tc-cta-copy {
+  position: relative;
+  z-index: 5;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(72px, 10vw, 120px) 24px;
+}
+.tc-cta-cosmic .tc-cta-subparts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px;
+  margin: 0 0 32px;
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(16, 255, 203, .75);
+}
+.tc-cta-cosmic .tc-cta-subparts span:nth-child(1) {
+  animation: animDont 8s ease-in-out var(--animation-iteration);
+}
+.tc-cta-cosmic .tc-cta-subparts span:nth-child(2) {
+  animation: animLet 8s ease-in-out var(--animation-iteration);
+}
+.tc-cta-cosmic .tc-cta-subparts span:nth-child(3) {
+  animation: animGo 8s ease-in-out var(--animation-iteration);
+}
+.tc-cta-cosmic .tc-cta-btn {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: #10ffcb;
+  color: #070F1E;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(68, 229, 231, .32);
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.tc-cta-cosmic .tc-cta-btn:hover {
+  background: #0de0b3;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 38px rgba(68, 229, 231, .4);
+  color: #070F1E;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tc-cta-cosmic .cosmic-stars,
+  .tc-cta-cosmic .cosmic-stars-medium,
+  .tc-cta-cosmic .cosmic-stars-large,
+  .tc-cta-cosmic .tc-cta-subparts span,
+  .tc-cta-cosmic .tc-cta-earth,
+  .tc-cta-cosmic .tc-cta-earth::before,
+  .tc-cta-cosmic .tc-cta-earth::after {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}

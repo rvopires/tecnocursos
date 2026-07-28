@@ -1923,7 +1923,7 @@ class Component extends DCLogic {
     const solucaoSubs = [
       { label: 'Tecnologia', onClick: () => { window.location.href = 'servicos/tecnologia/'; } },
       { label: 'Treinamento', onClick: () => { window.location.href = 'servicos/treinamento/'; } },
-      { label: 'Segurança', onClick: () => { window.location.href = 'servicos/tecnologia/#presenca-root'; } },
+      { label: 'Segurança', onClick: () => { window.location.href = 'servicos/seguranca/'; } },
     ];
     const navItems = nav.map(n => ({ label: n.label, active: page === n.key, onClick: () => this.go(n.key) }));
     const mobileNavItems = nav.map(n => ({
@@ -2007,7 +2007,7 @@ class Component extends DCLogic {
         title: 'Segurança',
         desc: 'Conformidade normativa e cultura de segurança com gestão completa das capacitações da sua equipe.',
         img: 'img/seguranca.png',
-        onClick: () => { window.location.href = 'servicos/tecnologia/#presenca-root'; },
+        onClick: () => { window.location.href = 'servicos/seguranca/'; },
       },
     ];
 

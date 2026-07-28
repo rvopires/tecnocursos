@@ -2316,6 +2316,8 @@
       #plataforma::before { animation: none; }
     }
   </style>
+  <link rel="stylesheet" href="../tc-spark-hero.css" />
+  <link rel="stylesheet" href="../tc-cta-cosmic.css" />
 </head>
 <body>
   
@@ -2525,7 +2527,7 @@
           <div class="tc-nav-dd-panel" role="menu">
             <button type="button" class="tc-nav-dd-item" onclick="location.href='../tecnologia/'">Tecnologia</button>
             <button type="button" class="tc-nav-dd-item" onclick="location.href='./'">Treinamento</button>
-            <button type="button" class="tc-nav-dd-item" onclick="location.href='../tecnologia/#presenca-root'">Segurança</button>
+            <button type="button" class="tc-nav-dd-item" onclick="location.href='../seguranca/'">Segurança</button>
           </div>
         </div>
         <span class="tc-nav-link" onclick="location.href='../../index.html#catalogo'" style="color:rgba(255,255,255,.88);font-weight:500">Catálogo</span>
@@ -2549,7 +2551,7 @@
     <div class="tc-nav-mobile-sub">
       <span onclick="location.href='../tecnologia/';document.getElementById('tc-shared-mobile-menu').style.display='none'">Tecnologia</span>
       <span onclick="location.href='./';document.getElementById('tc-shared-mobile-menu').style.display='none'">Treinamento</span>
-      <span onclick="location.href='../tecnologia/#presenca-root';document.getElementById('tc-shared-mobile-menu').style.display='none'">Segurança</span>
+      <span onclick="location.href='../seguranca/';document.getElementById('tc-shared-mobile-menu').style.display='none'">Segurança</span>
     </div>
     <span onclick="location.href='../../index.html#catalogo'" style="font-size:24px;font-weight:600;color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer">Catálogo</span>
     <span onclick="location.href='../../index.html#contato'" style="font-size:24px;font-weight:600;color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer">Contato</span>
@@ -2570,59 +2572,48 @@
 
   <!-- ========== MAIN ========== -->
   <main id="main">
-
-    <!-- ========== HERO — Shader Showcase ========== -->
-    <section class="hero" aria-labelledby="hero-title">
-      <svg class="hero-svg-filters" aria-hidden="true">
-        <defs>
-          <filter id="glass-effect" x="-50%" y="-50%" width="200%" height="200%">
-            <feTurbulence baseFrequency="0.005" numOctaves="1" result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.3" />
-            <feColorMatrix type="matrix" values="1 0 0 0 0.02  0 1 0 0 0.02  0 0 1 0 0.05  0 0 0 0.9 0" result="tint" />
-          </filter>
-          <filter id="text-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-      </svg>
-
-      <div class="hero-shader-bg" aria-hidden="true">
-        <video
-          class="hero-video"
-          autoplay
-          loop
-          muted
-          playsinline
-          preload="auto"
-          aria-hidden="true"
-        >
-          <source src="../assets/videofundo.mp4?v=202607101512" type="video/mp4" />
-        </video>
-        <div class="hero-video-overlay hero-video-overlay--top"></div>
-        <div class="hero-video-overlay hero-video-overlay--side"></div>
-        <div class="hero-video-overlay hero-video-overlay--bottom"></div>
-        <div class="hero-shader-fallback"></div>
-        <div id="hero-mesh-shader" class="hero-shader-layer"></div>
-        <div id="hero-mesh-wire" class="hero-shader-layer hero-shader-layer--wire"></div>
-      </div>
-
-      <div class="hero-shader-content">
-        <div class="hero-shader-stage">
-          <div class="hero-shader-inner">
-            <h1 id="hero-title" class="hero-shader-title">
-              Todas as NRs,<br/>do <span style="color:#6ABB8C">online</span> ao <span style="color:#6ABB8C">presencial</span>
-            </h1>
-            <p class="lead reveal">Capacitação teórica na plataforma e prática na sua empresa — com instrutores especializados e alinhamento às principais Normas Regulamentadoras.</p>
+    <!-- ========== HERO ========== -->
+    <section class="hero tc-spark-hero" aria-labelledby="hero-title">
+      <div class="tc-spark-inner">
+        <div class="tc-spark-copy">
+          <span class="tc-spark-eyebrow">Treinamento</span>
+          <h1 id="hero-title" class="tc-spark-title">Capacitação nas <span class="tc-spark-mark">NRs</span> que a sua operação exige.</h1>
+          <p class="tc-spark-lead">Teórico e prático, presencial, online ou híbrido — com conteúdo alinhado às Normas Regulamentadoras e à realidade da sua empresa.</p>
+          <div class="tc-spark-actions">
+            <a class="tc-spark-btn tc-spark-btn--primary" href="#tc-nr-title">Ver treinamentos
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="tc-spark-btn tc-spark-btn--ghost" href="../../index.html#contato">Solicitar proposta</a>
+          </div>
+        </div>
+        <div class="tc-spark-visual" aria-hidden="true">
+          <div class="tc-spark-float tc-spark-float--back">
+            <div class="tc-spark-card">
+              <div class="tc-spark-card-head"><strong>Trilha de capacitação</strong><span>NR</span></div>
+              <div class="tc-spark-card-body">
+                <div class="tc-spark-row"><span>NR-10 · Eletricidade</span><span class="tc-spark-pill">Teórico</span></div>
+                <div class="tc-spark-row"><span>NR-33 · Espaços confinados</span><span class="tc-spark-pill">Prático</span></div>
+                <div class="tc-spark-row"><span>NR-35 · Trabalho em altura</span><span class="tc-spark-pill">Híbrido</span></div>
+                <div class="tc-spark-row"><span>NR-23 · Brigada de incêndio</span><span class="tc-spark-pill">Presencial</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="tc-spark-float tc-spark-float--front">
+            <div class="tc-spark-card tc-spark-card--dark">
+              <div class="tc-spark-cert">
+                <div class="tc-spark-cert-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg></div>
+                <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:700">Certificado</div>
+                <div style="font-size:18px;font-weight:800;margin-top:6px;color:#fff">NR-35</div>
+                <div style="font-size:13px;color:rgba(255,255,255,.7);margin-top:4px">Trabalho em altura</div>
+                <div style="margin-top:14px;font-size:11px;color:#6ABB8C;font-weight:700">Reconhecido · rastreável</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Capacitação nas principais NRs -->
+<!-- Capacitação nas principais NRs -->
     <section class="tc-nr-section" aria-labelledby="tc-nr-title">
       <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
         <div class="tc-nr-header" style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px">
@@ -2766,21 +2757,23 @@
     <!-- ========== BLOCO 02 — NORMAS (React + Framer Motion) ========== -->
     <div id="normas-root"></div>
 
-    <!-- ========== CTA FINAL ========== -->
-    <section class="cta-final" aria-labelledby="cta-final-title">
-      <div class="container">
-        <div class="cta-final-card">
-          <h2 id="cta-final-title" class="display-2">Mais que uma plataforma, um parceiro para a segurança da sua empresa</h2>
-          <p class="lead subheadline">Treinamento, conformidade e comprovação em um só lugar — para você focar no que importa: proteger pessoas.</p>
-          <div class="cta-final-actions">
-            <!-- TODO: trocar o href pelo link da página de contato -->
-            <a href="../../index.html#contato" class="btn btn-primary" aria-label="Fale conosco">
-              Fale conosco
-              <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+    <!-- ========== CTA CÓSMICO (home) ========== -->
+    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title">
+      <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
+      <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
+      <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>
+      <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
+      <div class="tc-cta-earth" aria-hidden="true"></div>
+      <div class="tc-cta-copy">
+        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Pronto para transformar a gestão da sua empresa?</h2>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 14px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança.</p>
+        <div class="tc-cta-subparts" aria-hidden="true">
+          <span>digitalizar processos</span>
+          <span>capacitar equipes</span>
+          <span>fortalecer a segurança</span>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <a class="tc-cta-btn" href="../../index.html#contato">Falar com um especialista</a>
         </div>
       </div>
     </section>
@@ -3029,5 +3022,6 @@
       window.NormasApp.mountNormas(document.getElementById('normas-root'));
     }
     </script>
+  <script src="../tc-cta-cosmic.js"></script>
 </body>
 </html>

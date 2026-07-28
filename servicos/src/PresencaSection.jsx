@@ -2,14 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion } from 'framer-motion';
 import {
-  UserCheck,
-  Settings,
-  BarChart3,
-  Brain,
   Check,
   MoreHorizontal,
   Users,
   SquareActivity,
+  FileX2,
+  ShieldCheck,
+  Radio,
 } from 'lucide-react';
 
 const TOTAL_PARTICIPANTS = 1250;
@@ -38,16 +37,15 @@ const initialCheckins = [
   { id: 'c-4', name: 'Paulo Henrique', time: '10:24:22', initials: 'PH', tone: 'blue' },
 ];
 
+const highlightPills = [
+  { label: 'Zero papel', Icon: FileX2 },
+  { label: 'Auditoria ao vivo', Icon: Radio },
+  { label: 'Rastreável e confiável', Icon: ShieldCheck },
+];
+
 function formatCount(value) {
   return value.toLocaleString('pt-BR');
 }
-
-const areaCards = [
-  { id: 'auth', num: '01', label: 'Presença e Autenticação', Icon: UserCheck, accent: 'emerald' },
-  { id: 'ops', num: '02', label: 'Gestão e Operação', Icon: Settings, accent: 'blue' },
-  { id: 'reports', num: '03', label: 'Relatórios e Auditoria', Icon: BarChart3, accent: 'violet' },
-  { id: 'smart', num: '04', label: 'Gestão Inteligente', Icon: Brain, accent: 'amber' },
-];
 
 function getInitials(name) {
   return name
@@ -267,24 +265,32 @@ export function PresencaSection() {
       <div className="container">
         <div className="presenca-layout">
           <div className="presenca-copy">
+            <span className="presenca-eyebrow">Lista de Presença Digital</span>
             <h2 id="presenca-title" className="presenca-title">
-              Lista de Presença <span className="presenca-title-accent">Digital</span>
+              Presença em tempo real.<br />
+              <span className="presenca-title-accent">Sem papel. Sem dúvida.</span>
             </h2>
             <p className="presenca-lead">
-              Elimine o papel, registre presenças com segurança e tenha controle total da sua turma.
+              Check-ins ao vivo, QR Code e comprovação pronta para auditoria — a turma toda sob controle em um só painel.
             </p>
 
-            <ul className="presenca-area-cards" role="list" aria-label="Áreas da lista digital">
-              {areaCards.map((card) => (
-                <li key={card.id} className={`presenca-area-card presenca-area-card--${card.accent}`}>
-                  <span className="presenca-area-card-icon" aria-hidden="true">
-                    <card.Icon size={22} strokeWidth={1.75} />
+            <ul className="presenca-pills" aria-label="Diferenciais rápidos">
+              {highlightPills.map((pill) => (
+                <li key={pill.label} className="presenca-pill">
+                  <span className="presenca-pill-ico" aria-hidden="true">
+                    <pill.Icon size={16} strokeWidth={1.9} />
                   </span>
-                  <span className="presenca-area-card-num" aria-hidden="true">{card.num}</span>
-                  <strong className="presenca-area-card-title">{card.label}</strong>
+                  {pill.label}
                 </li>
               ))}
             </ul>
+
+            <a className="presenca-scroll-cta" href="#presenca-detalhes">
+              Ver como funciona
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 2.5v9m0 0L3.5 8M7 11.5L10.5 8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
 
           <div className="presenca-dashboard-col">
