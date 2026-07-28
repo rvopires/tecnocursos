@@ -100,9 +100,6 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 @keyframes tcRevealPop{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @media(max-width:640px){.tc-stats-row{flex-direction:column!important;align-items:center!important;gap:20px!important}.tc-stat-sep{display:none!important}.tc-nr-header{flex-direction:column!important;align-items:flex-start!important;margin-bottom:16px!important}.tc-nr-header-text{max-width:100%!important}.tc-footer-grid{grid-template-columns:1fr!important;gap:32px!important}[data-hide-sm]{display:none!important}[data-feat-grid]{grid-template-columns:1fr!important;column-gap:0!important;gap:16px!important;animation:none!important}[data-feat-grid]>div:not([data-phone-float]){height:auto!important;display:flex!important;flex-direction:column!important;gap:16px!important}[data-feat-grid] [data-feat]{position:static!important;top:auto!important}[data-feat-grid]>svg{display:none!important}.tc-tl-grid{grid-template-columns:1fr!important;height:auto!important}.tc-history-grid{grid-template-columns:1fr!important}.tc-br-section{min-height:auto!important}.tc-br-map-wrap{position:relative!important;top:auto!important;right:auto!important;transform:none!important;width:100%!important;max-width:100%!important;margin-top:36px!important}.tc-about-grid{grid-template-columns:1fr!important;gap:32px!important}.tc-brand-evo-row{flex-direction:column!important}.tc-brand-evo-arrow{transform:rotate(90deg)}}
 sc-for{display:contents}
-[data-nr-card]{opacity:1!important;transform:none!important;animation:none!important}
-.tc-nr-card-cta{margin-top:14px;align-self:flex-start;border:none;cursor:pointer;background:rgba(16,255,203,.12);color:#10ffcb;border:1px solid rgba(16,255,203,.24);font-size:12.5px;font-weight:700;padding:8px 12px;border-radius:999px;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
-.tc-nr-card-cta:hover{background:rgba(16,255,203,.22);transform:translateY(-1px);box-shadow:0 8px 18px rgba(16,255,203,.16)}
 [data-reveal-pop]{opacity:0}
 .tc-pop{animation:tcRevealPop 1.15s cubic-bezier(.22,.61,.36,1) both}
 @supports (animation-timeline: view()){
@@ -323,118 +320,6 @@ sc-for{display:contents}
         </sc-for>
       </div>
     </section>
-
-    <!-- NRs PREVIEW (Netflix posters) -->
-    <section style="position:relative;background:#edfdf8;padding:clamp(72px,9vw,120px) 0;overflow-x:clip">
-      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 75% at 85% 8%,rgba(16,255,203,.45),transparent 58%),radial-gradient(48% 65% at 8% 92%,rgba(16,255,203,.38),transparent 56%),radial-gradient(36% 48% at 50% 50%,rgba(68,229,231,.18),transparent 62%),radial-gradient(30% 40% at 20% 20%,rgba(115,251,211,.22),transparent 55%)"></div>
-      <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
-        <div class="tc-nr-header" style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px">
-          <div class="tc-nr-header-text" style="max-width:620px">
-            <span data-reveal-pop data-delay="0" style="display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#070F1E;background:#10ffcb;border:none;padding:7px 16px;border-radius:100px;margin-bottom:20px">Normas Regulamentadoras</span>
-            <h2 data-reveal-pop data-delay="180" style="font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.03em;font-weight:800;color:#070F1E;margin:0">Capacitação nas<br/><span style="font-style:italic;letter-spacing:-.05em">principais NRs</span></h2>
-            <p data-reveal-pop data-delay="340" style="font-size:17px;line-height:1.6;color:rgba(7,15,30,.6);margin:18px 0 0">Online e presencial, em <span style="color:#070F1E;font-weight:700">todo o território nacional</span>, com suporte em Libras nos treinamentos teóricos.</p>
-          </div>
-          <div style="display:flex;gap:10px;flex-shrink:0">
-            <button data-nr-prev style="font-family:inherit;cursor:pointer;width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid rgba(0,168,138,.25);color:#070F1E;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,box-shadow .2s" style-hover="background:#f0fdf9;border-color:#10ffcb;box-shadow:0 0 0 3px rgba(16,255,203,.12)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <button data-nr-next style="font-family:inherit;cursor:pointer;width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid rgba(0,168,138,.25);color:#070F1E;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,box-shadow .2s" style-hover="background:#f0fdf9;border-color:#10ffcb;box-shadow:0 0 0 3px rgba(16,255,203,.12)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
-          </div>
-        </div>
-        <div data-nr-track style="overflow:hidden;position:relative;padding:20px 0 22px">
-          <div data-nr-inner style="display:flex;gap:18px;will-change:transform;padding:0 4px">
-          <sc-for list="{{ nrs }}" as="n" hint-placeholder-count="6">
-            <div data-card data-nr-card onClick="{{ goCatalogo }}" style="scroll-snap-align:start;flex:0 0 auto;width:248px;cursor:pointer;position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(165deg,#0E1E3C,#070F1E);border:1px solid rgba(16,255,203,.18);box-shadow:0 4px 20px rgba(0,0,0,.12);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s,border-color .3s" style-hover="transform:translateY(-10px) scale(1.03);box-shadow:0 24px 52px rgba(0,0,0,.2),0 0 24px rgba(16,255,203,.2);border-color:rgba(16,255,203,.5)">
-              <div style="position:absolute;top:-50px;right:-50px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(16,255,203,.15),transparent 70%);pointer-events:none"></div>
-              <div style="position:relative;padding:26px 24px 22px;min-height:228px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:46px;font-weight:800;letter-spacing:-.03em;color:#10ffcb;line-height:1;margin:14px 0 0">{{ n.big }}</div>
-                <div style="font-size:14.5px;font-weight:600;line-height:1.3;color:#fff;margin-top:14px;min-height:2.6em">{{ n.label }}</div>
-                <button class="tc-nr-card-cta" type="button" onClick="{{ goCatalogo }}">Ver detalhes</button>
-              </div>
-            </div>
-          </sc-for>
-          </div>
-        </div>
-<div data-reveal-pop data-delay="120" style="margin-top:8px">
-          <button onClick="{{ goCatalogo }}" style="font-family:inherit;cursor:pointer;background:#10ffcb;border:none;color:#070F1E;font-size:15px;font-weight:700;padding:14px 26px;border-radius:12px;box-shadow:0 10px 28px rgba(16,255,203,.32);transition:background .2s,transform .2s,box-shadow .2s" style-hover="background:#0de0b3;transform:translateY(-2px);box-shadow:0 16px 36px rgba(16,255,203,.4)">Ver todos os treinamentos</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUALQUER LUGAR (phone + features) -->
-    <section data-feat-section style="position:relative;overflow:hidden;background:linear-gradient(180deg,#0C1C36 0%,#071E30 52%,#070B16 100%);padding:clamp(68px,6vw,80px) 0 clamp(150px,15vw,210px)">
-      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 70% at 50% 42%,rgba(16,255,203,.18),transparent 62%),radial-gradient(46% 60% at 92% 90%,rgba(0,92,139,.34),transparent 62%)"></div>
-      <div style="position:absolute;inset:0;pointer-events:none;opacity:.055;mix-blend-mode:screen;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22260%22%3E%3Cfilter id=%22gr%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.72%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22260%22 height=%22260%22 filter=%22url(%23gr)%22/%3E%3C/svg%3E');background-size:260px 260px"></div>
-      <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
-        <h2 data-reveal style="text-align:center;font-size:clamp(20px,3vw,40px);line-height:1.06;letter-spacing:-.03em;font-weight:800;color:#fff;margin:0 auto;max-width:800px;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Treinamento que acompanha o aluno em <span style="color:#10ffcb;font-style:italic">qualquer lugar!</span></h2>
-        <div data-feat-grid style="position:relative;display:grid;grid-template-columns:1fr auto 1fr;column-gap:88px;row-gap:0;align-items:center;margin-top:clamp(36px,4vw,52px)">
-          <!-- left features -->
-          <div style="position:relative;height:478px;align-self:center">
-            <!-- Card 1L — Aprendizado inclusivo · nível 17% do tel. -->
-            <div data-reveal data-feat style="position:absolute;top:14px;left:0;right:0;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:24px 22px;opacity:0;transform:translateY(24px);box-shadow:0 8px 32px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .35s cubic-bezier(.22,.61,.36,1),background .3s,border-color .3s,box-shadow .3s" style-hover="background:rgba(16,255,203,.07);border-color:rgba(16,255,203,.4);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.5),0 0 24px rgba(16,255,203,.14),inset 0 1px 0 rgba(16,255,203,.15)">
-              <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px">
-                <span style="width:42px;height:42px;border-radius:12px;background:rgba(16,255,203,.12);border:1px solid rgba(16,255,203,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 14px rgba(16,255,203,.14)" data-svg="libras" data-stroke="#10ffcb"></span>
-                <h3 style="font-size:15.5px;font-weight:700;color:#fff;margin:0;line-height:1.25">Aprendizado inclusivo</h3>
-              </div>
-              <p style="font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.72);margin:0">Recursos de áudio, Libras e transcrição trabalham juntos para atender diferentes formas de aprendizagem.</p>
-            </div>
-            <!-- Card 2L — Interação com games · nível 67% do tel. -->
-            <div data-reveal data-feat style="position:absolute;top:254px;left:0;right:0;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:24px 22px;opacity:0;transform:translateY(24px);box-shadow:0 8px 32px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .35s cubic-bezier(.22,.61,.36,1),background .3s,border-color .3s,box-shadow .3s" style-hover="background:rgba(16,255,203,.07);border-color:rgba(16,255,203,.4);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.5),0 0 24px rgba(16,255,203,.14),inset 0 1px 0 rgba(16,255,203,.15)">
-              <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px">
-                <span style="width:42px;height:42px;border-radius:12px;background:rgba(16,255,203,.12);border:1px solid rgba(16,255,203,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 14px rgba(16,255,203,.14)" data-svg="plataforma" data-stroke="#10ffcb"></span>
-                <h3 style="font-size:15.5px;font-weight:700;color:#fff;margin:0;line-height:1.25">Interação com games</h3>
-              </div>
-              <p style="font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.72);margin:0">Os treinamentos contam com seções de games e atividades interativas, tornando os conteúdos mais dinâmicos e fixando melhor o conhecimento.</p>
-            </div>
-          </div>
-          <!-- phone -->
-          <div data-hide-sm data-phone-float>
-            <div style="position:relative;width:234px;height:478px;border-radius:38px;background:linear-gradient(160deg,#1a1f2e,#05080f);padding:9px;box-shadow:0 32px 72px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08),inset 0 0 0 2px rgba(255,255,255,.04)">
-              <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);width:82px;height:20px;background:#05080f;border-radius:0 0 13px 13px;z-index:3"></div>
-              <div style="position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,#0E1B33,#070F1E)">
-                <div style="padding:22px 14px 10px;display:flex;align-items:center;gap:8px"><img src="uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" style="height:18px;width:auto"/></div>
-                <div style="display:flex;justify-content:space-around;padding:0 12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
-                  <span style="font-size:9px;color:rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;gap:5px"><span style="width:30px;height:30px;border-radius:9px;background:rgba(16,255,203,.1);display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10ffcb" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span>Início</span>
-                  <span style="font-size:9px;color:rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;gap:5px"><span style="width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></span>Cursos</span>
-                  <span style="font-size:9px;color:rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;gap:5px"><span style="width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0112 0v1"/></svg></span>Perfil</span>
-                </div>
-                <div style="padding:14px 16px">
-                  <div style="font-size:9.5px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.4);text-transform:uppercase">Módulo de treinamento</div>
-                  <div style="font-size:21px;font-weight:800;color:#10ffcb;line-height:1;margin-top:8px">NR-10 — ATEX</div>
-                  <div style="font-size:14px;font-weight:700;color:#fff;margin-top:3px">Áreas Classificadas</div>
-                  <p style="font-size:11px;line-height:1.5;color:rgba(255,255,255,.55);margin:10px 0 0">Capacitação em segurança nas Áreas Classificadas conforme NR-10 e ATEX.</p>
-                  <div style="margin-top:10px;height:96px;border-radius:12px;background:linear-gradient(150deg,#102A4A,#0A1326);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
-                    <div style="position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 40%,rgba(50,173,120,.22),transparent 70%)"></div>
-                    <span style="position:relative;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
-                  </div>
-                  <button style="font-family:inherit;border:none;cursor:pointer;width:100%;margin-top:14px;background:#10ffcb;color:#070F1E;font-size:12px;font-weight:600;padding:12px;border-radius:11px;display:flex;align-items:center;justify-content:center;gap:7px"><svg width="13" height="13" viewBox="0 0 24 24" fill="#070F1E"><path d="M8 5v14l11-7z"/></svg>Iniciar o treinamento</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- right features -->
-          <div style="position:relative;height:478px;align-self:center">
-            <!-- Card 1R — 100% responsiva · nível 41% do tel. -->
-            <div data-reveal data-feat style="position:absolute;top:136px;left:0;right:0;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:24px 22px;opacity:0;transform:translateY(24px);box-shadow:0 8px 32px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .35s cubic-bezier(.22,.61,.36,1),background .3s,border-color .3s,box-shadow .3s" style-hover="background:rgba(16,255,203,.07);border-color:rgba(16,255,203,.4);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.5),0 0 24px rgba(16,255,203,.14),inset 0 1px 0 rgba(16,255,203,.15)">
-              <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px">
-                <span style="width:42px;height:42px;border-radius:12px;background:rgba(16,255,203,.12);border:1px solid rgba(16,255,203,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 14px rgba(16,255,203,.14)" data-svg="online" data-stroke="#10ffcb"></span>
-                <h3 style="font-size:15.5px;font-weight:700;color:#fff;margin:0;line-height:1.25">100% responsiva</h3>
-              </div>
-              <p style="font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.72);margin:0">Acesse os treinamentos em qualquer dispositivo, com navegação adaptada para celular, tablet e computador.</p>
-            </div>
-            <!-- Card 2R — Navegação simples · nível 84% do tel. -->
-            <div data-reveal data-feat style="position:absolute;top:344px;left:0;right:0;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:24px 22px;opacity:0;transform:translateY(24px);box-shadow:0 8px 32px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .35s cubic-bezier(.22,.61,.36,1),background .3s,border-color .3s,box-shadow .3s" style-hover="background:rgba(16,255,203,.07);border-color:rgba(16,255,203,.4);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.5),0 0 24px rgba(16,255,203,.14),inset 0 1px 0 rgba(16,255,203,.15)">
-              <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px">
-                <span style="width:42px;height:42px;border-radius:12px;background:rgba(16,255,203,.12);border:1px solid rgba(16,255,203,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 14px rgba(16,255,203,.14)" data-svg="consultoria" data-stroke="#10ffcb"></span>
-                <h3 style="font-size:15.5px;font-weight:700;color:#fff;margin:0;line-height:1.25">Navegação simples</h3>
-              </div>
-              <p style="font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.72);margin:0">Uma interface intuitiva para que o aluno encontre conteúdos, recursos de acessibilidade e seu progresso com facilidade.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div style="position:relative;z-index:2;height:220px;margin:-110px 0;pointer-events:none;background:linear-gradient(180deg,rgba(7,11,22,0) 0%,rgba(7,11,22,.95) 35%,rgba(7,11,22,.95) 65%,rgba(7,11,22,0) 100%)"></div>
 
     <!-- Mapa do Brasil -->
     <section class="tc-br-section" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#070B16 0%,#05080F 45%,#070B16 100%);padding:clamp(64px,8vw,110px) 0;min-height:clamp(520px,calc(40vw + 170px),920px)">
@@ -1758,7 +1643,7 @@ class Component extends DCLogic {
     this._nrOffset = 0;
     this._nrPaused = false;
     // Make all originals visible (bypass data-reveal-pop)
-    cards.forEach(c => { c.style.opacity = '1'; c.style.animation = 'none'; c.style.transform = 'none'; });
+    cards.forEach(c => { c.style.opacity = '1'; c.style.animation = 'none'; });
     // Measure actual rendered card width
     this._nrCardW = (cards[0].getBoundingClientRect().width || 248) + 18;
     this._nrLoopWidth = cards.length * this._nrCardW;
