@@ -2558,6 +2558,20 @@
         filter: none !important;
       }
     }
+.hero.tc-spark-hero::after{background:#fff}
+.tc-choice-section{position:relative;z-index:1;padding:clamp(36px,5vw,56px) 24px clamp(28px,4vw,40px);margin:-1px 0 0;max-width:none;width:100%;box-sizing:border-box;background:#fff}
+.tc-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto}
+.tc-choice-card{position:relative;display:block;border-radius:20px;overflow:hidden;aspect-ratio:4/3;text-decoration:none;box-shadow:0 20px 44px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+.tc-choice-card:hover{transform:translateY(-4px)}
+.tc-choice-media{position:absolute;inset:0}
+.tc-choice-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.tc-choice-card:hover .tc-choice-media img{transform:scale(1.08)}
+.tc-choice-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,12,.05) 0%,rgba(5,8,12,.25) 45%,rgba(5,8,12,.85) 100%)}
+.tc-choice-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 24px 26px}
+.tc-choice-copy h3{margin:0 0 8px;font-size:clamp(20px,2.2vw,26px);font-weight:800;color:#fff;letter-spacing:-.02em}
+.tc-choice-copy p{margin:0 0 14px;font-size:14px;line-height:1.5;color:rgba(255,255,255,.85);max-width:30ch}
+.tc-choice-cta{display:inline-block;font-size:13px;font-weight:700;color:#fff}
+@media(max-width:720px){.tc-choice-grid{grid-template-columns:1fr}}
   </style>
 
   <header class="tc-nav-shell">
@@ -2653,38 +2667,82 @@
       </div>
     </section>
 
-<!-- ========== BLOCO 01 — PLATAFORMA ========== -->
-    <section class="block platform-showcase" id="plataforma" aria-labelledby="plataforma-title">
-      <div class="container">
-        <div class="platform-layout">
-          <div class="platform-content">
-            <h2 id="plataforma-title" class="platform-title">Sua plataforma própria para treinamentos digitais</h2>
-            <p class="platform-lead">Centralize cursos, trilhas, avaliações, certificados e relatórios em um ambiente moderno, acessível e fácil de usar para alunos, gestores e instrutores.</p>
-            <a class="platform-deep-cta" href="#recursos">Explorar recursos
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 2.5v9m0 0L3.5 8M7 11.5L10.5 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-
-          <div class="platform-mockup-wrap" aria-label="Prévia da plataforma em desktop e mobile">
-            <div class="platform-mockup-stage">
-              <div class="platform-mockup-halo" aria-hidden="true"></div>
-              <div class="platform-mockup-podium" aria-hidden="true"></div>
-              <div class="platform-mockup-floor" aria-hidden="true"></div>
-              <div class="platform-mockup-img-wrap">
-                <img
-                  class="platform-mockup-img"
-                  src="../mockup-plataforma.png"
-                  alt="Mockup da Plataforma TecnoCursos em desktop e mobile"
-                  width="720"
-                  height="540"
-                  loading="lazy"
-                  onerror="this.onerror=null;this.src='../assets/mockup-plataforma.png';"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- ATALHO: PLATAFORMA / LISTA DIGITAL -->
+<section class="tc-choice-section" aria-label="Escolha o que quer conhecer">
+  <div class="tc-choice-grid">
+    <a href="#plataforma" class="tc-choice-card">
+      <div class="tc-choice-media">
+        <img src="../mockup-plataforma.png" alt="" onerror="this.onerror=null;this.src='../assets/mockup-plataforma.png';" />
       </div>
+      <div class="tc-choice-shade" aria-hidden="true"></div>
+      <div class="tc-choice-copy">
+        <h3>Plataforma</h3>
+        <p>Trilhas, avaliações e certificados em um LMS só.</p>
+        <span class="tc-choice-cta">Conhecer a plataforma →</span>
+      </div>
+    </a>
+    <a href="#presenca-root" class="tc-choice-card">
+      <div class="tc-choice-media">
+        <img src="../../uploads/img2home.png" alt="" />
+      </div>
+      <div class="tc-choice-shade" aria-hidden="true"></div>
+      <div class="tc-choice-copy">
+        <h3>Lista de presença digital</h3>
+        <p>Autenticação, operação e relatórios prontos para auditoria.</p>
+        <span class="tc-choice-cta">Conhecer a lista digital →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+    <section class="tc-deep-steps tc-serenity" id="plataforma" aria-labelledby="deep-steps-title">
+      <div class="tc-serenity-fx" aria-hidden="true">
+        <span class="tc-serenity-orb tc-serenity-orb--1"></span>
+        <span class="tc-serenity-orb tc-serenity-orb--2"></span>
+        <span class="tc-serenity-orb tc-serenity-orb--3"></span>
+      </div>
+      <div class="tc-deep-steps-inner">
+      <div class="tc-deep-steps-head" data-tc-typewriter>
+        <span class="tc-deep-eyebrow">Do cadastro à comprovação</span>
+        <h2 id="deep-steps-title">
+          <span class="tc-tw-reveal">
+            <span class="tc-tw-text">Comece em minutos. <span class="tc-tw-accent">Centralize</span> tudo em um lugar.</span>
+          </span>
+        </h2>
+        <p class="tc-tw-sub" data-tc-tw-sub>Fluxo simples para RH, SESMT e gestores — sem trocar de ferramenta a cada etapa.</p>
+      </div>
+      <div class="tc-deep-steps-grid" data-tc-steps>
+        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
+          <div class="tc-deep-step-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="tc-deep-step-num">01</div>
+          <h3>Organize as turmas</h3>
+          <p>Cadastre colaboradores, defina trilhas por função e publique os treinamentos necessários.</p>
+          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
+          <div class="tc-deep-step-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M10 8l4 2.5L10 13z"/></svg>
+          </div>
+          <div class="tc-deep-step-num">02</div>
+          <h3>Treine e acompanhe</h3>
+          <p>Alunos estudam no celular ou no computador; gestores veem progresso e avaliações em tempo real.</p>
+          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
+          <div class="tc-deep-step-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg>
+          </div>
+          <div class="tc-deep-step-num">03</div>
+          <h3>Comprove e audite</h3>
+          <p>Certificados, presença e relatórios ficam prontos para auditoria — com validades sob controle.</p>
+          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+      </div>
+      </div>
+      <!-- Grain por cima de tudo — assinatura Digital Serenity -->
+      <div class="tc-serenity-grain" aria-hidden="true"></div>
     </section>
 
     <!-- ========== RECURSOS DETALHADOS (ritmo Cruip) ========== -->
@@ -2847,56 +2905,6 @@
       </div>
     </section>
 
-    <section class="tc-deep-steps tc-serenity" aria-labelledby="deep-steps-title">
-      <div class="tc-serenity-fx" aria-hidden="true">
-        <span class="tc-serenity-orb tc-serenity-orb--1"></span>
-        <span class="tc-serenity-orb tc-serenity-orb--2"></span>
-        <span class="tc-serenity-orb tc-serenity-orb--3"></span>
-      </div>
-      <div class="tc-deep-steps-inner">
-      <div class="tc-deep-steps-head" data-tc-typewriter>
-        <span class="tc-deep-eyebrow">Do cadastro à comprovação</span>
-        <h2 id="deep-steps-title">
-          <span class="tc-tw-reveal">
-            <span class="tc-tw-text">Comece em minutos. <span class="tc-tw-accent">Centralize</span> tudo em um lugar.</span>
-          </span>
-        </h2>
-        <p class="tc-tw-sub" data-tc-tw-sub>Fluxo simples para RH, SESMT e gestores — sem trocar de ferramenta a cada etapa.</p>
-      </div>
-      <div class="tc-deep-steps-grid" data-tc-steps>
-        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
-          <div class="tc-deep-step-ico" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <div class="tc-deep-step-num">01</div>
-          <h3>Organize as turmas</h3>
-          <p>Cadastre colaboradores, defina trilhas por função e publique os treinamentos necessários.</p>
-          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </article>
-        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
-          <div class="tc-deep-step-ico" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M10 8l4 2.5L10 13z"/></svg>
-          </div>
-          <div class="tc-deep-step-num">02</div>
-          <h3>Treine e acompanhe</h3>
-          <p>Alunos estudam no celular ou no computador; gestores veem progresso e avaliações em tempo real.</p>
-          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </article>
-        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
-          <div class="tc-deep-step-ico" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg>
-          </div>
-          <div class="tc-deep-step-num">03</div>
-          <h3>Comprove e audite</h3>
-          <p>Certificados, presença e relatórios ficam prontos para auditoria — com validades sob controle.</p>
-          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </article>
-      </div>
-      </div>
-      <!-- Grain por cima de tudo — assinatura Digital Serenity -->
-      <div class="tc-serenity-grain" aria-hidden="true"></div>
-    </section>
-
     </div>
 
     <!-- QUALQUER LUGAR (phone + features) -->
@@ -2976,144 +2984,153 @@
     <div id="presenca-root"></div>
 
     <div id="presenca-detalhes">
-      <div class="tc-presenca-band">
-        <span class="tc-deep-eyebrow">Como a lista digital trabalha</span>
-        <h2>Além do check-in: controle, prova e gestão.</h2>
-        <p>O painel ao vivo mostra a turma. Abaixo, o que acontece por trás — autenticação, operação, auditoria e matriz.</p>
-      </div>
 
-      <section class="tc-deep tc-deep--soft" aria-labelledby="presenca-auth-title">
+      <section class="tc-deep tc-deep--soft" aria-labelledby="presenca-ops-title" data-tc-topic-section>
         <div class="tc-deep-inner">
           <div class="tc-deep-copy reveal">
-            <span class="tc-deep-eyebrow">Presença e autenticação</span>
-            <h2 id="presenca-auth-title" class="tc-deep-title">Identifique quem entrou — com prova.</h2>
-            <p class="tc-deep-lead">Controle de presença em treinamentos, eventos, webinários, lives e reuniões — presenciais ou online — com autenticação segura.</p>
-            <ul class="tc-deep-list">
-              <li>QR Code com selfie para validar o participante</li>
-              <li>Autenticação por crachá (HID)</li>
-              <li>Inserção manual pelo instrutor quando necessário</li>
-            </ul>
-            <a class="tc-deep-cta" href="../../index.html#contato">Quero autenticar com QR
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-deep-panel">
-              <div class="tc-deep-panel-head"><strong>Métodos de entrada</strong><span>Seguro</span></div>
-              <div class="tc-deep-panel-body">
-                <div class="tc-presenca-auth-panel">
-                  <div class="tc-presenca-auth-row">
-                    <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v6M14 20h3"/></svg></div>
-                    <div><strong>QR Code + selfie</strong>Check-in com foto de autenticação</div>
-                  </div>
-                  <div class="tc-presenca-auth-row">
-                    <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div>
-                    <div><strong>Crachá HID</strong>Leitura rápida no acesso à turma</div>
-                  </div>
-                  <div class="tc-presenca-auth-row">
-                    <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                    <div><strong>Manual pelo instrutor</strong>Quando o participante precisa de apoio</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="tc-deep tc-deep--dark" aria-labelledby="presenca-ops-title">
-        <div class="tc-deep-inner tc-deep-inner--flip">
-          <div class="tc-deep-copy reveal">
-            <span class="tc-deep-eyebrow">Gestão e operação</span>
-            <h2 id="presenca-ops-title" class="tc-deep-title">Opere turmas, terceiros e entregas sem planilha.</h2>
-            <p class="tc-deep-lead">Do NoShow ao cadastro de empresas terceiras e instrutores externos — a operação acompanha o ritmo da sua empresa.</p>
-            <ul class="tc-deep-list">
-              <li>Controle de NoShow quando a turma não enche</li>
-              <li>Cadastro de empresas terceiras e instrutores externos</li>
-              <li>App offline para registrar presença sem conexão</li>
-            </ul>
-            <a class="tc-deep-cta" href="../../index.html#contato">Falar sobre operação
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-deep-panel">
-              <div class="tc-deep-panel-head"><strong>Painel operacional</strong><span>Live</span></div>
-              <div class="tc-deep-panel-body">
-                <div class="tc-presenca-ops-grid">
-                  <div class="tc-presenca-ops-item"><strong>NoShow</strong><span>Sinaliza turmas sem quórum e evita desperdício.</span></div>
-                  <div class="tc-presenca-ops-item"><strong>Terceiros</strong><span>Cadastro controlado de empresas parceiras.</span></div>
-                  <div class="tc-presenca-ops-item"><strong>Instrutores</strong><span>Externos e internos no mesmo fluxo.</span></div>
-                  <div class="tc-presenca-ops-item"><strong>Offline</strong><span>App funciona mesmo sem internet.</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="tc-deep" aria-labelledby="presenca-audit-title">
-        <div class="tc-deep-inner">
-          <div class="tc-deep-copy reveal">
-            <span class="tc-deep-eyebrow">Relatórios e auditoria</span>
-            <h2 id="presenca-audit-title" class="tc-deep-title">Evidência pronta quando a auditoria chegar.</h2>
-            <p class="tc-deep-lead">Relatórios em padrões internos e externos, com ou sem fotos de autenticação — alinhados à LGPD.</p>
-            <ul class="tc-deep-list">
-              <li>Relatório de presença em tempo real</li>
-              <li>Histórico rastreável de colaboradores e terceiros</li>
-              <li>Certificados customizados para o cliente</li>
-            </ul>
-            <a class="tc-deep-cta" href="../../index.html#contato">Ver modelo de relatório
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-deep-panel">
-              <div class="tc-deep-panel-head"><strong>Pacote de evidências</strong><span>LGPD</span></div>
-              <div class="tc-deep-panel-body">
-                <ul class="tc-presenca-report-list">
-                  <li><span class="tc-presenca-report-num">01</span><div><strong>Presenças com foto</strong>Quando a política da empresa exige selfie.</div></li>
-                  <li><span class="tc-presenca-report-num">02</span><div><strong>Presenças sem foto</strong>Respeitando as regras de privacidade.</div></li>
-                  <li><span class="tc-presenca-report-num">03</span><div><strong>Certificado custom</strong>Marca e layout do cliente.</div></li>
-                  <li><span class="tc-presenca-report-num">04</span><div><strong>Histórico completo</strong>Quem, quando e em qual turma.</div></li>
+            <span class="tc-deep-eyebrow">Presença · Operação</span>
+            <h2 id="presenca-ops-title" class="tc-deep-title">Da entrada à operação, sem planilha.</h2>
+            <p class="tc-deep-lead">Controle de presença com autenticação segura — e a operação de turmas, terceiros e entregas no mesmo lugar.</p>
+            <div class="tc-deep-topics" role="tablist" aria-label="Presença e operação">
+              <button type="button" class="tc-deep-topic is-active" role="tab" aria-selected="true" data-tc-topic="auth">
+                <span class="tc-deep-topic-top">
+                  <span class="tc-deep-topic-ico" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v6M14 20h3"/></svg>
+                  </span>
+                  <span class="tc-deep-topic-kicker">01</span>
+                </span>
+                <strong>Presença e autenticação</strong>
+                <ul>
+                  <li>QR Code com selfie para validar o participante</li>
+                  <li>Autenticação por crachá (HID)</li>
+                  <li>Inserção manual pelo instrutor quando necessário</li>
                 </ul>
+              </button>
+              <button type="button" class="tc-deep-topic" role="tab" aria-selected="false" data-tc-topic="ops">
+                <span class="tc-deep-topic-top">
+                  <span class="tc-deep-topic-ico" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                  </span>
+                  <span class="tc-deep-topic-kicker">02</span>
+                </span>
+                <strong>Gestão e operação</strong>
+                <ul>
+                  <li>Controle de NoShow quando a turma não enche</li>
+                  <li>Cadastro de empresas terceiras e instrutores externos</li>
+                  <li>App offline para registrar presença sem conexão</li>
+                </ul>
+              </button>
+            </div>
+            <a class="tc-deep-cta" href="../../index.html#contato">Falar sobre presença e operação
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="tc-deep-visual reveal" aria-hidden="true">
+            <div class="tc-deep-stage">
+              <div class="tc-deep-panel tc-deep-pane is-on" data-tc-pane="auth">
+                <div class="tc-deep-panel-head"><strong>Métodos de entrada</strong><span>Seguro</span></div>
+                <div class="tc-deep-panel-body">
+                  <div class="tc-presenca-auth-panel">
+                    <div class="tc-presenca-auth-row">
+                      <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v6M14 20h3"/></svg></div>
+                      <div><strong>QR Code + selfie</strong>Check-in com foto de autenticação</div>
+                    </div>
+                    <div class="tc-presenca-auth-row">
+                      <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+                      <div><strong>Crachá HID</strong>Leitura rápida no acesso à turma</div>
+                    </div>
+                    <div class="tc-presenca-auth-row">
+                      <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                      <div><strong>Manual pelo instrutor</strong>Quando o participante precisa de apoio</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tc-deep-panel tc-deep-pane" data-tc-pane="ops">
+                <div class="tc-deep-panel-head"><strong>Painel operacional</strong><span>Live</span></div>
+                <div class="tc-deep-panel-body">
+                  <div class="tc-presenca-ops-grid">
+                    <div class="tc-presenca-ops-item"><strong>NoShow</strong><span>Sinaliza turmas sem quórum e evita desperdício.</span></div>
+                    <div class="tc-presenca-ops-item"><strong>Terceiros</strong><span>Cadastro controlado de empresas parceiras.</span></div>
+                    <div class="tc-presenca-ops-item"><strong>Instrutores</strong><span>Externos e internos no mesmo fluxo.</span></div>
+                    <div class="tc-presenca-ops-item"><strong>Offline</strong><span>App funciona mesmo sem internet.</span></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="tc-deep tc-deep--soft" aria-labelledby="presenca-smart-title">
+      <section class="tc-deep tc-deep--dark" aria-labelledby="presenca-gestao-title" data-tc-topic-section>
         <div class="tc-deep-inner tc-deep-inner--flip">
           <div class="tc-deep-copy reveal">
-            <span class="tc-deep-eyebrow">Gestão inteligente</span>
-            <h2 id="presenca-smart-title" class="tc-deep-title">Matriz e dashboards no padrão da sua operação.</h2>
-            <p class="tc-deep-lead">Matriz de treinamentos por cargo ou versatilidade — totalmente customizável — e dashboards para enxergar a operação de uma vez.</p>
-            <ul class="tc-deep-list">
-              <li>Matriz por cargos alinhada aos padrões do cliente</li>
-              <li>Dashboard de treinamentos realizados</li>
-              <li>Controle também de entregas (ex.: kits e cestas)</li>
-            </ul>
-            <a class="tc-deep-cta" href="../../index.html#contato">Montar minha matriz
+            <span class="tc-deep-eyebrow">Relatórios · Gestão</span>
+            <h2 id="presenca-gestao-title" class="tc-deep-title">Evidência pronta — e a gestão no seu padrão.</h2>
+            <p class="tc-deep-lead">Relatórios alinhados à LGPD, matriz de treinamentos e dashboards pra enxergar tudo de uma vez.</p>
+            <div class="tc-deep-topics" role="tablist" aria-label="Relatórios e gestão">
+              <button type="button" class="tc-deep-topic is-active" role="tab" aria-selected="true" data-tc-topic="audit">
+                <span class="tc-deep-topic-top">
+                  <span class="tc-deep-topic-ico" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                  </span>
+                  <span class="tc-deep-topic-kicker">01</span>
+                </span>
+                <strong>Relatórios e auditoria</strong>
+                <ul>
+                  <li>Relatório de presença em tempo real</li>
+                  <li>Histórico rastreável de colaboradores e terceiros</li>
+                  <li>Certificados customizados para o cliente</li>
+                </ul>
+              </button>
+              <button type="button" class="tc-deep-topic" role="tab" aria-selected="false" data-tc-topic="smart">
+                <span class="tc-deep-topic-top">
+                  <span class="tc-deep-topic-ico" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+                  </span>
+                  <span class="tc-deep-topic-kicker">02</span>
+                </span>
+                <strong>Gestão inteligente</strong>
+                <ul>
+                  <li>Matriz por cargos alinhada aos padrões do cliente</li>
+                  <li>Dashboard de treinamentos realizados</li>
+                  <li>Controle também de entregas (ex.: kits e cestas)</li>
+                </ul>
+              </button>
+            </div>
+            <a class="tc-deep-cta" href="../../index.html#contato">Ver relatórios e gestão
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
           <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-deep-panel">
-              <div class="tc-deep-panel-head"><strong>Matriz · visão rápida</strong><span>Custom</span></div>
-              <div class="tc-deep-panel-body">
-                <div class="tc-deep-kpi">
-                  <div><strong>42</strong><span>Cargos</span></div>
-                  <div><strong>18</strong><span>NRs</span></div>
-                  <div><strong>97%</strong><span>Em dia</span></div>
+            <div class="tc-deep-stage">
+              <div class="tc-deep-panel tc-deep-pane is-on" data-tc-pane="audit">
+                <div class="tc-deep-panel-head"><strong>Pacote de evidências</strong><span>LGPD</span></div>
+                <div class="tc-deep-panel-body">
+                  <ul class="tc-presenca-report-list">
+                    <li><span class="tc-presenca-report-num">01</span><div><strong>Presenças com foto</strong>Quando a política da empresa exige selfie.</div></li>
+                    <li><span class="tc-presenca-report-num">02</span><div><strong>Presenças sem foto</strong>Respeitando as regras de privacidade.</div></li>
+                    <li><span class="tc-presenca-report-num">03</span><div><strong>Certificado custom</strong>Marca e layout do cliente.</div></li>
+                    <li><span class="tc-presenca-report-num">04</span><div><strong>Histórico completo</strong>Quem, quando e em qual turma.</div></li>
+                  </ul>
                 </div>
-                <div class="tc-deep-mod">
-                  <div class="tc-deep-mod-ico">OK</div>
-                  <div><strong>Eletricista · NR-10</strong><span>Validade em 14 meses</span><div class="tc-deep-bar"><i style="width:82%"></i></div></div>
-                </div>
-                <div class="tc-deep-mod">
-                  <div class="tc-deep-mod-ico">!</div>
-                  <div><strong>Operador · NR-35</strong><span>Reciclagem em 28 dias</span><div class="tc-deep-bar"><i style="width:38%"></i></div></div>
+              </div>
+              <div class="tc-deep-panel tc-deep-pane" data-tc-pane="smart">
+                <div class="tc-deep-panel-head"><strong>Matriz · visão rápida</strong><span>Custom</span></div>
+                <div class="tc-deep-panel-body">
+                  <div class="tc-deep-kpi">
+                    <div><strong>42</strong><span>Cargos</span></div>
+                    <div><strong>18</strong><span>NRs</span></div>
+                    <div><strong>97%</strong><span>Em dia</span></div>
+                  </div>
+                  <div class="tc-deep-mod">
+                    <div class="tc-deep-mod-ico">OK</div>
+                    <div><strong>Eletricista · NR-10</strong><span>Validade em 14 meses</span><div class="tc-deep-bar"><i style="width:82%"></i></div></div>
+                  </div>
+                  <div class="tc-deep-mod">
+                    <div class="tc-deep-mod-ico">!</div>
+                    <div><strong>Operador · NR-35</strong><span>Reciclagem em 28 dias</span><div class="tc-deep-bar"><i style="width:38%"></i></div></div>
+                  </div>
                 </div>
               </div>
             </div>
