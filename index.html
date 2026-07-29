@@ -285,28 +285,20 @@ sc-for{display:contents}
 .tc-stats-card-bar{position:relative;z-index:1;width:40px;height:3px;margin:20px 0 0;border-radius:3px;background:rgba(27,40,72,.08);overflow:hidden}
 .tc-stats-card-bar>i{display:block;width:0;height:100%;background:#32AD78;border-radius:3px;transition:width 2.2s cubic-bezier(.22,1,.36,1)}
 .tc-stats-card.tc-stats-live .tc-stats-card-bar>i{width:100%}
-.tc-how-section{position:relative;padding:clamp(64px,8vw,100px) 0;background:#fff;overflow:hidden}
-.tc-how-section::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 55% at 50% 0%,rgba(0,92,139,.06),transparent 60%)}
-.tc-how-head{position:relative;z-index:2;max-width:720px;margin:0 auto 48px;padding:0 24px;text-align:center}
-.tc-how-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#32AD78;margin-bottom:12px}
-.tc-how-title{margin:0;font-size:clamp(26px,3.4vw,40px);line-height:1.12;letter-spacing:-.03em;font-weight:800;color:#1B2848}
-.tc-how-sub{margin:14px 0 0;font-size:clamp(16px,1.8vw,18px);line-height:1.5;color:#64748b;font-weight:500}
-.tc-how-steps{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.tc-how-step{position:relative;opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.tc-how-step.tc-how-on{opacity:1;transform:none}
-.tc-how-num{display:block;font-size:clamp(40px,4.5vw,56px);font-weight:800;letter-spacing:-.05em;line-height:1;color:#32AD78;margin-bottom:18px;font-variant-numeric:tabular-nums}
-.tc-how-step h3{margin:0 0 10px;font-size:clamp(20px,2.2vw,24px);font-weight:800;letter-spacing:-.02em;color:#1B2848;line-height:1.2}
-.tc-how-step p{margin:0;font-size:15px;line-height:1.55;color:#64748b;max-width:28ch}
-.tc-how-line{display:none}
-@media(min-width:901px){
-  .tc-how-steps{gap:0 40px}
-  .tc-how-line{display:block;position:absolute;top:28px;left:calc(33.333% - 20px);right:calc(33.333% - 20px);height:2px;background:linear-gradient(90deg,rgba(50,173,120,.35),rgba(0,92,139,.25));pointer-events:none;z-index:0}
-}
-@media(max-width:900px){
-  .tc-how-steps{grid-template-columns:1fr;gap:32px;max-width:480px}
-}
+.tc-equation-section{position:relative;padding:clamp(72px,9vw,120px) 24px;background:#fff;text-align:center;overflow:hidden}
+.tc-equation-inner{position:relative;z-index:2;max-width:900px;margin:0 auto}
+.tc-equation-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#32AD78;margin-bottom:18px}
+.tc-equation-title{margin:0;font-size:clamp(28px,4.6vw,54px);line-height:1.2;letter-spacing:-.03em;font-weight:800;color:#1B2848}
+.tc-eq-tech{color:#005C8B}
+.tc-eq-train{color:#1B2848}
+.tc-eq-safety{color:#32AD78;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px;text-decoration-color:rgba(50,173,120,.4)}
+.tc-eq-op{color:#94a3b8;font-weight:600}
+.tc-equation-sub{margin:24px auto 0;max-width:420px;font-size:clamp(15px,1.6vw,18px);line-height:1.55;color:#64748b;font-weight:500}
+.tc-eq-char{display:inline-block;opacity:0;filter:blur(12px);transform:translateY(14px);will-change:transform,filter,opacity;transition:opacity .7s cubic-bezier(.22,1,.36,1),filter .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);transition-delay:calc(var(--eq-i,0) * 45ms)}
+.tc-equation-title.tc-eq-on .tc-eq-char{opacity:1;filter:blur(0);transform:none}
+.tc-eq-space{display:inline-block;width:.28em}
 @media(prefers-reduced-motion:reduce){
-  .tc-how-step{opacity:1;transform:none;transition:none}
+  .tc-eq-char{opacity:1;filter:none;transform:none;transition:none}
 }
 @media(max-width:900px){
   [data-navlinks]{display:none!important}
@@ -426,32 +418,14 @@ sc-for{display:contents}
       </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
-    <section class="tc-how-section" aria-labelledby="tc-how-title">
-      <div class="tc-how-head">
-        <span class="tc-how-eyebrow" data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)">Como funciona</span>
-        <h2 id="tc-how-title" class="tc-how-title" data-reveal data-delay="80" style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">Tecnologia no centro. Você escolhe o que precisa.</h2>
-        <p class="tc-how-sub" data-reveal data-delay="160" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Plataforma com lista de presença digital, treinamentos — ou os dois juntos.</p>
-      </div>
-      <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px">
-        <div class="tc-how-line" aria-hidden="true"></div>
-        <div class="tc-how-steps">
-          <article class="tc-how-step" data-how-step data-delay="0">
-            <span class="tc-how-num" aria-hidden="true">01</span>
-            <h3>Escolha</h3>
-            <p>Só a plataforma (lista digital, turmas e certificados), só o treinamento, ou os dois integrados.</p>
-          </article>
-          <article class="tc-how-step" data-how-step data-delay="120">
-            <span class="tc-how-num" aria-hidden="true">02</span>
-            <h3>Implante</h3>
-            <p>Colocamos a tecnologia no ar e organizamos a operação — do acesso à equipe até o fluxo de presença.</p>
-          </article>
-          <article class="tc-how-step" data-how-step data-delay="240">
-            <span class="tc-how-num" aria-hidden="true">03</span>
-            <h3>Controle</h3>
-            <p>Acompanhe lista de presença, validades e certificados em um só lugar — sem papel e sem planilha.</p>
-          </article>
-        </div>
+    <!-- ENSINAR + COMPROVAR = PROTEGER -->
+    <section class="tc-equation-section" aria-labelledby="tc-equation-title">
+      <div class="tc-equation-inner">
+        <span class="tc-equation-eyebrow" data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)">A soma</span>
+        <h2 id="tc-equation-title" class="tc-equation-title" data-eq-blur aria-label="Ensinar + Comprovar = Proteger.">
+          <span class="tc-eq-tech">Ensinar</span> <span class="tc-eq-op">+</span> <span class="tc-eq-train">Comprovar</span> <span class="tc-eq-op">=</span> <span class="tc-eq-safety">Proteger.</span>
+        </h2>
+        <p class="tc-equation-sub" data-reveal data-delay="220" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Uma soma que ninguém vê — até faltar.</p>
       </div>
     </section>
 
@@ -1419,7 +1393,7 @@ class Component extends DCLogic {
     window.addEventListener('resize', this._connResize);
     setTimeout(() => this.setupFeatScroll(), 800);
     setTimeout(() => this.initOfferingReveal(), 200);
-    setTimeout(() => this.initHowSteps(), 200);
+    setTimeout(() => this.initEquationBlur(), 200);
 
     // Counter animation
     this.initCounters();
@@ -1490,7 +1464,7 @@ class Component extends DCLogic {
     this.initBrazilMap();
   }
 
-  componentDidUpdate() { this.scanReveal(); this.paintSvgs(); this.drawConnectors(); this.initTypewriters(); this.initPopText(); this.initCounters(); this.initVideoFallbacks(); this.initNativeVideoAttrs(); this.initNrCarousel(); this.setupFeatScroll(); this.initOfferingReveal(); this.initHowSteps(); this.initCosmicStars(); this.initBrazilMap(); }
+  componentDidUpdate() { this.scanReveal(); this.paintSvgs(); this.drawConnectors(); this.initTypewriters(); this.initPopText(); this.initCounters(); this.initVideoFallbacks(); this.initNativeVideoAttrs(); this.initNrCarousel(); this.setupFeatScroll(); this.initOfferingReveal(); this.initEquationBlur(); this.initCosmicStars(); this.initBrazilMap(); }
 
   componentWillUnmount() {
     cancelAnimationFrame(this.raf);
@@ -1725,18 +1699,61 @@ class Component extends DCLogic {
     this._offeringIO.observe(section);
   }
 
-  initHowSteps() {
-    const steps = [...document.querySelectorAll('[data-how-step]')];
-    if (!steps.length) return;
-    if (steps[0].dataset.howReady) return;
-    steps.forEach(s => { s.dataset.howReady = '1'; });
+  initEquationBlur() {
+    const title = document.querySelector('[data-eq-blur]');
+    if (!title || title.dataset.eqReady) return;
+    title.dataset.eqReady = '1';
+
+    let i = 0;
+    const parts = [...title.childNodes];
+    parts.forEach((node) => {
+      if (node.nodeType === 3) {
+        const text = node.textContent;
+        if (!text || !text.trim()) {
+          if (text && text.length) {
+            const sp = document.createElement('span');
+            sp.className = 'tc-eq-space';
+            sp.setAttribute('aria-hidden', 'true');
+            title.replaceChild(sp, node);
+          }
+          return;
+        }
+        const frag = document.createDocumentFragment();
+        [...text].forEach((ch) => {
+          if (ch === ' ') {
+            const sp = document.createElement('span');
+            sp.className = 'tc-eq-space';
+            sp.setAttribute('aria-hidden', 'true');
+            frag.appendChild(sp);
+            return;
+          }
+          const s = document.createElement('span');
+          s.className = 'tc-eq-char';
+          s.textContent = ch;
+          s.style.setProperty('--eq-i', String(i++));
+          s.setAttribute('aria-hidden', 'true');
+          frag.appendChild(s);
+        });
+        title.replaceChild(frag, node);
+        return;
+      }
+      if (node.nodeType !== 1) return;
+      const el = node;
+      const raw = el.textContent || '';
+      el.textContent = '';
+      [...raw].forEach((ch) => {
+        const s = document.createElement('span');
+        s.className = 'tc-eq-char';
+        s.textContent = ch;
+        s.style.setProperty('--eq-i', String(i++));
+        s.setAttribute('aria-hidden', 'true');
+        el.appendChild(s);
+      });
+    });
 
     const play = () => {
-      steps.forEach((step, i) => {
-        const delay = +(step.dataset.delay || i * 120);
-        setTimeout(() => step.classList.add('tc-how-on'), delay);
-      });
-      if (this._howIO) this._howIO.disconnect();
+      title.classList.add('tc-eq-on');
+      if (this._eqIO) this._eqIO.disconnect();
     };
 
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1744,13 +1761,13 @@ class Component extends DCLogic {
       return;
     }
 
-    this._howIO = new IntersectionObserver((entries) => {
+    this._eqIO = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
         play();
       });
-    }, { threshold: 0.25 });
-    this._howIO.observe(steps[0].closest('.tc-how-section') || steps[0]);
+    }, { threshold: 0.4 });
+    this._eqIO.observe(title.closest('.tc-equation-section') || title);
   }
 
   initTypewriters() {
