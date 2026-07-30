@@ -2318,6 +2318,34 @@
   </style>
   <link rel="stylesheet" href="../tc-spark-hero.css" />
   <link rel="stylesheet" href="../tc-cta-cosmic.css" />
+  <style>
+.hero.hero-tec-cover{
+  position:relative;
+  top:auto;
+  min-height:84vh;
+  height:84vh;
+  margin-bottom:0;
+  padding-block:0;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:#03060a;
+}
+.hero-tec-cover-img{
+  position:absolute;
+  top:0;
+  left:0;
+  right:auto;
+  width:112%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center;
+  opacity:.95;
+}
+.hero-tec-cover-overlay{position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%, rgba(3,6,12,.84) 0%, rgba(4,9,18,.5) 46%, rgba(4,9,18,.12) 100%)}
+.hero-tec-cover-content{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box}
+  </style>
 </head>
 <body>
   
@@ -2575,42 +2603,19 @@
   <!-- ========== MAIN ========== -->
   <main id="main">
     <!-- ========== HERO ========== -->
-    <section class="hero tc-spark-hero" aria-labelledby="hero-title">
-      <div class="tc-spark-inner">
-        <div class="tc-spark-copy">
-          <span class="tc-spark-eyebrow">Treinamento</span>
-          <h1 id="hero-title" class="tc-spark-title">Capacitação nas <span class="tc-spark-mark">NRs</span> que a sua operação exige.</h1>
-          <p class="tc-spark-lead">Teórico e prático, presencial, online ou híbrido — com conteúdo alinhado às Normas Regulamentadoras e à realidade da sua empresa.</p>
-          <div class="tc-spark-actions">
-            <a class="tc-spark-btn tc-spark-btn--primary" href="#tc-nr-title">Ver treinamentos
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a class="tc-spark-btn tc-spark-btn--ghost" href="../../index.html#contato">Solicitar proposta</a>
-          </div>
-        </div>
-        <div class="tc-spark-visual" aria-hidden="true">
-          <div class="tc-spark-float tc-spark-float--back">
-            <div class="tc-spark-card">
-              <div class="tc-spark-card-head"><strong>Trilha de capacitação</strong><span>NR</span></div>
-              <div class="tc-spark-card-body">
-                <div class="tc-spark-row"><span>NR-10 · Eletricidade</span><span class="tc-spark-pill">Teórico</span></div>
-                <div class="tc-spark-row"><span>NR-33 · Espaços confinados</span><span class="tc-spark-pill">Prático</span></div>
-                <div class="tc-spark-row"><span>NR-35 · Trabalho em altura</span><span class="tc-spark-pill">Híbrido</span></div>
-                <div class="tc-spark-row"><span>NR-23 · Brigada de incêndio</span><span class="tc-spark-pill">Presencial</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="tc-spark-float tc-spark-float--front">
-            <div class="tc-spark-card tc-spark-card--dark">
-              <div class="tc-spark-cert">
-                <div class="tc-spark-cert-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg></div>
-                <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:700">Certificado</div>
-                <div style="font-size:18px;font-weight:800;margin-top:6px;color:#fff">NR-35</div>
-                <div style="font-size:13px;color:rgba(255,255,255,.7);margin-top:4px">Trabalho em altura</div>
-                <div style="margin-top:14px;font-size:11px;color:#6ABB8C;font-weight:700">Reconhecido · rastreável</div>
-              </div>
-            </div>
-          </div>
+    <section class="hero hero-tec-cover" aria-labelledby="hero-title">
+      <img src="../../img/tela%20fundo%20treinamento.png" alt="" class="hero-tec-cover-img"
+           onerror="this.style.display='none'"/>
+      <div class="hero-tec-cover-overlay" aria-hidden="true"></div>
+      <div class="hero-tec-cover-content">
+        <span class="tc-spark-eyebrow">Treinamento</span>
+        <h1 id="hero-title" class="tc-spark-title">Capacitação nas <span class="tc-spark-mark">NRs</span> que a sua operação exige.</h1>
+        <p class="tc-spark-lead">Teórico e prático, presencial, online ou híbrido — com conteúdo alinhado às Normas Regulamentadoras e à realidade da sua empresa.</p>
+        <div class="tc-spark-actions">
+          <a class="tc-spark-btn tc-spark-btn--primary" href="#tc-nr-title">Ver treinamentos
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="tc-spark-btn tc-spark-btn--ghost" href="../../index.html#contato">Solicitar proposta</a>
         </div>
       </div>
     </section>
