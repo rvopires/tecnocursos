@@ -252,6 +252,29 @@
 }
 .tc-deep--dark .tc-deep-score-card span { color: rgba(255, 255, 255, .55); }
 
+.tc-timeline{position:relative;display:flex;flex-direction:column;gap:22px;padding-left:6px}
+.tc-timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:rgba(255,255,255,.14)}
+.tc-timeline-item{position:relative;display:flex;gap:16px;align-items:flex-start;padding-left:28px}
+.tc-timeline-dot{position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.24);flex-shrink:0}
+.tc-timeline-item--done .tc-timeline-dot{background:#32AD78;border-color:#32AD78}
+.tc-timeline-item--done .tc-timeline-dot::after{content:"";position:absolute;left:6px;top:3px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.tc-timeline-item--active .tc-timeline-dot{border-color:#32AD78;box-shadow:0 0 0 4px rgba(50,173,120,.22)}
+.tc-timeline-item--locked .tc-timeline-content{opacity:.5}
+.tc-timeline-content{display:flex;flex-direction:column;gap:2px}
+.tc-timeline-content strong{font-size:14px;color:#fff}
+.tc-timeline-content span{font-size:12.5px;color:rgba(255,255,255,.6)}
+
+.tc-gauge-row{display:flex;align-items:center;gap:20px}
+.tc-gauge{position:relative;width:104px;height:104px;border-radius:50%;background:conic-gradient(#32AD78 calc(var(--pct)*1%), rgba(255,255,255,.12) 0);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tc-gauge::before{content:"";position:absolute;inset:9px;border-radius:50%;background:#1B2A42}
+.tc-gauge-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.tc-gauge-inner strong{font-size:22px;font-weight:800;color:#fff;line-height:1}
+.tc-gauge-inner span{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.tc-gauge-meta{display:flex;flex-direction:column;gap:10px}
+.tc-gauge-stat strong{display:block;font-size:20px;font-weight:800;color:#fff}
+.tc-gauge-stat span{font-size:12px;color:rgba(255,255,255,.6)}
+.tc-gauge-badge{display:inline-block;font-size:12px;font-weight:700;color:#32AD78;background:rgba(50,173,120,.14);border:1px solid rgba(50,173,120,.32);padding:4px 10px;border-radius:999px;width:fit-content}
+
 .tc-deep-cert {
   text-align: center;
   padding: 8px 8px 4px;

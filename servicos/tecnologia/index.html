@@ -2370,7 +2370,7 @@
     }
   </style>
   <link rel="stylesheet" href="../tc-spark-hero.css" />
-  <link rel="stylesheet" href="../tc-tech-deep.css" />
+  <link rel="stylesheet" href="../tc-tech-deep.css?v=timeline-gauge-1" />
   <link rel="stylesheet" href="../tc-cta-cosmic.css" />
   <style id="tc-tech-perf">
     /* Performance — remove efeitos que travam o scroll nesta página */
@@ -2558,22 +2558,315 @@
         filter: none !important;
       }
     }
-.hero.tc-spark-hero::after{background:#fff}
-.tc-choice-section{position:relative;z-index:1;padding:clamp(36px,5vw,56px) 24px clamp(28px,4vw,40px);margin:-1px 0 0;max-width:none;width:100%;box-sizing:border-box;background:#fff}
-.tc-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto}
-.tc-choice-card{position:relative;display:block;border-radius:20px;overflow:hidden;aspect-ratio:4/3;text-decoration:none;box-shadow:0 20px 44px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.22,.61,.36,1)}
-.tc-choice-card:hover{transform:translateY(-4px)}
-.tc-choice-media{position:absolute;inset:0}
-.tc-choice-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .5s cubic-bezier(.22,.61,.36,1)}
-.tc-choice-card:hover .tc-choice-media img{transform:scale(1.08)}
-.tc-choice-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,12,.05) 0%,rgba(5,8,12,.25) 45%,rgba(5,8,12,.85) 100%)}
-.tc-choice-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 24px 26px}
-.tc-choice-copy h3{margin:0 0 8px;font-size:clamp(20px,2.2vw,26px);font-weight:800;color:#fff;letter-spacing:-.02em}
-.tc-choice-copy p{margin:0 0 14px;font-size:14px;line-height:1.5;color:rgba(255,255,255,.85);max-width:30ch}
-.tc-choice-cta{display:inline-block;font-size:13px;font-weight:700;color:#fff}
-@media(max-width:720px){.tc-choice-grid{grid-template-columns:1fr}}
+.hero.tc-spark-hero::after{background:#F7F9FB}
+.hero.tc-spark-hero{
+  min-height:auto;
+}
+.hero.tc-spark-hero .tc-spark-inner{
+  padding:clamp(96px,10vw,120px) 24px clamp(88px,11vw,120px);
+}
+.tc-spark-photo{
+  width: 100%;
+  max-width: 420px;
+  max-height: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 40px 90px rgba(0,0,0,.35);
+  display: block;
+  margin-left: auto;
+}
+@media (max-width: 860px){
+  .tc-spark-photo{ max-width: min(100%, 360px); max-height: 360px; margin-left: auto; margin-right: auto; }
+}
+.hero.hero-tec-cover{
+  position:relative;
+  top:auto;
+  min-height:84vh;
+  height:84vh;
+  margin-bottom:0;
+  padding-block:0;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:#03060a;
+}
+.hero-tec-cover-img{
+  position:absolute;
+  top:0;
+  left:0;
+  right:auto;
+  width:112%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center;
+  opacity:.95;
+}
+.hero-tec-cover-overlay{position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%, rgba(3,6,12,.84) 0%, rgba(4,9,18,.5) 46%, rgba(4,9,18,.12) 100%)}
+.hero-tec-cover-content{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box}
+.tc-choice-meet{--meet:0;background:#F7F9FB;margin:0}
+.tc-choice-meet-track{height:220vh}
+.tc-choice-meet-sticky{
+  position:sticky;top:0;height:100vh;height:100dvh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:clamp(24px,4vh,48px) 24px;overflow:hidden;box-sizing:border-box
+}
+.tc-choice-meet-title{
+  margin:0 0 clamp(28px,5vh,48px);text-align:center;
+  font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:#1B2848;
+  max-width:16ch;opacity:calc(.25 + var(--meet) * .75);
+  transform:translateY(calc((1 - var(--meet)) * 12px));
+  will-change:opacity,transform
+}
+.tc-choice-meet-stage{
+  display:flex;align-items:stretch;justify-content:center;gap:clamp(20px,3vw,36px);
+  width:min(100%,920px);position:relative;z-index:1;
+  perspective:1400px;transform-style:preserve-3d
+}
+.tc-choice-meet-stage::before{
+  content:"";position:absolute;left:10%;right:10%;bottom:-18px;height:48px;
+  background:radial-gradient(ellipse at center, rgba(16,24,40,calc(.14 * var(--meet))) 0%, transparent 70%);
+  filter:blur(8px);pointer-events:none;z-index:0
+}
+.tc-choice-meet-card{
+  position:relative;flex:1 1 0;min-width:0;max-width:440px;
+  display:block;text-decoration:none;
+  background:linear-gradient(165deg,#ffffff 0%,#f7fafc 100%);
+  border-radius:24px;padding:18px 18px 60px;overflow:visible;
+  border:1px solid rgba(16,24,40,.06);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 2px 4px rgba(16,24,40,calc(.04 + var(--meet) * .03)),
+    0 14px 28px rgba(16,24,40,calc(.06 + var(--meet) * .06)),
+    0 36px 72px rgba(16,24,40,calc(.08 + var(--meet) * .1));
+  will-change:transform;
+  transform-style:preserve-3d;
+  isolation:isolate
+}
+.tc-choice-meet-card::before{
+  content:"";position:absolute;inset:-1px;border-radius:25px;z-index:-1;pointer-events:none;
+  background:radial-gradient(80% 60% at 50% 0%, rgba(50,173,120,calc(.18 * var(--meet))), transparent 65%);
+  opacity:.9;filter:blur(18px)
+}
+.tc-choice-meet-card::after{
+  content:"";position:absolute;inset:0;border-radius:24px;pointer-events:none;z-index:3;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75), inset 0 0 0 1px rgba(255,255,255,.25);
+}
+.tc-choice-meet-card--left{
+  transform:
+    translate3d(calc((1 - var(--meet)) * -48vw), calc((1 - var(--meet)) * 8vh), 0)
+    rotateY(calc((1 - var(--meet)) * 18deg))
+    rotate(calc((1 - var(--meet)) * -4deg))
+}
+.tc-choice-meet-card--right{
+  transform:
+    translate3d(calc((1 - var(--meet)) * 48vw), calc((1 - var(--meet)) * 8vh), 0)
+    rotateY(calc((1 - var(--meet)) * -18deg))
+    rotate(calc((1 - var(--meet)) * 4deg))
+}
+.tc-choice-meet-media{
+  position:relative;aspect-ratio:1/1;width:100%;overflow:hidden;background:#E8EEF5;border-radius:16px;
+  box-shadow:
+    0 10px 28px rgba(16,24,40,.12),
+    0 2px 6px rgba(16,24,40,.06),
+    inset 0 0 0 1px rgba(255,255,255,.35);
+  transform:translateZ(20px)
+}
+.tc-choice-meet-media img{
+  width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+  transform:scale(1.02);transition:transform .55s cubic-bezier(.22,.61,.36,1)
+}
+.tc-choice-meet-copy{position:relative;z-index:1;padding:18px 6px 0}
+.tc-choice-meet-copy h3{margin:0 0 6px;font-size:clamp(18px,2vw,22px);font-weight:800;color:#1B2848}
+.tc-choice-meet-copy p{margin:0;font-size:14px;line-height:1.5;color:#64748b;max-width:32ch}
+.tc-choice-meet-arrow{
+  position:absolute;right:20px;bottom:20px;z-index:2;width:44px;height:44px;border-radius:50%;
+  background:#005C8B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;
+  box-shadow:0 8px 20px rgba(0,92,139,.35), 0 2px 0 rgba(255,255,255,.2) inset;
+  transition:background .2s ease,transform .25s ease,box-shadow .25s ease
+}
+.tc-choice-meet-card:hover .tc-choice-meet-arrow{
+  background:#32AD78;transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(50,173,120,.4), 0 2px 0 rgba(255,255,255,.25) inset
+}
+.tc-choice-meet.is-complete .tc-choice-meet-card--left,
+.tc-choice-meet.is-complete .tc-choice-meet-card--right{transform:translateZ(0)}
+.tc-choice-meet.is-complete .tc-choice-meet-card:hover{
+  transform:translateY(-8px) translateZ(12px) scale(1.015);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.95) inset,
+    0 8px 16px rgba(16,24,40,.08),
+    0 28px 56px rgba(16,24,40,.14),
+    0 48px 96px rgba(16,24,40,.12);
+  transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease
+}
+.tc-choice-meet.is-complete .tc-choice-meet-card:hover .tc-choice-meet-media img{transform:scale(1.05)}
+@media(max-width:720px){
+  .tc-choice-meet-track{height:auto}
+  .tc-choice-meet-sticky{position:relative;height:auto;padding:56px 20px 48px;overflow:visible}
+  .tc-choice-meet-title{opacity:1;transform:none;margin-bottom:28px;max-width:18ch}
+  .tc-choice-meet-stage{flex-direction:column;width:100%;gap:20px;perspective:none}
+  .tc-choice-meet-stage::before{display:none}
+  .tc-choice-meet-card,
+  .tc-choice-meet-card--left,
+  .tc-choice-meet-card--right{max-width:none;transform:none!important;overflow:hidden}
+  .tc-choice-meet-card::before{filter:blur(12px);opacity:.55}
+}
+@media(prefers-reduced-motion:reduce){
+  .tc-choice-meet-track{height:auto}
+  .tc-choice-meet-sticky{position:relative;height:auto;padding:64px 24px}
+  .tc-choice-meet{--meet:1}
+  .tc-choice-meet-title{opacity:1;transform:none}
+  .tc-choice-meet-card--left,
+  .tc-choice-meet-card--right{transform:none!important}
+  .tc-choice-meet-media img{transition:none}
+}
+.tc-product-video{width:min(100%,420px);display:flex;flex-direction:column;gap:14px}
+.tc-product-video-frame{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/10;background:#0A1326;border:1px solid rgba(255,255,255,.12);box-shadow:0 28px 60px rgba(0,0,0,.45)}
+.tc-product-video-el{width:100%;height:100%;object-fit:cover;display:block}
+.tc-product-video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:0;cursor:pointer;background:rgba(50,173,120,.92);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(0,0,0,.35);transition:transform .25s ease,background .2s ease,opacity .25s ease}
+.tc-product-video-play:hover{transform:translate(-50%,-50%) scale(1.06);background:#32AD78}
+.tc-product-video.is-playing .tc-product-video-play{opacity:0;pointer-events:none}
+.tc-product-video-frame:hover .tc-product-video-play{opacity:1;pointer-events:auto}
+.tc-product-video-meta strong{display:block;font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.tc-product-video-meta span{font-size:13px;color:rgba(255,255,255,.6)}
+.tc-photo-card{width:min(100%,420px);background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 56px rgba(16,24,40,.12);border:1px solid rgba(16,24,40,.06);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s ease}
+.tc-photo-card:hover{transform:translateY(-4px);box-shadow:0 32px 64px rgba(16,24,40,.16)}
+.tc-deep--dark .tc-photo-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);box-shadow:0 24px 56px rgba(0,0,0,.35)}
+.tc-deep--dark .tc-photo-card:hover{box-shadow:0 32px 64px rgba(0,0,0,.45)}
+.tc-photo-card-media{position:relative;height:220px;overflow:hidden;background:#E8EEF5}
+.tc-photo-card-media img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.tc-photo-card:hover .tc-photo-card-media img{transform:scale(1.06)}
+.tc-photo-card-copy{padding:20px 22px 22px}
+.tc-photo-card-copy strong{display:block;font-size:16px;font-weight:700;color:#1B2848;margin-bottom:4px}
+.tc-photo-card-copy span{font-size:13.5px;line-height:1.45;color:#64748b}
+.tc-deep--dark .tc-photo-card-copy strong{color:#fff}
+.tc-deep--dark .tc-photo-card-copy span{color:rgba(255,255,255,.6)}
+.tc-photo-card-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#32AD78;background:rgba(50,173,120,.12);padding:4px 10px;border-radius:999px;margin-bottom:10px}
+@media(prefers-reduced-motion:reduce){
+  .tc-product-video-play,.tc-photo-card,.tc-photo-card-media img{transition:none}
+  .tc-photo-card:hover{transform:none}
+}
 .tc-footer-social a{transition:background .2s,border-color .2s,color .2s}
 .tc-footer-social a:hover{background:rgba(50,173,120,.16)!important;border-color:rgba(50,173,120,.45)!important;color:#32AD78!important}
+.tc-deep-topics--static{display:flex;flex-direction:column;gap:22px}
+.tc-deep-stage--static{display:flex;gap:16px;width:min(100%,880px);min-height:0}
+.tc-deep-stage--static .tc-deep-pane,
+.tc-deep-stage--static .tc-deep-pane:not(.is-on){
+  flex:1 1 0;min-width:0;opacity:1!important;position:static!important;display:block!important;
+  pointer-events:auto!important;transform:none!important;inset:auto
+}
+@media(max-width:860px){
+  .tc-deep-stage--static{flex-direction:column;width:100%}
+}
+.tc-timeline{position:relative;display:flex;flex-direction:column;gap:22px;padding-left:6px}
+.tc-timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:rgba(255,255,255,.14)}
+.tc-timeline-item{position:relative;display:flex;gap:16px;align-items:flex-start;padding-left:28px}
+.tc-timeline-dot{position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.24);flex-shrink:0}
+.tc-timeline-item--done .tc-timeline-dot{background:#32AD78;border-color:#32AD78}
+.tc-timeline-item--done .tc-timeline-dot::after{content:"";position:absolute;left:6px;top:3px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.tc-timeline-item--active .tc-timeline-dot{border-color:#32AD78;box-shadow:0 0 0 4px rgba(50,173,120,.22)}
+.tc-timeline-item--locked .tc-timeline-content{opacity:.5}
+.tc-timeline-content{display:flex;flex-direction:column;gap:2px}
+.tc-timeline-content strong{font-size:14px;color:#fff}
+.tc-timeline-content span{font-size:12.5px;color:rgba(255,255,255,.6)}
+.tc-gauge-row{display:flex;align-items:center;gap:20px}
+.tc-gauge{position:relative;width:104px;height:104px;border-radius:50%;background:conic-gradient(#32AD78 calc(var(--pct)*1%), rgba(255,255,255,.12) 0);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tc-gauge::before{content:"";position:absolute;inset:9px;border-radius:50%;background:#1B2A42}
+.tc-gauge-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.tc-gauge-inner strong{font-size:22px;font-weight:800;color:#fff;line-height:1}
+.tc-gauge-inner span{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.tc-gauge-meta{display:flex;flex-direction:column;gap:10px}
+.tc-gauge-stat strong{display:block;font-size:20px;font-weight:800;color:#fff}
+.tc-gauge-stat span{font-size:12px;color:rgba(255,255,255,.6)}
+.tc-gauge-badge{display:inline-block;font-size:12px;font-weight:700;color:#32AD78;background:rgba(50,173,120,.14);border:1px solid rgba(50,173,120,.32);padding:4px 10px;border-radius:999px;width:fit-content}
+.tc-glare-card{position:relative;overflow:hidden;border-radius:24px;padding:36px 32px;background:radial-gradient(120% 140% at 15% 0%, rgba(50,173,120,.28), transparent 55%), radial-gradient(100% 120% at 100% 100%, rgba(0,92,139,.32), transparent 60%), #0A1326;box-shadow:0 30px 70px rgba(0,0,0,.4);min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.tc-glare-sweep{position:absolute;top:-40%;left:-60%;width:60%;height:180%;background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,.16) 45%, rgba(255,255,255,.22) 50%, rgba(255,255,255,.16) 55%, transparent 100%);transform:rotate(8deg);animation:tcGlareSweep 5s ease-in-out infinite;pointer-events:none}
+@keyframes tcGlareSweep{0%{left:-60%}45%{left:120%}100%{left:120%}}
+.tc-glare-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ABB8C}
+.tc-glare-stat{display:flex;align-items:baseline;gap:10px}
+.tc-glare-stat strong{font-size:clamp(48px,6vw,64px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1}
+.tc-glare-stat span{font-size:15px;color:rgba(255,255,255,.6)}
+.tc-glare-meta strong{display:block;font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+.tc-glare-meta span{font-size:13.5px;color:rgba(255,255,255,.6)}
+@media(prefers-reduced-motion:reduce){.tc-glare-sweep{animation:none;display:none}}
+.tc-pin-card{position:relative;border-radius:22px;padding:28px 30px 24px;background:linear-gradient(165deg,#0F1E38,#0A1326);border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 60px rgba(0,0,0,.45);transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s ease;transform-style:preserve-3d;perspective:800px}
+.tc-pin-card:hover{transform:rotateX(4deg) rotateY(-4deg) translateY(-4px);box-shadow:0 40px 80px rgba(0,0,0,.55), 0 0 60px rgba(50,173,120,.18)}
+.tc-pin-status{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.tc-pin-dot{width:8px;height:8px;border-radius:50%;background:#32AD78;animation:tcPinPulse 2s ease-out infinite}
+@keyframes tcPinPulse{0%{box-shadow:0 0 0 0 rgba(50,173,120,.5)}70%{box-shadow:0 0 0 8px rgba(50,173,120,0)}100%{box-shadow:0 0 0 0 rgba(50,173,120,0)}}
+.tc-pin-status span{font-size:12.5px;color:rgba(255,255,255,.6);font-weight:600}
+.tc-pin-title{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.02em;margin:0 0 22px}
+.tc-pin-stats{display:flex;gap:32px;margin-bottom:22px}
+.tc-pin-stat strong{display:block;font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.tc-pin-stat span{font-size:12.5px;color:rgba(255,255,255,.55)}
+.tc-pin-stat--a strong{color:#6ABB8C}
+.tc-pin-stat--b strong{color:#005C8B}
+.tc-pin-glow{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);margin-bottom:22px}
+.tc-pin-foot{display:flex;justify-content:space-between;align-items:center;font-size:12.5px}
+.tc-pin-foot-meta{color:rgba(255,255,255,.5)}
+.tc-pin-foot-cta{color:#6ABB8C;font-weight:700}
+@media(prefers-reduced-motion:reduce){.tc-pin-card{transition:none}.tc-pin-card:hover{transform:none}.tc-pin-dot{animation:none}}
+
+/* Aceternity-style 3D Pin (pure CSS/JS) */
+#plataforma.tc-deep{overflow:visible}
+.tc-deep-stage--pin{width:min(100%,420px)!important;min-height:380px;display:flex;align-items:center;justify-content:center;perspective:1000px;overflow:visible}
+.tc-3dpin{position:relative;z-index:2;width:100%;max-width:340px;height:320px;cursor:pointer}
+.tc-3dpin-scene{position:absolute;left:50%;top:50%;width:100%;height:100%;perspective:1000px;transform:translate(-50%,-50%);z-index:2}
+.tc-3dpin-card{position:absolute;left:50%;top:50%;width:100%;max-width:320px;padding:16px;border-radius:16px;background:#0A1326;border:1px solid rgba(255,255,255,.1);box-shadow:0 8px 16px rgba(0,0,0,.4);overflow:hidden;transform:translate(-50%,-50%) rotateX(0deg) scale(1);transform-origin:center center;transition:transform .7s ease,border-color .7s ease;will-change:transform}
+.tc-3dpin.is-on .tc-3dpin-card{transform:translate(-50%,-50%) rotateX(40deg) scale(.8);border-color:rgba(255,255,255,.2)}
+.tc-3dpin-body{position:relative;z-index:1;display:flex;flex-direction:column;width:100%;min-height:260px;padding:8px 4px 4px;letter-spacing:-.01em}
+.tc-3dpin-body h4{margin:0 0 8px;font-size:16px;font-weight:700;color:#f1f5f9}
+.tc-3dpin-body p{margin:0;font-size:14px;line-height:1.45;font-weight:400;color:#64748b;max-width:28ch}
+.tc-3dpin-media{flex:1;margin-top:16px;min-height:140px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(145deg,#32AD78 0%,#005C8B 55%,#0A1326 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.tc-3dpin-media strong{font-size:42px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1}
+.tc-3dpin-media span{font-size:12px;font-weight:600;color:rgba(255,255,255,.78)}
+.tc-3dpin-fx{pointer-events:none;position:absolute;inset:0;z-index:3;opacity:0;transition:opacity .5s ease;display:flex;align-items:center;justify-content:center}
+.tc-3dpin.is-on .tc-3dpin-fx{opacity:1}
+.tc-3dpin-label{position:absolute;left:50%;top:10px;transform:translateX(-50%);z-index:5;display:inline-flex;align-items:center;padding:2px 16px;border-radius:999px;background:#09090b;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.tc-3dpin-label span{position:relative;z-index:2;font-size:12px;font-weight:700;color:#fff;line-height:1.8}
+.tc-3dpin-label i{position:absolute;left:18px;right:18px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(106,187,140,.9),transparent);opacity:.7}
+.tc-3dpin-ripples{position:absolute;left:50%;top:52%;width:180px;height:180px;transform:translate(-50%,-50%) rotateX(70deg);transform-style:preserve-3d}
+.tc-3dpin-ripples span{position:absolute;left:50%;top:50%;width:180px;height:180px;margin:-90px 0 0 -90px;border-radius:50%;background:rgba(0,92,139,.12);box-shadow:0 8px 16px rgba(0,0,0,.35);animation:tc3dPinRipple 6s ease-out infinite;opacity:0}
+.tc-3dpin-beam{position:absolute;left:50%;top:50%;width:4px;height:0;transform:translate(-50%,0)}
+.tc-3dpin.is-on .tc-3dpin-beam{height:160px}
+.tc-3dpin-beam-blur,.tc-3dpin-beam-line{position:absolute;left:50%;bottom:0;width:1px;height:100%;transform:translateX(-50%);background:linear-gradient(to bottom,transparent,#32AD78);transition:height .5s ease}
+.tc-3dpin-beam-blur{filter:blur(2px)}
+.tc-3dpin-beam-glow{position:absolute;left:50%;bottom:0;width:4px;height:4px;border-radius:50%;background:#005C8B;transform:translate(-35%,0);filter:blur(3px)}
+.tc-3dpin-beam-tip{position:absolute;left:50%;bottom:0;width:2px;height:2px;border-radius:50%;background:#6ABB8C;transform:translate(-25%,0)}
+@keyframes tc3dPinRipple{0%{opacity:0;transform:scale(0)}20%{opacity:1}50%{opacity:.5}100%{opacity:0;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){
+  .tc-3dpin-card,.tc-3dpin-fx,.tc-3dpin-beam-blur,.tc-3dpin-beam-line{transition:none}
+  .tc-3dpin.is-on .tc-3dpin-card{transform:translate(-50%,-50%) scale(1)}
+  .tc-3dpin-ripples span{animation:none;opacity:0}
+  .tc-3dpin.is-on .tc-3dpin-beam{height:80px}
+}
+<style>
+.tc-orbit-wrap{position:relative;width:100%;max-width:380px;margin:0 auto;padding:60px 20px;min-height:480px}
+.tc-orbit-svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.tc-orbit-path{fill:none;stroke:rgba(50,173,120,.35);stroke-width:1.5;stroke-dasharray:4 6}
+.tc-orbit-badge{position:absolute;width:44px;height:44px;border-radius:50%;background:rgba(10,19,38,.9);border:1px solid rgba(50,173,120,.4);box-shadow:0 0 24px rgba(50,173,120,.35);display:flex;align-items:center;justify-content:center;color:#6ABB8C;z-index:3;animation:tcOrbitFloat 4s ease-in-out infinite}
+.tc-orbit-badge--1{top:70px;left:20px}
+.tc-orbit-badge--2{top:40px;right:30px;animation-delay:1.2s}
+@keyframes tcOrbitFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.tc-orbit-phone{position:relative;z-index:2;width:240px;margin:0 auto;border-radius:32px;background:linear-gradient(165deg,#12213f,#060b17);border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 60px rgba(0,92,139,.25);padding:14px 14px 20px;transform:perspective(900px) rotateY(-10deg) rotateX(4deg);transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.tc-orbit-wrap:hover .tc-orbit-phone{transform:perspective(900px) rotateY(-4deg) rotateX(2deg)}
+.tc-orbit-phone-notch{width:60px;height:6px;border-radius:4px;background:rgba(255,255,255,.15);margin:0 auto 14px}
+.tc-orbit-phone-screen{background:rgba(255,255,255,.03);border-radius:20px;padding:16px}
+.tc-orbit-phone-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.tc-orbit-phone-head span:first-child{font-size:14px;font-weight:800;color:#fff}
+.tc-orbit-phone-badge{font-size:10px;font-weight:700;color:#6ABB8C;background:rgba(50,173,120,.14);border:1px solid rgba(50,173,120,.3);padding:3px 8px;border-radius:999px}
+.tc-orbit-phone-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid rgba(255,255,255,.06)}
+.tc-orbit-phone-row:first-of-type{border-top:none}
+.tc-orbit-phone-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15);flex-shrink:0}
+.tc-orbit-phone-row--done .tc-orbit-phone-dot{background:#32AD78}
+.tc-orbit-phone-row--active .tc-orbit-phone-dot{background:#6ABB8C;box-shadow:0 0 0 4px rgba(106,187,140,.25)}
+.tc-orbit-phone-row--locked{opacity:.45}
+.tc-orbit-phone-row strong{display:block;font-size:13px;color:#fff;font-weight:700}
+.tc-orbit-phone-row small{display:block;font-size:11px;color:rgba(255,255,255,.55);margin-top:2px}
+@media (prefers-reduced-motion: reduce){.tc-orbit-badge{animation:none}.tc-orbit-phone{transition:none}}
+</style>
   </style>
 
   <header class="tc-nav-shell">
@@ -2626,138 +2919,65 @@
   <!-- ========== MAIN ========== -->
   <main id="main">
     <!-- ========== HERO ========== -->
-    <section class="hero tc-spark-hero" aria-labelledby="hero-title">
-      <div class="tc-spark-inner">
-        <div class="tc-spark-copy">
-          <span class="tc-spark-eyebrow">Tecnologia</span>
-          <h1 id="hero-title" class="tc-spark-title">A plataforma que <span class="tc-spark-mark">treina</span>, controla e comprova.</h1>
-          <p class="tc-spark-lead">LMS próprio, gestão de treinamentos e lista de presença digital — turmas, validades e certificados em um só lugar.</p>
-          <div class="tc-spark-actions">
-            <a class="tc-spark-btn tc-spark-btn--primary" href="#plataforma">Conhecer a plataforma
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a class="tc-spark-btn tc-spark-btn--ghost" href="../../index.html#contato">Falar com especialista</a>
-          </div>
-        </div>
-        <div class="tc-spark-visual" aria-hidden="true">
-          <div class="tc-spark-float tc-spark-float--back">
-            <div class="tc-spark-card">
-              <div class="tc-spark-card-head"><strong>Painel de gestão</strong><span>Live</span></div>
-              <div class="tc-spark-card-body">
-                <div class="tc-spark-row"><span>Turmas ativas</span><strong>24</strong></div>
-                <div class="tc-spark-row"><span>Validades em dia</span><span class="tc-spark-pill">98%</span></div>
-                <div class="tc-spark-row"><span>Certificados emitidos</span><strong>1.284</strong></div>
-                <div style="margin-top:10px;font-size:11px;font-weight:600;color:#495264">Conclusão da trilha</div>
-                <div class="tc-spark-bar"><i style="width:78%"></i></div>
-              </div>
-            </div>
-          </div>
-          <div class="tc-spark-float tc-spark-float--front">
-            <div class="tc-spark-phone">
-              <div class="tc-spark-phone-screen">
-                <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:700">Módulo</div>
-                <div style="font-size:20px;font-weight:800;color:#32AD78;margin-top:6px">NR-10</div>
-                <div style="font-size:13px;font-weight:600;margin-top:2px">Áreas Classificadas</div>
-                <div style="margin-top:14px;height:88px;border-radius:12px;background:linear-gradient(150deg,#102A4A,#0A1326);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center">
-                  <span style="width:40px;height:40px;border-radius:50%;background:rgba(50,173,120,.25);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
-                </div>
-                <div style="margin-top:14px;background:#32AD78;color:#fff;font-size:12px;font-weight:700;text-align:center;padding:11px;border-radius:10px">Iniciar treinamento</div>
-              </div>
-            </div>
-          </div>
+    <section class="hero hero-tec-cover" aria-labelledby="hero-title">
+      <img src="../../img/fundo%20tecnologia.png" alt="" class="hero-tec-cover-img"
+           onerror="this.style.display='none'"/>
+      <div class="hero-tec-cover-overlay" aria-hidden="true"></div>
+      <div class="hero-tec-cover-content">
+        <span class="tc-spark-eyebrow">Tecnologia</span>
+        <h1 id="hero-title" class="tc-spark-title">Tecnologia que <span class="tc-spark-mark">ensina</span>, comprova e protege.</h1>
+        <p class="tc-spark-lead">Plataforma de treinamentos e lista de presença digital — turmas, validades e certificados, tudo comprovado em um só lugar.</p>
+        <div class="tc-spark-actions">
+          <a class="tc-spark-btn tc-spark-btn--primary" href="#plataforma">Conhecer a plataforma
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="tc-spark-btn tc-spark-btn--ghost" href="../../index.html#contato">Falar com especialista</a>
         </div>
       </div>
     </section>
 
-<!-- ATALHO: PLATAFORMA / LISTA DIGITAL -->
-<section class="tc-choice-section" aria-label="Escolha o que quer conhecer">
-  <div class="tc-choice-grid">
-    <a href="#plataforma" class="tc-choice-card">
-      <div class="tc-choice-media">
-        <img src="../mockup-plataforma.png" alt="" onerror="this.onerror=null;this.src='../assets/mockup-plataforma.png';" />
+<!-- ATALHO: PLATAFORMA / LISTA DIGITAL — scroll meet (EVASION-style) -->
+<section class="tc-choice-meet" data-tc-choice-meet aria-label="Escolha o que quer conhecer">
+  <div class="tc-choice-meet-track">
+    <div class="tc-choice-meet-sticky">
+      <h2 class="tc-choice-meet-title">Conheça a Plataforma &amp; a Lista digital.</h2>
+      <div class="tc-choice-meet-stage">
+        <a href="#plataforma" class="tc-choice-meet-card tc-choice-meet-card--left">
+          <div class="tc-choice-meet-media">
+            <img src="../../img/PLataforma.png" alt="" loading="eager" />
+          </div>
+          <div class="tc-choice-meet-copy">
+            <h3>Plataforma</h3>
+            <p>Trilhas, avaliações e certificados em um LMS só.</p>
+          </div>
+          <span class="tc-choice-meet-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#presenca-root" class="tc-choice-meet-card tc-choice-meet-card--right">
+          <div class="tc-choice-meet-media">
+            <img src="../../img/Lista%20de%20presen%C3%A7a.png" alt="" loading="eager" />
+          </div>
+          <div class="tc-choice-meet-copy">
+            <h3>Lista de presença digital</h3>
+            <p>Autenticação, operação e relatórios prontos para auditoria.</p>
+          </div>
+          <span class="tc-choice-meet-arrow" aria-hidden="true">→</span>
+        </a>
       </div>
-      <div class="tc-choice-shade" aria-hidden="true"></div>
-      <div class="tc-choice-copy">
-        <h3>Plataforma</h3>
-        <p>Trilhas, avaliações e certificados em um LMS só.</p>
-        <span class="tc-choice-cta">Conhecer a plataforma →</span>
-      </div>
-    </a>
-    <a href="#presenca-root" class="tc-choice-card">
-      <div class="tc-choice-media">
-        <img src="../../uploads/img2home.png" alt="" />
-      </div>
-      <div class="tc-choice-shade" aria-hidden="true"></div>
-      <div class="tc-choice-copy">
-        <h3>Lista de presença digital</h3>
-        <p>Autenticação, operação e relatórios prontos para auditoria.</p>
-        <span class="tc-choice-cta">Conhecer a lista digital →</span>
-      </div>
-    </a>
+    </div>
   </div>
 </section>
-
-    <section class="tc-deep-steps tc-serenity" id="plataforma" aria-labelledby="deep-steps-title">
-      <div class="tc-serenity-fx" aria-hidden="true">
-        <span class="tc-serenity-orb tc-serenity-orb--1"></span>
-        <span class="tc-serenity-orb tc-serenity-orb--2"></span>
-        <span class="tc-serenity-orb tc-serenity-orb--3"></span>
-      </div>
-      <div class="tc-deep-steps-inner">
-      <div class="tc-deep-steps-head" data-tc-typewriter>
-        <span class="tc-deep-eyebrow">Do cadastro à comprovação</span>
-        <h2 id="deep-steps-title">
-          <span class="tc-tw-reveal">
-            <span class="tc-tw-text">Comece em minutos. <span class="tc-tw-accent">Centralize</span> tudo em um lugar.</span>
-          </span>
-        </h2>
-        <p class="tc-tw-sub" data-tc-tw-sub>Fluxo simples para RH, SESMT e gestores — sem trocar de ferramenta a cada etapa.</p>
-      </div>
-      <div class="tc-deep-steps-grid" data-tc-steps>
-        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
-          <div class="tc-deep-step-ico" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <div class="tc-deep-step-num">01</div>
-          <h3>Organize as turmas</h3>
-          <p>Cadastre colaboradores, defina trilhas por função e publique os treinamentos necessários.</p>
-          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </article>
-        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
-          <div class="tc-deep-step-ico" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M10 8l4 2.5L10 13z"/></svg>
-          </div>
-          <div class="tc-deep-step-num">02</div>
-          <h3>Treine e acompanhe</h3>
-          <p>Alunos estudam no celular ou no computador; gestores veem progresso e avaliações em tempo real.</p>
-          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </article>
-        <article class="tc-deep-step reveal" tabindex="0" role="button" aria-pressed="false" data-tc-step>
-          <div class="tc-deep-step-ico" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg>
-          </div>
-          <div class="tc-deep-step-num">03</div>
-          <h3>Comprove e audite</h3>
-          <p>Certificados, presença e relatórios ficam prontos para auditoria — com validades sob controle.</p>
-          <span class="tc-deep-step-more">Falar com especialista <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </article>
-      </div>
-      </div>
-      <!-- Grain por cima de tudo — assinatura Digital Serenity -->
-      <div class="tc-serenity-grain" aria-hidden="true"></div>
-    </section>
 
     <!-- ========== RECURSOS DETALHADOS (ritmo Cruip) ========== -->
     <div id="recursos">
 
-    <section class="tc-deep tc-deep--dark" aria-labelledby="deep-trilhas-title" data-tc-topic-section>
+    <section class="tc-deep tc-deep--dark" id="plataforma" aria-labelledby="deep-trilhas-title">
       <div class="tc-deep-inner">
         <div class="tc-deep-copy reveal">
           <span class="tc-deep-eyebrow">Trilhas · Avaliações</span>
           <h2 id="deep-trilhas-title" class="tc-deep-title">Do caminho à nota, no mesmo fluxo.</h2>
           <p class="tc-deep-lead">Monte trilhas por função, libere módulos com pré-requisitos e meça o aprendizado com provas automáticas — o aluno evolui com clareza e o gestor vê quem precisa de reforço.</p>
-          <div class="tc-deep-topics" role="tablist" aria-label="Recursos de trilha e avaliação">
-            <button type="button" class="tc-deep-topic is-active" role="tab" aria-selected="true" data-tc-topic="trilhas">
+          <div class="tc-deep-topics tc-deep-topics--static">
+            <div class="tc-deep-topic">
               <span class="tc-deep-topic-top">
                 <span class="tc-deep-topic-ico" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h6"/></svg>
@@ -2767,11 +2987,10 @@
               <strong>Trilhas e módulos</strong>
               <ul>
                 <li>Trilhas por função, unidade ou risco</li>
-                <li>Sequência com pré-requisitos</li>
                 <li>Conteúdo alinhado às NRs</li>
               </ul>
-            </button>
-            <button type="button" class="tc-deep-topic" role="tab" aria-selected="false" data-tc-topic="avaliacoes">
+            </div>
+            <div class="tc-deep-topic">
               <span class="tc-deep-topic-top">
                 <span class="tc-deep-topic-ico" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
@@ -2781,60 +3000,49 @@
               <strong>Avaliações e feedback</strong>
               <ul>
                 <li>Correção automática de provas</li>
-                <li>Notas e tentativas por turma</li>
                 <li>Feedback imediato ao aluno</li>
               </ul>
-            </button>
+            </div>
           </div>
           <a class="tc-deep-cta" href="../../index.html#contato">Quero montar minhas trilhas
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
-        <div class="tc-deep-visual reveal" aria-hidden="true">
-          <div class="tc-deep-stage">
-            <div class="tc-deep-panel tc-deep-pane is-on" data-tc-pane="trilhas">
-              <div class="tc-deep-panel-head"><strong>Trilha NR-10</strong><span>3 módulos</span></div>
-              <div class="tc-deep-panel-body">
-                <div class="tc-deep-mod">
-                  <div class="tc-deep-mod-ico">01</div>
-                  <div><strong>Fundamentos</strong><span>Concluído · 100%</span><div class="tc-deep-bar"><i style="width:100%"></i></div></div>
-                </div>
-                <div class="tc-deep-mod">
-                  <div class="tc-deep-mod-ico">02</div>
-                  <div><strong>Áreas classificadas</strong><span>Em andamento · 64%</span><div class="tc-deep-bar"><i style="width:64%"></i></div></div>
-                </div>
-                <div class="tc-deep-mod">
-                  <div class="tc-deep-mod-ico">03</div>
-                  <div><strong>Avaliação final</strong><span>Liberada após o módulo 02</span><div class="tc-deep-bar"><i style="width:0%"></i></div></div>
-                </div>
-              </div>
+        <div class="tc-deep-visual reveal">
+          <div class="tc-product-video">
+            <div class="tc-product-video-frame">
+              <video
+                class="tc-product-video-el"
+                poster="../../uploads/video-apresentacao-poster.jpg"
+                muted
+                playsinline
+                loop
+                preload="metadata"
+                data-tc-product-video
+              >
+                <source src="../../uploads/video-apresentacao.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="tc-product-video-play" data-tc-product-play aria-label="Reproduzir vídeo do produto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </button>
             </div>
-            <div class="tc-deep-panel tc-deep-pane" data-tc-pane="avaliacoes">
-              <div class="tc-deep-panel-head"><strong>Avaliação · NR-35</strong><span>Concluída</span></div>
-              <div class="tc-deep-panel-body">
-                <div class="tc-deep-score">
-                  <div class="tc-deep-score-card"><strong>9,2</strong><span>Nota final</span></div>
-                  <div class="tc-deep-score-card"><strong>12/12</strong><span>Questões</span></div>
-                </div>
-                <div class="tc-deep-mod tc-deep-mod--ok" style="margin-top:12px">
-                  <div class="tc-deep-mod-ico" style="font-size:0;color:#32AD78"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-                  <div><strong>Aprovado · feedback enviado</strong><span>Aluno e gestor notificados</span></div>
-                </div>
-              </div>
+            <div class="tc-product-video-meta">
+              <strong>Trilha NR-10 em ação</strong>
+              <span>Do módulo à avaliação — no mesmo fluxo</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="tc-deep tc-deep--soft" aria-labelledby="deep-gestao-title" data-tc-topic-section>
+    <section class="tc-deep tc-deep--soft" aria-labelledby="deep-gestao-title">
       <div class="tc-deep-inner tc-deep-inner--flip">
         <div class="tc-deep-copy reveal">
           <span class="tc-deep-eyebrow">Certificados · Gestão</span>
           <h2 id="deep-gestao-title" class="tc-deep-title">Comprove e acompanhe sem planilha.</h2>
           <p class="tc-deep-lead">Certificado emitido na hora da conclusão e painéis com progresso, validades e pendências — evidência pronta para auditoria e fiscalização.</p>
-          <div class="tc-deep-topics" role="tablist" aria-label="Recursos de certificado e gestão">
-            <button type="button" class="tc-deep-topic is-active" role="tab" aria-selected="true" data-tc-topic="cert">
+          <div class="tc-deep-topics tc-deep-topics--static">
+            <div class="tc-deep-topic">
               <span class="tc-deep-topic-top">
                 <span class="tc-deep-topic-ico" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg>
@@ -2844,11 +3052,10 @@
               <strong>Certificado automático</strong>
               <ul>
                 <li>Emissão digital com dados da NR</li>
-                <li>Histórico consultável a qualquer hora</li>
                 <li>Rastreável para auditorias</li>
               </ul>
-            </button>
-            <button type="button" class="tc-deep-topic" role="tab" aria-selected="false" data-tc-topic="gestao">
+            </div>
+            <div class="tc-deep-topic">
               <span class="tc-deep-topic-top">
                 <span class="tc-deep-topic-ico" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
@@ -2857,50 +3064,24 @@
               </span>
               <strong>Relatórios e gestão</strong>
               <ul>
-                <li>Conclusão e aderência por área</li>
                 <li>Alertas de validade e atraso</li>
                 <li>Exportação para compliance</li>
               </ul>
-            </button>
+            </div>
           </div>
           <a class="tc-deep-cta" href="#presenca-root">Ver lista de presença digital
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
         <div class="tc-deep-visual reveal" aria-hidden="true">
-          <div class="tc-deep-stage">
-            <div class="tc-deep-panel tc-deep-pane is-on" data-tc-pane="cert">
-              <div class="tc-deep-panel-body">
-                <div class="tc-deep-cert tc-deep-cert--light">
-                  <div class="tc-deep-cert-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg></div>
-                  <h4>Certificado NR-35</h4>
-                  <p>Trabalho em altura · TecnoCursos</p>
-                  <div class="tc-deep-cert-meta">
-                    <div>Aluno<strong>Ana Souza</strong></div>
-                    <div>Validade<strong>24 meses</strong></div>
-                    <div>Status<strong>Emitido</strong></div>
-                  </div>
-                </div>
-              </div>
+          <div class="tc-photo-card">
+            <div class="tc-photo-card-media">
+              <img src="../assets/mockup-plataforma-desktop-mobile.png" alt="" loading="lazy" />
             </div>
-            <div class="tc-deep-panel tc-deep-pane" data-tc-pane="gestao">
-              <div class="tc-deep-panel-head"><strong>Painel gerencial</strong><span>Live</span></div>
-              <div class="tc-deep-panel-body">
-                <div class="tc-deep-kpi">
-                  <div><strong>98%</strong><span>Em dia</span></div>
-                  <div><strong>24</strong><span>Turmas</span></div>
-                  <div><strong>12</strong><span>Alertas</span></div>
-                </div>
-                <div class="tc-deep-chart-row" aria-hidden="true">
-                  <span style="height:42%"></span>
-                  <span style="height:68%"></span>
-                  <span style="height:55%"></span>
-                  <span style="height:88%"></span>
-                  <span style="height:74%"></span>
-                  <span style="height:96%"></span>
-                  <span style="height:62%"></span>
-                </div>
-              </div>
+            <div class="tc-photo-card-copy">
+              <span class="tc-photo-card-tag">Certificado · Painel</span>
+              <strong>Emissão na hora da conclusão</strong>
+              <span>Validades, pendências e evidência pronta para auditoria.</span>
             </div>
           </div>
         </div>
@@ -2987,14 +3168,14 @@
 
     <div id="presenca-detalhes">
 
-      <section class="tc-deep tc-deep--soft" aria-labelledby="presenca-ops-title" data-tc-topic-section>
+      <section class="tc-deep tc-deep--soft" aria-labelledby="presenca-ops-title">
         <div class="tc-deep-inner">
           <div class="tc-deep-copy reveal">
             <span class="tc-deep-eyebrow">Presença · Operação</span>
             <h2 id="presenca-ops-title" class="tc-deep-title">Da entrada à operação, sem planilha.</h2>
             <p class="tc-deep-lead">Controle de presença com autenticação segura — e a operação de turmas, terceiros e entregas no mesmo lugar.</p>
-            <div class="tc-deep-topics" role="tablist" aria-label="Presença e operação">
-              <button type="button" class="tc-deep-topic is-active" role="tab" aria-selected="true" data-tc-topic="auth">
+            <div class="tc-deep-topics tc-deep-topics--static">
+              <div class="tc-deep-topic">
                 <span class="tc-deep-topic-top">
                   <span class="tc-deep-topic-ico" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v6M14 20h3"/></svg>
@@ -3005,10 +3186,9 @@
                 <ul>
                   <li>QR Code com selfie para validar o participante</li>
                   <li>Autenticação por crachá (HID)</li>
-                  <li>Inserção manual pelo instrutor quando necessário</li>
                 </ul>
-              </button>
-              <button type="button" class="tc-deep-topic" role="tab" aria-selected="false" data-tc-topic="ops">
+              </div>
+              <div class="tc-deep-topic">
                 <span class="tc-deep-topic-top">
                   <span class="tc-deep-topic-ico" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
@@ -3018,60 +3198,37 @@
                 <strong>Gestão e operação</strong>
                 <ul>
                   <li>Controle de NoShow quando a turma não enche</li>
-                  <li>Cadastro de empresas terceiras e instrutores externos</li>
                   <li>App offline para registrar presença sem conexão</li>
                 </ul>
-              </button>
+              </div>
             </div>
             <a class="tc-deep-cta" href="../../index.html#contato">Falar sobre presença e operação
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
           <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-deep-stage">
-              <div class="tc-deep-panel tc-deep-pane is-on" data-tc-pane="auth">
-                <div class="tc-deep-panel-head"><strong>Métodos de entrada</strong><span>Seguro</span></div>
-                <div class="tc-deep-panel-body">
-                  <div class="tc-presenca-auth-panel">
-                    <div class="tc-presenca-auth-row">
-                      <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v6M14 20h3"/></svg></div>
-                      <div><strong>QR Code + selfie</strong>Check-in com foto de autenticação</div>
-                    </div>
-                    <div class="tc-presenca-auth-row">
-                      <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div>
-                      <div><strong>Crachá HID</strong>Leitura rápida no acesso à turma</div>
-                    </div>
-                    <div class="tc-presenca-auth-row">
-                      <div class="tc-presenca-auth-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                      <div><strong>Manual pelo instrutor</strong>Quando o participante precisa de apoio</div>
-                    </div>
-                  </div>
-                </div>
+            <div class="tc-photo-card">
+              <div class="tc-photo-card-media">
+                <img src="../../uploads/img3home.png" alt="" loading="lazy" />
               </div>
-              <div class="tc-deep-panel tc-deep-pane" data-tc-pane="ops">
-                <div class="tc-deep-panel-head"><strong>Painel operacional</strong><span>Live</span></div>
-                <div class="tc-deep-panel-body">
-                  <div class="tc-presenca-ops-grid">
-                    <div class="tc-presenca-ops-item"><strong>NoShow</strong><span>Sinaliza turmas sem quórum e evita desperdício.</span></div>
-                    <div class="tc-presenca-ops-item"><strong>Terceiros</strong><span>Cadastro controlado de empresas parceiras.</span></div>
-                    <div class="tc-presenca-ops-item"><strong>Instrutores</strong><span>Externos e internos no mesmo fluxo.</span></div>
-                    <div class="tc-presenca-ops-item"><strong>Offline</strong><span>App funciona mesmo sem internet.</span></div>
-                  </div>
-                </div>
+              <div class="tc-photo-card-copy">
+                <span class="tc-photo-card-tag">Check-in · QR</span>
+                <strong>Presença validada na hora</strong>
+                <span>QR Code, selfie e operação de turma no mesmo fluxo.</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="tc-deep tc-deep--dark" aria-labelledby="presenca-gestao-title" data-tc-topic-section>
+      <section class="tc-deep tc-deep--dark" aria-labelledby="presenca-gestao-title">
         <div class="tc-deep-inner tc-deep-inner--flip">
           <div class="tc-deep-copy reveal">
             <span class="tc-deep-eyebrow">Relatórios · Gestão</span>
             <h2 id="presenca-gestao-title" class="tc-deep-title">Evidência pronta — e a gestão no seu padrão.</h2>
             <p class="tc-deep-lead">Relatórios alinhados à LGPD, matriz de treinamentos e dashboards pra enxergar tudo de uma vez.</p>
-            <div class="tc-deep-topics" role="tablist" aria-label="Relatórios e gestão">
-              <button type="button" class="tc-deep-topic is-active" role="tab" aria-selected="true" data-tc-topic="audit">
+            <div class="tc-deep-topics tc-deep-topics--static">
+              <div class="tc-deep-topic">
                 <span class="tc-deep-topic-top">
                   <span class="tc-deep-topic-ico" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
@@ -3082,10 +3239,9 @@
                 <ul>
                   <li>Relatório de presença em tempo real</li>
                   <li>Histórico rastreável de colaboradores e terceiros</li>
-                  <li>Certificados customizados para o cliente</li>
                 </ul>
-              </button>
-              <button type="button" class="tc-deep-topic" role="tab" aria-selected="false" data-tc-topic="smart">
+              </div>
+              <div class="tc-deep-topic">
                 <span class="tc-deep-topic-top">
                   <span class="tc-deep-topic-ico" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
@@ -3096,44 +3252,22 @@
                 <ul>
                   <li>Matriz por cargos alinhada aos padrões do cliente</li>
                   <li>Dashboard de treinamentos realizados</li>
-                  <li>Controle também de entregas (ex.: kits e cestas)</li>
                 </ul>
-              </button>
+              </div>
             </div>
             <a class="tc-deep-cta" href="../../index.html#contato">Ver relatórios e gestão
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
           <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-deep-stage">
-              <div class="tc-deep-panel tc-deep-pane is-on" data-tc-pane="audit">
-                <div class="tc-deep-panel-head"><strong>Pacote de evidências</strong><span>LGPD</span></div>
-                <div class="tc-deep-panel-body">
-                  <ul class="tc-presenca-report-list">
-                    <li><span class="tc-presenca-report-num">01</span><div><strong>Presenças com foto</strong>Quando a política da empresa exige selfie.</div></li>
-                    <li><span class="tc-presenca-report-num">02</span><div><strong>Presenças sem foto</strong>Respeitando as regras de privacidade.</div></li>
-                    <li><span class="tc-presenca-report-num">03</span><div><strong>Certificado custom</strong>Marca e layout do cliente.</div></li>
-                    <li><span class="tc-presenca-report-num">04</span><div><strong>Histórico completo</strong>Quem, quando e em qual turma.</div></li>
-                  </ul>
-                </div>
+            <div class="tc-photo-card">
+              <div class="tc-photo-card-media">
+                <img src="../../uploads/img1home.png" alt="" loading="lazy" />
               </div>
-              <div class="tc-deep-panel tc-deep-pane" data-tc-pane="smart">
-                <div class="tc-deep-panel-head"><strong>Matriz · visão rápida</strong><span>Custom</span></div>
-                <div class="tc-deep-panel-body">
-                  <div class="tc-deep-kpi">
-                    <div><strong>42</strong><span>Cargos</span></div>
-                    <div><strong>18</strong><span>NRs</span></div>
-                    <div><strong>97%</strong><span>Em dia</span></div>
-                  </div>
-                  <div class="tc-deep-mod">
-                    <div class="tc-deep-mod-ico">OK</div>
-                    <div><strong>Eletricista · NR-10</strong><span>Validade em 14 meses</span><div class="tc-deep-bar"><i style="width:82%"></i></div></div>
-                  </div>
-                  <div class="tc-deep-mod">
-                    <div class="tc-deep-mod-ico">!</div>
-                    <div><strong>Operador · NR-35</strong><span>Reciclagem em 28 dias</span><div class="tc-deep-bar"><i style="width:38%"></i></div></div>
-                  </div>
-                </div>
+              <div class="tc-photo-card-copy">
+                <span class="tc-photo-card-tag">LGPD · Matriz</span>
+                <strong>Dashboard pronto para auditoria</strong>
+                <span>Histórico, validades e visão por cargo — sem planilha.</span>
               </div>
             </div>
           </div>
@@ -3212,6 +3346,108 @@
       // Year
       var y = document.getElementById('year');
       if (y) y.textContent = new Date().getFullYear();
+
+      // Choice cards — EVASION-style scroll meet (sides → center)
+      (function () {
+        var root = document.querySelector('[data-tc-choice-meet]');
+        if (!root) return;
+
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+        var narrow = window.matchMedia('(max-width: 720px)');
+
+        function setMeet(v) {
+          root.style.setProperty('--meet', String(v));
+          root.classList.toggle('is-complete', v >= 0.98);
+        }
+
+        function update() {
+          if (reduce.matches || narrow.matches) {
+            setMeet(1);
+            return;
+          }
+          var total = root.offsetHeight - window.innerHeight;
+          if (total <= 0) {
+            setMeet(1);
+            return;
+          }
+          var top = root.getBoundingClientRect().top;
+          var raw = Math.min(1, Math.max(0, -top / total));
+          // ease-in-out for a smoother meet
+          var eased = raw < 0.5
+            ? 2 * raw * raw
+            : 1 - Math.pow(-2 * raw + 2, 2) / 2;
+          setMeet(eased);
+        }
+
+        var ticking = false;
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            update();
+            ticking = false;
+          });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', update);
+        if (typeof reduce.addEventListener === 'function') reduce.addEventListener('change', update);
+        if (typeof narrow.addEventListener === 'function') narrow.addEventListener('change', update);
+        update();
+      })();
+
+      // Product video (Trilhas) — play on click / pause on leave when reduced motion off
+      (function () {
+        var wrap = document.querySelector('.tc-product-video');
+        if (!wrap) return;
+        var video = wrap.querySelector('[data-tc-product-video]');
+        var btn = wrap.querySelector('[data-tc-product-play]');
+        if (!video || !btn) return;
+
+        function sync() {
+          wrap.classList.toggle('is-playing', !video.paused);
+          btn.setAttribute('aria-label', video.paused ? 'Reproduzir vídeo do produto' : 'Pausar vídeo do produto');
+        }
+
+        btn.addEventListener('click', function () {
+          if (video.paused) {
+            var p = video.play();
+            if (p && typeof p.catch === 'function') p.catch(function () {});
+          } else {
+            video.pause();
+          }
+          sync();
+        });
+
+        video.addEventListener('play', sync);
+        video.addEventListener('pause', sync);
+
+        if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                var p = video.play();
+                if (p && typeof p.catch === 'function') p.catch(function () {});
+              } else {
+                video.pause();
+              }
+              sync();
+            });
+          }, { threshold: 0.45 });
+          io.observe(wrap);
+        }
+      })();
+
+      // Aceternity-style 3D Pin hover
+      (function () {
+        var pins = document.querySelectorAll('[data-tc-3dpin]');
+        pins.forEach(function (pin) {
+          pin.addEventListener('mouseenter', function () { pin.classList.add('is-on'); });
+          pin.addEventListener('mouseleave', function () { pin.classList.remove('is-on'); });
+          pin.addEventListener('focusin', function () { pin.classList.add('is-on'); });
+          pin.addEventListener('focusout', function () { pin.classList.remove('is-on'); });
+        });
+      })();
 
       // Topic tiles → troca o preview ao lado
       (function () {
