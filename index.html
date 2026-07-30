@@ -756,7 +756,7 @@ section[aria-labelledby="tc-partners-title"]::before{
   <main>
     <!-- Banner -->
     <section style="position:relative;min-height:84vh;height:84vh;display:flex;align-items:center;overflow:hidden;background:#03060a" aria-labelledby="sobre-hero-title">
-      <img src="img/tela%20fundo%20sobre%20nos.png" alt="" style="position:absolute;top:-4%;left:-14%;width:145%;height:108%;max-width:none;object-fit:cover;object-position:left center;opacity:.95" onerror="this.style.display='none'"/>
+      <img src="img/tela%20fundo%20sobre%20nos.png" alt="" style="position:absolute;top:-4%;left:auto;right:-8%;width:145%;height:108%;max-width:none;object-fit:cover;object-position:right center;opacity:.95" onerror="this.style.display='none'"/>
       <div style="position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%, rgba(3,6,12,.84) 0%, rgba(4,9,18,.5) 46%, rgba(4,9,18,.12) 100%)" aria-hidden="true"></div>
       <div class="hero-tec-cover-content" style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif">
         <span class="tc-spark-eyebrow">Sobre nós</span>
@@ -969,37 +969,43 @@ section[aria-labelledby="tc-partners-title"]::before{
 
   <!-- ===================== CATÁLOGO DE NRs ===================== -->
   <sc-if value="{{ catalogo }}">
-  <main style="padding-top:72px">
-    <section style="position:relative;overflow:hidden;background:linear-gradient(180deg,#0A1326,#0C1C36);padding:clamp(56px,7vw,88px) 0 clamp(40px,5vw,64px)">
-      <div style="position:absolute;inset:0;background:radial-gradient(60% 80% at 85% -10%,rgba(0,92,139,.42),transparent 58%),radial-gradient(50% 70% at 5% 110%,rgba(50,173,120,.26),transparent 56%);pointer-events:none"></div>
-      <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px;text-align:center;display:flex;flex-direction:column;align-items:center">
-        <span style="display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#10ffcb;margin-bottom:18px">Catálogo</span>
-        <h1 style="font-size:clamp(32px,5vw,54px);line-height:1.06;letter-spacing:-.03em;font-weight:700;color:#fff;margin:0;max-width:720px">Todas as Normas Regulamentadoras</h1>
-        <p style="font-size:17px;line-height:1.6;color:rgba(255,255,255,.72);margin:18px 0 0;max-width:600px">Explore os treinamentos disponíveis e encontre a capacitação certa para a sua empresa.</p>
-
-        <div style="margin:30px auto 0;max-width:460px;width:100%">
-          <input type="text" placeholder="Buscar por NR, nome ou tema..." value="{{ catalogSearch }}" onInput="{{ setCatalogSearch }}" style="width:100%;box-sizing:border-box;padding:14px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:inherit;text-align:center"/>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:34px auto 0;max-width:780px;width:100%">
-          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 20px;text-align:center">
-            <div style="font-size:30px;font-weight:800;color:#10ffcb;line-height:1">{{ catalogTotal }}</div>
-            <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-top:8px">Total de treinamentos</div>
-          </div>
-          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 20px;text-align:center">
-            <div style="font-size:30px;font-weight:800;color:#10ffcb;line-height:1">{{ catalogFiltered.length }}</div>
-            <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-top:8px">Resultados encontrados</div>
-          </div>
-          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 20px;text-align:center">
-            <div style="font-size:30px;font-weight:800;color:#10ffcb;line-height:1">{{ catalogTotal }}</div>
-            <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-top:8px">Normas regulamentadoras</div>
-          </div>
+  <main>
+    <!-- Banner -->
+    <section style="position:relative;min-height:84vh;height:84vh;display:flex;align-items:center;overflow:hidden;background:#03060a" aria-labelledby="catalogo-hero-title">
+      <img src="img/tela%20fundo%20catalogo.png" alt="" style="position:absolute;top:0;left:-70%;right:auto;width:200%;height:100%;max-width:none;object-fit:cover;object-position:left center;opacity:.95" onerror="this.style.display='none'"/>
+      <div style="position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%, rgba(3,6,12,.84) 0%, rgba(4,9,18,.5) 46%, rgba(4,9,18,.12) 100%)" aria-hidden="true"></div>
+      <div class="hero-tec-cover-content" style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif">
+        <span class="tc-spark-eyebrow">Catálogo</span>
+        <h1 id="catalogo-hero-title" class="tc-spark-title">Todas as Normas <span class="tc-spark-mark">Regulamentadoras</span>.</h1>
+        <p class="tc-spark-lead">Explore os treinamentos disponíveis e encontre a capacitação certa para a sua empresa.</p>
+        <div class="tc-spark-actions">
+          <a class="tc-spark-btn tc-spark-btn--primary" href="#catalogo-lista">Ver treinamentos
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <button class="tc-spark-btn tc-spark-btn--ghost" onClick="{{ goContato }}">Fale com a gente</button>
         </div>
       </div>
     </section>
 
-    <section style="background:#f7f9fb;padding:clamp(48px,6vw,72px) 0 clamp(72px,9vw,110px)">
+    <section id="catalogo-lista" style="background:#f7f9fb;padding:clamp(48px,6vw,72px) 0 clamp(72px,9vw,110px)">
       <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+        <div style="margin:0 auto 28px;max-width:460px;width:100%">
+          <input type="text" placeholder="Buscar por NR, nome ou tema..." value="{{ catalogSearch }}" onInput="{{ setCatalogSearch }}" style="width:100%;box-sizing:border-box;padding:14px 18px;border-radius:12px;border:1px solid rgba(7,15,30,.12);background:#fff;color:#070F1E;font-size:15px;font-family:inherit;text-align:center;box-shadow:0 2px 12px rgba(7,15,30,.06)"/>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:0 auto 34px;max-width:780px;width:100%">
+          <div style="background:#fff;border:1px solid rgba(7,15,30,.08);border-radius:16px;padding:22px 20px;text-align:center;box-shadow:0 2px 12px rgba(7,15,30,.04)">
+            <div style="font-size:30px;font-weight:800;color:#00A88A;line-height:1">{{ catalogTotal }}</div>
+            <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(7,15,30,.55);margin-top:8px">Total de treinamentos</div>
+          </div>
+          <div style="background:#fff;border:1px solid rgba(7,15,30,.08);border-radius:16px;padding:22px 20px;text-align:center;box-shadow:0 2px 12px rgba(7,15,30,.04)">
+            <div style="font-size:30px;font-weight:800;color:#00A88A;line-height:1">{{ catalogFiltered.length }}</div>
+            <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(7,15,30,.55);margin-top:8px">Resultados encontrados</div>
+          </div>
+          <div style="background:#fff;border:1px solid rgba(7,15,30,.08);border-radius:16px;padding:22px 20px;text-align:center;box-shadow:0 2px 12px rgba(7,15,30,.04)">
+            <div style="font-size:30px;font-weight:800;color:#00A88A;line-height:1">{{ catalogTotal }}</div>
+            <div style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(7,15,30,.55);margin-top:8px">Normas regulamentadoras</div>
+          </div>
+        </div>
         <div style="display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
           <sc-for list="{{ catalogFiltered }}" as="n" hint-placeholder-count="13">
             <div style="background:#fff;border:1px solid rgba(7,15,30,.08);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(7,15,30,.05);transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-4px);box-shadow:0 16px 32px rgba(7,15,30,.1)">
