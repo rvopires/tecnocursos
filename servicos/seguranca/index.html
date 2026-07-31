@@ -103,11 +103,11 @@
     }
 
     /* ========== EMPILHAMENTO DE SEÇÕES NO SCROLL ==========
-       Hero e Normas ficam presas; Plataforma e Presença rolam normalmente. */
+       Sticky desativado — evita travar o scroll nesta página. */
     .hero,
     #normas-root {
-      position: sticky;
-      top: 0;
+      position: relative;
+      top: auto;
     }
     .normas-section {
       min-height: 100vh;
@@ -861,11 +861,10 @@
 
     /* ========== HERO — Shader Showcase (banner) ========== */
     .hero {
-      /* w-full overflow-hidden + sticky para o empilhamento de seções */
       width: 100%;
       overflow: hidden;
-      position: sticky;
-      top: 0;
+      position: relative;
+      top: auto;
       padding-block: 0;
       margin-bottom: 20px;
       min-height: unset;
@@ -2545,6 +2544,150 @@
     @media (prefers-reduced-motion: reduce) {
       .tc-nr-cta-main { animation: none; }
     }
+section.tc-seg-fact{
+  position:relative;
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:clamp(72px,10vw,120px) 24px;
+  text-align:center;
+  background:#0A1326;
+  overflow:hidden;
+}
+.tc-seg-fact::before{
+  content:"";
+  position:absolute;
+  left:50%;top:0;bottom:0;
+  width:2px;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,transparent,rgba(50,173,120,.45),transparent);
+  opacity:.35;
+  pointer-events:none;
+}
+.tc-seg-fact-inner{
+  position:relative;z-index:1;
+  max-width:720px;margin:0 auto;
+  padding-left:28px;
+  border-left:3px solid #32AD78;
+  text-align:left;
+}
+.tc-seg-fact-eyebrow{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#6ABB8C;margin-bottom:16px;
+}
+.tc-seg-fact-inner h2{
+  font-size:clamp(22px,3.2vw,34px);font-weight:700;color:#fff;
+  line-height:1.35;margin:0 0 16px;letter-spacing:-.02em;
+}
+.tc-seg-fact-inner h2::before{
+  content:"“";
+  display:block;
+  font-size:clamp(48px,6vw,72px);line-height:.7;color:#32AD78;
+  font-weight:800;margin-bottom:8px;opacity:.85;
+}
+.tc-seg-fact-note{font-size:15px;color:rgba(255,255,255,.72);margin:0 0 20px;line-height:1.55}
+.tc-seg-fact-source{display:block;font-size:12px;color:rgba(255,255,255,.4);font-style:italic}
+
+.tc-seg-section#pilares .tc-seg-card{
+  background:transparent;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  padding:8px 4px 12px;
+}
+.tc-seg-section#pilares .tc-seg-card:hover{
+  transform:none;
+  box-shadow:none;
+  border-color:transparent;
+}
+.tc-seg-section#pilares .tc-seg-card-icon{
+  width:48px;height:48px;border-radius:14px;margin-bottom:18px;
+}
+
+section.tc-seg-actions{
+  position:relative;
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:clamp(72px,9vw,110px) 24px;
+  text-align:center;
+  background:#F7F9FB;
+}
+.tc-seg-actions-inner{max-width:1100px;margin:0 auto}
+.tc-seg-actions-inner .tc-spark-eyebrow{
+  color:#005C8B;
+  background:rgba(0,92,139,.08);
+  border-color:rgba(0,92,139,.22);
+}
+.tc-seg-actions-inner h2{
+  font-size:clamp(24px,3.2vw,36px);font-weight:800;color:#1B2848;
+  margin:14px 0 48px;letter-spacing:-.03em;
+}
+.tc-seg-actions-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;text-align:left;
+  position:relative;
+}
+.tc-seg-actions-grid::before{
+  content:"";
+  position:absolute;left:8%;right:8%;top:28px;height:2px;
+  background:linear-gradient(90deg,#32AD78,#005C8B,#32AD78);
+  opacity:.35;pointer-events:none;
+}
+.tc-seg-actions-step{
+  position:relative;
+  background:transparent;border:none;border-radius:0;
+  padding:0 20px 8px;
+}
+.tc-seg-actions-num{
+  display:flex;align-items:center;justify-content:center;
+  width:56px;height:56px;margin:0 auto 18px;border-radius:50%;
+  font-size:18px;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,#32AD78,#005C8B);
+  box-shadow:0 10px 28px rgba(50,173,120,.28);
+  position:relative;z-index:1;
+}
+.tc-seg-actions-step strong{
+  display:block;font-size:17px;color:#1B2848;margin-bottom:8px;text-align:center;
+}
+.tc-seg-actions-step p{
+  font-size:14px;line-height:1.55;color:#64748b;margin:0;text-align:center;
+}
+@media(max-width:860px){
+  .tc-seg-actions-grid{grid-template-columns:1fr;gap:28px}
+  .tc-seg-actions-grid::before{
+    left:27px;right:auto;top:0;bottom:0;width:2px;height:auto;
+  }
+  .tc-seg-actions-step{display:grid;grid-template-columns:56px 1fr;gap:4px 16px;align-items:start;padding:0}
+  .tc-seg-actions-num{margin:0;grid-row:1 / span 2}
+  .tc-seg-actions-step strong,.tc-seg-actions-step p{text-align:left}
+  .tc-seg-fact-inner{border-left:none;padding-left:0;text-align:center}
+  .tc-seg-fact::before{display:none}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tc-seg-fact-inner.reveal,
+  .tc-seg-card.reveal,
+  .tc-seg-actions-step.reveal {
+    filter: blur(6px);
+    transform: translateY(24px) scale(0.94);
+    transition:
+      opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 750ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tc-seg-fact-inner.reveal.is-visible,
+  .tc-seg-card.reveal.is-visible,
+  .tc-seg-actions-step.reveal.is-visible {
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  .tc-seg-card.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-seg-card.reveal:nth-child(2) { --reveal-delay: 1; }
+  .tc-seg-card.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-seg-actions-step.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-seg-actions-step.reveal:nth-child(2) { --reveal-delay: 1; }
+  .tc-seg-actions-step.reveal:nth-child(3) { --reveal-delay: 2; }
+}
   </style>
 
   <header class="tc-nav-shell">
@@ -2610,27 +2753,39 @@
         <span class="tc-spark-eyebrow">Segurança</span>
         <h1 id="hero-title" class="tc-spark-title">Cultura de segurança através do <span class="tc-spark-mark">conhecimento</span>.</h1>
         <p class="tc-spark-lead">Treinamentos alinhados às NRs e às necessidades da sua empresa — prevenção, prática e capacitação sob medida.</p>
+        <div style="margin-top:28px">
+          <a href="#tc-actions-title" class="tc-cta-btn" style="display:inline-flex">Ver como atuamos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tc-seg-fact" aria-labelledby="tc-fact-title">
+      <div class="tc-seg-fact-inner reveal">
+        <span class="tc-seg-fact-eyebrow">Você sabia?</span>
+        <h2 id="tc-fact-title">Grande parte dos acidentes de trabalho pode ser evitada com prevenção, treinamentos adequados e gestão eficiente de riscos.</h2>
+        <p class="tc-seg-fact-note">Ignorar as NRs não é só um risco legal — é um risco humano e financeiro.</p>
+        <span class="tc-seg-fact-source">Fonte: Observatório de Segurança e Saúde no Trabalho (SmartLab) · Parceria MPT, QIT e ENIT</span>
       </div>
     </section>
 
     <section class="tc-seg-section" id="pilares" aria-labelledby="pilares-title">
       <div style="max-width:1200px;margin:0 auto 36px;text-align:center">
-        <span style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#32AD78;margin-bottom:12px">Segurança</span>
-        <h2 id="pilares-title" style="margin:0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#1B2848;letter-spacing:-.03em">Promovemos uma cultura de segurança através do conhecimento.</h2>
-        <p style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:#495264">Treinamentos alinhados às Normas Regulamentadoras e às necessidades da sua empresa.</p>
+        <span style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#005C8B;margin-bottom:12px">Nossa abordagem</span>
+        <h2 id="pilares-title" class="reveal" style="margin:0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#1B2848;letter-spacing:-.03em">Promovemos uma cultura de segurança através do conhecimento.</h2>
+        <p class="reveal" style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:#495264">Treinamentos alinhados às Normas Regulamentadoras e às necessidades da sua empresa.</p>
       </div>
       <div class="tc-seg-grid">
-        <article class="tc-seg-card">
+        <article class="tc-seg-card reveal">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>Cultura de prevenção</h3>
           <p>Conhecimento que fortalece atitudes seguras no dia a dia da operação.</p>
         </article>
-        <article class="tc-seg-card">
+        <article class="tc-seg-card reveal">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div>
           <h3>NRs aplicadas</h3>
           <p>Capacitações alinhadas às Normas Regulamentadoras e à realidade da sua empresa.</p>
         </article>
-        <article class="tc-seg-card">
+        <article class="tc-seg-card reveal">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
           <h3>Treinamento sob medida</h3>
           <p>Conteúdo personalizado para a realidade e as necessidades da sua operação.</p>
@@ -2638,38 +2793,57 @@
       </div>
     </section>
 
-    <section class="tc-seg-mobile" aria-labelledby="unidade-title">
-      <div class="tc-seg-mobile-inner">
-        <div>
-          <span class="tc-spark-eyebrow" style="margin-bottom:16px">Unidade Móvel</span>
-          <h2 id="unidade-title">Treinamentos práticos direto na sua empresa.</h2>
-          <p>NR 23 (Brigada de Incêndio), NR 33 e NR 35 com estrutura móvel — prática onde a operação acontece.</p>
-          <span class="tc-seg-badge">Atendimento no estado de São Paulo</span>
+    <section class="tc-seg-actions" aria-labelledby="tc-actions-title">
+      <div class="tc-seg-actions-inner">
+        <span class="tc-spark-eyebrow reveal">Como atuamos</span>
+        <h2 id="tc-actions-title" class="reveal">De ponta a ponta, transformando risco em segurança.</h2>
+        <div class="tc-seg-actions-grid">
+          <div class="tc-seg-actions-step reveal">
+            <span class="tc-seg-actions-num">01</span>
+            <strong>Identificar</strong>
+            <p>Mapeamos riscos e oportunidades de melhoria em toda a operação.</p>
+          </div>
+          <div class="tc-seg-actions-step reveal">
+            <span class="tc-seg-actions-num">02</span>
+            <strong>Corrigir</strong>
+            <p>Tratamos não conformidades com ações práticas e mensuráveis.</p>
+          </div>
+          <div class="tc-seg-actions-step reveal">
+            <span class="tc-seg-actions-num">03</span>
+            <strong>Prevenir</strong>
+            <p>Treinamentos e cultura de segurança que evitam acidentes e protegem pessoas e resultados.</p>
+          </div>
         </div>
-        <ul class="tc-seg-mobile-panel">
-          <li><div><strong>NR 23</strong>Brigada de Incêndio — prática e resposta a emergências.</div></li>
-          <li><div><strong>NR 33</strong>Espaços confinados — procedimentos e segurança operacional.</div></li>
-          <li><div><strong>NR 35</strong>Trabalho em altura — capacitação com foco em prevenção.</div></li>
+      </div>
+    </section>
+
+    <section class="tc-seg-mobile" aria-labelledby="suporte-title">
+      <div class="tc-seg-mobile-inner">
+        <div class="reveal">
+          <span class="tc-spark-eyebrow" style="margin-bottom:16px">Suporte contínuo</span>
+          <h2 id="suporte-title">Acompanhamento próximo, do início à reciclagem.</h2>
+          <p>Segurança não é um treinamento pontual — é acompanhamento constante, com prazos sob controle e suporte disponível durante toda a vigência do contrato.</p>
+          <span class="tc-seg-badge">Instrutores em todo o Brasil</span>
+        </div>
+        <ul class="tc-seg-mobile-panel reveal">
+          <li><div><strong>Suporte dedicado</strong>WhatsApp e e-mail, com resposta em horas úteis durante toda a vigência do contrato.</div></li>
+          <li><div><strong>Controle de validade</strong>Aviso antecipado para reciclagens, sem perder o prazo.</div></li>
+          <li><div><strong>Instrutores no Brasil todo</strong>Disponíveis em diversas regiões para atendimento presencial.</div></li>
         </ul>
       </div>
     </section>
 
 
-    <!-- ========== CTA CÓSMICO (home) ========== -->
-    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title">
+    <!-- ========== CTA CÓSMICO ========== -->
+    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title" style="min-height:clamp(480px,70vh,640px);display:flex;align-items:center;justify-content:center">
       <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
       <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
       <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>
       <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
       <div class="tc-cta-earth" aria-hidden="true"></div>
       <div class="tc-cta-copy">
-        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Pronto para transformar a gestão da sua empresa?</h2>
-        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 14px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança.</p>
-        <div class="tc-cta-subparts" aria-hidden="true">
-          <span>digitalizar processos</span>
-          <span>capacitar equipes</span>
-          <span>fortalecer a segurança</span>
-        </div>
+        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Quer fortalecer a cultura de segurança na sua empresa?</h2>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Prevenção, NRs aplicadas e suporte contínuo — do diagnóstico à reciclagem.</p>
         <div style="display:flex;justify-content:center">
           <a class="tc-cta-btn" href="../../index.html#contato">Falar com um especialista</a>
         </div>

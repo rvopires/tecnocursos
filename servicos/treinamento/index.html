@@ -103,11 +103,11 @@
     }
 
     /* ========== EMPILHAMENTO DE SEÇÕES NO SCROLL ==========
-       Hero e Normas ficam presas; Plataforma e Presença rolam normalmente. */
+       Sticky desativado nesta página — travava o scroll após as NRs. */
     .hero,
     #normas-root {
-      position: sticky;
-      top: 0;
+      position: relative;
+      top: auto;
     }
     .normas-section {
       min-height: 100vh;
@@ -861,11 +861,10 @@
 
     /* ========== HERO — Shader Showcase (banner) ========== */
     .hero {
-      /* w-full overflow-hidden + sticky para o empilhamento de seções */
       width: 100%;
       overflow: hidden;
-      position: sticky;
-      top: 0;
+      position: relative;
+      top: auto;
       padding-block: 0;
       margin-bottom: 20px;
       min-height: unset;
@@ -2421,51 +2420,81 @@
     .tc-nr-card {
       scroll-snap-align: start;
       flex: 0 0 auto;
-      width: 248px;
+      width: 268px;
       cursor: pointer;
       position: relative;
       border-radius: 20px;
       overflow: hidden;
       isolation: isolate;
-      background: linear-gradient(165deg, rgba(27, 40, 72, .72) 0%, rgba(7, 15, 30, .88) 100%);
+      background: #0C1524;
       border: 1px solid rgba(106, 187, 140, .22);
-      box-shadow: 0 12px 36px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .35);
       transition: transform .35s cubic-bezier(.22, .61, .36, 1), box-shadow .35s, border-color .35s;
       text-decoration: none;
       color: inherit;
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
-    .tc-nr-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 14%;
-      right: 14%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(106, 187, 140, .55), transparent);
-      z-index: 2;
-      pointer-events: none;
-      opacity: 1;
-    }
+    .tc-nr-card::before { display: none; }
     .tc-nr-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      border-color: rgba(50, 173, 120, .55);
-      box-shadow: 0 28px 56px rgba(0, 0, 0, .45), 0 0 0 1px rgba(50, 173, 120, .2), 0 0 40px rgba(50, 173, 120, .18), inset 0 1px 0 rgba(255, 255, 255, .12);
+      transform: translateY(-6px);
+      border-color: rgba(50, 173, 120, .5);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, .42), 0 0 0 1px rgba(50, 173, 120, .15);
     }
-    .tc-nr-card-glow {
+    .tc-nr-card-media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #070F1E;
+      flex-shrink: 0;
+    }
+    .tc-nr-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform .55s cubic-bezier(.22, .61, .36, 1);
+    }
+    .tc-nr-card:hover .tc-nr-card-media img { transform: scale(1.08); }
+    .tc-nr-card-media-shade {
       position: absolute;
-      top: -60px;
-      right: -40px;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(50, 173, 120, .28), transparent 68%);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4,9,18,.05) 0%, rgba(4,9,18,.45) 100%);
       pointer-events: none;
-      transition: opacity .35s, transform .35s;
     }
-    .tc-nr-card:hover .tc-nr-card-glow { transform: scale(1.15); }
+    .tc-nr-card-body {
+      position: relative;
+      z-index: 1;
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 148px;
+    }
+    .tc-nr-card-kicker {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,.4);
+      text-transform: uppercase;
+    }
+    .tc-nr-card-code {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      color: #32AD78;
+      line-height: 1;
+      margin: 10px 0 0;
+    }
+    .tc-nr-card-label {
+      font-size: 14.5px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #fff;
+      margin: 10px 0 14px;
+      min-height: 2.5em;
+    }
+    .tc-nr-card-glow { display: none; }
     .tc-nr-card-cta {
       margin-top: auto;
       align-self: flex-start;
@@ -2545,6 +2574,199 @@
     @media (prefers-reduced-motion: reduce) {
       .tc-nr-cta-main { animation: none; }
     }
+.tc-process{
+  position:relative;
+  background:#F7F9FB;
+  padding:clamp(72px,9vw,110px) 0;
+  overflow:hidden;
+}
+.tc-process-inner{max-width:1100px;margin:0 auto;padding:0 24px;text-align:center}
+.tc-process-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#005C8B;margin-bottom:14px}
+.tc-process-title{font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#1B2848;margin:0 0 12px;letter-spacing:-.03em}
+.tc-process-lead{font-size:16px;color:#64748b;margin:0 auto 48px;max-width:42ch}
+.tc-process-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  text-align:left;
+  position:relative;
+}
+.tc-process-grid::before{
+  content:"";
+  position:absolute;
+  left:8%;
+  right:8%;
+  top:28px;
+  height:2px;
+  background:linear-gradient(90deg,#32AD78,#005C8B,#32AD78);
+  opacity:.35;
+  pointer-events:none;
+}
+.tc-process-step{
+  position:relative;
+  padding:0 20px 8px;
+  background:transparent;
+  border:none;
+}
+.tc-process-num{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;height:56px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  font-size:18px;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,#32AD78,#005C8B);
+  box-shadow:0 10px 28px rgba(50,173,120,.28);
+  position:relative;z-index:1;
+}
+.tc-process-step strong{display:block;font-size:17px;color:#1B2848;margin-bottom:8px;text-align:center}
+.tc-process-step p{font-size:14px;line-height:1.55;color:#64748b;margin:0;text-align:center}
+@media(max-width:860px){
+  .tc-process-grid{grid-template-columns:1fr;gap:28px}
+  .tc-process-grid::before{
+    left:27px;right:auto;top:0;bottom:0;width:2px;height:auto;
+  }
+  .tc-process-step{display:grid;grid-template-columns:56px 1fr;gap:4px 16px;align-items:start;padding:0}
+  .tc-process-num{margin:0;grid-row:1 / span 2}
+  .tc-process-step strong,.tc-process-step p{text-align:left}
+}
+
+.tc-adv-strip{
+  background:linear-gradient(180deg,#E8F5EF 0%,#D5F0E4 100%);
+  padding:clamp(40px,6vw,64px) 0;
+}
+.tc-adv-strip .tc-adv-grid{
+  max-width:1100px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.tc-adv-chip{
+  display:flex;flex-direction:column;gap:12px;align-items:flex-start;
+  background:transparent;border:none;border-radius:0;padding:8px 4px;
+}
+.tc-adv-ico{
+  flex-shrink:0;width:40px;height:40px;border-radius:12px;
+  background:rgba(255,255,255,.7);border:1px solid rgba(50,173,120,.28);
+  color:#32AD78;display:flex;align-items:center;justify-content:center;
+}
+.tc-adv-chip strong{display:block;font-size:15px;color:#1B2848;font-weight:800;letter-spacing:-.01em}
+.tc-adv-chip span{font-size:13px;color:#495264;line-height:1.45}
+@media(max-width:900px){.tc-adv-strip .tc-adv-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tc-adv-strip .tc-adv-grid{grid-template-columns:1fr}}
+
+.tc-regions{
+  background:#0A1326;
+  padding:clamp(72px,9vw,110px) 0;
+  text-align:center;
+}
+.tc-regions-inner{max-width:980px;margin:0 auto;padding:0 24px}
+.tc-regions-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ABB8C;margin-bottom:14px}
+.tc-regions-title{font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#fff;margin:0 0 40px;letter-spacing:-.03em}
+.tc-regions-grid{
+  display:flex;flex-direction:column;gap:0;text-align:left;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.tc-regions-item{
+  display:grid;grid-template-columns:minmax(120px,180px) 1fr;
+  gap:16px;align-items:baseline;
+  background:transparent;border:none;border-radius:0;
+  padding:18px 4px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.tc-regions-item strong{display:block;font-size:clamp(16px,1.6vw,18px);color:#32AD78;margin:0;font-weight:800}
+.tc-regions-item span{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.45}
+@media(max-width:560px){.tc-regions-item{grid-template-columns:1fr;gap:4px}}
+
+.tc-mobile-unit{
+  position:relative;
+  min-height:clamp(420px,62vh,620px);
+  max-width:none;margin:0;padding:0;
+  overflow:hidden;
+  display:flex;align-items:flex-end;
+}
+.tc-mobile-unit-inner{
+  position:relative;z-index:2;
+  display:block;max-width:720px;
+  padding:clamp(48px,7vw,88px) 24px;
+  margin:0;
+}
+.tc-mobile-unit-media{
+  position:absolute;inset:0;z-index:0;
+}
+.tc-mobile-unit-media img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  border-radius:0;box-shadow:none;
+  transform:scale(1.04);
+  transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);
+}
+.tc-mobile-unit.is-in .tc-mobile-unit-media img{transform:scale(1)}
+.tc-mobile-unit::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(7,15,30,.88) 0%,rgba(7,15,30,.55) 48%,rgba(7,15,30,.2) 100%),
+    linear-gradient(0deg,rgba(7,15,30,.55) 0%,transparent 45%);
+}
+.tc-mobile-unit-tag{
+  display:inline-block;font-size:12px;font-weight:700;color:#10ffcb;
+  background:rgba(16,255,203,.1);border:1px solid rgba(16,255,203,.28);
+  padding:5px 12px;border-radius:999px;margin-bottom:14px;
+}
+.tc-mobile-unit-copy h2{
+  font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.03em;
+  text-shadow:0 8px 32px rgba(0,0,0,.35);
+}
+.tc-mobile-unit-copy p{
+  font-size:clamp(15px,1.5vw,17px);line-height:1.6;color:rgba(255,255,255,.78);margin:0;max-width:46ch;
+}
+@media(max-width:860px){
+  .tc-mobile-unit-inner{max-width:100%}
+  .tc-mobile-unit::after{
+    background:
+      linear-gradient(180deg,rgba(7,15,30,.35) 0%,rgba(7,15,30,.82) 55%,rgba(7,15,30,.92) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tc-process-step.reveal,
+  .tc-adv-chip.reveal,
+  .tc-regions-item.reveal {
+    filter: blur(6px);
+    transform: translateY(24px) scale(0.94);
+    transition:
+      opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 750ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tc-process-step.reveal.is-visible,
+  .tc-adv-chip.reveal.is-visible,
+  .tc-regions-item.reveal.is-visible {
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  .tc-process-step.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-process-step.reveal:nth-child(2) { --reveal-delay: 1; }
+  .tc-process-step.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-adv-chip.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-adv-chip.reveal:nth-child(2) { --reveal-delay: 1; }
+  .tc-adv-chip.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-adv-chip.reveal:nth-child(4) { --reveal-delay: 3; }
+  .tc-regions-item.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-regions-item.reveal:nth-child(2) { --reveal-delay: 1; }
+  .tc-regions-item.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-regions-item.reveal:nth-child(4) { --reveal-delay: 3; }
+  .tc-regions-item.reveal:nth-child(5) { --reveal-delay: 4; }
+  .tc-mobile-unit-copy.reveal {
+    filter: blur(8px);
+    transform: translateY(28px) scale(0.92);
+    transition:
+      opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 850ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 850ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tc-mobile-unit-copy.reveal.is-visible {
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
   </style>
 
   <header class="tc-nav-shell">
@@ -2610,6 +2832,9 @@
         <span class="tc-spark-eyebrow">Treinamento</span>
         <h1 id="hero-title" class="tc-spark-title">Capacitação nas <span class="tc-spark-mark">NRs</span> que a sua operação exige.</h1>
         <p class="tc-spark-lead">Teórico e prático, presencial, online ou híbrido — com conteúdo alinhado às Normas Regulamentadoras e à realidade da sua empresa.</p>
+        <div style="margin-top:28px">
+          <a href="#tc-nr-title" class="tc-cta-btn" style="display:inline-flex">Ver treinamentos</a>
+        </div>
       </div>
     </section>
 
@@ -2630,121 +2855,56 @@
         <div data-nr-track style="overflow:hidden;position:relative;padding:22px 0 26px">
           <div data-nr-inner style="display:flex;gap:18px;will-change:transform;padding:0 4px">
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 05</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">CIPAA</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%201.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 05</div><div class="tc-nr-card-label">CIPAA</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 06</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">EPI</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../img/seguranca.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 06</div><div class="tc-nr-card-label">EPI</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 10</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Eletricidade</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/img1home.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 10</div><div class="tc-nr-card-label">Eletricidade</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 11</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Movimentação de materiais</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/caminh%C3%A3o.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 11</div><div class="tc-nr-card-label">Movimentação de materiais</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 12</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Máquinas e equipamentos</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../img/treinamento.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 12</div><div class="tc-nr-card-label">Máquinas e equipamentos</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 13</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Caldeiras e vasos de pressão</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%202.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 13</div><div class="tc-nr-card-label">Caldeiras e vasos de pressão</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 17</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Ergonomia</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/img2home.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 17</div><div class="tc-nr-card-label">Ergonomia</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 18</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Construção civil</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/fachada.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 18</div><div class="tc-nr-card-label">Construção civil</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 20</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Inflamáveis e combustíveis</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%201.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 20</div><div class="tc-nr-card-label">Inflamáveis e combustíveis</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 23</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Combate a incêndio</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%202.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 23</div><div class="tc-nr-card-label">Combate a incêndio</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 33</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Espaços confinados</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../img/treinamento.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 33</div><div class="tc-nr-card-label">Espaços confinados</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 34</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Trabalhos a quente</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../uploads/img3home.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 34</div><div class="tc-nr-card-label">Trabalhos a quente</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
             <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
-              <div class="tc-nr-card-glow" aria-hidden="true"></div>
-              <div style="position:relative;z-index:1;padding:26px 24px 22px;min-height:236px;display:flex;flex-direction:column">
-                <span style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase">Treinamento NR</span>
-                <div style="font-size:clamp(40px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:#32AD78;line-height:1;margin:16px 0 0;text-shadow:0 0 28px rgba(50,173,120,.35)">NR 35</div>
-                <div style="font-size:15px;font-weight:600;line-height:1.35;color:#fff;margin:14px 0 18px;min-height:2.7em">Trabalho em altura</div>
-                <span class="tc-nr-card-cta">Ver detalhes</span>
-              </div>
+              <div class="tc-nr-card-media"><img src="../../img/seguranca.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
+              <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 35</div><div class="tc-nr-card-label">Trabalho em altura</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
           </div>
         </div>
@@ -2754,24 +2914,93 @@
       </div>
     </section>
 
-    <!-- ========== BLOCO 02 — NORMAS (React + Framer Motion) ========== -->
-    <div id="normas-root"></div>
+    <!-- COMO CONDUZIMOS CADA TREINAMENTO -->
+    <section class="tc-process" aria-labelledby="tc-process-title">
+      <div class="tc-process-inner">
+        <span class="tc-process-eyebrow reveal">Processo de treinamento</span>
+        <h2 id="tc-process-title" class="tc-process-title reveal">Como conduzimos cada treinamento.</h2>
+        <p class="tc-process-lead reveal">Um método completo, do conteúdo teórico à reciclagem periódica.</p>
+        <div class="tc-process-grid">
+          <div class="tc-process-step reveal">
+            <span class="tc-process-num">01</span>
+            <strong>Treinamento teórico</strong>
+            <p>Na plataforma (aulas online) e presencial, com questionário avaliativo dos colaboradores.</p>
+          </div>
+          <div class="tc-process-step reveal">
+            <span class="tc-process-num">02</span>
+            <strong>Treinamento prático</strong>
+            <p>Com instrutores qualificados em todo o país, foco em situações reais e vivência prática.</p>
+          </div>
+          <div class="tc-process-step reveal">
+            <span class="tc-process-num">03</span>
+            <strong>Reciclagem</strong>
+            <p>Periódica, mantém os colaboradores atualizados e em conformidade legal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- ========== CTA CÓSMICO (home) ========== -->
-    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title">
+    <!-- NOSSO DIFERENCIAL -->
+    <section class="tc-adv-strip" aria-label="Diferenciais do treinamento">
+      <div class="tc-adv-grid">
+        <div class="tc-adv-chip reveal">
+          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6 10v2a6 6 0 0012 0v-2M12 18v4"/></svg></span>
+          <div><strong>Libras</strong><span>Vídeos interpretados em todos os treinamentos teóricos.</span></div>
+        </div>
+        <div class="tc-adv-chip reveal">
+          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg></span>
+          <div><strong>Gamificação</strong><span>Pontos que estimulam o engajamento em cada conquista.</span></div>
+        </div>
+        <div class="tc-adv-chip reveal">
+          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10v4h4l5 5V5l-5 5H3z"/><path d="M16 8a5 5 0 010 8"/></svg></span>
+          <div><strong>Narração em áudio</strong><span>Áudios profissionais para facilitar o entendimento.</span></div>
+        </div>
+        <div class="tc-adv-chip reveal">
+          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg></span>
+          <div><strong>Certificado automático</strong><span>Emitido na aprovação, com validade e rastreio.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTRUTORES EM TODO O BRASIL -->
+    <section class="tc-regions" aria-labelledby="tc-regions-title">
+      <div class="tc-regions-inner">
+        <span class="tc-regions-eyebrow reveal">Cobertura nacional</span>
+        <h2 id="tc-regions-title" class="tc-regions-title reveal">Instrutores em todo o território nacional.</h2>
+        <div class="tc-regions-grid">
+          <div class="tc-regions-item reveal"><strong>Norte</strong><span>Presença estratégica na Amazônia Legal</span></div>
+          <div class="tc-regions-item reveal"><strong>Nordeste</strong><span>Instrutores especializados em toda a região</span></div>
+          <div class="tc-regions-item reveal"><strong>Centro-Oeste</strong><span>Atendimento ágil e personalizado</span></div>
+          <div class="tc-regions-item reveal"><strong>Sudeste</strong><span>Cobertura completa e logística eficiente</span></div>
+          <div class="tc-regions-item reveal"><strong>Sul</strong><span>Instrutores próximos à sua operação</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIDADE MÓVEL -->
+    <section class="tc-mobile-unit" aria-labelledby="tc-mobile-title" data-mobile-unit>
+      <div class="tc-mobile-unit-media" aria-hidden="true">
+        <img src="../../uploads/caminhão.png" alt="" loading="lazy"/>
+      </div>
+      <div class="tc-mobile-unit-inner">
+        <div class="tc-mobile-unit-copy reveal">
+          <span class="tc-mobile-unit-tag">Casa de fumaça · Exclusivo SP</span>
+          <h2 id="tc-mobile-title">O treinamento que vai até você.</h2>
+          <p>Unidade móvel exclusiva: caminhão adaptado com casa de fumaça para a NR-23, NR-33 e Brigada de Incêndio — treinamentos práticos de alto impacto, hoje disponível no estado de São Paulo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA CÓSMICO ========== -->
+    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title" style="min-height:clamp(480px,70vh,640px);display:flex;align-items:center;justify-content:center">
       <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
       <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
       <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>
       <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
       <div class="tc-cta-earth" aria-hidden="true"></div>
       <div class="tc-cta-copy">
-        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Pronto para transformar a gestão da sua empresa?</h2>
-        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 14px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança.</p>
-        <div class="tc-cta-subparts" aria-hidden="true">
-          <span>digitalizar processos</span>
-          <span>capacitar equipes</span>
-          <span>fortalecer a segurança</span>
-        </div>
+        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Quer capacitar sua equipe com teórico e prático?</h2>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Treinamentos em NRs online, presenciais ou híbridos — com instrutores em todo o Brasil.</p>
         <div style="display:flex;justify-content:center">
           <a class="tc-cta-btn" href="../../index.html#contato">Falar com um especialista</a>
         </div>
@@ -2950,6 +3179,29 @@
         reveals.forEach(function (el) { el.classList.add('is-visible'); });
       }
 
+      // Zoom suave na unidade móvel
+      (function () {
+        var unit = document.querySelector('[data-mobile-unit]');
+        if (!unit) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          unit.classList.add('is-in');
+          return;
+        }
+        if ('IntersectionObserver' in window) {
+          var mio = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting) {
+                unit.classList.add('is-in');
+                mio.unobserve(unit);
+              }
+            });
+          }, { threshold: 0.25 });
+          mio.observe(unit);
+        } else {
+          unit.classList.add('is-in');
+        }
+      })();
+
       // Carrossel NRs — marquee contínuo com setas
       (function initNrCarousel() {
         var nrTrack = document.querySelector('[data-nr-track]');
@@ -3016,12 +3268,6 @@
 
     })();
   </script>
-  <script src="../normas-section.bundle.js"></script>
-  <script>
-    if (window.NormasApp && typeof window.NormasApp.mountNormas === 'function') {
-      window.NormasApp.mountNormas(document.getElementById('normas-root'));
-    }
-    </script>
   <script src="../tc-cta-cosmic.js"></script>
 </body>
 </html>
