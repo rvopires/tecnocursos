@@ -1602,6 +1602,113 @@
     }
 
     /* ========== BLOCO 3 — Lista de Presença Digital (seção clara, dashboard escuro) ========== */
+    /* ========== BLOCO 3 — Lista de Presença Digital (seção clara, dashboard escuro) ========== */
+    /* Entrada só de texto + cards: blur + zoom + stagger */
+    @media (prefers-reduced-motion: no-preference) {
+      .presenca-section .presenca-eyebrow,
+      .presenca-section .presenca-title,
+      .presenca-section .presenca-lead,
+      .presenca-section .presenca-scroll-cta,
+      .presenca-section .presenca-pill,
+      .presenca-section .presenca-dashboard-wrap {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(28px) scale(0.88);
+        transition:
+          opacity .75s cubic-bezier(0.22, 1, 0.36, 1),
+          transform .75s cubic-bezier(0.22, 1, 0.36, 1),
+          filter .75s cubic-bezier(0.22, 1, 0.36, 1),
+          letter-spacing .9s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform, filter;
+      }
+      .presenca-section .presenca-title {
+        filter: blur(12px);
+        letter-spacing: 0.06em;
+        transform: translateY(36px) scale(0.82);
+        transform-origin: left center;
+      }
+      .presenca-section .presenca-lead {
+        transform: translateY(30px) scale(0.9);
+        transform-origin: left center;
+      }
+      .presenca-section .presenca-eyebrow,
+      .presenca-section .presenca-scroll-cta {
+        transform: translateY(24px) scale(0.9);
+      }
+      .presenca-section .presenca-dashboard-wrap {
+        filter: blur(14px);
+        transform: translateY(44px) scale(0.88);
+        transition-duration: .95s;
+      }
+      .presenca-section .presenca-pill {
+        filter: blur(8px);
+        transform: translateY(20px) scale(0.86);
+      }
+      .presenca-section.is-in .presenca-eyebrow,
+      .presenca-section.is-in .presenca-title,
+      .presenca-section.is-in .presenca-lead,
+      .presenca-section.is-in .presenca-scroll-cta,
+      .presenca-section.is-in .presenca-pill,
+      .presenca-section.is-in .presenca-dashboard-wrap {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+        letter-spacing: normal;
+      }
+      .presenca-section.is-in .presenca-eyebrow { transition-delay: .04s; }
+      .presenca-section.is-in .presenca-title { transition-delay: .1s; }
+      .presenca-section.is-in .presenca-lead { transition-delay: .2s; }
+      .presenca-section.is-in .presenca-pill:nth-child(1) { transition-delay: .28s; }
+      .presenca-section.is-in .presenca-pill:nth-child(2) { transition-delay: .36s; }
+      .presenca-section.is-in .presenca-pill:nth-child(3) { transition-delay: .44s; }
+      .presenca-section.is-in .presenca-scroll-cta { transition-delay: .52s; }
+      .presenca-section.is-in .presenca-dashboard-wrap { transition-delay: .18s; }
+
+      /* ponte tipográfica: fundo sempre visível — letras animam via JS */
+      .tc-adv-chip.reveal,
+      .tc-scene-modes .reveal,
+      .tc-report-doc.reveal--left,
+      .tc-report-copy.reveal--right {
+        filter: blur(8px);
+        transition:
+          opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+          filter 800ms cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: calc(var(--reveal-delay, 0) * 90ms);
+      }
+      .tc-adv-chip.reveal {
+        transform: translateY(36px) scale(0.88);
+      }
+      .tc-adv-chip.reveal.is-visible {
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+      }
+      .tc-scene-modes .reveal {
+        transform: translateY(32px) scale(0.88);
+        filter: blur(10px);
+      }
+      .tc-scene-modes .reveal.is-visible {
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+      }
+      .tc-report-doc.reveal--left {
+        transform: translateX(-32px) translateY(20px) scale(0.9);
+        filter: blur(12px);
+      }
+      .tc-report-doc.reveal--left.is-visible {
+        filter: blur(0);
+        transform: translateX(0) translateY(0) scale(1);
+      }
+      .tc-report-copy.reveal--right {
+        transform: translateX(28px) translateY(18px) scale(0.9);
+        filter: blur(8px);
+        transform-origin: left center;
+      }
+      .tc-report-copy.reveal--right.is-visible {
+        filter: blur(0);
+        transform: translateX(0) translateY(0) scale(1);
+      }
+    }
     .presenca-section {
       position: relative;
       overflow: hidden;
@@ -2337,6 +2444,27 @@
         opacity: 1;
         transform: translateY(0) scale(1);
       }
+      .reveal--left {
+        transform: translateX(-36px) scale(0.98);
+      }
+      .reveal--left.is-visible {
+        transform: translateX(0) scale(1);
+      }
+      .reveal--right {
+        transform: translateX(36px) scale(0.98);
+      }
+      .reveal--right.is-visible {
+        transform: translateX(0) scale(1);
+      }
+      .reveal--zoom {
+        transform: scale(1.08);
+        transition:
+          opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal--zoom.is-visible {
+        transform: scale(1);
+      }
       .hero-shader-title { animation: fade-drop 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s backwards; }
       .hero-shader-inner .lead { animation: fade-drop 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s backwards; }
       @keyframes fade-drop {
@@ -2350,6 +2478,13 @@
       .normas-copy.reveal { --reveal-delay: 0; }
       .normas-orbital-wrap.reveal { --reveal-delay: 1; }
       .digital-visual.reveal { --reveal-delay: 1; }
+      .tc-adv-grid .reveal:nth-child(1) { --reveal-delay: 0; }
+      .tc-adv-grid .reveal:nth-child(2) { --reveal-delay: 1; }
+      .tc-adv-grid .reveal:nth-child(3) { --reveal-delay: 2; }
+      .tc-adv-grid .reveal:nth-child(4) { --reveal-delay: 3; }
+      .tc-scene-modes .reveal:nth-child(1) { --reveal-delay: 2; }
+      .tc-scene-modes .reveal:nth-child(2) { --reveal-delay: 3; }
+      .tc-scene-modes .reveal:nth-child(3) { --reveal-delay: 4; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -2579,12 +2714,27 @@
       content: "";
       position: absolute;
       left: 50%;
-      bottom: 6%;
-      width: 78%;
-      height: 42%;
+      bottom: 2%;
+      width: 92%;
+      height: 78%;
       transform: translateX(-50%);
-      background: radial-gradient(ellipse at center, rgba(106, 187, 140, .28), transparent 72%);
-      filter: blur(18px);
+      background:
+        radial-gradient(ellipse at 48% 58%, rgba(255, 255, 255, .28) 0%, rgba(255, 255, 255, .1) 38%, transparent 68%),
+        radial-gradient(ellipse at 55% 70%, rgba(106, 187, 140, .22), transparent 72%);
+      filter: blur(22px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .tc-feat-devices::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 4%;
+      width: 70%;
+      height: 18%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, .35), transparent 70%);
+      filter: blur(16px);
       z-index: 0;
       pointer-events: none;
     }
@@ -2593,21 +2743,24 @@
       width: min(560px, 78%);
       z-index: 1;
       transform: translateX(-28px);
-      filter: drop-shadow(0 28px 48px rgba(0, 0, 0, .55));
+      filter: drop-shadow(0 28px 48px rgba(0, 0, 0, .45)) drop-shadow(0 0 28px rgba(255, 255, 255, .22));
     }
     .tc-feat-laptop-lid {
       background: linear-gradient(160deg, #1c2436, #0a0e18);
       border-radius: 14px 14px 4px 4px;
       padding: 10px 10px 8px;
-      border: 1px solid rgba(255, 255, 255, .1);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .22);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .12),
+        0 0 0 1px rgba(255, 255, 255, .06),
+        0 0 40px rgba(255, 255, 255, .14);
     }
     .tc-feat-laptop-screen {
       position: relative;
       aspect-ratio: 16 / 10;
       border-radius: 6px;
       overflow: hidden;
-      background: linear-gradient(180deg, #0E1B33, #070F1E);
+      background: #F7F9FB;
     }
     .tc-feat-desk {
       display: grid;
@@ -2621,8 +2774,8 @@
       align-items: center;
       gap: 10px;
       padding: 14px 8px;
-      border-right: 1px solid rgba(255, 255, 255, .08);
-      background: rgba(0, 0, 0, .18);
+      border-right: 1px solid rgba(27, 40, 72, .08);
+      background: #fff;
     }
     .tc-feat-desk-nav span {
       display: flex;
@@ -2630,7 +2783,7 @@
       align-items: center;
       gap: 4px;
       font-size: 8px;
-      color: rgba(255, 255, 255, .4);
+      color: #475569;
     }
     .tc-feat-desk-nav i {
       width: 28px;
@@ -2639,18 +2792,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, .06);
+      background: #F1F5F9;
       font-style: normal;
     }
-    .tc-feat-desk-nav span.is-on { color: rgba(255, 255, 255, .7); }
+    .tc-feat-desk-nav span.is-on { color: #0F1B33; font-weight: 700; }
     .tc-feat-desk-nav span.is-on i {
-      background: rgba(16, 255, 203, .12);
+      background: rgba(50, 173, 120, .14);
     }
     .tc-feat-desk-main {
       padding: 12px 16px 14px;
       min-width: 0;
       display: flex;
       flex-direction: column;
+      background: #F7F9FB;
     }
     .tc-feat-desk-logo {
       height: 18px;
@@ -2665,28 +2819,28 @@
     }
     .tc-feat-desk-kicker {
       font-size: 8.5px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, .4);
+      color: #334155;
     }
     .tc-feat-desk-title {
       font-size: 18px;
       font-weight: 800;
-      color: #10ffcb;
+      color: #0F766E;
       line-height: 1;
       margin-top: 5px;
     }
     .tc-feat-desk-sub {
       font-size: 12px;
       font-weight: 700;
-      color: #fff;
+      color: #0F1B33;
       margin-top: 3px;
     }
     .tc-feat-desk-desc {
       font-size: 10px;
       line-height: 1.45;
-      color: rgba(255, 255, 255, .55);
+      color: #1E293B;
       margin: 6px 0 0;
       max-width: 36ch;
     }
@@ -2695,8 +2849,8 @@
       flex: 1;
       min-height: 72px;
       border-radius: 10px;
-      background: linear-gradient(150deg, #102A4A, #0A1326);
-      border: 1px solid rgba(255, 255, 255, .08);
+      background: linear-gradient(150deg, #E8F5EF, #DCE8F5);
+      border: 1px solid rgba(27, 40, 72, .08);
       position: relative;
       overflow: hidden;
       display: flex;
@@ -2707,17 +2861,18 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(60% 70% at 50% 40%, rgba(50, 173, 120, .22), transparent 70%);
+      background: radial-gradient(60% 70% at 50% 40%, rgba(50, 173, 120, .18), transparent 70%);
     }
     .tc-feat-desk-play span {
       position: relative;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, .14);
+      background: #32AD78;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 8px 18px rgba(50, 173, 120, .35);
     }
     .tc-feat-desk-cta {
       margin-top: 10px;
@@ -2726,8 +2881,8 @@
       cursor: default;
       pointer-events: none;
       width: 100%;
-      background: #10ffcb;
-      color: #070F1E;
+      background: #32AD78;
+      color: #fff;
       font-size: 11px;
       font-weight: 600;
       padding: 10px;
@@ -2736,6 +2891,164 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
+    }
+    .tc-feat-laptop-base {
+      height: 12px;
+      margin: 0 -18px;
+      background: linear-gradient(180deg, #2a3348, #121826 70%, #0a0e16);
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .35);
+      position: relative;
+    }
+    .tc-feat-laptop-base::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 3px;
+      transform: translateX(-50%);
+      width: 18%;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+    }
+    .tc-feat-phone-shell {
+      position: relative;
+      width: 234px;
+      height: 478px;
+      border-radius: 38px;
+      background: linear-gradient(160deg, #1a1f2e, #05080f);
+      padding: 9px;
+      box-shadow:
+        0 32px 72px rgba(0, 0, 0, .55),
+        0 0 0 1px rgba(255, 255, 255, .14),
+        0 0 36px rgba(255, 255, 255, .2),
+        inset 0 0 0 2px rgba(255, 255, 255, .06);
+    }
+    .tc-feat-phone-notch {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 82px;
+      height: 20px;
+      background: #05080f;
+      border-radius: 0 0 13px 13px;
+      z-index: 3;
+    }
+    .tc-feat-phone-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #F7F9FB;
+    }
+    .tc-feat-phone-top {
+      padding: 34px 14px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tc-feat-phone-top img { height: 18px; width: auto; }
+    .tc-feat-phone-tabs {
+      display: flex;
+      justify-content: space-around;
+      padding: 0 12px 14px;
+      border-bottom: 1px solid rgba(27, 40, 72, .08);
+    }
+    .tc-feat-phone-tabs > span {
+      font-size: 9px;
+      color: #475569;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    .tc-feat-phone-tabs > span > i {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: #EEF2F6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+    }
+    .tc-feat-phone-tabs > span.is-on { color: #0F1B33; font-weight: 700; }
+    .tc-feat-phone-tabs > span.is-on > i { background: rgba(50, 173, 120, .14); }
+    .tc-feat-phone-body { padding: 14px 16px; }
+    .tc-feat-phone-kicker {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: #334155;
+      text-transform: uppercase;
+    }
+    .tc-feat-phone-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: #0F766E;
+      line-height: 1;
+      margin-top: 8px;
+    }
+    .tc-feat-phone-sub {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0F1B33;
+      margin-top: 3px;
+    }
+    .tc-feat-phone-desc {
+      font-size: 11px;
+      line-height: 1.5;
+      color: #1E293B;
+      margin: 10px 0 0;
+    }
+    .tc-feat-phone-play {
+      margin-top: 10px;
+      height: 96px;
+      border-radius: 12px;
+      background: linear-gradient(150deg, #E8F5EF, #DCE8F5);
+      border: 1px solid rgba(27, 40, 72, .08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tc-feat-phone-play::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 70% at 50% 40%, rgba(50, 173, 120, .2), transparent 70%);
+    }
+    .tc-feat-phone-play span {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #32AD78;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(50, 173, 120, .35);
+    }
+    .tc-feat-phone-cta {
+      font-family: inherit;
+      border: none;
+      cursor: default;
+      pointer-events: none;
+      width: 100%;
+      margin-top: 14px;
+      background: #32AD78;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
     }
     .tc-feat-icons {
       display: flex;
@@ -2814,25 +3127,6 @@
       outline: 2px solid rgba(16, 255, 203, .7);
       outline-offset: 4px;
       border-radius: 12px;
-    }
-    .tc-feat-laptop-base {
-      height: 12px;
-      margin: 0 -18px;
-      background: linear-gradient(180deg, #2a3348, #121826 70%, #0a0e16);
-      border-radius: 0 0 10px 10px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, .35);
-      position: relative;
-    }
-    .tc-feat-laptop-base::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 3px;
-      transform: translateX(-50%);
-      width: 18%;
-      height: 4px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .12);
     }
     .tc-feat-phone-wrap {
       position: absolute;
@@ -3143,6 +3437,79 @@
 .tc-show-bridge{position:relative;padding:clamp(40px,6vw,64px) 24px;text-align:center;background:linear-gradient(180deg,#0A1326 0%,#1B2848 50%,#F7F9FB 100%)}
 .tc-show-bridge p{margin:0 auto;max-width:28ch;font-size:clamp(22px,3.2vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff}
 .tc-show-bridge em{font-style:italic;color:#32AD78;font-weight:800}
+/* Ponte: multi-device → Lista de presença */
+.tc-feat-to-lista{
+  position:relative;
+  padding:clamp(56px,8vw,100px) 24px clamp(72px,10vw,128px);
+  text-align:center;
+  overflow:hidden;
+  background:linear-gradient(
+    180deg,
+    #071210 0%,
+    #0A1F18 32%,
+    #0C241C 52%,
+    #12352a 68%,
+    #1a4d3a 78%,
+    #2f6b52 86%,
+    #7fb89a 92%,
+    #D5EDE2 96%,
+    #F7F9FB 100%
+  );
+}
+.tc-feat-to-lista-title{
+  position:relative;z-index:1;
+  margin:0 auto;
+  font-size:clamp(22px,3.2vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:#fff;
+  text-shadow:0 8px 28px rgba(0,0,0,.3);
+}
+.tc-bridge-reveal{
+  display:inline-block;
+  overflow:hidden;
+  width:0;
+  max-width:100%;
+  vertical-align:bottom;
+  box-sizing:content-box;
+}
+.tc-feat-to-lista.is-on .tc-bridge-reveal{
+  transition:width 1.7s linear .12s;
+}
+.tc-bridge-text{
+  display:inline-block;
+  white-space:nowrap;
+  font-size:inherit;font-weight:inherit;letter-spacing:inherit;color:#fff;
+}
+.tc-bridge-text em{font-style:italic;color:#10ffcb;font-weight:800}
+.tc-feat-to-lista-sub{
+  position:relative;z-index:1;
+  display:block;margin:14px auto 0;max-width:36ch;
+  font-size:clamp(14px,1.4vw,16px);line-height:1.55;color:rgba(255,255,255,.72);font-weight:500;
+  min-height:2.8em;
+}
+.tc-feat-to-lista-sub .tc-bridge-char{
+  display:inline-block;
+  opacity:0;
+}
+.tc-feat-to-lista.is-typed .tc-feat-to-lista-sub .tc-bridge-char{
+  opacity:1;
+  transition:opacity .22s ease;
+}
+@media (max-width:720px){
+  .tc-bridge-text{white-space:normal}
+  .tc-feat-to-lista.is-on .tc-bridge-reveal{
+    width:auto !important;
+    transition:none;
+  }
+  .tc-feat-to-lista:not(.is-on) .tc-bridge-reveal{width:auto}
+  .tc-feat-to-lista:not(.is-on) .tc-bridge-text{opacity:0}
+  .tc-feat-to-lista.is-on .tc-bridge-text{
+    opacity:1;
+    transition:opacity .6s ease;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .tc-feat-to-lista.is-on .tc-bridge-reveal{width:auto !important;transition:none}
+  .tc-feat-to-lista-sub .tc-bridge-char{opacity:1 !important}
+}
 .tc-show-cert-band{
   position:relative;
   border-radius:24px;
@@ -3209,6 +3576,478 @@
 .tc-show-cert-copy .tc-show-card-tag{background:rgba(50,173,120,.18);border-color:rgba(106,187,140,.4);color:#6ABB8C;margin-bottom:12px}
 .tc-show-cert-copy strong{display:block;font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:0 0 8px}
 .tc-show-cert-copy p{margin:0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.72)}
+/* Relatórios · Gestão — feed ao vivo (só esta seção) */
+.tc-live{
+  position:relative;
+  padding:clamp(72px,9vw,120px) 0;
+  overflow:hidden;
+  background:#070F1E;
+  color:#fff;
+}
+.tc-live-ambient{
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 55% 50% at 85% 40%,rgba(50,173,120,.22),transparent 70%),
+    radial-gradient(ellipse 40% 45% at 10% 80%,rgba(0,92,139,.2),transparent 65%);
+}
+.tc-live-inner{
+  position:relative;z-index:2;
+  max-width:1140px;margin:0 auto;padding:0 24px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(36px,5vw,64px);
+  align-items:center;
+}
+.tc-live-eyebrow{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ABB8C;margin-bottom:14px
+}
+.tc-live-title{
+  margin:0;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:#fff
+}
+.tc-live-lead{
+  margin:14px 0 0;max-width:38ch;font-size:clamp(15px,1.5vw,17px);line-height:1.65;color:rgba(255,255,255,.68)
+}
+.tc-live-flow{
+  list-style:none;margin:28px 0 0;padding:0;
+  display:flex;flex-direction:column;gap:0;
+  border-left:1px solid rgba(106,187,140,.28);
+}
+.tc-live-flow li{
+  position:relative;
+  padding:0 0 22px 22px;
+}
+.tc-live-flow li:last-child{padding-bottom:0}
+.tc-live-flow li::before{
+  content:"";
+  position:absolute;left:-5px;top:6px;
+  width:9px;height:9px;border-radius:50%;
+  background:#32AD78;box-shadow:0 0 0 4px rgba(50,173,120,.2);
+}
+.tc-live-flow strong{
+  display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:4px
+}
+.tc-live-flow span{
+  display:block;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.58)
+}
+.tc-live-cta{
+  display:inline-flex;align-items:center;gap:8px;margin-top:28px;
+  font-family:inherit;font-size:14.5px;font-weight:700;padding:13px 22px;border-radius:999px;
+  text-decoration:none;background:#32AD78;color:#fff;
+  box-shadow:0 10px 28px rgba(50,173,120,.35);
+  transition:transform .2s,background .2s;
+}
+.tc-live-cta:hover{background:#6ABB8C;transform:translateY(-2px);color:#fff}
+.tc-live-board{
+  position:relative;
+  border-radius:20px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 28px 64px rgba(0,0,0,.45);
+  overflow:hidden;
+  backdrop-filter:blur(8px);
+}
+.tc-live-board-head{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:16px 18px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.2);
+}
+.tc-live-board-head strong{
+  display:block;font-size:14px;font-weight:800;color:#fff;letter-spacing:-.01em
+}
+.tc-live-board-head em{
+  display:block;font-style:normal;font-size:12px;color:rgba(255,255,255,.5);margin-top:2px
+}
+.tc-live-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:#6ABB8C;background:rgba(50,173,120,.14);border:1px solid rgba(106,187,140,.35);
+  padding:6px 11px;border-radius:999px;
+}
+.tc-live-pill i{
+  width:7px;height:7px;border-radius:50%;background:#32AD78;
+  animation:tcLivePulse 1.6s ease-in-out infinite;
+}
+@keyframes tcLivePulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(50,173,120,.55)}
+  50%{box-shadow:0 0 0 6px rgba(50,173,120,0)}
+}
+.tc-live-board-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.tc-live-board-stats div{
+  padding:14px 16px;text-align:center;
+}
+.tc-live-board-stats div + div{border-left:1px solid rgba(255,255,255,.08)}
+.tc-live-board-stats strong{
+  display:block;font-size:22px;font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1
+}
+.tc-live-board-stats span{
+  display:block;margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.45)
+}
+.tc-live-board-stats .is-green strong{color:#6ABB8C}
+.tc-live-board-stats .is-amber strong{color:#fbbf24}
+.tc-live-feed{padding:8px 10px 12px;display:flex;flex-direction:column;gap:6px}
+.tc-live-row{
+  display:grid;
+  grid-template-columns:36px 1fr auto;
+  gap:12px;align-items:center;
+  padding:10px 12px;border-radius:12px;
+  background:rgba(255,255,255,.03);
+  border:1px solid transparent;
+  animation:tcLiveRowIn .55s ease both;
+}
+.tc-live-row:nth-child(1){animation-delay:.05s}
+.tc-live-row:nth-child(2){animation-delay:.18s}
+.tc-live-row:nth-child(3){animation-delay:.32s}
+.tc-live-row:nth-child(4){animation-delay:.46s}
+.tc-live-row:nth-child(5){animation-delay:.6s}
+.tc-live-row.is-new{
+  border-color:rgba(50,173,120,.35);
+  background:rgba(50,173,120,.1);
+}
+@keyframes tcLiveRowIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+.tc-live-av{
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;color:#fff;
+  background:linear-gradient(145deg,#005C8B,#1B2848);
+}
+.tc-live-row.is-new .tc-live-av{background:linear-gradient(145deg,#32AD78,#005C8B)}
+.tc-live-row strong{display:block;font-size:13.5px;font-weight:700;color:#fff;letter-spacing:-.01em}
+.tc-live-row small{display:block;font-size:11.5px;color:rgba(255,255,255,.48);margin-top:2px}
+.tc-live-time{
+  font-size:12px;font-weight:700;color:#6ABB8C;white-space:nowrap
+}
+.tc-live-row.is-wait .tc-live-time{color:#fbbf24}
+.tc-live-row.is-off .tc-live-time{color:rgba(255,255,255,.35)}
+@media(max-width:900px){
+  .tc-live-inner{grid-template-columns:1fr;gap:32px}
+}
+@media(prefers-reduced-motion:reduce){
+  .tc-live-pill i,.tc-live-row{animation:none}
+}
+/* Presença · Operação — faixa cinematográfica (≠ dashboard React) */
+.tc-scene{
+  position:relative;
+  min-height:clamp(560px,78vh,780px);
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+  color:#fff;
+  background:#070F1E;
+}
+.tc-scene-media{
+  position:absolute;inset:0;z-index:0;
+}
+.tc-scene-media img{
+  width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  display:block;
+  transform:scale(1.06);
+  animation:tcSceneKen 18s ease-in-out infinite alternate;
+}
+@keyframes tcSceneKen{
+  from{transform:scale(1.06) translate3d(0,0,0)}
+  to{transform:scale(1.12) translate3d(-1.5%,-1%,0)}
+}
+.tc-scene-shade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(105deg,rgba(7,15,30,.94) 0%,rgba(7,15,30,.78) 34%,rgba(7,15,30,.35) 58%,rgba(7,15,30,.18) 100%),
+    linear-gradient(180deg,rgba(7,15,30,.15) 0%,rgba(7,15,30,.25) 45%,rgba(7,15,30,.88) 100%),
+    radial-gradient(ellipse 50% 55% at 78% 40%,rgba(50,173,120,.18),transparent 65%);
+}
+.tc-scene-inner{
+  position:relative;z-index:2;
+  width:100%;max-width:1140px;margin:0 auto;
+  padding:clamp(56px,8vw,96px) 24px;
+  display:flex;flex-direction:column;align-items:flex-start;
+}
+.tc-scene-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6ABB8C;margin-bottom:16px
+}
+.tc-scene-eyebrow::before{
+  content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,#6ABB8C)
+}
+.tc-scene-title{
+  margin:0;max-width:14ch;
+  font-size:clamp(34px,5.4vw,60px);line-height:1.02;letter-spacing:-.035em;font-weight:800;color:#fff;
+  text-shadow:0 12px 40px rgba(0,0,0,.35)
+}
+.tc-scene-title em{
+  font-style:italic;font-weight:800;color:#6ABB8C
+}
+.tc-scene-lead{
+  margin:18px 0 0;max-width:40ch;
+  font-size:clamp(15px,1.55vw,18px);line-height:1.65;color:rgba(255,255,255,.74)
+}
+.tc-scene-dock{
+  width:100%;
+  max-width:720px;
+  margin-top:clamp(28px,4vw,40px);
+  padding:18px 18px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(255,255,255,.7);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 50px rgba(0,0,0,.3), 0 0 0 1px rgba(50,173,120,.12);
+}
+.tc-scene-modes{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+}
+.tc-scene-modes article{
+  position:relative;
+  padding:4px 16px 4px 0;
+  border:none;
+  border-right:1px solid rgba(27,40,72,.1);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  transition:none;
+}
+.tc-scene-modes article:last-child{border-right:none;padding-right:0}
+.tc-scene-modes article:not(:first-child){padding-left:16px}
+.tc-scene-modes article::before{display:none}
+.tc-scene-modes article:hover{
+  transform:none;
+  background:transparent;
+  box-shadow:none;
+}
+.tc-scene-modes i{
+  display:block;font-style:normal;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#15803d;margin-bottom:8px
+}
+.tc-scene-modes strong{
+  display:block;font-size:14px;font-weight:800;letter-spacing:-.01em;color:#1B2848;margin-bottom:6px
+}
+.tc-scene-modes span{
+  display:block;font-size:13px;line-height:1.45;color:#64748b
+}
+@media(max-width:800px){
+  .tc-scene{min-height:auto;align-items:stretch}
+  .tc-scene-media{position:relative;height:280px}
+  .tc-scene-media img{animation:none;transform:scale(1.04);object-position:center 25%}
+  .tc-scene-shade{
+    background:
+      linear-gradient(180deg,rgba(7,15,30,.1) 0%,rgba(7,15,30,.45) 50%,#070F1E 100%),
+      radial-gradient(ellipse 70% 50% at 50% 30%,rgba(50,173,120,.12),transparent 70%)
+  }
+  .tc-scene-inner{padding:28px 24px 48px}
+  .tc-scene-title{max-width:none}
+  .tc-scene-dock{padding:16px;margin-top:22px;max-width:none}
+  .tc-scene-modes{grid-template-columns:1fr;gap:0}
+  .tc-scene-modes article{
+    padding:14px 0;border-right:none;border-top:1px solid rgba(27,40,72,.1)
+  }
+  .tc-scene-modes article:first-child{border-top:none;padding-top:2px}
+  .tc-scene-modes article:not(:first-child){padding-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .tc-scene-media img{animation:none;transform:none}
+}
+/* Relatórios · Gestão — mock de evidência / PDF */
+.tc-report{
+  position:relative;
+  padding:clamp(64px,8vw,110px) 0;
+  background:#CDEAD9;
+  color:#1B2848;
+  overflow:hidden;
+}
+.tc-report-ambient{
+  position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+.tc-report-mesh{
+  position:absolute;inset:-20%;
+  background:
+    radial-gradient(ellipse 45% 40% at 20% 30%,rgba(50,173,120,.55),transparent 60%),
+    radial-gradient(ellipse 40% 45% at 78% 25%,rgba(106,187,140,.5),transparent 62%),
+    radial-gradient(ellipse 50% 40% at 55% 80%,rgba(0,92,139,.22),transparent 65%),
+    linear-gradient(135deg,#CDEAD9 0%,#B8E0C8 40%,#D8F0E2 70%,#C6E6D4 100%);
+  background-size:120% 120%;
+  animation:tcReportMesh 16s ease-in-out infinite alternate;
+}
+.tc-report-orb{
+  position:absolute;border-radius:50%;filter:blur(40px);opacity:.85;
+  will-change:transform;
+}
+.tc-report-orb--a{
+  width:min(48vw,420px);height:min(48vw,420px);
+  left:-8%;top:10%;
+  background:radial-gradient(circle,rgba(50,173,120,.7) 0%,rgba(50,173,120,0) 70%);
+  animation:tcReportOrbA 12s ease-in-out infinite;
+}
+.tc-report-orb--b{
+  width:min(42vw,380px);height:min(42vw,380px);
+  right:-6%;top:-5%;
+  background:radial-gradient(circle,rgba(106,187,140,.65) 0%,rgba(106,187,140,0) 70%);
+  animation:tcReportOrbB 15s ease-in-out infinite;
+}
+.tc-report-orb--c{
+  width:min(36vw,320px);height:min(36vw,320px);
+  left:35%;bottom:-12%;
+  background:radial-gradient(circle,rgba(0,92,139,.28) 0%,rgba(0,92,139,0) 70%);
+  animation:tcReportOrbC 18s ease-in-out infinite;
+}
+@keyframes tcReportMesh{
+  from{transform:translate3d(0,0,0) scale(1);background-position:0% 40%}
+  to{transform:translate3d(-3%,2%,0) scale(1.06);background-position:80% 60%}
+}
+@keyframes tcReportOrbA{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(12%,8%,0) scale(1.12)}
+}
+@keyframes tcReportOrbB{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-10%,14%,0) scale(1.08)}
+}
+@keyframes tcReportOrbC{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(8%,-10%,0) scale(1.15)}
+}
+@media(prefers-reduced-motion:reduce){
+  .tc-report-mesh,.tc-report-orb{animation:none}
+}
+.tc-report-inner{
+  position:relative;z-index:2;
+  max-width:1140px;margin:0 auto;padding:0 24px;
+}
+.tc-report-head{
+  max-width:640px;margin:0 auto 36px;text-align:center;
+}
+.tc-report-eyebrow{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#005C8B;margin-bottom:14px
+}
+.tc-report-title{
+  margin:0;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:#1B2848
+}
+.tc-report-lead{
+  margin:14px auto 0;max-width:48ch;font-size:clamp(15px,1.5vw,17px);line-height:1.65;color:#64748b
+}
+.tc-report-band{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr);
+  gap:clamp(24px,4vw,48px);
+  align-items:center;
+  padding:clamp(24px,3.5vw,36px);
+  border-radius:24px;
+  background:#fff;
+  border:1px solid rgba(27,40,72,.08);
+  box-shadow:0 18px 48px rgba(16,24,40,.08);
+}
+.tc-report-doc{
+  position:relative;
+  background:linear-gradient(165deg,#F7FBF8 0%,#fff 42%,#F3F8FC 100%);
+  border-radius:12px;
+  padding:20px 22px 18px;
+  border:1px solid rgba(50,173,120,.18);
+  box-shadow:0 14px 36px rgba(16,24,40,.1), 8px 8px 0 rgba(0,92,139,.1);
+  max-width:520px;
+}
+.tc-report-doc-top{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;
+}
+.tc-report-doc-brand{display:flex;align-items:center;gap:10px}
+.tc-report-doc-brand img{height:20px;width:auto}
+.tc-report-doc-brand em{
+  font-style:normal;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b
+}
+.tc-report-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;background:linear-gradient(135deg,#32AD78,#15803d);
+  border:1px solid rgba(50,173,120,.4);
+  padding:5px 9px;border-radius:999px;white-space:nowrap;
+  box-shadow:0 6px 14px rgba(50,173,120,.25);
+}
+.tc-report-badge i{
+  width:6px;height:6px;border-radius:50%;background:#fff;display:inline-block
+}
+.tc-report-doc-kicker{
+  margin:0 0 4px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#005C8B
+}
+.tc-report-doc-title{
+  margin:0 0 14px;font-size:clamp(17px,1.8vw,20px);font-weight:800;letter-spacing:-.02em;color:#1B2848;line-height:1.2
+}
+.tc-report-table{display:flex;flex-direction:column;gap:6px}
+.tc-report-row{
+  display:grid;grid-template-columns:1.2fr .7fr .7fr;gap:10px;align-items:center;
+  padding:10px 12px;border-radius:10px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(27,40,72,.06)
+}
+.tc-report-row:nth-child(even){
+  background:rgba(50,173,120,.08);
+  border-color:rgba(50,173,120,.12)
+}
+.tc-report-row--head{
+  background:linear-gradient(90deg,rgba(0,92,139,.1),rgba(50,173,120,.1))!important;
+  border:1px solid rgba(0,92,139,.12)!important;
+  padding:8px 12px
+}
+.tc-report-row--head span{
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#005C8B
+}
+.tc-report-row strong{font-size:13px;font-weight:700;color:#1B2848}
+.tc-report-row em{font-style:normal;font-size:12px;font-weight:600;color:#64748b}
+.tc-report-row em.is-ok{
+  color:#15803d;
+  background:rgba(50,173,120,.14);
+  border:1px solid rgba(50,173,120,.22);
+  border-radius:999px;padding:3px 8px;justify-self:start
+}
+.tc-report-row em.is-off{
+  color:#b45309;
+  background:rgba(245,158,11,.14);
+  border:1px solid rgba(245,158,11,.25);
+  border-radius:999px;padding:3px 8px;justify-self:start
+}
+.tc-report-doc-foot{
+  display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-top:12px;
+  border-top:1px dashed rgba(0,92,139,.2);
+  background:rgba(0,92,139,.04);
+  margin-left:-6px;margin-right:-6px;padding-left:12px;padding-right:12px;
+  border-radius:0 0 8px 8px
+}
+.tc-report-doc-foot span{
+  font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#64748b
+}
+.tc-report-doc-foot strong{
+  display:block;margin-top:3px;font-size:12px;font-weight:700;color:#1B2848;text-transform:none;letter-spacing:0
+}
+.tc-report-copy{max-width:34ch}
+.tc-report-copy .tc-show-card-tag{margin-bottom:12px}
+.tc-report-copy strong{
+  display:block;font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:#1B2848;margin:0 0 10px
+}
+.tc-report-copy p{margin:0 0 18px;font-size:14.5px;line-height:1.55;color:#64748b}
+.tc-report-points{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.tc-report-points li{
+  display:flex;gap:10px;align-items:flex-start;
+  font-size:13.5px;line-height:1.45;color:#475569
+}
+.tc-report-points li::before{
+  content:"";width:8px;height:8px;margin-top:6px;border-radius:50%;flex-shrink:0;
+  background:#32AD78;box-shadow:0 0 0 3px rgba(50,173,120,.18)
+}
+@media(max-width:900px){
+  .tc-report-band{grid-template-columns:1fr;padding:22px 18px}
+  .tc-report-doc{max-width:none;box-shadow:0 12px 28px rgba(16,24,40,.1)}
+  .tc-report-row{grid-template-columns:1fr .8fr .7fr;gap:6px}
+}
+.tc-adv-strip{max-width:1100px;margin:0 auto;padding:32px 24px}
+.tc-adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tc-adv-chip{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
+.tc-adv-ico{flex-shrink:0;width:34px;height:34px;border-radius:10px;background:rgba(50,173,120,.14);border:1px solid rgba(50,173,120,.3);color:#32AD78;display:flex;align-items:center;justify-content:center}
+.tc-adv-chip strong{display:block;font-size:14px;color:#fff;font-weight:700}
+.tc-adv-chip span{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.4}
 .tc-show-ops{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -3649,12 +4488,12 @@
               <div class="tc-feat-laptop-screen" aria-label="Mesmo módulo NR-10 ATEX no notebook">
                 <div class="tc-feat-desk">
                   <aside class="tc-feat-desk-nav" aria-hidden="true">
-                    <span class="is-on"><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10ffcb" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></i>Início</span>
-                    <span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></i>Cursos</span>
-                    <span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0112 0v1"/></svg></i>Perfil</span>
+                    <span class="is-on"><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#32AD78" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></i>Início</span>
+                    <span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></i>Cursos</span>
+                    <span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0112 0v1"/></svg></i>Perfil</span>
                   </aside>
                   <div class="tc-feat-desk-main">
-                    <img class="tc-feat-desk-logo" src="../../uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt=""/>
+                    <img class="tc-feat-desk-logo" src="../../uploads/NOVA%20LOGO%20TECNOCURSOS%201.png" alt=""/>
                     <div class="tc-feat-desk-kicker">Módulo de treinamento</div>
                     <div class="tc-feat-desk-title">NR-10 — ATEX</div>
                     <div class="tc-feat-desk-sub">Áreas Classificadas</div>
@@ -3662,7 +4501,7 @@
                     <div class="tc-feat-desk-play">
                       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
                     </div>
-                    <button type="button" class="tc-feat-desk-cta" tabindex="-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="#070F1E"><path d="M8 5v14l11-7z"/></svg>Iniciar o treinamento</button>
+                    <button type="button" class="tc-feat-desk-cta" tabindex="-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>Iniciar o treinamento</button>
                   </div>
                 </div>
               </div>
@@ -3671,25 +4510,26 @@
           </div>
 
           <div class="tc-feat-phone-wrap" data-phone-float>
-            <div style="position:relative;width:234px;height:478px;border-radius:38px;background:linear-gradient(160deg,#1a1f2e,#05080f);padding:9px;box-shadow:0 32px 72px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08),inset 0 0 0 2px rgba(255,255,255,.04)">
-              <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);width:82px;height:20px;background:#05080f;border-radius:0 0 13px 13px;z-index:3"></div>
-              <div style="position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,#0E1B33,#070F1E)">
-                <div style="padding:22px 14px 10px;display:flex;align-items:center;gap:8px"><img src="../../uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" style="height:18px;width:auto"/></div>
-                <div style="display:flex;justify-content:space-around;padding:0 12px 14px;border-bottom:1px solid rgba(255,255,255,.08)">
-                  <span style="font-size:9px;color:rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;gap:5px"><span style="width:30px;height:30px;border-radius:9px;background:rgba(16,255,203,.1);display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10ffcb" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span>Início</span>
-                  <span style="font-size:9px;color:rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;gap:5px"><span style="width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></span>Cursos</span>
-                  <span style="font-size:9px;color:rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;gap:5px"><span style="width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0112 0v1"/></svg></span>Perfil</span>
+            <div class="tc-feat-phone-shell">
+              <div class="tc-feat-phone-notch" aria-hidden="true"></div>
+              <div class="tc-feat-phone-screen">
+                <div class="tc-feat-phone-top">
+                  <img src="../../uploads/NOVA%20LOGO%20TECNOCURSOS%201.png" alt="TecnoCursos"/>
                 </div>
-                <div style="padding:14px 16px">
-                  <div style="font-size:9.5px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.4);text-transform:uppercase">Módulo de treinamento</div>
-                  <div style="font-size:21px;font-weight:800;color:#10ffcb;line-height:1;margin-top:8px">NR-10 — ATEX</div>
-                  <div style="font-size:14px;font-weight:700;color:#fff;margin-top:3px">Áreas Classificadas</div>
-                  <p style="font-size:11px;line-height:1.5;color:rgba(255,255,255,.55);margin:10px 0 0">Capacitação em segurança nas Áreas Classificadas conforme NR-10 e ATEX.</p>
-                  <div style="margin-top:10px;height:96px;border-radius:12px;background:linear-gradient(150deg,#102A4A,#0A1326);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
-                    <div style="position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 40%,rgba(50,173,120,.22),transparent 70%)"></div>
-                    <span style="position:relative;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+                <div class="tc-feat-phone-tabs">
+                  <span class="is-on"><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#32AD78" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></i>Início</span>
+                  <span><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></i>Cursos</span>
+                  <span><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0112 0v1"/></svg></i>Perfil</span>
+                </div>
+                <div class="tc-feat-phone-body">
+                  <div class="tc-feat-phone-kicker">Módulo de treinamento</div>
+                  <div class="tc-feat-phone-title">NR-10 — ATEX</div>
+                  <div class="tc-feat-phone-sub">Áreas Classificadas</div>
+                  <p class="tc-feat-phone-desc">Capacitação em segurança nas Áreas Classificadas conforme NR-10 e ATEX.</p>
+                  <div class="tc-feat-phone-play">
+                    <span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
                   </div>
-                  <button style="font-family:inherit;border:none;cursor:pointer;width:100%;margin-top:14px;background:#10ffcb;color:#070F1E;font-size:12px;font-weight:600;padding:12px;border-radius:11px;display:flex;align-items:center;justify-content:center;gap:7px"><svg width="13" height="13" viewBox="0 0 24 24" fill="#070F1E"><path d="M8 5v14l11-7z"/></svg>Iniciar o treinamento</button>
+                  <button type="button" class="tc-feat-phone-cta" tabindex="-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>Iniciar o treinamento</button>
                 </div>
               </div>
             </div>
@@ -3722,112 +4562,126 @@
       </div>
     </section>
 
+    <div class="tc-feat-to-lista" data-feat-bridge>
+      <p class="tc-feat-to-lista-title">
+        <span class="tc-bridge-reveal">
+          <span class="tc-bridge-text">Celular ou notebook → <em>lista digital</em></span>
+        </span>
+      </p>
+      <span class="tc-feat-to-lista-sub" data-bridge-sub>O aluno treina onde estiver. A presença comprova que ele esteve lá.</span>
+    </div>
+
     <!-- ========== BLOCO 03 — LISTA DE PRESENÇA DIGITAL (React + Framer Motion) ========== -->
     <div id="presenca-root"></div>
 
     <div id="presenca-detalhes">
 
-      <section class="tc-deep tc-deep--soft" aria-labelledby="presenca-ops-title">
-        <div class="tc-deep-inner">
-          <div class="tc-deep-copy reveal">
-            <span class="tc-deep-eyebrow">Presença · Operação</span>
-            <h2 id="presenca-ops-title" class="tc-deep-title">Da entrada à operação, sem planilha.</h2>
-            <p class="tc-deep-lead">Controle de presença com autenticação segura — e a operação de turmas, terceiros e entregas no mesmo lugar.</p>
-            <div class="tc-deep-topics tc-deep-topics--static">
-              <div class="tc-deep-topic">
-                <span class="tc-deep-topic-top">
-                  <span class="tc-deep-topic-ico" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v6M14 20h3"/></svg>
-                  </span>
-                  <span class="tc-deep-topic-kicker">01</span>
-                </span>
-                <strong>Presença e autenticação</strong>
-                <ul>
-                  <li>QR Code com selfie para validar o participante</li>
-                  <li>Autenticação por crachá (HID)</li>
-                </ul>
-              </div>
-              <div class="tc-deep-topic">
-                <span class="tc-deep-topic-top">
-                  <span class="tc-deep-topic-ico" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                  </span>
-                  <span class="tc-deep-topic-kicker">02</span>
-                </span>
-                <strong>Gestão e operação</strong>
-                <ul>
-                  <li>Controle de NoShow quando a turma não enche</li>
-                  <li>App offline para registrar presença sem conexão</li>
-                </ul>
-              </div>
-            </div>
-            <a class="tc-deep-cta" href="../../index.html#contato">Falar sobre presença e operação
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+      <section class="tc-adv-strip" aria-label="Vantagens da lista de presença digital">
+        <div class="tc-adv-grid">
+          <div class="tc-adv-chip reveal">
+            <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h8m4-14v14a2 2 0 01-2 2h-2M14 3l6 6h-6z"/><path d="M4 4l16 16" stroke-width="2"/></svg></span>
+            <div><strong>Sem papel</strong><span>Elimina lista física e arquivo em pasta.</span></div>
           </div>
-          <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-photo-card">
-              <div class="tc-photo-card-media">
-                <img src="../../uploads/img3home.png" alt="" loading="lazy" />
-              </div>
-              <div class="tc-photo-card-copy">
-                <span class="tc-photo-card-tag">Check-in · QR</span>
-                <strong>Presença validada na hora</strong>
-                <span>QR Code, selfie e operação de turma no mesmo fluxo.</span>
-              </div>
+          <div class="tc-adv-chip reveal">
+            <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><strong>Auditoria em tempo real</strong><span>Relatório pronto quando pedirem.</span></div>
+          </div>
+          <div class="tc-adv-chip reveal">
+            <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+            <div><strong>Comprovação confiável</strong><span>Documento pronto para fiscalização.</span></div>
+          </div>
+          <div class="tc-adv-chip reveal">
+            <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
+            <div><strong>Histórico rastreável</strong><span>Quem, quando e em qual turma.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tc-scene" aria-labelledby="presenca-ops-title">
+        <div class="tc-scene-media reveal reveal--zoom" aria-hidden="true">
+          <img src="../../uploads/img3home.png" alt="" loading="lazy"/>
+          <div class="tc-scene-shade"></div>
+        </div>
+        <div class="tc-scene-inner reveal">
+          <span class="tc-scene-eyebrow">Presença · Operação</span>
+          <h2 id="presenca-ops-title" class="tc-scene-title">Da entrada à operação, <em>sem planilha.</em></h2>
+          <p class="tc-scene-lead">QR com selfie ou crachá HID na porta — a lista registra, e a operação segue com NoShow e app offline.</p>
+          <div class="tc-scene-dock">
+            <div class="tc-scene-modes">
+              <article class="reveal">
+                <i>01</i>
+                <strong>QR + selfie</strong>
+                <span>Check-in validado na hora, com foto de autenticação.</span>
+              </article>
+              <article class="reveal">
+                <i>02</i>
+                <strong>Crachá HID</strong>
+                <span>Leitura rápida pra quem já usa identificação por crachá.</span>
+              </article>
+              <article class="reveal">
+                <i>03</i>
+                <strong>NoShow · Offline</strong>
+                <span>Turmas, terceiros e registro mesmo sem conexão.</span>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="tc-deep tc-deep--dark" aria-labelledby="presenca-gestao-title">
-        <div class="tc-deep-inner tc-deep-inner--flip">
-          <div class="tc-deep-copy reveal">
-            <span class="tc-deep-eyebrow">Relatórios · Gestão</span>
-            <h2 id="presenca-gestao-title" class="tc-deep-title">Evidência pronta — e a gestão no seu padrão.</h2>
-            <p class="tc-deep-lead">Relatórios alinhados à LGPD, matriz de treinamentos e dashboards pra enxergar tudo de uma vez.</p>
-            <div class="tc-deep-topics tc-deep-topics--static">
-              <div class="tc-deep-topic">
-                <span class="tc-deep-topic-top">
-                  <span class="tc-deep-topic-ico" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-                  </span>
-                  <span class="tc-deep-topic-kicker">01</span>
-                </span>
-                <strong>Relatórios e auditoria</strong>
-                <ul>
-                  <li>Relatório de presença em tempo real</li>
-                  <li>Histórico rastreável de colaboradores e terceiros</li>
-                </ul>
+      <section class="tc-report" aria-labelledby="presenca-gestao-title">
+        <div class="tc-report-ambient" aria-hidden="true">
+          <div class="tc-report-mesh"></div>
+          <div class="tc-report-orb tc-report-orb--a"></div>
+          <div class="tc-report-orb tc-report-orb--b"></div>
+          <div class="tc-report-orb tc-report-orb--c"></div>
+        </div>
+        <div class="tc-report-inner">
+          <div class="tc-report-head reveal">
+            <span class="tc-report-eyebrow">Relatórios · Gestão</span>
+            <h2 id="presenca-gestao-title" class="tc-report-title">Evidência pronta — e a gestão no seu padrão.</h2>
+            <p class="tc-report-lead">Relatórios alinhados à LGPD, matriz de treinamentos e dashboards pra enxergar tudo de uma vez.</p>
+          </div>
+
+          <div class="tc-report-band">
+            <div class="tc-report-doc reveal reveal--left" aria-hidden="true">
+              <div class="tc-report-doc-top">
+                <div class="tc-report-doc-brand">
+                  <img src="../../uploads/NOVA%20LOGO%20TECNOCURSOS%201.png" alt=""/>
+                  <em>PDF · Auditoria</em>
+                </div>
+                <span class="tc-report-badge"><i></i>LGPD ok</span>
               </div>
-              <div class="tc-deep-topic">
-                <span class="tc-deep-topic-top">
-                  <span class="tc-deep-topic-ico" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-                  </span>
-                  <span class="tc-deep-topic-kicker">02</span>
-                </span>
-                <strong>Gestão inteligente</strong>
-                <ul>
-                  <li>Matriz por cargos alinhada aos padrões do cliente</li>
-                  <li>Dashboard de treinamentos realizados</li>
-                </ul>
+              <p class="tc-report-doc-kicker">Relatório de presença</p>
+              <p class="tc-report-doc-title">NR-10 · Turma A — Março 2026</p>
+              <div class="tc-report-table">
+                <div class="tc-report-row tc-report-row--head">
+                  <span>Participante</span><span>Status</span><span>Método</span>
+                </div>
+                <div class="tc-report-row">
+                  <strong>Ana Souza</strong><em class="is-ok">Presente</em><em>QR + selfie</em>
+                </div>
+                <div class="tc-report-row">
+                  <strong>Carlos Mendes</strong><em class="is-ok">Presente</em><em>Crachá HID</em>
+                </div>
+                <div class="tc-report-row">
+                  <strong>Paula Ferreira</strong><em class="is-off">NoShow</em><em>—</em>
+                </div>
+              </div>
+              <div class="tc-report-doc-foot">
+                <span>Exportado<strong>28/03/2026 · 09:14</strong></span>
+                <span>Código<strong>TC-AUD-1042</strong></span>
               </div>
             </div>
-            <a class="tc-deep-cta" href="../../index.html#contato">Ver relatórios e gestão
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="tc-deep-visual reveal" aria-hidden="true">
-            <div class="tc-photo-card">
-              <div class="tc-photo-card-media">
-                <img src="../../uploads/img1home.png" alt="" loading="lazy" />
-              </div>
-              <div class="tc-photo-card-copy">
-                <span class="tc-photo-card-tag">LGPD · Matriz</span>
-                <strong>Dashboard pronto para auditoria</strong>
-                <span>Histórico, validades e visão por cargo — sem planilha.</span>
-              </div>
+
+            <div class="tc-report-copy reveal reveal--right">
+              <span class="tc-show-card-tag">Evidência exportável</span>
+              <strong>PDF pronto quando a auditoria chegar</strong>
+              <p>Histórico rastreável de colaboradores e terceiros — com ou sem foto, conforme a LGPD.</p>
+              <ul class="tc-report-points">
+                <li>Relatórios para auditorias internas e externas</li>
+                <li>Matriz de treinamentos por cargo, customizável</li>
+                <li>Dashboards e certificados no seu padrão</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -3835,20 +4689,15 @@
     </div>
 
     <!-- ========== CTA CÓSMICO (home) ========== -->
-    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title">
+    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title" style="min-height:clamp(480px,70vh,640px);display:flex;align-items:center;justify-content:center">
       <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
       <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
       <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>
       <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
       <div class="tc-cta-earth" aria-hidden="true"></div>
       <div class="tc-cta-copy">
-        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Pronto para transformar a gestão da sua empresa?</h2>
-        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 14px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança.</p>
-        <div class="tc-cta-subparts" aria-hidden="true">
-          <span>digitalizar processos</span>
-          <span>capacitar equipes</span>
-          <span>fortalecer a segurança</span>
-        </div>
+        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Quer a Plataforma e a Lista digital na sua operação?</h2>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Treinamento multi-device e presença comprovada, no mesmo ecossistema TecnoCursos.</p>
         <div style="display:flex;justify-content:center">
           <a class="tc-cta-btn" href="../../index.html#contato">Falar com um especialista</a>
         </div>
@@ -4118,6 +4967,83 @@
         }
       })();
 
+      // Ponte multi-device → lista: letras aparecem (mesmo ritmo da home)
+      (function () {
+        var bridge = document.querySelector('[data-feat-bridge]');
+        if (!bridge) return;
+        var sub = bridge.querySelector('[data-bridge-sub]');
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var started = false;
+
+        function wrapChars(el) {
+          if (!el) return;
+          var text = el.textContent || '';
+          el.textContent = '';
+          for (var i = 0; i < text.length; i++) {
+            var span = document.createElement('span');
+            span.className = 'tc-bridge-char';
+            span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+            el.appendChild(span);
+          }
+        }
+
+        function typeSub() {
+          if (!sub) {
+            bridge.classList.add('is-typed');
+            return;
+          }
+          var chars = sub.querySelectorAll('.tc-bridge-char');
+          bridge.classList.add('is-typed');
+          if (!chars.length) return;
+          chars.forEach(function (ch, i) {
+            ch.style.transitionDelay = (i * 0.022) + 's';
+          });
+          requestAnimationFrame(function () {
+            chars.forEach(function (ch) { ch.style.opacity = '1'; });
+          });
+        }
+
+        function start() {
+          if (started) return;
+          started = true;
+          var reveal = bridge.querySelector('.tc-bridge-reveal');
+          var text = bridge.querySelector('.tc-bridge-text');
+          bridge.classList.add('is-on');
+          if (reduce) {
+            if (reveal) reveal.style.width = 'auto';
+            if (sub) wrapChars(sub);
+            bridge.classList.add('is-typed');
+            return;
+          }
+          if (reveal && text) {
+            var full = text.scrollWidth + 8;
+            requestAnimationFrame(function () {
+              reveal.style.width = full + 'px';
+            });
+          }
+          wrapChars(sub);
+          setTimeout(typeSub, 1650);
+        }
+
+        if (reduce) {
+          start();
+          return;
+        }
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                start();
+                io.disconnect();
+              }
+            });
+          }, { threshold: 0.4 });
+          io.observe(bridge);
+        } else {
+          start();
+        }
+      })();
+
       // Cards interativos — passos 01/02/03
       (function () {
         var grid = document.querySelector('[data-tc-steps]');
@@ -4276,6 +5202,27 @@
       var root = document.getElementById('presenca-root');
       if (!root) return;
       var loaded = false;
+      function watchPresencaIn() {
+        var section = root.querySelector('.presenca-section');
+        if (!section) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          section.classList.add('is-in');
+          return;
+        }
+        if ('IntersectionObserver' in window) {
+          var inIo = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting) {
+                section.classList.add('is-in');
+                inIo.unobserve(section);
+              }
+            });
+          }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+          inIo.observe(section);
+        } else {
+          section.classList.add('is-in');
+        }
+      }
       function loadPresenca() {
         if (loaded) return;
         loaded = true;
@@ -4284,6 +5231,10 @@
         s.onload = function () {
           if (window.PresencaApp && typeof window.PresencaApp.mountPresenca === 'function') {
             window.PresencaApp.mountPresenca(root);
+            // espera o React pintar o DOM
+            requestAnimationFrame(function () {
+              requestAnimationFrame(watchPresencaIn);
+            });
           }
         };
         document.body.appendChild(s);
