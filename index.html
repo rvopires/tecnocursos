@@ -215,12 +215,14 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 /* NR detalhe — página editorial do treinamento */
 .tc-nr-detail-hero{position:relative;overflow:hidden;background:linear-gradient(165deg,#0a1830 0%,#0a1830 40%,#071426 100%);padding:clamp(48px,6vw,80px) 0 clamp(56px,7vw,96px);--aurora-color1:rgba(50,173,120,.18);--aurora-color2:rgba(40,110,180,.28)}
 .tc-nr-detail-hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 60% at 82% 18%,rgba(0,92,139,.35),transparent 68%),radial-gradient(48% 50% at 12% 88%,rgba(50,173,120,.2),transparent 70%)}
-.tc-nr-detail-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.9fr);gap:clamp(36px,5vw,64px);align-items:center}
-.tc-nr-detail-back{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:rgba(255,255,255,.55);cursor:pointer;margin-bottom:22px;transition:color .2s;background:none;border:none;font-family:inherit;padding:0}
-.tc-nr-detail-back:hover{color:#32AD78}
-.tc-nr-detail-code{display:block;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(56px,11vw,112px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:#32AD78;margin:0 0 18px;text-shadow:0 0 60px rgba(50,173,120,.25)}
-.tc-nr-detail-label{font-size:clamp(22px,2.8vw,32px);font-weight:700;color:#fff;margin:0;letter-spacing:-.02em;line-height:1.15}
-.tc-nr-detail-full{font-size:16px;line-height:1.65;color:rgba(255,255,255,.62);margin:14px 0 0;max-width:520px}
+.tc-nr-detail-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1.05fr);gap:clamp(32px,5vw,56px);align-items:center}
+.tc-nr-detail-back{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:#fff;cursor:pointer;margin-bottom:28px;font-family:inherit;padding:12px 18px 12px 14px;border-radius:999px;border:1px solid rgba(50,173,120,.45);background:rgba(50,173,120,.18);box-shadow:0 8px 24px rgba(0,0,0,.22),inset 0 0 0 1px rgba(255,255,255,.06);transition:background .2s,border-color .2s,transform .2s,box-shadow .2s,color .2s}
+.tc-nr-detail-back svg{flex-shrink:0;width:18px;height:18px}
+.tc-nr-detail-back:hover{color:#070F1E;background:#32AD78;border-color:#32AD78;transform:translateY(-2px);box-shadow:0 12px 28px rgba(50,173,120,.35)}
+.tc-nr-detail-back:focus-visible{outline:2px solid #32AD78;outline-offset:3px}
+.tc-nr-detail-code{display:block;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(52px,9vw,96px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:#32AD78;margin:0 0 16px;text-shadow:0 0 60px rgba(50,173,120,.25)}
+.tc-nr-detail-label{font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;margin:0;letter-spacing:-.02em;line-height:1.15}
+.tc-nr-detail-full{font-size:16px;line-height:1.65;color:rgba(255,255,255,.62);margin:14px 0 0;max-width:480px}
 .tc-nr-detail-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .tc-nr-detail-chip{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:7px 14px;border-radius:999px}
 .tc-nr-detail-chip--accent{color:#070F1E;background:#32AD78;border-color:#32AD78}
@@ -230,14 +232,13 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-nr-detail-btn--primary:hover{background:#6ABB8C;transform:translateY(-2px);color:#070F1E}
 .tc-nr-detail-btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.28)}
 .tc-nr-detail-btn--ghost:hover{border-color:rgba(50,173,120,.5);background:rgba(255,255,255,.06);transform:translateY(-1px);color:#fff}
-.tc-nr-detail-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;border:1px solid rgba(255,255,255,.12);box-shadow:0 28px 64px rgba(0,0,0,.4)}
-.tc-nr-detail-media img{width:100%;height:100%;object-fit:cover;display:block}
-.tc-nr-detail-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(7,15,30,.72) 100%);pointer-events:none}
-.tc-nr-detail-media-badge{position:absolute;left:16px;bottom:16px;z-index:1;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(7,15,30,.65);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px}
+.tc-nr-detail-media{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 56px rgba(0,0,0,.38),0 0 0 1px rgba(50,173,120,.12);background:rgba(7,15,30,.35);line-height:0}
+.tc-nr-detail-media img{width:100%;height:auto;display:block;aspect-ratio:auto}
 .tc-nr-detail-about{position:relative;overflow:hidden;background:linear-gradient(165deg,#FFFFFF 0%,#F7FBF9 55%,#F2F8F5 100%);padding:clamp(56px,7vw,96px) 0}
 .tc-nr-detail-about-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
 .tc-nr-detail-about-head{margin-bottom:clamp(32px,4vw,48px)}
-.tc-nr-detail-about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,48px);border-top:1px solid rgba(27,40,72,.1);padding-top:clamp(28px,4vw,40px)}
+.tc-nr-detail-about-grid{display:grid;grid-template-columns:minmax(180px,.7fr) 1.15fr 1.15fr;gap:clamp(24px,3.5vw,40px);border-top:1px solid rgba(27,40,72,.1);padding-top:clamp(28px,4vw,40px)}
+.tc-nr-detail-about-item{padding:4px 0}
 .tc-nr-detail-about-item dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#32AD78;margin:0 0 10px}
 .tc-nr-detail-about-item dd{font-size:16px;line-height:1.65;color:#3D4F47;margin:0}
 .tc-nr-detail-about-item dd.tc-nr-detail-hours{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;color:#0F2A1F;line-height:1.1}
@@ -256,12 +257,13 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-nr-detail-cta p{font-size:16px;line-height:1.65;color:rgba(255,255,255,.62);margin:0 0 28px}
 .tc-nr-detail-cta .tc-nr-detail-actions{justify-content:center}
 @media(max-width:900px){
-  .tc-nr-detail-hero-inner{grid-template-columns:1fr;gap:36px}
-  .tc-nr-detail-media{aspect-ratio:16/10;max-width:560px}
+  .tc-nr-detail-hero-inner{grid-template-columns:1fr;gap:28px}
+  .tc-nr-detail-media{max-width:640px}
   .tc-nr-detail-about-grid{grid-template-columns:1fr;gap:24px}
 }
 @media(max-width:640px){
-  .tc-nr-detail-media{display:none}
+  .tc-nr-detail-media{max-width:100%;order:-1}
+  .tc-nr-detail-hero-inner{display:flex;flex-direction:column}
   .tc-nr-detail-topic-list::before{left:18px}
   .tc-nr-detail-topic-num{width:36px;height:36px;font-size:12px}
 }
@@ -1332,25 +1334,15 @@ section[aria-labelledby="tc-partners-title"]::before{
       <div class="tc-nr-detail-hero-inner">
         <div>
           <button type="button" class="tc-nr-detail-back" onClick="{{ goCatalogo }}">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Voltar ao catálogo
           </button>
-          <span data-reveal="blur" data-delay="40" class="tc-nr-detail-code" style="transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1),filter .9s cubic-bezier(.22,.61,.36,1)">{{ selectedNrData.code }}</span>
-          <h1 id="tc-nr-detail-title" data-reveal data-delay="100" class="tc-nr-detail-label" style="transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">{{ selectedNrData.label }}</h1>
-          <p data-reveal data-delay="160" class="tc-nr-detail-full" style="transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">{{ selectedNrData.full }}</p>
-          <div data-reveal="scale" data-delay="200" class="tc-nr-detail-chips" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">
-            <span class="tc-nr-detail-chip tc-nr-detail-chip--accent">{{ selectedNrData.hours }}</span>
-            <span class="tc-nr-detail-chip">Online · Presencial · Combinada</span>
-            <span class="tc-nr-detail-chip">Norma Regulamentadora</span>
-          </div>
-          <div data-reveal-pop data-delay="260" class="tc-nr-detail-actions">
-            <button type="button" class="tc-nr-detail-btn tc-nr-detail-btn--primary" onClick="{{ goContato }}">Solicitar proposta</button>
-            <button type="button" class="tc-nr-detail-btn tc-nr-detail-btn--ghost" onClick="{{ goCatalogo }}">Ver catálogo</button>
-          </div>
+          <span class="tc-nr-detail-code">{{ selectedNrData.code }}</span>
+          <h1 id="tc-nr-detail-title" class="tc-nr-detail-label">{{ selectedNrData.label }}</h1>
+          <p class="tc-nr-detail-full">{{ selectedNrData.full }}</p>
         </div>
-        <div data-reveal="right" data-delay="140" class="tc-nr-detail-media" style="transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1)">
-          <img src="{{ selectedNrData.img }}" alt="{{ selectedNrData.label }}"/>
-          <span class="tc-nr-detail-media-badge">{{ selectedNrData.code }}</span>
+        <div class="tc-nr-detail-media">
+          <img src="{{ selectedNrData.img }}" alt="{{ selectedNrData.label }}" width="1536" height="1024" loading="eager" decoding="async"/>
         </div>
       </div>
     </section>
@@ -1750,7 +1742,6 @@ class Component extends DCLogic {
           const isPop = e.target.hasAttribute('data-reveal-pop');
           const isNrCard = e.target.hasAttribute('data-nr-card');
           const alreadyRevealed = e.target.dataset.revealed === '1';
-          const scrollingDown = this._scrollDir !== 'up';
 
           if (e.isIntersecting) {
             if (alreadyRevealed) {
@@ -1759,8 +1750,8 @@ class Component extends DCLogic {
               if (!isPop) { e.target.style.transform = 'none'; e.target.style.filter = 'none'; }
               return;
             }
-            // Ainda não revelado: só anima quando descendo
-            if (!scrollingDown) return;
+            // Primeira revelação: anima sempre que entra na tela
+            // (não depender de scrollDir — scrollTo(0) após navegar marca "up" e deixava texto/foto invisíveis)
             const d = +e.target.dataset.delay || 0;
             const show = () => {
               if (isPop) {
@@ -2152,6 +2143,20 @@ class Component extends DCLogic {
     el.style.filter = (mode === 'blur' || el.classList.contains('tc-blur-reveal')) ? 'blur(10px)' : 'none';
   }
 
+  _revealInView() {
+    const vh = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal]:not([data-feat]),[data-reveal-pop],[data-reveal-plain]').forEach(el => {
+      if (el.dataset.revealed === '1') return;
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.95 && r.bottom > 0) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.filter = 'none';
+        el.dataset.revealed = '1';
+      }
+    });
+  }
+
   scanReveal() {
     document.querySelectorAll('[data-nr-card]').forEach((el, i) => { el.dataset.delay = String(i * 130); });
     const els = document.querySelectorAll('[data-reveal]:not([data-feat]),[data-reveal-pop],[data-reveal-plain]');
@@ -2162,6 +2167,7 @@ class Component extends DCLogic {
       if (el.dataset.revealed !== '1') this._applyRevealHidden(el);
       this.io.observe(el);
     });
+    requestAnimationFrame(() => this._revealInView());
   }
 
   _wrapSolWords(el) {
@@ -2759,6 +2765,8 @@ class Component extends DCLogic {
     if (p === 'servicos') { window.location.href = 'servicos/tecnologia/'; return; }
     this.setState({ page: p, menu: false });
     window.scrollTo(0, 0);
+    this._scrollDir = 'down';
+    this._lastScrollY = 0;
     if (location.hash.replace('#', '') !== p) location.hash = p;
   };
 
@@ -2766,7 +2774,10 @@ class Component extends DCLogic {
     const hash = 'nr-' + code.replace('NR-', '').toLowerCase();
     this.setState({ page: 'nrDetail', selectedNr: code, menu: false });
     window.scrollTo(0, 0);
+    this._scrollDir = 'down';
+    this._lastScrollY = 0;
     if (location.hash.replace('#', '') !== hash) location.hash = hash;
+    requestAnimationFrame(() => this._revealInView());
   };
 
   scrollRail(id, dir) {
@@ -2952,19 +2963,19 @@ class Component extends DCLogic {
     };
 
     const nrs = [
-      { code: 'NR-05', label: 'CIPAA', full: 'Comissão Interna de Prevenção de Acidentes e Assédio', hours: '8h a 20h', img: 'uploads/segurança 1.jpg' },
-      { code: 'NR-06', label: 'EPI', full: 'Equipamento de Proteção Individual', hours: 'Sob medida', img: 'img/seguranca.png' },
-      { code: 'NR-10', label: 'Eletricidade', full: 'Segurança em instalações e serviços em eletricidade', hours: '40h', img: 'uploads/img1home.png' },
-      { code: 'NR-11', label: 'Movimentação de materiais', full: 'Transporte, movimentação, armazenagem e manuseio de materiais', hours: '8h a 16h', img: 'uploads/caminhão.png' },
-      { code: 'NR-12', label: 'Máquinas e equipamentos', full: 'Segurança no trabalho em máquinas e equipamentos', hours: 'Sob medida', img: 'img/treinamento.png' },
-      { code: 'NR-13', label: 'Caldeiras e vasos de pressão', full: 'Caldeiras, vasos de pressão e tubulações', hours: 'Sob consulta', img: 'uploads/segurança 2.jpg' },
-      { code: 'NR-17', label: 'Ergonomia', full: 'Adaptação das condições de trabalho às características do trabalhador', hours: '2h', img: 'uploads/img2home.png' },
-      { code: 'NR-18', label: 'Construção civil', full: 'Condições e meio ambiente de trabalho na indústria da construção', hours: '8h', img: 'uploads/fachada.png' },
-      { code: 'NR-20', label: 'Inflamáveis e combustíveis', full: 'Segurança com inflamáveis e combustíveis', hours: '4h a 16h', img: 'uploads/segurança 1.jpg' },
-      { code: 'NR-23', label: 'Combate a incêndio', full: 'Proteção contra incêndios e rotas de fuga', hours: '4h a 40h', img: 'uploads/segurança 2.jpg' },
-      { code: 'NR-33', label: 'Espaços confinados', full: 'Segurança e saúde nos trabalhos em espaços confinados', hours: '16h a 40h', img: 'img/treinamento.png' },
-      { code: 'NR-34', label: 'Trabalhos a quente', full: 'Condições na indústria da construção, reparação e desmonte naval', hours: '6h', img: 'uploads/img3home.png' },
-      { code: 'NR-35', label: 'Trabalho em altura', full: 'Capacitação para atividades em altura com segurança', hours: '8h', img: 'img/seguranca.png' },
+      { code: 'NR-05', label: 'CIPAA', full: 'Comissão Interna de Prevenção de Acidentes e Assédio', hours: '8h a 20h', img: 'img/nr-05.png' },
+      { code: 'NR-06', label: 'EPI', full: 'Equipamento de Proteção Individual', hours: 'Sob medida', img: 'img/nr-06.png' },
+      { code: 'NR-10', label: 'Eletricidade', full: 'Segurança em instalações e serviços em eletricidade', hours: '40h', img: 'img/nr-10.png' },
+      { code: 'NR-11', label: 'Movimentação de materiais', full: 'Transporte, movimentação, armazenagem e manuseio de materiais', hours: '8h a 16h', img: 'img/nr-11.png' },
+      { code: 'NR-12', label: 'Máquinas e equipamentos', full: 'Segurança no trabalho em máquinas e equipamentos', hours: 'Sob medida', img: 'img/nr-12.png' },
+      { code: 'NR-13', label: 'Caldeiras e vasos de pressão', full: 'Caldeiras, vasos de pressão e tubulações', hours: 'Sob consulta', img: 'img/nr-13.png' },
+      { code: 'NR-17', label: 'Ergonomia', full: 'Adaptação das condições de trabalho às características do trabalhador', hours: '2h', img: 'img/nr-17.png' },
+      { code: 'NR-18', label: 'Construção civil', full: 'Condições e meio ambiente de trabalho na indústria da construção', hours: '8h', img: 'img/nr-18.png' },
+      { code: 'NR-20', label: 'Inflamáveis e combustíveis', full: 'Segurança com inflamáveis e combustíveis', hours: '4h a 16h', img: 'img/nr-20.png' },
+      { code: 'NR-23', label: 'Combate a incêndio', full: 'Proteção contra incêndios e rotas de fuga', hours: '4h a 40h', img: 'img/nr-23.png' },
+      { code: 'NR-33', label: 'Espaços confinados', full: 'Segurança e saúde nos trabalhos em espaços confinados', hours: '16h a 40h', img: 'img/nr-33.png' },
+      { code: 'NR-34', label: 'Trabalhos a quente', full: 'Condições na indústria da construção, reparação e desmonte naval', hours: '6h', img: 'img/nr-34.png' },
+      { code: 'NR-35', label: 'Trabalho em altura', full: 'Capacitação para atividades em altura com segurança', hours: '8h', img: 'img/nr-35.png' },
     ].map(n => ({ ...n, big: n.code.replace('-', ' '), ...(nrExtra[n.code] || {}) }));
 
     const catalogQuery = (this.state.catalogSearch || '').trim().toLowerCase();
