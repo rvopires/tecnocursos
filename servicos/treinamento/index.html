@@ -2316,7 +2316,7 @@
     }
   </style>
   <link rel="stylesheet" href="../tc-spark-hero.css" />
-  <link rel="stylesheet" href="../tc-cta-cosmic.css" />
+  <!-- cta cósmico removido nesta página -->
   <style>
 .hero.hero-tec-cover{
   position:relative;
@@ -2389,11 +2389,16 @@
     section.tc-nr-section {
       position: relative;
       background: linear-gradient(180deg, #05070B 0%, #0A1018 45%, #070B12 100%);
-      padding: clamp(72px, 9vw, 120px) 0;
+      padding: calc(clamp(72px, 9vw, 120px) + clamp(40px, 5vw, 64px)) 0 clamp(72px, 9vw, 120px);
       overflow-x: clip;
       isolation: isolate;
       font-family: 'Poppins', system-ui, sans-serif;
     }
+    .tc-nr-wave{
+      position:absolute;top:0;left:0;right:0;height:clamp(64px,8vw,96px);
+      z-index:4;pointer-events:none;line-height:0;
+    }
+    .tc-nr-wave svg{display:block;width:100%;height:100%}
     section.tc-nr-section::before {
       content: "";
       position: absolute;
@@ -2552,219 +2557,276 @@
       padding: 15px 28px;
       border-radius: 12px;
       text-decoration: none;
-      box-shadow: 0 10px 28px rgba(50, 173, 120, .38);
-      animation: tcCtaPulse 2.2s ease-in-out infinite;
+      box-shadow: 0 8px 22px rgba(50, 173, 120, .28);
       transition: background .2s, transform .2s, box-shadow .2s;
     }
     .tc-nr-cta-main:hover {
       background: #6ABB8C;
       transform: translateY(-2px);
-      box-shadow: 0 16px 36px rgba(50, 173, 120, .48);
-      animation: none;
+      box-shadow: 0 12px 28px rgba(50, 173, 120, .36);
       color: #fff;
-    }
-    @keyframes tcCtaPulse {
-      0%, 100% { box-shadow: 0 10px 28px rgba(50, 173, 120, .38), 0 0 0 0 rgba(50, 173, 120, .4); }
-      50% { box-shadow: 0 12px 32px rgba(50, 173, 120, .5), 0 0 0 12px rgba(50, 173, 120, 0); }
     }
     @media (max-width: 640px) {
       .tc-nr-header { flex-direction: column !important; align-items: flex-start !important; margin-bottom: 16px !important; }
       .tc-nr-header-text { max-width: 100% !important; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      .tc-nr-cta-main { animation: none; }
-    }
+.tc-trein-hero-actions{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px;
+}
+.tc-trein-hero-btn{
+  font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:700;padding:14px 26px;border-radius:12px;
+  text-decoration:none;border:none;transition:transform .2s,background .2s,border-color .2s;
+}
+.tc-trein-hero-btn--primary{
+  background:#32AD78;color:#070F1E;box-shadow:0 10px 28px rgba(50,173,120,.32);
+}
+.tc-trein-hero-btn--primary:hover{background:#6ABB8C;transform:translateY(-2px);color:#070F1E}
+.tc-trein-hero-btn--ghost{
+  background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.28);
+}
+.tc-trein-hero-btn--ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(50,173,120,.5);transform:translateY(-1px);color:#fff}
+.tc-trein-wave{
+  position:absolute;top:0;left:0;right:0;height:clamp(64px,8vw,96px);
+  z-index:4;pointer-events:none;line-height:0;
+}
+.tc-trein-wave svg{display:block;width:100%;height:100%}
+.tc-trein-wave--bottom{
+  top:auto;bottom:-1px;height:clamp(56px,7vw,88px);z-index:3;
+}
+.tc-trein-has-wave{padding-top:calc(clamp(72px,9vw,110px) + clamp(40px,5vw,64px)) !important}
+
+.tc-trein-offers{
+  position:relative;overflow:hidden;
+  background:#fff;
+  padding:clamp(64px,8vw,110px) 24px;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+.tc-trein-offers-inner{max-width:1080px;margin:0 auto}
+.tc-trein-offers-head{max-width:36ch;margin-bottom:clamp(28px,4vw,44px)}
+.tc-trein-offers-head h2{
+  margin:0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#0F2A1F;letter-spacing:-.03em;line-height:1.12;
+}
+.tc-trein-offers-head p{margin:14px 0 0;font-size:16px;line-height:1.65;color:#4A6358}
+.tc-trein-modes{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+.tc-trein-mode{
+  display:flex;flex-direction:column;
+  background:#fff;
+  border:1px solid rgba(50,173,120,.2);
+  border-radius:16px;
+  overflow:hidden;
+  padding:0;
+  text-decoration:none;color:inherit;
+  box-shadow:0 10px 28px rgba(10,40,28,.06);
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.tc-trein-mode:hover{
+  transform:translateY(-3px);
+  border-color:rgba(50,173,120,.45);
+  box-shadow:0 16px 40px rgba(10,40,28,.1);
+}
+.tc-trein-mode-media{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#E8F5EF;
+}
+.tc-trein-mode-media img{
+  width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1);
+}
+.tc-trein-mode:hover .tc-trein-mode-media img{transform:scale(1.04)}
+.tc-trein-mode-body{padding:clamp(20px,2.5vw,26px);display:flex;flex-direction:column;flex:1}
+.tc-trein-mode strong{display:block;font-size:20px;font-weight:800;color:#0F2A1F;letter-spacing:-.02em;margin:0 0 10px}
+.tc-trein-mode p{margin:0 0 18px;font-size:15px;line-height:1.6;color:#4A6358;flex:1}
+.tc-trein-mode-link{font-size:13.5px;font-weight:700;color:#218a5d;margin-top:auto}
+.tc-trein-mode:hover .tc-trein-mode-link{color:#32AD78}
+.tc-trein-libras{
+  margin-top:clamp(24px,3.5vw,32px);
+  padding:18px 4px 0;
+  border-top:1px solid rgba(15,42,31,.1);
+  display:grid;grid-template-columns:minmax(120px,180px) 1fr auto;
+  gap:16px 24px;align-items:baseline;
+}
+.tc-trein-libras strong{font-size:15px;font-weight:800;color:#0F2A1F}
+.tc-trein-libras p{margin:0;font-size:15px;line-height:1.6;color:#4A6358;max-width:52ch}
+.tc-trein-libras a{font-size:13.5px;font-weight:700;color:#218a5d;text-decoration:none;white-space:nowrap}
+.tc-trein-libras a:hover{color:#32AD78}
+@media(max-width:800px){
+  .tc-trein-modes{grid-template-columns:1fr}
+  .tc-trein-libras{grid-template-columns:1fr;gap:8px}
+}
+
 .tc-process{
   position:relative;
-  background:#F7F9FB;
+  background:#D5F0E4;
   padding:clamp(72px,9vw,110px) 0;
   overflow:hidden;
 }
-.tc-process-inner{max-width:1100px;margin:0 auto;padding:0 24px;text-align:center}
-.tc-process-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#005C8B;margin-bottom:14px}
-.tc-process-title{font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#1B2848;margin:0 0 12px;letter-spacing:-.03em}
-.tc-process-lead{font-size:16px;color:#64748b;margin:0 auto 48px;max-width:42ch}
-.tc-process-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:0;
-  text-align:left;
-  position:relative;
+.tc-process-inner{max-width:820px;margin:0 auto;padding:0 24px;text-align:left}
+.tc-process-title{font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#0F2A1F;margin:0 0 12px;letter-spacing:-.03em}
+.tc-process-lead{font-size:16px;color:#4A6358;margin:0 0 36px;max-width:42ch;line-height:1.6}
+.tc-process-list{margin:0;padding:0;list-style:none;border-top:1px solid rgba(15,42,31,.14)}
+.tc-process-list li{
+  display:grid;grid-template-columns:64px 1fr;gap:16px;
+  padding:22px 0;border-bottom:1px solid rgba(15,42,31,.14);
 }
-.tc-process-grid::before{
-  content:"";
-  position:absolute;
-  left:8%;
-  right:8%;
-  top:28px;
-  height:2px;
-  background:linear-gradient(90deg,#32AD78,#005C8B,#32AD78);
-  opacity:.35;
-  pointer-events:none;
-}
-.tc-process-step{
-  position:relative;
-  padding:0 20px 8px;
-  background:transparent;
-  border:none;
-}
-.tc-process-num{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:56px;height:56px;
-  margin:0 auto 18px;
-  border-radius:50%;
-  font-size:18px;font-weight:800;color:#fff;
-  background:linear-gradient(135deg,#32AD78,#005C8B);
-  box-shadow:0 10px 28px rgba(50,173,120,.28);
-  position:relative;z-index:1;
-}
-.tc-process-step strong{display:block;font-size:17px;color:#1B2848;margin-bottom:8px;text-align:center}
-.tc-process-step p{font-size:14px;line-height:1.55;color:#64748b;margin:0;text-align:center}
-@media(max-width:860px){
-  .tc-process-grid{grid-template-columns:1fr;gap:28px}
-  .tc-process-grid::before{
-    left:27px;right:auto;top:0;bottom:0;width:2px;height:auto;
-  }
-  .tc-process-step{display:grid;grid-template-columns:56px 1fr;gap:4px 16px;align-items:start;padding:0}
-  .tc-process-num{margin:0;grid-row:1 / span 2}
-  .tc-process-step strong,.tc-process-step p{text-align:left}
-}
+.tc-process-list b{font-size:13px;font-weight:800;letter-spacing:.08em;color:#218a5d;padding-top:3px}
+.tc-process-list strong{display:block;font-size:17px;color:#0F2A1F;margin:0 0 6px;font-weight:800}
+.tc-process-list p{margin:0;font-size:15px;line-height:1.55;color:#4A6358;max-width:48ch}
+@media(max-width:560px){.tc-process-list li{grid-template-columns:48px 1fr;gap:12px}}
 
 .tc-adv-strip{
-  background:linear-gradient(180deg,#E8F5EF 0%,#D5F0E4 100%);
-  padding:clamp(40px,6vw,64px) 0;
+  background:#E8F5EF;
+  padding:clamp(36px,5vw,52px) 0;
+  border-top:1px solid rgba(50,173,120,.16);
+  border-bottom:1px solid rgba(50,173,120,.16);
 }
-.tc-adv-strip .tc-adv-grid{
-  max-width:1100px;margin:0 auto;padding:0 24px;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+.tc-adv-line{
+  max-width:920px;margin:0 auto;padding:0 24px;
+  font-size:clamp(15px,1.7vw,17px);line-height:1.7;color:#0F2A1F;text-align:center;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
 }
-.tc-adv-chip{
-  display:flex;flex-direction:column;gap:12px;align-items:flex-start;
-  background:transparent;border:none;border-radius:0;padding:8px 4px;
-}
-.tc-adv-ico{
-  flex-shrink:0;width:40px;height:40px;border-radius:12px;
-  background:rgba(255,255,255,.7);border:1px solid rgba(50,173,120,.28);
-  color:#32AD78;display:flex;align-items:center;justify-content:center;
-}
-.tc-adv-chip strong{display:block;font-size:15px;color:#1B2848;font-weight:800;letter-spacing:-.01em}
-.tc-adv-chip span{font-size:13px;color:#495264;line-height:1.45}
-@media(max-width:900px){.tc-adv-strip .tc-adv-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.tc-adv-strip .tc-adv-grid{grid-template-columns:1fr}}
+.tc-adv-line em{font-style:normal;font-weight:800;color:#218a5d}
 
 .tc-regions{
   background:#0A1326;
   padding:clamp(72px,9vw,110px) 0;
+  text-align:left;
+}
+.tc-regions-inner{max-width:820px;margin:0 auto;padding:0 24px}
+.tc-regions-title{font-size:clamp(28px,3.8vw,44px);font-weight:800;color:#fff;margin:0 0 18px;letter-spacing:-.03em;line-height:1.12;max-width:18ch}
+.tc-regions-lead{font-size:17px;line-height:1.65;color:rgba(255,255,255,.68);margin:0 0 28px;max-width:46ch}
+.tc-regions-proof{
+  display:flex;flex-wrap:wrap;gap:10px 28px;
+  padding-top:22px;border-top:1px solid rgba(255,255,255,.12);
+  font-size:14px;font-weight:700;color:rgba(255,255,255,.88);letter-spacing:.02em;
+}
+.tc-regions-proof span{color:#6ABB8C}
+
+.tc-trein-cta{
+  position:relative;overflow:hidden;
+  background:#07101C;
+  padding:clamp(72px,9vw,110px) 24px;
   text-align:center;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
 }
-.tc-regions-inner{max-width:980px;margin:0 auto;padding:0 24px}
-.tc-regions-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ABB8C;margin-bottom:14px}
-.tc-regions-title{font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#fff;margin:0 0 40px;letter-spacing:-.03em}
-.tc-regions-grid{
-  display:flex;flex-direction:column;gap:0;text-align:left;
-  border-top:1px solid rgba(255,255,255,.1);
+.tc-trein-cta-inner{max-width:640px;margin:0 auto}
+.tc-trein-cta h2{
+  font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;margin:0;
+  letter-spacing:-.03em;line-height:1.12;
 }
-.tc-regions-item{
-  display:grid;grid-template-columns:minmax(120px,180px) 1fr;
-  gap:16px;align-items:baseline;
-  background:transparent;border:none;border-radius:0;
-  padding:18px 4px;border-bottom:1px solid rgba(255,255,255,.1);
+.tc-trein-cta p{
+  font-size:16px;line-height:1.65;color:rgba(255,255,255,.68);
+  margin:18px auto 28px;max-width:42ch;
 }
-.tc-regions-item strong{display:block;font-size:clamp(16px,1.6vw,18px);color:#32AD78;margin:0;font-weight:800}
-.tc-regions-item span{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.45}
-@media(max-width:560px){.tc-regions-item{grid-template-columns:1fr;gap:4px}}
+.tc-trein-cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 
 .tc-mobile-unit{
   position:relative;
-  min-height:clamp(420px,62vh,620px);
-  max-width:none;margin:0;padding:0;
   overflow:hidden;
-  display:flex;align-items:flex-end;
+  background:#F2F8F5;
+  padding:clamp(64px,8vw,100px) 24px;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  border-top:1px solid rgba(50,173,120,.14);
 }
 .tc-mobile-unit-inner{
   position:relative;z-index:2;
-  display:block;max-width:720px;
-  padding:clamp(48px,7vw,88px) 24px;
-  margin:0;
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,1.05fr);
+  gap:clamp(28px,4vw,52px);align-items:center;
 }
 .tc-mobile-unit-media{
-  position:absolute;inset:0;z-index:0;
+  position:relative;
+  border-radius:20px;overflow:hidden;
+  aspect-ratio:4/3;
+  border:1px solid rgba(50,173,120,.2);
+  box-shadow:0 18px 44px rgba(10,40,28,.1);
+  background:#fff;
 }
 .tc-mobile-unit-media img{
-  width:100%;height:100%;object-fit:cover;object-position:center;
-  border-radius:0;box-shadow:none;
-  transform:scale(1.04);
-  transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);
+  width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+  transform:none;transition:transform .5s cubic-bezier(.22,.61,.36,1);
 }
-.tc-mobile-unit.is-in .tc-mobile-unit-media img{transform:scale(1)}
-.tc-mobile-unit::after{
-  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-    linear-gradient(90deg,rgba(7,15,30,.88) 0%,rgba(7,15,30,.55) 48%,rgba(7,15,30,.2) 100%),
-    linear-gradient(0deg,rgba(7,15,30,.55) 0%,transparent 45%);
-}
+.tc-mobile-unit-media:hover img{transform:scale(1.03)}
+.tc-mobile-unit-copy{min-width:0}
 .tc-mobile-unit-tag{
-  display:inline-block;font-size:12px;font-weight:700;color:#10ffcb;
-  background:rgba(16,255,203,.1);border:1px solid rgba(16,255,203,.28);
-  padding:5px 12px;border-radius:999px;margin-bottom:14px;
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#218a5d;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.28);
+  padding:7px 14px;border-radius:999px;margin-bottom:16px;
 }
 .tc-mobile-unit-copy h2{
-  font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.03em;
-  text-shadow:0 8px 32px rgba(0,0,0,.35);
+  font-size:clamp(28px,3.8vw,42px);font-weight:800;color:#0F2A1F;margin:0 0 14px;letter-spacing:-.03em;line-height:1.12;
+  text-shadow:none;
 }
 .tc-mobile-unit-copy p{
-  font-size:clamp(15px,1.5vw,17px);line-height:1.6;color:rgba(255,255,255,.78);margin:0;max-width:46ch;
+  font-size:16px;line-height:1.65;color:#4A6358;margin:0 0 12px;max-width:48ch;
 }
+.tc-mobile-unit-meta{
+  display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px;
+}
+.tc-mobile-unit-meta span{
+  font-size:12px;font-weight:700;letter-spacing:.04em;
+  color:#0F2A1F;background:#fff;border:1px solid rgba(50,173,120,.25);
+  padding:7px 12px;border-radius:999px;
+}
+.tc-mobile-unit-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;
+  color:#fff;background:#32AD78;padding:13px 22px;border-radius:12px;
+  box-shadow:0 10px 28px rgba(50,173,120,.28);transition:background .2s,transform .2s;
+}
+.tc-mobile-unit-cta:hover{background:#6ABB8C;transform:translateY(-2px);color:#fff}
 @media(max-width:860px){
-  .tc-mobile-unit-inner{max-width:100%}
-  .tc-mobile-unit::after{
-    background:
-      linear-gradient(180deg,rgba(7,15,30,.35) 0%,rgba(7,15,30,.82) 55%,rgba(7,15,30,.92) 100%);
-  }
+  .tc-mobile-unit-inner{grid-template-columns:1fr;gap:28px}
+  .tc-mobile-unit-media{aspect-ratio:16/10;max-width:560px}
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .tc-process-step.reveal,
-  .tc-adv-chip.reveal,
-  .tc-regions-item.reveal {
-    filter: blur(6px);
-    transform: translateY(24px) scale(0.94);
+  .tc-process-list li.reveal,
+  .tc-trein-mode.reveal {
+    filter: blur(4px);
+    transform: translateY(18px);
     transition:
-      opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 750ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .tc-process-step.reveal.is-visible,
-  .tc-adv-chip.reveal.is-visible,
-  .tc-regions-item.reveal.is-visible {
+  .tc-process-list li.reveal.is-visible,
+  .tc-trein-mode.reveal.is-visible {
     filter: blur(0);
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
-  .tc-process-step.reveal:nth-child(1) { --reveal-delay: 0; }
-  .tc-process-step.reveal:nth-child(2) { --reveal-delay: 1; }
-  .tc-process-step.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-process-list li.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-process-list li.reveal:nth-child(2) { --reveal-delay: 1; }
+  .tc-process-list li.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-trein-mode.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-trein-mode.reveal:nth-child(2) { --reveal-delay: 1; }
   .tc-adv-chip.reveal:nth-child(1) { --reveal-delay: 0; }
   .tc-adv-chip.reveal:nth-child(2) { --reveal-delay: 1; }
   .tc-adv-chip.reveal:nth-child(3) { --reveal-delay: 2; }
   .tc-adv-chip.reveal:nth-child(4) { --reveal-delay: 3; }
-  .tc-regions-item.reveal:nth-child(1) { --reveal-delay: 0; }
-  .tc-regions-item.reveal:nth-child(2) { --reveal-delay: 1; }
-  .tc-regions-item.reveal:nth-child(3) { --reveal-delay: 2; }
-  .tc-regions-item.reveal:nth-child(4) { --reveal-delay: 3; }
-  .tc-regions-item.reveal:nth-child(5) { --reveal-delay: 4; }
-  .tc-mobile-unit-copy.reveal {
-    filter: blur(8px);
-    transform: translateY(28px) scale(0.92);
+  .tc-mobile-unit-media.reveal {
+    transform: translateX(-28px);
     transition:
-      opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 850ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 850ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tc-mobile-unit-media.reveal.is-visible { transform: translateX(0); }
+  .tc-mobile-unit-copy.reveal {
+    filter: blur(6px);
+    transform: translateY(24px);
+    transition:
+      opacity 850ms cubic-bezier(0.22, 1, 0.36, 1) 80ms,
+      transform 850ms cubic-bezier(0.22, 1, 0.36, 1) 80ms,
+      filter 850ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
   }
   .tc-mobile-unit-copy.reveal.is-visible {
     filter: blur(0);
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
   </style>
@@ -2810,15 +2872,6 @@
   </div>
 
 
-  <div class="ambient" aria-hidden="true">
-    <div class="ambient-orb ambient-orb--1" id="orb-1"></div>
-    <div class="ambient-orb ambient-orb--2" id="orb-2"></div>
-    <div class="ambient-orb ambient-orb--3" id="orb-3"></div>
-    <div class="ambient-orb ambient-orb--4" id="orb-4"></div>
-    <div class="ambient-grid"></div>
-    <div class="ambient-scan"></div>
-  </div>
-
   <a href="#main" class="skip-link">Pular para o conteúdo</a>
 
   <!-- ========== MAIN ========== -->
@@ -2832,20 +2885,88 @@
         <span class="tc-spark-eyebrow">Treinamento</span>
         <h1 id="hero-title" class="tc-spark-title">Capacitação nas <span class="tc-spark-mark">NRs</span> que a sua operação exige.</h1>
         <p class="tc-spark-lead">Teórico e prático, presencial, online ou híbrido — com conteúdo alinhado às Normas Regulamentadoras e à realidade da sua empresa.</p>
-        <div style="margin-top:28px">
-          <a href="#tc-nr-title" class="tc-cta-btn" style="display:inline-flex">Ver treinamentos</a>
+        <div class="tc-trein-hero-actions">
+          <a href="../../index.html#contato" class="tc-trein-hero-btn tc-trein-hero-btn--primary">Falar com um especialista</a>
+          <a href="#tc-nr-title" class="tc-trein-hero-btn tc-trein-hero-btn--ghost">Ver treinamentos</a>
+        </div>
+      </div>
+      <div class="tc-trein-wave tc-trein-wave--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#fff" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tc-trein-offers" aria-labelledby="tc-offers-title">
+      <div class="tc-trein-offers-inner">
+        <div class="tc-trein-offers-head reveal">
+          <h2 id="tc-offers-title">Como a capacitação acontece.</h2>
+          <p>Teórico na plataforma. Prático no chão de fábrica — ou com a Unidade Móvel, quando faz sentido.</p>
+        </div>
+        <div class="tc-trein-modes">
+          <a class="tc-trein-mode reveal" href="../tecnologia/">
+            <div class="tc-trein-mode-media">
+              <img src="../../img/PLataforma.png" alt="Plataforma de treinamento online" loading="lazy"/>
+            </div>
+            <div class="tc-trein-mode-body">
+              <strong>Teórico online</strong>
+              <p>Aulas, avaliação e certificado na plataforma — com gestão de turmas e sem deslocamento desnecessário.</p>
+              <span class="tc-trein-mode-link">Conhecer a plataforma →</span>
+            </div>
+          </a>
+          <a class="tc-trein-mode reveal" href="#tc-nr-title">
+            <div class="tc-trein-mode-media">
+              <img src="../../img/treinamento.png" alt="Treinamento prático presencial" loading="lazy"/>
+            </div>
+            <div class="tc-trein-mode-body">
+              <strong>Prático presencial</strong>
+              <p>Instrutores no território nacional, com foco no que a equipe realmente faz no dia a dia.</p>
+              <span class="tc-trein-mode-link">Ver NRs →</span>
+            </div>
+          </a>
+        </div>
+        <div class="tc-trein-libras reveal">
+          <strong>Libras</strong>
+          <p>Nos treinamentos teóricos, com interpretação — para a equipe toda acompanhar o conteúdo.</p>
+          <a href="../../index.html#contato">Incluir na proposta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIDADE MÓVEL -->
+    <section class="tc-mobile-unit" aria-labelledby="tc-mobile-title" id="unidade-movel">
+      <div class="tc-mobile-unit-inner">
+        <div class="tc-mobile-unit-media reveal">
+          <img src="../../uploads/caminhão.png" alt="Unidade móvel da TecnoCursos" loading="lazy"/>
+        </div>
+        <div class="tc-mobile-unit-copy reveal">
+          <span class="tc-mobile-unit-tag">Unidade Móvel</span>
+          <h2 id="tc-mobile-title">O treinamento que vai até a sua empresa.</h2>
+          <p>Caminhão equipado para capacitações práticas no local da operação — sem deslocar a equipe para longe do dia a dia.</p>
+          <p>Usada em NR-23, NR-33 e Brigada de Incêndio, hoje disponível no estado de São Paulo.</p>
+          <div class="tc-mobile-unit-meta">
+            <span>NR-23</span>
+            <span>NR-33</span>
+            <span>Brigada de Incêndio</span>
+            <span>Disponível em SP</span>
+          </div>
+          <a class="tc-mobile-unit-cta" href="../../index.html#contato">Solicitar Unidade Móvel</a>
         </div>
       </div>
     </section>
 
 <!-- Capacitação nas principais NRs -->
     <section class="tc-nr-section" aria-labelledby="tc-nr-title">
+      <div class="tc-nr-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#F2F8F5" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+        </svg>
+      </div>
       <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
         <div class="tc-nr-header" style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px">
           <div class="tc-nr-header-text" style="max-width:640px">
-            <span style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6ABB8C;background:rgba(50,173,120,.12);border:1px solid rgba(106,187,140,.35);padding:7px 14px;border-radius:999px;margin-bottom:18px;backdrop-filter:blur(8px)">Normas Regulamentadoras</span>
-            <h2 id="tc-nr-title" style="font-size:clamp(32px,4.8vw,54px);line-height:1.02;letter-spacing:-.03em;font-weight:800;color:#fff;margin:0">Capacitação nas<br/><span style="font-style:italic;letter-spacing:-.04em;color:#32AD78">principais NRs</span></h2>
-            <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.62);margin:16px 0 0;max-width:520px">Online e presencial, em <span style="color:#fff;font-weight:700">todo o território nacional</span>, com suporte em Libras nos treinamentos teóricos.</p>
+            <h2 id="tc-nr-title" style="font-size:clamp(30px,4.2vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:#fff;margin:0">As NRs que mais capacitamos.</h2>
+            <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.62);margin:16px 0 0;max-width:480px">Online e presencial, com instrutores no Brasil. Libras nos teóricos.</p>
           </div>
           <div style="display:flex;gap:10px;flex-shrink:0">
             <button data-nr-prev class="tc-nr-nav-btn" type="button" aria-label="Anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
@@ -2854,55 +2975,55 @@
         </div>
         <div data-nr-track style="overflow:hidden;position:relative;padding:22px 0 26px">
           <div data-nr-inner style="display:flex;gap:18px;will-change:transform;padding:0 4px">
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-05" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%201.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 05</div><div class="tc-nr-card-label">CIPAA</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-06" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../img/seguranca.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 06</div><div class="tc-nr-card-label">EPI</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-10" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/img1home.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 10</div><div class="tc-nr-card-label">Eletricidade</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-11" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/caminh%C3%A3o.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 11</div><div class="tc-nr-card-label">Movimentação de materiais</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-12" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../img/treinamento.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 12</div><div class="tc-nr-card-label">Máquinas e equipamentos</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-13" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%202.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 13</div><div class="tc-nr-card-label">Caldeiras e vasos de pressão</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-17" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/img2home.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 17</div><div class="tc-nr-card-label">Ergonomia</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-18" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/fachada.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 18</div><div class="tc-nr-card-label">Construção civil</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-20" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%201.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 20</div><div class="tc-nr-card-label">Inflamáveis e combustíveis</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-23" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/seguran%C3%A7a%202.jpg" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 23</div><div class="tc-nr-card-label">Combate a incêndio</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-33" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../img/treinamento.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 33</div><div class="tc-nr-card-label">Espaços confinados</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-34" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../uploads/img3home.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 34</div><div class="tc-nr-card-label">Trabalhos a quente</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
-            <a href="../../index.html#catalogo" data-nr-card class="tc-nr-card">
+            <a href="../../index.html#nr-35" data-nr-card class="tc-nr-card">
               <div class="tc-nr-card-media"><img src="../../img/seguranca.png" alt="" loading="lazy"/><div class="tc-nr-card-media-shade" aria-hidden="true"></div></div>
               <div class="tc-nr-card-body"><span class="tc-nr-card-kicker">Treinamento NR</span><div class="tc-nr-card-code">NR 35</div><div class="tc-nr-card-label">Trabalho em altura</div><span class="tc-nr-card-cta">Ver detalhes</span></div>
             </a>
@@ -2915,94 +3036,65 @@
     </section>
 
     <!-- COMO CONDUZIMOS CADA TREINAMENTO -->
-    <section class="tc-process" aria-labelledby="tc-process-title">
+    <section class="tc-process tc-trein-has-wave" aria-labelledby="tc-process-title">
+      <div class="tc-trein-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#070B12" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+        </svg>
+      </div>
       <div class="tc-process-inner">
-        <span class="tc-process-eyebrow reveal">Processo de treinamento</span>
-        <h2 id="tc-process-title" class="tc-process-title reveal">Como conduzimos cada treinamento.</h2>
-        <p class="tc-process-lead reveal">Um método completo, do conteúdo teórico à reciclagem periódica.</p>
-        <div class="tc-process-grid">
-          <div class="tc-process-step reveal">
-            <span class="tc-process-num">01</span>
-            <strong>Treinamento teórico</strong>
-            <p>Na plataforma (aulas online) e presencial, com questionário avaliativo dos colaboradores.</p>
-          </div>
-          <div class="tc-process-step reveal">
-            <span class="tc-process-num">02</span>
-            <strong>Treinamento prático</strong>
-            <p>Com instrutores qualificados em todo o país, foco em situações reais e vivência prática.</p>
-          </div>
-          <div class="tc-process-step reveal">
-            <span class="tc-process-num">03</span>
-            <strong>Reciclagem</strong>
-            <p>Periódica, mantém os colaboradores atualizados e em conformidade legal.</p>
-          </div>
-        </div>
+        <h2 id="tc-process-title" class="tc-process-title reveal">Do conteúdo à reciclagem.</h2>
+        <p class="tc-process-lead reveal">Três etapas. Sem mistério — e com prazo e certificado sob controle.</p>
+        <ol class="tc-process-list">
+          <li class="reveal">
+            <b>01</b>
+            <div>
+              <strong>Teórico</strong>
+              <p>Na plataforma ou presencial, com avaliação dos colaboradores.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <b>02</b>
+            <div>
+              <strong>Prático</strong>
+              <p>Com instrutor no local — ou na Unidade Móvel, em São Paulo.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <b>03</b>
+            <div>
+              <strong>Reciclagem</strong>
+              <p>No prazo certo, para manter a equipe atualizada e em conformidade.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- NOSSO DIFERENCIAL -->
-    <section class="tc-adv-strip" aria-label="Diferenciais do treinamento">
-      <div class="tc-adv-grid">
-        <div class="tc-adv-chip reveal">
-          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 015 5v3a5 5 0 01-10 0V7a5 5 0 015-5z"/><path d="M6 10v2a6 6 0 0012 0v-2M12 18v4"/></svg></span>
-          <div><strong>Libras</strong><span>Vídeos interpretados em todos os treinamentos teóricos.</span></div>
-        </div>
-        <div class="tc-adv-chip reveal">
-          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg></span>
-          <div><strong>Gamificação</strong><span>Pontos que estimulam o engajamento em cada conquista.</span></div>
-        </div>
-        <div class="tc-adv-chip reveal">
-          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10v4h4l5 5V5l-5 5H3z"/><path d="M16 8a5 5 0 010 8"/></svg></span>
-          <div><strong>Narração em áudio</strong><span>Áudios profissionais para facilitar o entendimento.</span></div>
-        </div>
-        <div class="tc-adv-chip reveal">
-          <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 13L7 21l5-3 5 3-1.5-8"/></svg></span>
-          <div><strong>Certificado automático</strong><span>Emitido na aprovação, com validade e rastreio.</span></div>
-        </div>
-      </div>
+    <section class="tc-adv-strip" aria-label="O que vem na plataforma">
+      <p class="tc-adv-line reveal">Na plataforma: <em>Libras</em>, narração em áudio, gamificação e <em>certificado automático</em> na aprovação.</p>
     </section>
 
     <!-- INSTRUTORES EM TODO O BRASIL -->
     <section class="tc-regions" aria-labelledby="tc-regions-title">
       <div class="tc-regions-inner">
-        <span class="tc-regions-eyebrow reveal">Cobertura nacional</span>
-        <h2 id="tc-regions-title" class="tc-regions-title reveal">Instrutores em todo o território nacional.</h2>
-        <div class="tc-regions-grid">
-          <div class="tc-regions-item reveal"><strong>Norte</strong><span>Presença estratégica na Amazônia Legal</span></div>
-          <div class="tc-regions-item reveal"><strong>Nordeste</strong><span>Instrutores especializados em toda a região</span></div>
-          <div class="tc-regions-item reveal"><strong>Centro-Oeste</strong><span>Atendimento ágil e personalizado</span></div>
-          <div class="tc-regions-item reveal"><strong>Sudeste</strong><span>Cobertura completa e logística eficiente</span></div>
-          <div class="tc-regions-item reveal"><strong>Sul</strong><span>Instrutores próximos à sua operação</span></div>
+        <h2 id="tc-regions-title" class="tc-regions-title reveal">Instrutores onde a sua operação está.</h2>
+        <p class="tc-regions-lead reveal">Presença em todas as regiões do Brasil — Norte a Sul. Quem ministra conhece a norma e o chão de fábrica.</p>
+        <div class="tc-regions-proof reveal">
+          <span>Desde 2004</span>
+          Norte · Nordeste · Centro-Oeste · Sudeste · Sul
         </div>
       </div>
     </section>
 
-    <!-- UNIDADE MÓVEL -->
-    <section class="tc-mobile-unit" aria-labelledby="tc-mobile-title" data-mobile-unit>
-      <div class="tc-mobile-unit-media" aria-hidden="true">
-        <img src="../../uploads/caminhão.png" alt="" loading="lazy"/>
-      </div>
-      <div class="tc-mobile-unit-inner">
-        <div class="tc-mobile-unit-copy reveal">
-          <span class="tc-mobile-unit-tag">Casa de fumaça · Exclusivo SP</span>
-          <h2 id="tc-mobile-title">O treinamento que vai até você.</h2>
-          <p>Unidade móvel exclusiva: caminhão adaptado com casa de fumaça para a NR-23, NR-33 e Brigada de Incêndio — treinamentos práticos de alto impacto, hoje disponível no estado de São Paulo.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== CTA CÓSMICO ========== -->
-    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title" style="min-height:clamp(480px,70vh,640px);display:flex;align-items:center;justify-content:center">
-      <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
-      <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
-      <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>
-      <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
-      <div class="tc-cta-earth" aria-hidden="true"></div>
-      <div class="tc-cta-copy">
-        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Quer capacitar sua equipe com teórico e prático?</h2>
-        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Treinamentos em NRs online, presenciais ou híbridos — com instrutores em todo o Brasil.</p>
-        <div style="display:flex;justify-content:center">
-          <a class="tc-cta-btn" href="../../index.html#contato">Falar com um especialista</a>
+    <!-- CTA -->
+    <section class="tc-trein-cta" aria-labelledby="cta-trein-title">
+      <div class="tc-trein-cta-inner">
+        <h2 id="cta-trein-title">Precisa treinar a equipe nesta NR?</h2>
+        <p>Monte teórico, prático ou os dois — com instrutor no Brasil ou Unidade Móvel em SP.</p>
+        <div class="tc-trein-cta-actions">
+          <a class="tc-trein-hero-btn tc-trein-hero-btn--primary" href="../../index.html#contato">Pedir proposta</a>
+          <a href="../../index.html#catalogo" class="tc-trein-hero-btn tc-trein-hero-btn--ghost">Ver catálogo</a>
         </div>
       </div>
     </section>
@@ -3179,29 +3271,6 @@
         reveals.forEach(function (el) { el.classList.add('is-visible'); });
       }
 
-      // Zoom suave na unidade móvel
-      (function () {
-        var unit = document.querySelector('[data-mobile-unit]');
-        if (!unit) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          unit.classList.add('is-in');
-          return;
-        }
-        if ('IntersectionObserver' in window) {
-          var mio = new IntersectionObserver(function (entries) {
-            entries.forEach(function (en) {
-              if (en.isIntersecting) {
-                unit.classList.add('is-in');
-                mio.unobserve(unit);
-              }
-            });
-          }, { threshold: 0.25 });
-          mio.observe(unit);
-        } else {
-          unit.classList.add('is-in');
-        }
-      })();
-
       // Carrossel NRs — marquee contínuo com setas
       (function initNrCarousel() {
         var nrTrack = document.querySelector('[data-nr-track]');
@@ -3268,6 +3337,5 @@
 
     })();
   </script>
-  <script src="../tc-cta-cosmic.js"></script>
 </body>
 </html>

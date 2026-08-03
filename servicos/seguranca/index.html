@@ -2588,21 +2588,91 @@ section.tc-seg-fact{
 .tc-seg-fact-note{font-size:15px;color:rgba(255,255,255,.72);margin:0 0 20px;line-height:1.55}
 .tc-seg-fact-source{display:block;font-size:12px;color:rgba(255,255,255,.4);font-style:italic}
 
+.tc-seg-section#pilares{
+  background:linear-gradient(165deg,#FFFFFF 0%,#F7FBF9 55%,#F2F8F5 100%);
+  padding-top:clamp(72px,9vw,120px);
+}
 .tc-seg-section#pilares .tc-seg-card{
-  background:transparent;
-  border:none;
-  border-radius:0;
-  box-shadow:none;
-  padding:8px 4px 12px;
+  background:#fff;
+  border:1px solid rgba(50,173,120,.16);
+  border-radius:18px;
+  box-shadow:0 14px 40px rgba(10,40,28,.08);
+  padding:clamp(22px,2.8vw,28px);
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .3s ease,border-color .3s,box-shadow .3s;
 }
 .tc-seg-section#pilares .tc-seg-card:hover{
-  transform:none;
-  box-shadow:none;
-  border-color:transparent;
+  transform:translateY(-4px);
+  border-color:rgba(50,173,120,.4);
+  box-shadow:0 22px 52px rgba(10,40,28,.12);
 }
 .tc-seg-section#pilares .tc-seg-card-icon{
   width:48px;height:48px;border-radius:14px;margin-bottom:18px;
 }
+.tc-seg-card-link{
+  display:inline-flex;align-items:center;gap:6px;margin-top:18px;
+  font-size:13.5px;font-weight:700;color:#218a5d;text-decoration:none;
+}
+.tc-seg-card:hover .tc-seg-card-link{color:#32AD78}
+
+.tc-seg-hero-actions{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px;
+}
+.tc-seg-hero-btn{
+  font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:700;padding:14px 26px;border-radius:12px;
+  text-decoration:none;border:none;transition:transform .2s,background .2s,border-color .2s;
+}
+.tc-seg-hero-btn--primary{
+  background:#32AD78;color:#070F1E;box-shadow:0 10px 28px rgba(50,173,120,.32);
+}
+.tc-seg-hero-btn--primary:hover{background:#6ABB8C;transform:translateY(-2px);color:#070F1E}
+.tc-seg-hero-btn--ghost{
+  background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.28);
+}
+.tc-seg-hero-btn--ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(50,173,120,.5);transform:translateY(-1px);color:#fff}
+
+.tc-seg-wave{
+  position:absolute;top:0;left:0;right:0;height:clamp(64px,8vw,96px);
+  z-index:4;pointer-events:none;line-height:0;
+}
+.tc-seg-wave svg{display:block;width:100%;height:100%}
+.tc-seg-wave--bottom{
+  top:auto;bottom:-1px;height:clamp(56px,7vw,88px);z-index:3;
+}
+.tc-seg-has-wave{padding-top:calc(clamp(72px,9vw,110px) + clamp(40px,5vw,64px)) !important}
+
+section.tc-seg-nrs{
+  position:relative;overflow:hidden;
+  background:linear-gradient(165deg,#0a1830 0%,#0a1830 40%,#071426 100%);
+  padding:clamp(64px,8vw,110px) 24px;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+.tc-seg-nrs-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;text-align:center}
+.tc-seg-nrs-chips{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  margin:clamp(28px,4vw,40px) auto 0;max-width:900px;
+}
+.tc-seg-nr-chip{
+  font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;
+  color:#fff;text-decoration:none;
+  padding:10px 16px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  transition:background .2s,border-color .2s,transform .2s,color .2s;
+}
+.tc-seg-nr-chip:hover{
+  background:rgba(50,173,120,.18);border-color:rgba(50,173,120,.5);
+  color:#6ABB8C;transform:translateY(-2px);
+}
+.tc-seg-nrs-more{
+  display:inline-flex;margin-top:28px;font-size:14px;font-weight:700;
+  color:#32AD78;text-decoration:none;align-items:center;gap:6px;
+}
+.tc-seg-nrs-more:hover{color:#6ABB8C}
 
 section.tc-seg-actions{
   position:relative;
@@ -2611,16 +2681,16 @@ section.tc-seg-actions{
   margin:0;
   padding:clamp(72px,9vw,110px) 24px;
   text-align:center;
-  background:#F7F9FB;
+  background:#D5F0E4;
 }
 .tc-seg-actions-inner{max-width:1100px;margin:0 auto}
 .tc-seg-actions-inner .tc-spark-eyebrow{
-  color:#005C8B;
-  background:rgba(0,92,139,.08);
-  border-color:rgba(0,92,139,.22);
+  color:#218a5d;
+  background:rgba(50,173,120,.12);
+  border-color:rgba(50,173,120,.28);
 }
 .tc-seg-actions-inner h2{
-  font-size:clamp(24px,3.2vw,36px);font-weight:800;color:#1B2848;
+  font-size:clamp(24px,3.2vw,36px);font-weight:800;color:#0F2A1F;
   margin:14px 0 48px;letter-spacing:-.03em;
 }
 .tc-seg-actions-grid{
@@ -2630,8 +2700,8 @@ section.tc-seg-actions{
 .tc-seg-actions-grid::before{
   content:"";
   position:absolute;left:8%;right:8%;top:28px;height:2px;
-  background:linear-gradient(90deg,#32AD78,#005C8B,#32AD78);
-  opacity:.35;pointer-events:none;
+  background:linear-gradient(90deg,#32AD78,#218a5d,#32AD78);
+  opacity:.45;pointer-events:none;
 }
 .tc-seg-actions-step{
   position:relative;
@@ -2642,15 +2712,15 @@ section.tc-seg-actions{
   display:flex;align-items:center;justify-content:center;
   width:56px;height:56px;margin:0 auto 18px;border-radius:50%;
   font-size:18px;font-weight:800;color:#fff;
-  background:linear-gradient(135deg,#32AD78,#005C8B);
+  background:linear-gradient(135deg,#32AD78,#218a5d);
   box-shadow:0 10px 28px rgba(50,173,120,.28);
   position:relative;z-index:1;
 }
 .tc-seg-actions-step strong{
-  display:block;font-size:17px;color:#1B2848;margin-bottom:8px;text-align:center;
+  display:block;font-size:17px;color:#0F2A1F;margin-bottom:8px;text-align:center;
 }
 .tc-seg-actions-step p{
-  font-size:14px;line-height:1.55;color:#64748b;margin:0;text-align:center;
+  font-size:14px;line-height:1.55;color:#4A6358;margin:0;text-align:center;
 }
 @media(max-width:860px){
   .tc-seg-actions-grid{grid-template-columns:1fr;gap:28px}
@@ -2667,7 +2737,9 @@ section.tc-seg-actions{
 @media (prefers-reduced-motion: no-preference) {
   .tc-seg-fact-inner.reveal,
   .tc-seg-card.reveal,
-  .tc-seg-actions-step.reveal {
+  .tc-seg-actions-step.reveal,
+  .tc-seg-nr-chip.reveal,
+  .tc-seg-nrs-inner .reveal {
     filter: blur(6px);
     transform: translateY(24px) scale(0.94);
     transition:
@@ -2677,7 +2749,9 @@ section.tc-seg-actions{
   }
   .tc-seg-fact-inner.reveal.is-visible,
   .tc-seg-card.reveal.is-visible,
-  .tc-seg-actions-step.reveal.is-visible {
+  .tc-seg-actions-step.reveal.is-visible,
+  .tc-seg-nr-chip.reveal.is-visible,
+  .tc-seg-nrs-inner .reveal.is-visible {
     filter: blur(0);
     transform: translateY(0) scale(1);
   }
@@ -2687,6 +2761,14 @@ section.tc-seg-actions{
   .tc-seg-actions-step.reveal:nth-child(1) { --reveal-delay: 0; }
   .tc-seg-actions-step.reveal:nth-child(2) { --reveal-delay: 1; }
   .tc-seg-actions-step.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-seg-nr-chip.reveal:nth-child(1) { --reveal-delay: 0; }
+  .tc-seg-nr-chip.reveal:nth-child(2) { --reveal-delay: 1; }
+  .tc-seg-nr-chip.reveal:nth-child(3) { --reveal-delay: 2; }
+  .tc-seg-nr-chip.reveal:nth-child(4) { --reveal-delay: 3; }
+  .tc-seg-nr-chip.reveal:nth-child(5) { --reveal-delay: 4; }
+  .tc-seg-nr-chip.reveal:nth-child(6) { --reveal-delay: 5; }
+  .tc-seg-nr-chip.reveal:nth-child(7) { --reveal-delay: 6; }
+  .tc-seg-nr-chip.reveal:nth-child(8) { --reveal-delay: 7; }
 }
   </style>
 
@@ -2753,9 +2835,15 @@ section.tc-seg-actions{
         <span class="tc-spark-eyebrow">Segurança</span>
         <h1 id="hero-title" class="tc-spark-title">Cultura de segurança através do <span class="tc-spark-mark">conhecimento</span>.</h1>
         <p class="tc-spark-lead">Treinamentos alinhados às NRs e às necessidades da sua empresa — prevenção, prática e capacitação sob medida.</p>
-        <div style="margin-top:28px">
-          <a href="#tc-actions-title" class="tc-cta-btn" style="display:inline-flex">Ver como atuamos</a>
+        <div class="tc-seg-hero-actions">
+          <a href="../../index.html#contato" class="tc-seg-hero-btn tc-seg-hero-btn--primary">Falar com um especialista</a>
+          <a href="../../index.html#catalogo" class="tc-seg-hero-btn tc-seg-hero-btn--ghost">Ver NRs do catálogo</a>
         </div>
+      </div>
+      <div class="tc-seg-wave tc-seg-wave--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#0A1326" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+        </svg>
       </div>
     </section>
 
@@ -2764,36 +2852,73 @@ section.tc-seg-actions{
         <span class="tc-seg-fact-eyebrow">Você sabia?</span>
         <h2 id="tc-fact-title">Grande parte dos acidentes de trabalho pode ser evitada com prevenção, treinamentos adequados e gestão eficiente de riscos.</h2>
         <p class="tc-seg-fact-note">Ignorar as NRs não é só um risco legal — é um risco humano e financeiro.</p>
-        <span class="tc-seg-fact-source">Fonte: Observatório de Segurança e Saúde no Trabalho (SmartLab) · Parceria MPT, QIT e ENIT</span>
+        <span class="tc-seg-fact-source">Fonte: Observatório de Segurança e Saúde no Trabalho, iniciativa SmartLab de Trabalho Decente, coordenada pelo MPT e pela OIT.</span>
       </div>
     </section>
 
-    <section class="tc-seg-section" id="pilares" aria-labelledby="pilares-title">
+    <section class="tc-seg-section tc-seg-has-wave" id="pilares" aria-labelledby="pilares-title">
+      <div class="tc-seg-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#0A1326" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+        </svg>
+      </div>
       <div style="max-width:1200px;margin:0 auto 36px;text-align:center">
-        <span style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#005C8B;margin-bottom:12px">Nossa abordagem</span>
-        <h2 id="pilares-title" class="reveal" style="margin:0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#1B2848;letter-spacing:-.03em">Promovemos uma cultura de segurança através do conhecimento.</h2>
-        <p class="reveal" style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:#495264">Treinamentos alinhados às Normas Regulamentadoras e às necessidades da sua empresa.</p>
+        <span class="tc-spark-eyebrow reveal" style="color:#218a5d;background:rgba(50,173,120,.12);border-color:rgba(50,173,120,.28)">O que oferecemos</span>
+        <h2 id="pilares-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#0F2A1F;letter-spacing:-.03em">Segurança na prática — não só no papel.</h2>
+        <p class="reveal" style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:#4A6358">Três frentes concretas para reduzir risco, cumprir a norma e formar equipes preparadas.</p>
       </div>
       <div class="tc-seg-grid">
-        <article class="tc-seg-card reveal">
-          <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Cultura de prevenção</h3>
-          <p>Conhecimento que fortalece atitudes seguras no dia a dia da operação.</p>
-        </article>
-        <article class="tc-seg-card reveal">
+        <a class="tc-seg-card reveal" href="../../index.html#catalogo">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div>
-          <h3>NRs aplicadas</h3>
-          <p>Capacitações alinhadas às Normas Regulamentadoras e à realidade da sua empresa.</p>
-        </article>
-        <article class="tc-seg-card reveal">
+          <h3>NRs presenciais e online</h3>
+          <p>Capacitações nas principais Normas Regulamentadoras, com carga horária e formato alinhados à sua operação.</p>
+          <span class="tc-seg-card-link">Ver catálogo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="tc-seg-card reveal" href="../../index.html#contato">
+          <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Simulações e brigada</h3>
+          <p>Treinamentos práticos de emergência, resgate e combate a princípios de incêndio — preparação real para o dia a dia.</p>
+          <span class="tc-seg-card-link">Solicitar proposta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="tc-seg-card reveal" href="../../index.html#contato">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-          <h3>Treinamento sob medida</h3>
-          <p>Conteúdo personalizado para a realidade e as necessidades da sua operação.</p>
-        </article>
+          <h3>Consultoria sob medida</h3>
+          <p>Diagnóstico, adequação e capacitação personalizada conforme os riscos e a realidade da sua empresa.</p>
+          <span class="tc-seg-card-link">Falar conosco <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
       </div>
     </section>
 
-    <section class="tc-seg-actions" aria-labelledby="tc-actions-title">
+    <section class="tc-seg-nrs tc-seg-has-wave" aria-labelledby="tc-nrs-title">
+      <div class="tc-seg-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#F2F8F5" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+        </svg>
+      </div>
+      <div class="tc-seg-nrs-inner">
+        <span class="tc-spark-eyebrow reveal">Catálogo</span>
+        <h2 id="tc-nrs-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.8vw,42px);font-weight:800;color:#fff;letter-spacing:-.03em">Normas que capacitamos</h2>
+        <p class="reveal" style="margin:14px auto 0;max-width:520px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.62)">Escolha a NR e veja carga horária, objetivo, público e o conteúdo programático completo.</p>
+        <div class="tc-seg-nrs-chips">
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-05">NR-05 · CIPAA</a>
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-06">NR-06 · EPI</a>
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-10">NR-10 · Eletricidade</a>
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-12">NR-12 · Máquinas</a>
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-18">NR-18 · Construção</a>
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-23">NR-23 · Incêndio</a>
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-33">NR-33 · Espaços confinados</a>
+          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-35">NR-35 · Altura</a>
+        </div>
+        <a class="tc-seg-nrs-more reveal" href="../../index.html#catalogo">Ver todas no catálogo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+
+    <section class="tc-seg-actions tc-seg-has-wave" aria-labelledby="tc-actions-title">
+      <div class="tc-seg-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#071426" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+        </svg>
+      </div>
       <div class="tc-seg-actions-inner">
         <span class="tc-spark-eyebrow reveal">Como atuamos</span>
         <h2 id="tc-actions-title" class="reveal">De ponta a ponta, transformando risco em segurança.</h2>
@@ -2817,7 +2942,12 @@ section.tc-seg-actions{
       </div>
     </section>
 
-    <section class="tc-seg-mobile" aria-labelledby="suporte-title">
+    <section class="tc-seg-mobile tc-seg-has-wave" aria-labelledby="suporte-title">
+      <div class="tc-seg-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#D5F0E4" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+        </svg>
+      </div>
       <div class="tc-seg-mobile-inner">
         <div class="reveal">
           <span class="tc-spark-eyebrow" style="margin-bottom:16px">Suporte contínuo</span>
@@ -2833,7 +2963,6 @@ section.tc-seg-actions{
       </div>
     </section>
 
-
     <!-- ========== CTA CÓSMICO ========== -->
     <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title" style="min-height:clamp(480px,70vh,640px);display:flex;align-items:center;justify-content:center">
       <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
@@ -2844,8 +2973,9 @@ section.tc-seg-actions{
       <div class="tc-cta-copy">
         <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Quer fortalecer a cultura de segurança na sua empresa?</h2>
         <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Prevenção, NRs aplicadas e suporte contínuo — do diagnóstico à reciclagem.</p>
-        <div style="display:flex;justify-content:center">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
           <a class="tc-cta-btn" href="../../index.html#contato">Falar com um especialista</a>
+          <a href="../../index.html#catalogo" class="tc-seg-hero-btn tc-seg-hero-btn--ghost">Ver catálogo de NRs</a>
         </div>
       </div>
     </section>
