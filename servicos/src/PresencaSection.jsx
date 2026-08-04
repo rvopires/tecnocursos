@@ -240,7 +240,11 @@ function PresencaDashboard() {
 
       <aside className="presenca-qr-widget" aria-label="QR Code de presença">
         <img
-          src="./assets/qr-code.png"
+          src={
+            typeof window !== 'undefined' && window.location.pathname.includes('/tecnologia')
+              ? '../../img/qrcode.jpeg'
+              : '../img/qrcode.jpeg'
+          }
           alt="QR Code de Presença"
           className="presenca-qr-img"
           width="96"

@@ -3265,6 +3265,11 @@
 .tc-tech-wave--bottom{
   top:auto;bottom:-1px;height:clamp(56px,7vw,88px);z-index:3;
 }
+.tc-scene .tc-tech-wave--bottom{
+  bottom:0;
+  height:clamp(64px,8vw,100px);
+  z-index:5;
+}
 .tc-tech-has-wave{padding-top:calc(clamp(64px,8vw,110px) + clamp(40px,5vw,64px)) !important}
 .tc-choice-meet-title{
   margin:0 0 clamp(28px,5vh,48px);text-align:center;
@@ -3870,9 +3875,12 @@
   background:#CDEAD9;
   color:#1B2848;
   overflow:hidden;
+  margin-top:-2px;
 }
 .tc-report-ambient{
   position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 88px);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 88px);
 }
 .tc-report-mesh{
   position:absolute;inset:-20%;
@@ -4622,14 +4630,9 @@
         </div>
       </section>
 
-      <section class="tc-scene tc-tech-has-wave" aria-labelledby="presenca-ops-title">
-        <div class="tc-tech-wave" aria-hidden="true">
-          <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#F7F9FB" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
-          </svg>
-        </div>
+      <section class="tc-scene" aria-labelledby="presenca-ops-title">
         <div class="tc-scene-media reveal reveal--zoom" aria-hidden="true">
-          <img src="../../uploads/img3home.png" alt="" loading="lazy"/>
+          <img src="../../img/capa%20-%20presen%C3%A7a%20lista.png" alt="" loading="lazy"/>
           <div class="tc-scene-shade"></div>
         </div>
         <div class="tc-scene-inner reveal">
@@ -4655,6 +4658,11 @@
               </article>
             </div>
           </div>
+        </div>
+        <div class="tc-tech-wave tc-tech-wave--bottom" aria-hidden="true">
+          <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#CDEAD9" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+          </svg>
         </div>
       </section>
 
@@ -4719,12 +4727,7 @@
     </div>
 
     <!-- ========== CTA CÓSMICO (home) ========== -->
-    <section class="tc-cta-cosmic tc-tech-has-wave" aria-labelledby="cta-cosmic-title" style="min-height:clamp(480px,70vh,640px);display:flex;align-items:center;justify-content:center">
-      <div class="tc-tech-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#CDEAD9" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
-        </svg>
-      </div>
+    <section class="tc-cta-cosmic" aria-labelledby="cta-cosmic-title" style="min-height:clamp(480px,70vh,640px);display:flex;align-items:center;justify-content:center">
       <div data-cosmic-stars="small" class="cosmic-stars" aria-hidden="true"></div>
       <div data-cosmic-stars="medium" class="cosmic-stars-medium" aria-hidden="true"></div>
       <div data-cosmic-stars="large" class="cosmic-stars-large" aria-hidden="true"></div>

@@ -171,7 +171,7 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
   .tc-why-grid>div:last-child{border-bottom:none}
 }
 /* Trajetória — fundo mint (stats da home) */
-.tc-traj{position:relative;overflow:hidden;background:#D5F0E4;padding:clamp(64px,8vw,110px) 0}
+.tc-traj{position:relative;overflow:hidden;background:#D5F0E4;padding:clamp(64px,8vw,110px) 0;margin-top:-1px}
 .tc-traj::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 60% at 18% 20%,rgba(50,173,120,.16),transparent 62%),radial-gradient(50% 55% at 82% 70%,rgba(106,187,140,.12),transparent 65%),radial-gradient(45% 50% at 50% 100%,rgba(50,173,120,.1),transparent 58%)}
 .tc-traj-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
 .tc-traj-panel{margin-top:clamp(36px,5vw,52px);padding:clamp(28px,4vw,40px);border-radius:24px;background:#fff;border:1px solid rgba(27,40,72,.08);box-shadow:0 16px 44px rgba(27,40,72,.08)}
@@ -340,8 +340,10 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
   linear-gradient(90deg,rgba(6,16,31,.18) 0%,transparent 38%,transparent 72%,rgba(6,16,31,.1) 100%)}
 .tc-br-wave,.tc-sec-wave{position:absolute;top:0;left:0;right:0;height:clamp(64px,8vw,96px);z-index:4;pointer-events:none;line-height:0}
 .tc-br-wave svg,.tc-sec-wave svg{display:block;width:100%;height:100%}
+.tc-sec-wave--bottom{top:auto;bottom:0;height:clamp(56px,7vw,88px)}
 .tc-br-section.tc-br-section{padding-top:calc(clamp(72px,9vw,120px) + clamp(48px,6vw,72px))}
 .tc-mv-section.tc-has-wave,.tc-traj.tc-has-wave,.tc-loc.tc-has-wave,.tc-nr-detail-topics.tc-has-wave,.tc-nr-detail-cta.tc-has-wave{padding-top:calc(clamp(72px,9vw,120px) + clamp(48px,6vw,72px))}
+.tc-mv-section.tc-has-wave-end{padding-bottom:calc(clamp(72px,9vw,120px) + clamp(28px,4vw,48px))}
 .tc-br-aurora{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .tc-br-aurora-pulse{
   position:absolute;inset:0;opacity:.55;
@@ -1079,7 +1081,7 @@ section[aria-labelledby="tc-partners-title"]::before{
     </section>
 
     <!-- Quem somos — visual inspirado na home (catálogo + bolhas) -->
-    <section class="tc-mv-section tc-has-wave" aria-labelledby="tc-mv-title">
+    <section class="tc-mv-section tc-has-wave tc-has-wave-end" aria-labelledby="tc-mv-title">
       <div class="tc-sec-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path fill="#fff" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
@@ -1121,15 +1123,15 @@ section[aria-labelledby="tc-partners-title"]::before{
           </sc-for>
         </div>
       </div>
+      <div class="tc-sec-wave tc-sec-wave--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#D5F0E4" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+        </svg>
+      </div>
     </section>
 
     <!-- Linha do tempo interativa -->
-    <section class="tc-traj tc-has-wave" aria-labelledby="tc-traj-title">
-      <div class="tc-sec-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#1B2848" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
-        </svg>
-      </div>
+    <section class="tc-traj" aria-labelledby="tc-traj-title">
       <div class="tc-traj-inner">
         <span class="tc-stats-eyebrow">Nossa história</span>
         <h2 id="tc-traj-title" class="tc-shine-text" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;margin:14px 0 12px;letter-spacing:-.03em;color:#1B2848">Confira nossa trajetória</h2>
