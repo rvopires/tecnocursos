@@ -218,7 +218,7 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-contato-hero-overlay{position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%,rgba(3,6,12,.86) 0%,rgba(4,9,18,.55) 46%,rgba(4,9,18,.18) 100%);pointer-events:none}
 .tc-contato-hero-content{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
 .tc-contato-hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
-.tc-contato-main{position:relative;z-index:2;overflow:visible;background:linear-gradient(165deg,#0a1830 0%,#0a1830 38%,#071426 100%);padding:clamp(64px,8vw,110px) 0 calc(clamp(40px,5vw,56px) + clamp(56px,7vw,88px));margin-bottom:calc(clamp(56px,7vw,88px) * -0.55);--aurora-color1:rgba(50,173,120,.18);--aurora-color2:rgba(40,110,180,.28)}
+.tc-contato-main{position:relative;z-index:2;overflow:hidden;background:linear-gradient(165deg,#0a1830 0%,#0a1830 38%,#071426 100%);padding:clamp(64px,8vw,110px) 0 calc(clamp(48px,6vw,72px) + clamp(56px,7vw,88px));margin-bottom:-1px;--aurora-color1:rgba(50,173,120,.18);--aurora-color2:rgba(40,110,180,.28)}
 .tc-contato-main::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.03;mix-blend-mode:screen;z-index:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px 220px}
 .tc-contato-main::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(80% 90% at 50% 40%,transparent 48%,rgba(3,10,22,.45) 100%),linear-gradient(90deg,rgba(6,16,31,.18) 0%,transparent 38%,transparent 72%,rgba(6,16,31,.1) 100%)}
 .tc-contato-ambient{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
@@ -226,9 +226,10 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-contato-ambient::after{content:"";position:absolute;width:52%;height:52%;bottom:-20%;right:-14%;border-radius:50%;background:#124a7a;opacity:.4;filter:blur(80px);animation:tcContatoOrb 18s ease-in-out infinite reverse}
 .tc-contato-grid{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.14;background-image:linear-gradient(rgba(106,187,140,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(106,187,140,.14) 1px,transparent 1px);background-size:52px 52px;-webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 72%)}
 @keyframes tcContatoOrb{0%,100%{transform:translate(0,0) scale(1);opacity:.55}50%{transform:translate(2%,3%) scale(1.06);opacity:.7}}
-.tc-contato-wave{position:absolute;left:0;right:0;bottom:-1px;height:clamp(56px,7vw,88px);z-index:3;pointer-events:none;line-height:0}
-.tc-contato-wave svg{display:block;width:100%;height:calc(100% + 2px);margin-bottom:-1px}
-.tc-contato-main-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.9fr);gap:clamp(22px,3vw,36px);align-items:start}
+.tc-contato-stars{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.tc-contato-wave{position:absolute;left:0;right:0;bottom:0;height:clamp(56px,7vw,88px);z-index:3;pointer-events:none;line-height:0}
+.tc-contato-wave svg{display:block;width:100%;height:100%}
+.tc-contato-main-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.9fr);gap:clamp(22px,3vw,36px);align-items:start}
 .tc-contato-form-card{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.98) 0%,rgba(247,251,249,.96) 100%);border:1px solid rgba(106,187,140,.35);border-radius:22px;padding:clamp(24px,3vw,36px);box-shadow:0 24px 60px rgba(0,0,0,.35),0 0 0 1px rgba(50,173,120,.08),inset 0 1px 0 rgba(255,255,255,.9)}
 .tc-contato-form-card::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(135deg,rgba(50,173,120,.08),transparent 42%,transparent 58%,rgba(0,92,139,.06));z-index:0}
 .tc-contato-form-card::after{content:"";position:absolute;left:18px;right:18px;top:0;height:2px;border-radius:0 0 2px 2px;background:linear-gradient(90deg,transparent,rgba(50,173,120,.85),rgba(16,255,203,.7),rgba(0,92,139,.7),transparent);z-index:1}
@@ -1559,6 +1560,7 @@ section[aria-labelledby="tc-partners-title"]::before{
     <section class="tc-contato-main" aria-labelledby="contato-form-title">
       <div class="tc-contato-ambient" aria-hidden="true"></div>
       <div class="tc-contato-grid" aria-hidden="true"></div>
+      <div class="tc-contato-stars" data-contato-stars aria-hidden="true"></div>
       <div class="tc-contato-main-inner">
         <div id="contato-form" class="tc-contato-form-card" data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">
           <p class="tc-contato-step" id="tc-contato-step-label">Passo 1 de 2</p>
@@ -1679,7 +1681,7 @@ section[aria-labelledby="tc-partners-title"]::before{
       </div>
       <div class="tc-contato-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#D5F0E4" d="M0,96 L1440,96 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+          <path fill="#D5F0E4" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
         </svg>
       </div>
     </section>
@@ -2658,6 +2660,10 @@ class Component extends DCLogic {
     };
     fillAuroraStars(document.querySelector('[data-br-stars]'), 'tc-br-aurora-star', 70);
     fillAuroraStars(document.querySelector('[data-loc-stars]'), 'tc-loc-aurora-star', 110);
+    fillAuroraStars(document.querySelector('[data-contato-stars]'), 'tc-br-aurora-star', 60);
+    const contatoStarsHost = () => fillAuroraStars(document.querySelector('[data-contato-stars]'), 'tc-br-aurora-star', 60);
+    const contatoStarsObs = new MutationObserver(contatoStarsHost);
+    contatoStarsObs.observe(document.body, { childList: true, subtree: true });
 
     const svg = document.getElementById('tc-br-map');
     if (!svg || svg.dataset.brReady) return;
