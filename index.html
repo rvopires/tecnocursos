@@ -414,14 +414,19 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-br-pin-ring{transform-box:fill-box;transform-origin:center;opacity:0}
 .tc-br-pin.tc-br-pin-on .tc-br-pin-ring{animation:tcBrRing 2.4s ease-out infinite}
 @keyframes tcBrRing{0%{transform:scale(.55);opacity:.75}70%{opacity:.15}100%{transform:scale(2.4);opacity:0}}
-.tc-br-stats{display:flex;flex-direction:column;gap:10px;margin-top:28px;background:transparent;border:none;border-radius:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;overflow:visible}
-.tc-br-stat-row{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid rgba(255,255,255,.55);border-radius:16px;background:#fff;box-shadow:0 14px 36px rgba(0,0,0,.22);transition:transform .25s ease,box-shadow .25s ease}
+.tc-br-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;width:100%;max-width:420px;background:transparent;border:none;border-radius:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;overflow:visible}
+.tc-br-stat-row{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;width:100%;min-height:100px;height:100%;box-sizing:border-box;padding:14px 12px;border:1px solid rgba(255,255,255,.55);border-radius:14px;background:#fff;box-shadow:0 14px 36px rgba(0,0,0,.22);transition:transform .25s ease,box-shadow .25s ease}
 .tc-br-stat-row:nth-child(even){background:#fff}
 .tc-br-stat-row:last-child{border-bottom:1px solid rgba(255,255,255,.55)}
 .tc-br-stat-row:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(0,0,0,.28);background:#fff}
-.tc-br-stat-icon{width:40px;height:40px;border-radius:12px;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#32AD78;box-shadow:none}
-.tc-br-stat-num{font-size:clamp(26px,2.6vw,32px);font-weight:800;color:#32AD78;line-height:1;letter-spacing:-.03em;min-width:4.2ch;text-shadow:none}
-.tc-br-stat-label{font-size:11.5px;font-weight:700;color:#495264;text-transform:uppercase;letter-spacing:.08em}
+.tc-br-stat-top{display:flex;align-items:center;gap:8px}
+.tc-br-stat-icon{width:32px;height:32px;border-radius:9px;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#32AD78;box-shadow:none}
+.tc-br-stat-num{font-size:clamp(22px,2.2vw,28px);font-weight:800;color:#32AD78;line-height:1;letter-spacing:-.03em;min-width:0;text-shadow:none}
+.tc-br-stat-label{font-size:10px;font-weight:700;color:#495264;text-transform:uppercase;letter-spacing:.06em;line-height:1.35;padding-left:0;max-width:100%}
+@media(max-width:520px){
+  .tc-br-stats{grid-template-columns:1fr;max-width:260px}
+  .tc-br-stat-row{min-height:0;padding:14px 16px}
+}
 .tc-br-regions{display:flex;flex-wrap:wrap;gap:8px}
 .tc-br-filters{margin-top:18px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .tc-br-filter-all{display:flex;align-items:center;gap:10px}
@@ -858,26 +863,32 @@ section[aria-labelledby="tc-partners-title"]::before{
       <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
         <div style="max-width:420px">
           <span data-reveal class="tc-br-eyebrow" style="opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Onde atendemos</span>
-          <h2 id="tc-br-title" data-reveal style="font-size:clamp(30px,3.8vw,46px);font-weight:800;color:#fff;margin:0;letter-spacing:-.03em;line-height:1.05;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Onde você estiver,<br/>a <span style="color:#32AD78;font-style:italic;letter-spacing:-.04em">TecnoCursos</span> chega.</h2>
-          <p data-reveal style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.6);margin:16px 0 0;max-width:380px;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1) .05s,transform .7s cubic-bezier(.22,.61,.36,1) .05s">Da teoria à prática, capacitação em Normas Regulamentadoras para empresas em todas as regiões do país.</p>
+          <h2 id="tc-br-title" data-reveal style="font-size:clamp(30px,3.8vw,46px);font-weight:800;color:#fff;margin:0;letter-spacing:-.03em;line-height:1.05;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Onde você estiver,<br/>a <span style="color:#32AD78;letter-spacing:-.04em">TecnoCursos</span> chega.</h2>
+          <p data-reveal style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.6);margin:16px 0 0;max-width:380px;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1) .05s,transform .7s cubic-bezier(.22,.61,.36,1) .05s">Com atuação nacional, levamos treinamentos em Normas Regulamentadoras e soluções que unem tecnologia, conhecimento e segurança para empresas em todas as regiões do Brasil.</p>
 
           <div class="tc-br-stats" data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,.61,.36,1) .12s,transform .8s cubic-bezier(.22,.61,.36,1) .12s">
             <div class="tc-br-stat-row">
-              <div class="tc-br-stat-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
-              <div class="tc-br-stat-num" data-counter="27" data-counter-duration="1800" data-counter-delay="120">0</div>
-              <div class="tc-br-stat-label">Estados atendidos</div>
+              <div class="tc-br-stat-top">
+                <div class="tc-br-stat-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
+                <div class="tc-br-stat-num" data-counter="27" data-counter-duration="1800" data-counter-delay="120">0</div>
               </div>
+              <div class="tc-br-stat-label">Estados atendidos</div>
+            </div>
             <div class="tc-br-stat-row">
-              <div class="tc-br-stat-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg></div>
-              <div class="tc-br-stat-num" data-counter="100" data-counter-suffix="%" data-counter-duration="2000" data-counter-delay="280">0%</div>
+              <div class="tc-br-stat-top">
+                <div class="tc-br-stat-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg></div>
+                <div class="tc-br-stat-num" data-counter="100" data-counter-suffix="%" data-counter-duration="2000" data-counter-delay="280">0%</div>
+              </div>
               <div class="tc-br-stat-label">Cobertura nacional</div>
             </div>
             <div class="tc-br-stat-row">
-              <div class="tc-br-stat-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></div>
-              <div class="tc-br-stat-num" data-counter="35" data-counter-suffix="+" data-counter-duration="1900" data-counter-delay="440">0+</div>
-              <div class="tc-br-stat-label">NRs ministradas</div>
+              <div class="tc-br-stat-top">
+                <div class="tc-br-stat-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></div>
+                <div class="tc-br-stat-num" data-counter="35" data-counter-suffix="+" data-counter-duration="1900" data-counter-delay="440">0+</div>
               </div>
+              <div class="tc-br-stat-label">NRs ministradas</div>
             </div>
+          </div>
 
           <div class="tc-br-filters" data-reveal style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,.61,.36,1) .18s,transform .8s cubic-bezier(.22,.61,.36,1) .18s">
             <div class="tc-br-filter-all">
@@ -1002,7 +1013,7 @@ section[aria-labelledby="tc-partners-title"]::before{
       <div class="tc-cta-earth" aria-hidden="true"></div>
       <div class="tc-cta-copy">
         <h2 style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Pronto para transformar a gestão da sua empresa?</h2>
-        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança.</p>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Conheça as soluções da TecnoCursos para digitalizar processos, capacitar equipes e fortalecer a segurança da sua empresa. Conte com quem une tecnologia, treinamento e experiência para impulsionar resultados.</p>
         <div style="display:flex;justify-content:center">
           <button data-reveal-pop data-delay="120" onClick="{{ goContato }}" style="font-family:inherit;border:none;cursor:pointer;background:#6ABB8C;color:#070F1E;font-size:16px;font-weight:700;padding:16px 30px;border-radius:12px;box-shadow:0 10px 30px rgba(106,187,140,.32);transition:background .2s,transform .2s,box-shadow .2s" style-hover="filter:brightness(1.08);transform:translateY(-2px) scale(1.03);box-shadow:0 16px 38px rgba(106,187,140,.4)">Falar com um especialista</button>
         </div>
@@ -2766,12 +2777,21 @@ class Component extends DCLogic {
       })
     );
 
-    const partners = Array.from({ length: 34 }, (_, i) => {
-      const n = i + 1;
-      return { name: 'Parceiro ' + n, logo: 'img/LOGOS/' + n + '.png' };
-    });
+    const partnerFiles = [
+      'AGRIMETAIS.png', 'AGROFITO.png', 'AMBEV.png', 'AMSTEL.png', 'ANTONIOSI.png',
+      'BADEN BADEN.png', 'BALDAN.png', 'CITROSUCO.png', 'COAGROSOL.png', 'COCA-COLA.png',
+      'CPW.png', 'EISENBAHN.png', 'GMF.png', 'HEINEKEN.png', 'ITUBAINA.png',
+      'JCV.png', 'LEROY MERLIN.png', 'LIBELL.png', 'MARCHESAN.png', 'METALBRAS.png',
+      'METALFER.png', 'NESPRESSO.png', 'NESTLE.png', 'NOVA HIDRAULICA.png', 'PIRACANJUBA.png',
+      'PURINA.png', 'RAIZEN.png', 'SCHIN.png', 'SIMONI.png', 'SOL.png',
+      'TERRAL.png', 'TIGER.png', 'TRACBEL.png', 'UNIMED.png',
+    ];
+    const partners = partnerFiles.map((file) => ({
+      name: file.replace(/\.png$/i, ''),
+      logo: encodeURI('img/LOGOS - EMPRESAS PARCEIRAS/' + file),
+    }));
     const partnersRow1 = partners.slice(0, 17);
-    const partnersRow2 = partners.slice(17, 34);
+    const partnersRow2 = partners.slice(17);
     const mkPartner = (p, i, kp) => React.createElement('div', {
       key: kp + i,
       style: { width: '250px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 14px' },
