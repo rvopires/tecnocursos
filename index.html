@@ -128,26 +128,26 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-mv-timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:linear-gradient(180deg,rgba(50,173,120,.15),rgba(50,173,120,.65),rgba(0,92,139,.45),rgba(50,173,120,.15));z-index:0}
 .tc-mv-row{position:relative;z-index:1;display:flex;align-items:center;margin-bottom:clamp(28px,3.5vw,44px)}
 .tc-mv-row:last-child{margin-bottom:0}
-.tc-mv-card{position:relative;width:calc(50% - 28px);padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(145deg,rgba(12,26,48,.92) 0%,rgba(10,58,92,.88) 52%,rgba(15,74,72,.9) 100%);border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 48px rgba(7,15,30,.28);overflow:hidden;opacity:0;transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1),border-color .3s,box-shadow .3s}
-.tc-mv-card::after{content:"";position:absolute;right:-18%;top:-40%;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(50,173,120,.28),transparent 68%);pointer-events:none}
+.tc-mv-card{position:relative;width:calc(50% - 28px);padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(145deg,#32AD78 0%,#2a9a6a 48%,#218a5d 100%);border:1px solid rgba(255,255,255,.28);box-shadow:0 20px 48px rgba(7,15,30,.28),0 0 0 1px rgba(50,173,120,.2);overflow:hidden;opacity:0;transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1),border-color .3s,box-shadow .3s}
+.tc-mv-card::after{content:"";position:absolute;right:-18%;top:-40%;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 68%);pointer-events:none}
 /* Ímpar = esquerda | Par = direita */
 .tc-mv-row:nth-child(odd) .tc-mv-card{margin-left:0;margin-right:28px;text-align:right;transform:translateX(-52px)}
 .tc-mv-row:nth-child(even) .tc-mv-card{margin-left:auto;margin-right:0;text-align:left;transform:translateX(52px)}
-.tc-mv-card:hover{border-color:rgba(50,173,120,.5);box-shadow:0 24px 56px rgba(0,0,0,.35),0 0 40px rgba(50,173,120,.14)}
+.tc-mv-card:hover{border-color:rgba(255,255,255,.5);box-shadow:0 24px 56px rgba(0,0,0,.35),0 0 40px rgba(50,173,120,.28);filter:brightness(1.04)}
 .tc-mv-card>*{position:relative;z-index:1}
 .tc-mv-row.tc-mv-on .tc-mv-card{opacity:1;transform:none}
-.tc-mv-num{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ABB8C;margin-bottom:10px}
+.tc-mv-num{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:10px}
 .tc-mv-title{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(20px,2.2vw,26px);font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:-.02em}
-.tc-mv-desc{font-size:15px;line-height:1.7;color:rgba(255,255,255,.72);margin:0}
+.tc-mv-desc{font-size:15px;line-height:1.7;color:rgba(255,255,255,.9);margin:0}
 .tc-mv-valores{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
-.tc-mv-valores li{position:relative;margin:0;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(50,173,120,.22);transition:background .25s,border-color .25s,transform .25s}
-.tc-mv-valores li:hover{background:rgba(50,173,120,.14);border-color:rgba(50,173,120,.45);transform:translateY(-1px)}
-.tc-mv-valores-name{display:block;font-size:14px;font-weight:700;letter-spacing:.02em;color:#6ABB8C;margin:0 0 4px}
-.tc-mv-valores-desc{display:block;font-size:13px;line-height:1.6;color:rgba(255,255,255,.68);margin:0}
+.tc-mv-valores li{position:relative;margin:0;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);transition:background .25s,border-color .25s,transform .25s}
+.tc-mv-valores li:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
+.tc-mv-valores-name{display:block;font-size:14px;font-weight:700;letter-spacing:.02em;color:#fff;margin:0 0 4px}
+.tc-mv-valores-desc{display:block;font-size:13px;line-height:1.6;color:rgba(255,255,255,.85);margin:0}
 .tc-mv-row:nth-child(odd) .tc-mv-valores{text-align:right}
-.tc-mv-row:nth-child(odd) .tc-mv-valores li{border-right:3px solid #32AD78;border-left-color:transparent}
+.tc-mv-row:nth-child(odd) .tc-mv-valores li{border-right:3px solid #fff;border-left-color:transparent}
 .tc-mv-row:nth-child(even) .tc-mv-valores{text-align:left}
-.tc-mv-row:nth-child(even) .tc-mv-valores li{border-left:3px solid #32AD78;border-right-color:transparent}
+.tc-mv-row:nth-child(even) .tc-mv-valores li{border-left:3px solid #fff;border-right-color:transparent}
 .tc-mv-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
 .tc-mv-dot>i{display:block;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#32AD78,#6ABB8C);box-shadow:0 0 0 4px rgba(50,173,120,.22),0 0 18px rgba(50,173,120,.45);transform:scale(0);transition:transform .35s cubic-bezier(.34,1.4,.64,1)}
 .tc-mv-row.tc-mv-on .tc-mv-dot>i{transform:scale(1)}
@@ -156,7 +156,7 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
   .tc-mv-row{flex-direction:column;align-items:stretch}
   .tc-mv-card,.tc-mv-row:nth-child(odd) .tc-mv-card,.tc-mv-row:nth-child(even) .tc-mv-card{width:100%;margin:0 0 0 36px;padding:20px;text-align:left;transform:translateX(36px)}
   .tc-mv-row:nth-child(odd) .tc-mv-valores,.tc-mv-row:nth-child(even) .tc-mv-valores{text-align:left}
-  .tc-mv-row:nth-child(odd) .tc-mv-valores li,.tc-mv-row:nth-child(even) .tc-mv-valores li{border-left:3px solid #32AD78;border-right-color:transparent}
+  .tc-mv-row:nth-child(odd) .tc-mv-valores li,.tc-mv-row:nth-child(even) .tc-mv-valores li{border-left:3px solid #fff;border-right-color:transparent}
   .tc-mv-dot{left:14px;top:28px;transform:translate(-50%,0)}
   .tc-mv-row.tc-mv-on .tc-mv-card{transform:none}
   .tc-mv-floats{display:none}
@@ -210,6 +210,7 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-loc-map iframe{width:100%;height:100%;border:0;display:block}
 @media(max-width:860px){
   .tc-loc-inner{grid-template-columns:1fr;gap:32px}
+  .tc-contato-matao{grid-template-columns:1fr!important}
 }
 @media(prefers-reduced-motion:reduce){.tc-loc-aurora-star{animation:none!important;opacity:.35}}
 /* NR detalhe — página editorial do treinamento */
@@ -270,9 +271,9 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 /* About — layout creative portfolio (foto no canto + card) */
 .tc-about-pf{position:relative;overflow:hidden;background:linear-gradient(165deg,#FFFFFF 0%,#F7FBF9 55%,#F2F8F5 100%);padding:clamp(56px,7vw,96px) 0}
 .tc-about-pf::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 48% at 14% 28%,rgba(50,173,120,.06),transparent 68%),radial-gradient(42% 40% at 90% 75%,rgba(106,187,140,.05),transparent 70%)}
-.tc-about-pf-grid{display:grid;grid-template-columns:minmax(320px,520px) minmax(0,1fr);gap:clamp(28px,4vw,48px);align-items:center}
-.tc-about-pf-photo{position:relative;width:100%;border-radius:16px;overflow:hidden;aspect-ratio:1;background:#fff;border:1px solid rgba(50,173,120,.2);align-self:center;box-shadow:0 18px 44px rgba(10,40,28,.1)}
-.tc-about-pf-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.tc-about-pf-grid{display:grid;grid-template-columns:minmax(300px,520px) minmax(0,1.2fr);gap:clamp(28px,4vw,48px);align-items:center}
+.tc-about-pf-photo{position:relative;width:100%;border-radius:16px;overflow:hidden;aspect-ratio:5/4;background:#fff;border:1px solid rgba(50,173,120,.2);align-self:center;box-shadow:0 18px 44px rgba(10,40,28,.1)}
+.tc-about-pf-photo img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}
 .tc-about-pf-badge{position:absolute;left:14px;bottom:14px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(7,12,22,.78);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:13px;font-weight:600;color:#fff}
 .tc-about-pf-badge>i{width:8px;height:8px;border-radius:50%;background:#32AD78;box-shadow:0 0 0 0 rgba(50,173,120,.55);animation:tcAboutPulse 1.8s ease-out infinite}
 @keyframes tcAboutPulse{0%{box-shadow:0 0 0 0 rgba(50,173,120,.55)}70%{box-shadow:0 0 0 10px rgba(50,173,120,0)}100%{box-shadow:0 0 0 0 rgba(50,173,120,0)}}
@@ -303,11 +304,11 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
   .tc-about-pf-card:hover{transform:none}
 }
 /* Evolução da marca — verde com gradiente branco */
-.tc-brand{position:relative;overflow:hidden;background:linear-gradient(165deg,#32AD78 0%,#6ABB8C 38%,#E8F7F0 72%,#fff 100%);padding:clamp(72px,9vw,120px) 0}
+.tc-brand{position:relative;overflow:hidden;background:linear-gradient(165deg,#32AD78 0%,#6ABB8C 38%,#E8F7F0 72%,#fff 100%);padding:clamp(48px,6vw,80px) 0}
 .tc-brand::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 50% at 18% 22%,rgba(255,255,255,.45),transparent 68%),radial-gradient(48% 46% at 88% 78%,rgba(255,255,255,.35),transparent 70%)}
 .tc-brand::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,transparent 40%,rgba(255,255,255,.55) 100%)}
 .tc-brand-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
-.tc-brand-head{text-align:center;max-width:640px;margin:0 auto clamp(40px,5vw,64px)}
+.tc-brand-head{text-align:center;max-width:640px;margin:0 auto clamp(28px,3.5vw,40px)}
 .tc-brand-copy{text-align:center;max-width:620px;margin:0 auto;font-size:16px;line-height:1.7;color:#1F3D32}
 /* (legado de cards da marca — mantido se reutilizado) */
 .tc-brand-stage{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(16px,2.5vw,28px);align-items:center;margin-bottom:clamp(36px,5vw,52px)}
@@ -563,7 +564,7 @@ sc-for{display:contents}
 }
 .tc-stats-head{position:relative;z-index:2;max-width:720px;margin:0 auto 40px;padding:0 24px;text-align:center}
 .tc-stats-title{margin:0;font-size:clamp(26px,3.4vw,40px);line-height:1.12;letter-spacing:-.03em;font-weight:800;color:#1B2848}
-.tc-stats-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;--glow-angle:0deg}
+.tc-stats-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;--glow-angle:0deg}
 @property --glow-angle{syntax:'<angle>';inherits:true;initial-value:0deg}
 .tc-stats-cards.tc-glow-run{animation:tcGlowSpin 5.5s linear infinite}
 @keyframes tcGlowSpin{to{--glow-angle:360deg}}
@@ -654,6 +655,9 @@ section[aria-labelledby="tc-partners-title"]::before{
   .tc-nav-shell{padding:14px 14px 0}
   .tc-nav-pill{height:58px;padding:0 10px 0 16px}
 }
+@media(max-width:1100px){
+  .tc-stats-cards{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:720px){
   .tc-stats-cards{grid-template-columns:1fr!important;max-width:420px;margin:0 auto}
 }
@@ -733,11 +737,7 @@ section[aria-labelledby="tc-partners-title"]::before{
 
       <div data-hero-pad style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center">
         <h1 style="font-size:clamp(30px,4.8vw,54px);line-height:1.06;letter-spacing:-.03em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.6),0 0 60px rgba(0,0,0,.35);animation:tcSlideUp .82s cubic-bezier(.22,.61,.36,1) .18s both"><span style="color:#32AD78">Tecnologia</span> que conecta pessoas, processos e <span style="color:#32AD78">conformidade.</span></h1>
-        <p style="font-size:clamp(14px,1.55vw,16px);line-height:1.65;color:rgba(255,255,255,.74);margin:20px 0 0;max-width:560px;text-shadow:0 1px 12px rgba(0,0,0,.7);animation:tcSlideUp .7s cubic-bezier(.22,.61,.36,1) .34s both">Uma plataforma própria com lista de presença digital, treinamentos em NRs e conformidade comprovada — a tecnologia por trás do crescimento da sua empresa.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:28px;animation:tcSlideUp .7s cubic-bezier(.22,.61,.36,1) .48s both">
-          <button onClick="{{ goServicos }}" style="font-family:inherit;border:none;cursor:pointer;background:#32AD78;color:#070F1E;font-size:13px;font-weight:600;padding:12px 22px;border-radius:10px;box-shadow:0 8px 24px rgba(50,173,120,.36);transition:transform .2s,background .2s" style-hover="filter:brightness(1.08);transform:translateY(-2px)">Conheça nossos serviços</button>
-          <button onClick="{{ goContato }}" style="font-family:inherit;cursor:pointer;background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.26);font-size:13px;font-weight:600;padding:12px 22px;border-radius:10px;transition:background .2s,transform .2s" style-hover="background:rgba(255,255,255,.16);transform:translateY(-2px)">Fale com a gente</button>
-        </div>
+        <p style="font-size:clamp(14px,1.55vw,16px);line-height:1.65;color:rgba(255,255,255,.74);margin:20px 0 0;max-width:560px;text-shadow:0 1px 12px rgba(0,0,0,.7);animation:tcSlideUp .7s cubic-bezier(.22,.61,.36,1) .34s both">Uma plataforma própria com lista de presença digital, treinamentos em NRs e conformidade comprovada, a tecnologia por trás do crescimento da sua empresa.</p>
       </div>
     </section>
 
@@ -780,7 +780,7 @@ section[aria-labelledby="tc-partners-title"]::before{
         <h2 id="tc-equation-title" class="tc-equation-title" data-eq-blur aria-label="Ensinar + Comprovar = Proteger.">
           <span class="tc-eq-tech">Ensinar</span> <span class="tc-eq-op">+</span> <span class="tc-eq-train">Comprovar</span> <span class="tc-eq-op">=</span> <span class="tc-eq-safety">Proteger.</span>
         </h2>
-        <p class="tc-equation-sub" data-reveal data-delay="220" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Uma soma que ninguém vê — até faltar.</p>
+        <p class="tc-equation-sub" data-reveal data-delay="220" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Uma soma que ninguém vê, até faltar.</p>
       </div>
     </section>
 
@@ -789,9 +789,10 @@ section[aria-labelledby="tc-partners-title"]::before{
 
       <div class="tc-stats-head">
         <span class="tc-stats-eyebrow" data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)">Em números</span>
-        <h2 id="tc-stats-title" class="tc-stats-title" data-reveal data-delay="80" style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">Resultados que acompanham a nossa história.</h2>
+        <h2 id="tc-stats-title" class="tc-stats-title" data-reveal data-delay="80" style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">Resultados que refletem a nossa trajetória</h2>
+        <p data-reveal data-delay="140" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);margin:16px auto 0;max-width:520px;font-size:16px;line-height:1.65;color:#64748b">Cada número representa uma história construída com dedicação, confiança e compromisso em transformar pessoas e empresas por meio do conhecimento.</p>
               </div>
-      <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px">
+      <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
         <div class="tc-stats-cards">
           <div class="tc-stats-card">
             <span class="tc-glow-effect" aria-hidden="true"></span>
@@ -810,7 +811,7 @@ section[aria-labelledby="tc-partners-title"]::before{
               <span class="tc-stats-card-num" data-counter="320" data-counter-duration="2600" data-counter-delay="280">0</span>
               <span class="tc-stats-card-unit">mil</span>
             </div>
-            <div class="tc-stats-card-label">inscritos em treinamentos</div>
+            <div class="tc-stats-card-label">Inscrições em nossos treinamentos</div>
             <div class="tc-stats-card-bar" aria-hidden="true"><i></i></div>
           </div>
           <div class="tc-stats-card">
@@ -820,9 +821,19 @@ section[aria-labelledby="tc-partners-title"]::before{
               <span class="tc-stats-card-num" data-counter="250" data-counter-duration="2800" data-counter-delay="560">0</span>
               <span class="tc-stats-card-unit">mil</span>
                 </div>
-            <div class="tc-stats-card-label">capacitados</div>
+            <div class="tc-stats-card-label">Profissionais capacitados</div>
             <div class="tc-stats-card-bar" aria-hidden="true"><i></i></div>
                   </div>
+          <div class="tc-stats-card">
+            <span class="tc-glow-effect" aria-hidden="true"></span>
+            <div class="tc-stats-card-value">
+              <span class="tc-stats-card-prefix" aria-hidden="true">+</span>
+              <span class="tc-stats-card-num" data-counter="70" data-counter-duration="3000" data-counter-delay="840">0</span>
+              <span class="tc-stats-card-unit">mil</span>
+            </div>
+            <div class="tc-stats-card-label">Alunos em formação neste momento</div>
+            <div class="tc-stats-card-bar" aria-hidden="true"><i></i></div>
+          </div>
                 </div>
               </div>
     </section>
@@ -1010,17 +1021,17 @@ section[aria-labelledby="tc-partners-title"]::before{
       <div style="position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%, rgba(3,6,12,.84) 0%, rgba(4,9,18,.5) 46%, rgba(4,9,18,.12) 100%)" aria-hidden="true"></div>
       <div class="hero-tec-cover-content" style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif">
         <span class="tc-spark-eyebrow">Sobre nós</span>
-        <h1 id="sobre-hero-title" class="tc-spark-title">Uma jornada de <span class="tc-spark-mark">dedicação</span>.</h1>
-        <p class="tc-spark-lead">Desde 2004 ajudando empresas a manterem-se em conformidade com as Normas Regulamentadoras — hoje, com tecnologia para gerir tudo isso.</p>
+        <h1 id="sobre-hero-title" class="tc-spark-title">Uma jornada de <span class="tc-spark-mark">evolução</span>.</h1>
+        <p class="tc-spark-lead">Desde 2004, transformamos a forma como empresas gerenciam as Normas Regulamentadoras, combinando tecnologia, treinamento e segurança em um único ecossistema de soluções.</p>
       </div>
     </section>
 
-    <!-- Nossa história — layout About do creative portfolio (v0) -->
+    <!-- Quem somos — foto + texto institucional -->
     <section id="nossa-historia" class="tc-about-pf" aria-labelledby="nossa-historia-title">
       <div style="position:relative;max-width:1230px;margin:0 auto;padding:0 24px">
         <div style="text-align:center;margin-bottom:clamp(36px,5vw,56px)">
-          <span data-reveal data-delay="40" style="display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#32AD78;margin-bottom:12px;transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Sobre nós</span>
-          <h2 id="nossa-historia-title" data-pop-text class="tc-shine-text" style="font-size:clamp(34px,5.4vw,52px);font-weight:800;margin:0;letter-spacing:-.03em;opacity:0">Nossa história</h2>
+          <span data-reveal data-delay="40" class="tc-stats-eyebrow" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">A empresa</span>
+          <h2 id="nossa-historia-title" data-pop-text class="tc-shine-text" style="font-size:clamp(34px,5.4vw,52px);font-weight:800;margin:0;letter-spacing:-.03em;opacity:0">Quem somos</h2>
         </div>
 
         <div class="tc-about-pf-grid">
@@ -1030,9 +1041,11 @@ section[aria-labelledby="tc-partners-title"]::before{
 
           <div data-reveal="right" data-delay="160" class="tc-about-pf-card" style="transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1),border-color .3s,box-shadow .3s">
             <div class="tc-about-pf-copy">
-              <p>Tudo começou em <strong>2004</strong>, quando João Arthur fundou uma escola de capacitação focada em Normas Regulamentadoras. A missão era clara: ajudar empresas a se manterem em conformidade, garantindo um ambiente mais seguro para todos.</p>
-              <p>Nos primeiros anos, João fazia de tudo — criava conteúdos, ministrava treinamentos e até dirigia a Unidade Móvel para treinamentos práticos, como os de brigada de incêndio. Ao seu lado, Alessandra cuidava da logística, do financeiro e da emissão dos certificados.</p>
-              <p>Em <strong>2009</strong>, a formalização do CNPJ consolidou nossa atuação. Hoje contamos com uma equipe altamente qualificada — administração, TI, suporte e instrutores — espalhada por diversas regiões do Brasil.</p>
+              <p>A TecnoCursos é uma empresa de tecnologia, treinamento e segurança, especializada em capacitação corporativa e atendimento às Normas Regulamentadoras (NRs).</p>
+              <p>Oferecemos treinamentos presenciais, online e híbridos, com conteúdo gamificado, acessibilidade em Libras e uma experiência mais dinâmica para os colaboradores.</p>
+              <p>Contamos com plataforma digital própria para gestão de treinamentos, certificados, indicadores e relatórios, além de Lista de Presença Digital com autenticação e registros seguros.</p>
+              <p>Desenvolvemos soluções, conteúdos e recursos tecnológicos conforme a necessidade de cada cliente.</p>
+              <p>Atendemos em todo o Brasil com consultoria, treinamentos e tecnologia para apoiar a conformidade, a segurança e o desenvolvimento profissional.</p>
             </div>
           </div>
         </div>
@@ -1043,33 +1056,16 @@ section[aria-labelledby="tc-partners-title"]::before{
     <section id="evolucao-marca" class="tc-brand" aria-labelledby="tc-brand-title">
       <div class="tc-brand-inner">
         <div class="tc-brand-head">
-          <span data-reveal data-delay="40" style="display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0F2A1F;margin-bottom:14px;transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Nossa marca</span>
-          <h2 id="tc-brand-title" data-reveal="blur" data-delay="100" class="tc-shine-text" style="font-size:clamp(32px,5vw,52px);font-weight:800;margin:0 0 16px;letter-spacing:-.03em;transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1),filter .85s cubic-bezier(.22,.61,.36,1)">A evolução da nossa logo</h2>
-          <p data-reveal="scale" data-delay="180" style="font-size:16px;line-height:1.65;color:#1F3D32;margin:0;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">Mais do que um novo visual: uma marca que cresceu com a TecnoCursos e expressa tecnologia, confiança e o compromisso com a capacitação.</p>
+          <span data-reveal data-delay="40" class="tc-stats-eyebrow" style="color:#0F2A1F;background:rgba(255,255,255,.5);border-color:rgba(15,42,31,.22);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Nossa marca</span>
+          <h2 id="tc-brand-title" data-reveal="blur" data-delay="100" class="tc-shine-text" style="font-size:clamp(32px,5vw,52px);font-weight:800;margin:0 0 16px;letter-spacing:-.03em;transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1),filter .85s cubic-bezier(.22,.61,.36,1)">Um novo momento</h2>
+          <p data-reveal="scale" data-delay="180" style="font-size:16px;line-height:1.65;color:#1F3D32;margin:0;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">Mais do que uma nova marca, ela representa a evolução da TecnoCursos e reafirma o compromisso que sempre fez parte da nossa história: transformar pessoas e empresas por meio do conhecimento. Essa nova identidade reflete quem somos hoje e a direção que seguimos para oferecer soluções cada vez mais completas aos nossos clientes e parceiros.</p>
         </div>
 
-        <div data-reveal="scale" data-delay="220" data-anim-grad onClick="{{ toggleVideo }}" style="position:relative;border-radius:22px;overflow:hidden;aspect-ratio:16/7;background:linear-gradient(120deg,#0C1A30,#005C8B,#218a5d,#005C8B,#0C1A30);cursor:pointer;border:1px solid rgba(255,255,255,.85);box-shadow:0 24px 56px rgba(10,60,40,.18);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.34,1.18,.64,1);margin-bottom:clamp(28px,4vw,40px)">
-          <img src="uploads/video-apresentacao-poster.jpg" alt="Prévia do vídeo institucional da TecnoCursos" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(rgba(4,9,18,.55),rgba(4,9,18,.65));pointer-events:none"></div>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-            <div style="width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.5);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:transform .25s,background .25s" style-hover="transform:scale(1.08);background:rgba(255,255,255,.26)">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
+        <div data-reveal="scale" data-delay="220" style="position:relative;border-radius:22px;overflow:hidden;aspect-ratio:16/9;background:#0C1A30;border:1px solid rgba(255,255,255,.85);box-shadow:0 24px 56px rgba(10,60,40,.18);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.34,1.18,.64,1)">
+          <iframe id="panda-f7622fa5-3df8-4bd6-88f4-03afebba8c71" src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=f7622fa5-3df8-4bd6-88f4-03afebba8c71" title="Vídeo institucional TecnoCursos" style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen="true" fetchpriority="high" loading="lazy"></iframe>
         </div>
-
-        <p data-reveal="blur" data-delay="120" class="tc-brand-copy" style="transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1),filter .8s cubic-bezier(.22,.61,.36,1)">O que começou como um logotipo simples, focado em transmitir capacitação e conhecimento técnico, hoje reflete a modernidade e a confiabilidade que unem a TecnoCursos aos seus clientes — mantendo viva a essência de levar treinamento e segurança para empresas em todo o Brasil.</p>
       </div>
     </section>
-
-    <sc-if value="{{ videoOpen }}">
-    <div onClick="{{ toggleVideo }}" style="position:fixed;inset:0;z-index:300;background:rgba(6,9,15,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;animation:tcFadeIn .25s ease-out both">
-      <div onClick="{{ stopClick }}" style="position:relative;width:min(920px,100%);aspect-ratio:16/9;background:#000;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 40px 90px rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center">
-        <button onClick="{{ toggleVideo }}" style="position:absolute;top:14px;right:14px;z-index:1;background:rgba(255,255,255,.14);border:none;cursor:pointer;width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.24)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-        <iframe src="https://player.vimeo.com/video/1207863885?autoplay=1&title=0&byline=0&portrait=0" style="display:block;width:100%;height:100%;background:#000;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-    </sc-if>
 
     <!-- Quem somos — visual inspirado na home (catálogo + bolhas) -->
     <section class="tc-mv-section tc-has-wave" aria-labelledby="tc-mv-title">
@@ -1124,9 +1120,9 @@ section[aria-labelledby="tc-partners-title"]::before{
         </svg>
       </div>
       <div class="tc-traj-inner">
-        <span data-reveal="left" data-delay="40" class="tc-stats-eyebrow" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Nossa história</span>
-        <h2 id="tc-traj-title" data-pop-text class="tc-shine-text" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;margin:14px 0 12px;letter-spacing:-.03em;opacity:0">Confira nossa trajetória</h2>
-        <p data-reveal="blur" data-delay="140" style="font-size:16px;line-height:1.6;color:#4A6358;margin:0 0 8px;max-width:560px;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1),filter .75s cubic-bezier(.22,.61,.36,1)">Explore os principais momentos e avanços da TecnoCursos, desde a fundação em 2004 até a trajetória que construímos ao longo dos anos.</p>
+        <span class="tc-stats-eyebrow">Nossa história</span>
+        <h2 id="tc-traj-title" class="tc-shine-text" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;margin:14px 0 12px;letter-spacing:-.03em;color:#1B2848">Confira nossa trajetória</h2>
+        <p style="font-size:16px;line-height:1.6;color:#4A6358;margin:0 0 8px;max-width:560px">Explore os principais marcos da história da TecnoCursos, desde sua fundação em 2004 até as conquistas que moldaram nossa trajetória.</p>
 
         <div data-reveal="scale" data-delay="200" class="tc-traj-panel" style="transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.34,1.18,.64,1)">
           <div class="tc-tl-grid" style="display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:clamp(28px,4vw,56px);align-items:center;min-height:280px">
@@ -1150,7 +1146,7 @@ section[aria-labelledby="tc-partners-title"]::before{
           <div class="tc-traj-scrub">
             <div class="tc-traj-scrub-track"></div>
             <div class="tc-traj-scrub-fill" style="width:{{ tlProgress }}"></div>
-            <sc-for list="{{ tlDots }}" as="d" hint-placeholder-count="7">
+            <sc-for list="{{ tlDots }}" as="d" hint-placeholder-count="13">
               <div onClick="{{ d.onClick }}" style="position:absolute;top:0;transform:translateX(-50%);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;left:{{ d.leftPct }}">
                 <div style="width:14px;height:14px;display:flex;align-items:center;justify-content:center">
                   <span style="display:block;border-radius:50%;transition:all .25s;width:{{ d.dotSize }};height:{{ d.dotSize }};background:{{ d.dotBg }};box-shadow:{{ d.dotShadow }}"></span>
@@ -1158,93 +1154,6 @@ section[aria-labelledby="tc-partners-title"]::before{
                 <span style="white-space:nowrap;transition:color .25s;font-size:12px;font-weight:{{ d.labelWeight }};color:{{ d.labelColor }}">{{ d.year }}</span>
               </div>
             </sc-for>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nossa localização -->
-    <section class="tc-loc tc-has-wave" aria-labelledby="tc-loc-title">
-      <div class="tc-sec-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#D5F0E4" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
-        </svg>
-      </div>
-      <div class="tc-br-aurora" aria-hidden="true">
-        <div class="tc-br-aurora-pulse"></div>
-        <div class="tc-br-aurora-blobs">
-          <span class="tc-br-aurora-blob tc-br-aurora-blob--a"></span>
-          <span class="tc-br-aurora-blob tc-br-aurora-blob--b"></span>
-          <span class="tc-br-aurora-blob tc-br-aurora-blob--c"></span>
-        </div>
-        <div class="tc-br-aurora-stars" data-loc-stars></div>
-      </div>
-      <div class="tc-loc-inner">
-        <div>
-          <span data-reveal data-delay="40" class="tc-spark-eyebrow" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Onde estamos</span>
-          <h2 id="tc-loc-title" data-reveal="blur" data-delay="100" class="tc-shine-text-light" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.6vw,42px);font-weight:800;margin:16px 0 14px;letter-spacing:-.03em;transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1),filter .85s cubic-bezier(.22,.61,.36,1)">Nossa Localização</h2>
-          <p data-reveal data-delay="160" style="font-size:16px;line-height:1.65;color:rgba(255,255,255,.62);margin:0;max-width:460px;transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Sede em Matão-SP, com atendimento a empresas de toda a região e do restante do Brasil — treinamentos presenciais e online.</p>
-
-          <div class="tc-loc-info">
-            <div data-reveal="left" data-delay="200" class="tc-loc-item" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1),border-color .25s,background .25s">
-              <span class="tc-loc-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-              <div>
-                <strong>Endereço</strong>
-                <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Trolesi,+4495,+Parque+Imperial,+Matão+-+SP" target="_blank" rel="noopener noreferrer">Avenida Trolesi, 4495, Parque Imperial<br/>Matão · São Paulo</a>
-              </div>
-            </div>
-            <div data-reveal="left" data-delay="280" class="tc-loc-item" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1),border-color .25s,background .25s">
-              <span class="tc-loc-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
-              <div>
-                <strong>Telefone</strong>
-                <a href="tel:+5516997143932">(16) 99714-3932</a>
-              </div>
-            </div>
-            <div data-reveal="left" data-delay="360" class="tc-loc-item" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1),border-color .25s,background .25s">
-              <span class="tc-loc-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-              <div>
-                <strong>Horário de atendimento</strong>
-                <span>Segunda a Sexta · 7h30 às 17h</span>
-              </div>
-            </div>
-          </div>
-
-          <div data-reveal-pop data-delay="420" class="tc-loc-actions" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">
-            <a class="tc-loc-btn tc-loc-btn--primary" href="https://www.google.com/maps/search/?api=1&query=Avenida+Trolesi,+4495,+Parque+Imperial,+Matão+-+SP" target="_blank" rel="noopener noreferrer">Ver no Maps</a>
-            <button type="button" class="tc-loc-btn tc-loc-btn--ghost" onClick="{{ goContato }}">Falar conosco</button>
-          </div>
-        </div>
-
-        <div data-reveal="right" data-delay="180" class="tc-loc-map" style="transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1)">
-          <iframe
-            src="https://www.google.com/maps?q=Avenida+Trolesi,+4495,+Parque+Imperial,+Mat%C3%A3o+-+SP&output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Localização da TecnoCursos em Matão-SP"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section style="position:relative;overflow:hidden;background:linear-gradient(180deg,#0C1C36,#0A1326);padding:clamp(56px,7vw,96px) 0">
-      <div style="max-width:1100px;margin:0 auto;padding:0 24px;text-align:center">
-        <span data-reveal="scale" data-delay="40" style="display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#32AD78;margin-bottom:16px;transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Por que a TecnoCursos</span>
-        <h2 data-reveal="blur" data-delay="100" style="font-size:clamp(26px,3.6vw,42px);font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.02em;transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1),filter .85s cubic-bezier(.22,.61,.36,1)">Tecnologia que impulsiona pessoas, processos e resultados.</h2>
-        <p data-reveal data-delay="160" style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.65);margin:0 0 44px;max-width:640px;margin-left:auto;margin-right:auto;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">Uma plataforma completa para simplificar treinamentos, garantir conformidade e potencializar o crescimento do seu negócio.</p>
-        <div class="tc-why-grid" style="display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));text-align:left;border-top:1px solid rgba(255,255,255,.1)">
-          <div data-reveal="scale" data-delay="200" style="padding:28px 20px 8px;border-right:1px solid rgba(255,255,255,.08);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.34,1.18,.64,1)">
-            <strong style="display:block;font-size:16px;color:#fff;margin-bottom:8px">Experiência intuitiva</strong>
-            <p style="font-size:14px;line-height:1.55;color:rgba(255,255,255,.6);margin:0">Navegação simples e acessível para todos os perfis.</p>
-          </div>
-          <div data-reveal="scale" data-delay="280" style="padding:28px 20px 8px;border-right:1px solid rgba(255,255,255,.08);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.34,1.18,.64,1)">
-            <strong style="display:block;font-size:16px;color:#fff;margin-bottom:8px">Gestão estratégica</strong>
-            <p style="font-size:14px;line-height:1.55;color:rgba(255,255,255,.6);margin:0">Dados e relatórios que apoiam decisões e geram impacto.</p>
-          </div>
-          <div data-reveal="scale" data-delay="360" style="padding:28px 20px 8px;border-right:1px solid rgba(255,255,255,.08);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.34,1.18,.64,1)">
-            <strong style="display:block;font-size:16px;color:#fff;margin-bottom:8px">Conformidade e segurança</strong>
-            <p style="font-size:14px;line-height:1.55;color:rgba(255,255,255,.6);margin:0">Certificados válidos e rastreáveis, com total confiabilidade.</p>
-          </div>
-          <div data-reveal="scale" data-delay="440" style="padding:28px 20px 8px;transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.34,1.18,.64,1)">
-            <strong style="display:block;font-size:16px;color:#fff;margin-bottom:8px">Suporte especializado</strong>
-            <p style="font-size:14px;line-height:1.55;color:rgba(255,255,255,.6);margin:0">Acompanhamento próximo para você ir sempre além.</p>
           </div>
         </div>
       </div>
@@ -1519,6 +1428,25 @@ section[aria-labelledby="tc-partners-title"]::before{
           </div>
         </div>
       </div>
+
+      <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px clamp(64px,8vw,96px)">
+        <div class="tc-contato-matao" style="display:grid;gap:28px;grid-template-columns:minmax(0,1fr) minmax(280px,.95fr);align-items:stretch">
+          <div style="border-radius:20px;overflow:hidden;min-height:320px;aspect-ratio:16/10;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 56px rgba(0,0,0,.35)">
+            <iframe
+              src="https://www.google.com/maps?q=Avenida+Trolesi,+4495,+Parque+Imperial,+Mat%C3%A3o+-+SP&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Localização da TecnoCursos em Matão-SP"
+              style="width:100%;height:100%;border:0;display:block;min-height:320px"></iframe>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center;gap:18px;padding:8px 0">
+            <span style="display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#32AD78;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.35);padding:7px 14px;border-radius:999px">Matão · SP</span>
+            <h2 style="font-size:clamp(24px,3.2vw,34px);font-weight:800;color:#fff;margin:0;letter-spacing:-.02em">Nossa sede</h2>
+            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.65);margin:0">Avenida Trolesi, 4495, Parque Imperial<br/>Matão · São Paulo</p>
+            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.65);margin:0">Segunda a Sexta · 7h30 às 17h</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Trolesi,+4495,+Parque+Imperial,+Matão+-+SP" target="_blank" rel="noopener noreferrer" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:13px 22px;border-radius:12px;background:#32AD78;color:#fff;text-decoration:none;box-shadow:0 10px 28px rgba(50,173,120,.32)">Ver no Maps</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   </sc-if>
@@ -1534,15 +1462,14 @@ section[aria-labelledby="tc-partners-title"]::before{
 
         <!-- coluna 1: logo + tagline + social -->
         <div>
-          <img src="uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" style="height:28px;width:auto;margin-bottom:14px;display:block"/>
-          <p style="font-size:13.5px;line-height:1.65;color:rgba(255,255,255,.5);margin:0 0 22px;max-width:260px">Tecnologia, treinamento e segurança.</p>
+          <img src="uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" style="height:44px;width:auto;margin-bottom:22px;display:block"/>
           <!-- ícones sociais -->
           <div class="tc-footer-social" style="display:flex;gap:12px;align-items:center">
             <a href="https://www.facebook.com/tecnocursosoficiall/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s,color .2s" style-hover="background:rgba(50,173,120,.16);border-color:rgba(50,173,120,.45);color:#32AD78"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.instagram.com/tecnocursosoficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s,color .2s" style-hover="background:rgba(50,173,120,.16);border-color:rgba(50,173,120,.45);color:#32AD78"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
             <a href="https://www.linkedin.com/company/tecno-cursos/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s,color .2s" style-hover="background:rgba(50,173,120,.16);border-color:rgba(50,173,120,.45);color:#32AD78"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
             <a href="https://www.youtube.com/@tecnocursosoficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s,color .2s" style-hover="background:rgba(50,173,120,.16);border-color:rgba(50,173,120,.45);color:#32AD78"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#070F1E"/></svg></a>
-            <a href="https://tiktok.com" target="_blank" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s,color .2s" style-hover="background:rgba(50,173,120,.16);border-color:rgba(50,173,120,.45);color:#32AD78"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.9-.78-1.47-1.9-1.55-3.15h-2.9v13.6a2.7 2.7 0 11-2.13-2.64V10.6a5.62 5.62 0 105.03 5.6V9.4a7.5 7.5 0 004.3 1.36V7.87c-1-.02-1.98-.35-2.75-.98z"/></svg></a>
+            <a href="https://www.tiktok.com/@tecnocursosbr" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s,color .2s" style-hover="background:rgba(50,173,120,.16);border-color:rgba(50,173,120,.45);color:#32AD78"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.9-.78-1.47-1.9-1.55-3.15h-2.9v13.6a2.7 2.7 0 11-2.13-2.64V10.6a5.62 5.62 0 105.03 5.6V9.4a7.5 7.5 0 004.3 1.36V7.87c-1-.02-1.98-.35-2.75-.98z"/></svg></a>
           </div>
         </div>
 
@@ -1564,7 +1491,8 @@ section[aria-labelledby="tc-partners-title"]::before{
           <div style="display:flex;flex-direction:column;gap:13px">
             <span style="font-size:14px;color:rgba(255,255,255,.62)">16 99714-3932</span>
             <span style="font-size:14px;color:rgba(255,255,255,.62)"><span>contato</span><span>&#64;</span><span>tecnocursos.com.br</span></span>
-            <span style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.5">Avenida Trolesi, 4495,<br/>Parque Imperial · Matão-SP</span>
+            <span style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.55">Avenida Trolesi, 4495 - Parque Imperial<br/>CEP: 15.997-110 | Matão (SP) | Brasil</span>
+            <span style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.55;margin-top:4px"><strong style="display:block;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px">Horário de atendimento</strong>Segunda a Sexta: das 7h às 17h</span>
           </div>
         </div>
 
@@ -2860,7 +2788,7 @@ class Component extends DCLogic {
     const offerings = [
       {
         title: 'Tecnologia',
-        desc: 'Plataforma digital para gerir treinamentos, lista de presença, validades e certificados — sem papel e sem planilha.',
+        desc: 'Plataforma digital para gerir treinamentos, lista de presença, validades e certificados, sem papel e sem planilha.',
         img: 'img/tecnologia.png',
         onClick: () => { window.location.href = 'servicos/tecnologia/'; },
       },
@@ -3025,13 +2953,19 @@ class Component extends DCLogic {
     ];
 
     const timeline = [
-      { year: '2004', title: 'Fundação em Matão-SP', desc: 'João Arthur funda uma escola de capacitação focada em Normas Regulamentadoras, com a missão de ajudar empresas a se manterem em conformidade e a garantir um ambiente de trabalho mais seguro.', icon: 'flag', grad: 'linear-gradient(150deg,#1B2848,#005C8B)' },
-      { year: '2005–2008', title: 'Crescimento artesanal', desc: 'João acumulava funções — criava conteúdos, ministrava treinamentos e dirigia a Unidade Móvel para aulas práticas, como as de brigada de incêndio. Alessandra cuidava da logística, do financeiro e da emissão dos certificados.', icon: 'treino', grad: 'linear-gradient(150deg,#005C8B,#1B2848)' },
-      { year: '2009', title: 'Formalização do CNPJ', desc: 'A empresa se consolida oficialmente, o que expande horizontes e abre caminho para um crescimento mais expressivo nos anos seguintes.', icon: 'law', grad: 'linear-gradient(150deg,#0C1A30,#6a4bb5)' },
-      { year: '2010–2023', title: 'Equipe em todo o Brasil', desc: 'Montamos uma equipe altamente qualificada — administração, TI, suporte e instrutores — atuando em diversas regiões do país.', icon: 'users', grad: 'linear-gradient(150deg,#0C1A30,#218a5d)' },
-      { year: '2024', title: 'Plataforma digital TecnoCursos', desc: 'Treinamento, tecnologia e gestão em um só lugar: unimos a capacitação presencial à nossa plataforma digital para gerir tudo com mais eficiência.', icon: 'plataforma', grad: 'linear-gradient(150deg,#218a5d,#005C8B)' },
-      { year: '2025', title: 'Expansão da plataforma', desc: 'Avançamos na digitalização dos processos: mais recursos na plataforma, gestão aprimorada de turmas e treinamentos e uma experiência ainda mais fluida para empresas e alunos.', icon: 'consultoria', grad: 'linear-gradient(150deg,#005C8B,#32AD78)' },
-      { year: '2026', title: 'Nova identidade visual', desc: 'A marca evolui: renovamos nosso logotipo e a comunicação visual para refletir a modernidade, a tecnologia e a confiança que a TecnoCursos entrega a empresas em todo o Brasil.', icon: 'award', grad: 'linear-gradient(150deg,#32AD78,#005C8B)' },
+      { year: '2004', title: 'Primeiros Treinamentos', desc: 'Em Américo Brasiliense (SP), iniciamos nossa trajetória com treinamentos de solda e calderaria, dando os primeiros passos no propósito de ajudar empresas a manterem-se em conformidade e promover ambientes de trabalho mais seguros.', icon: 'flag', grad: 'linear-gradient(150deg,#1B2848,#005C8B)' },
+      { year: '2005–2008', title: 'Construindo a Base', desc: 'João acumulava funções, criava conteúdos, ministrava treinamentos diversos e brigada de incêndio. Alessandra cuidava da logística, do financeiro e da emissão dos certificados.', icon: 'treino', grad: 'linear-gradient(150deg,#005C8B,#1B2848)' },
+      { year: '2009', title: 'Formalização da Empresa', desc: 'Com a criação do CNPJ, a TecnoCursos passa a atuar oficialmente como empresa, consolidando uma nova etapa de sua trajetória. Esse importante passo amplia horizontes e abre caminho para um crescimento mais estruturado nos anos seguintes.', icon: 'law', grad: 'linear-gradient(150deg,#0C1A30,#6a4bb5)' },
+      { year: '2010', title: 'Primeiros Passos em Matão', desc: 'João, que atendia a cidade de Américo Brasiliense (SP), visita Matão (SP) em busca de parcerias, novos clientes e da possibilidade de estabelecer a empresa na cidade.', icon: 'users', grad: 'linear-gradient(150deg,#0C1A30,#218a5d)' },
+      { year: '2013', title: 'Nova Sede em Matão', desc: 'Após três anos de planejamento e estudos, a TecnoCursos se estabelece em Matão (SP), mantendo sua atuação em Américo Brasiliense (SP), onde sua história começou. A partir desse momento, inicia uma trajetória atendendo grandes empresas dos setores metalúrgico e de segurança do trabalho.', icon: 'shield', grad: 'linear-gradient(150deg,#218a5d,#005C8B)' },
+      { year: '2015–2018', title: 'Grandes Multinacionais', desc: 'Ampliamos nossa atuação e passamos a atender grandes multinacionais com operações no Brasil e no exterior, consolidando nossa presença em projetos de maior alcance e complexidade.', icon: 'award', grad: 'linear-gradient(150deg,#005C8B,#32AD78)' },
+      { year: '2019', title: 'Unidade Móvel de Treinamentos', desc: 'A TecnoCursos desenvolve sua Unidade Móvel de Treinamentos para capacitações em NR-23 (Brigada de Incêndio), NR-33 (Espaço Confinado) e NR-35 (Trabalho em Altura), ampliando seu atendimento diretamente nas empresas em todo o estado de São Paulo.', icon: 'emergencia', grad: 'linear-gradient(150deg,#C0492E,#1B2848)' },
+      { year: '2020', title: 'Plataforma Digital', desc: 'Durante a pandemia, a TecnoCursos inova, criando a sua plataforma digital de treinamento e gestão em um só lugar: unimos a capacitação presencial à nossa plataforma digital para gerir tudo com mais eficiência.', icon: 'plataforma', grad: 'linear-gradient(150deg,#218a5d,#005C8B)' },
+      { year: '2021', title: 'Produção Própria de Vídeos', desc: 'Iniciamos a produção própria de vídeos de treinamento, internalizando um processo que até então era realizado por produtoras especializadas.', icon: 'online', grad: 'linear-gradient(150deg,#005C8B,#1B2848)' },
+      { year: '2022', title: 'Fortalecimento da Estrutura', desc: 'Ampliamos a equipe de instrutores para atender empresas em todo o Brasil e fortalecemos a estrutura administrativa com a expansão das áreas de Tecnologia da Informação (TI) e Suporte.', icon: 'presencial', grad: 'linear-gradient(150deg,#0C1A30,#218a5d)' },
+      { year: '2023', title: 'Acessibilidade Digital', desc: 'Passamos a disponibilizar interpretação em Libras nos vídeos e leitura em áudio dos conteúdos, ampliando a acessibilidade e promovendo uma experiência de aprendizagem mais inclusiva.', icon: 'libras', grad: 'linear-gradient(150deg,#218a5d,#6ABB8C)' },
+      { year: '2024–2025', title: 'Inteligência Artificial', desc: 'Incorporamos ferramentas de Inteligência Artificial (IA) ao desenvolvimento e à produção de vídeos, criando conteúdos personalizados e alinhados à realidade e às necessidades da empresa com equipe própria.', icon: 'consultoria', grad: 'linear-gradient(150deg,#005C8B,#32AD78)' },
+      { year: '2026', title: 'Nova Fase', desc: 'A TecnoCursos amplia novamente sua estrutura administrativa com a criação da área de Marketing, renova sua identidade visual, lança seu novo site, fortalece sua presença digital, moderniza sua comunicação e inicia sua atuação no segmento de tecnologia, marcando o início de uma nova fase de crescimento e inovação.', icon: 'award', grad: 'linear-gradient(150deg,#32AD78,#005C8B)' },
     ];
     const tlLen = timeline.length;
     const tlIndex = Math.min(Math.max(this.state.aboutTlIndex || 0, 0), tlLen - 1);
