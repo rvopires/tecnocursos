@@ -214,7 +214,7 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 }
 /* Contato — redesign alinhado ao DNA do site */
 .tc-contato-hero{position:relative;min-height:72vh;height:72vh;display:flex;align-items:center;overflow:hidden;background:#03060a}
-.tc-contato-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center;opacity:.95}
+.tc-contato-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% center;opacity:.95}
 .tc-contato-hero-overlay{position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%,rgba(3,6,12,.86) 0%,rgba(4,9,18,.55) 46%,rgba(4,9,18,.18) 100%);pointer-events:none}
 .tc-contato-hero-content{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
 .tc-contato-hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
@@ -1608,19 +1608,19 @@ section[aria-labelledby="tc-partners-title"]::before{
                 <button type="button" class="tc-contato-back" id="tc-contato-to-step-1">Trocar opção</button>
               </div>
               <div class="tc-contato-field">
-                <label for="tc-contato-nome">Nome</label>
-                <input id="tc-contato-nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name"/>
+                <label for="tc-contato-nome">Nome *</label>
+                <input id="tc-contato-nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required/>
               </div>
               <div class="tc-contato-field">
-                <label for="tc-contato-email">E-mail corporativo</label>
-                <input id="tc-contato-email" name="email" type="email" placeholder="voce@empresa.com.br" autocomplete="email"/>
+                <label for="tc-contato-email">E-mail corporativo *</label>
+                <input id="tc-contato-email" name="email" type="email" placeholder="voce@empresa.com.br" autocomplete="email" required/>
               </div>
               <div class="tc-contato-field">
-                <label for="tc-contato-empresa">Empresa</label>
-                <input id="tc-contato-empresa" name="empresa" type="text" placeholder="Nome da empresa" autocomplete="organization"/>
+                <label for="tc-contato-empresa">Empresa *</label>
+                <input id="tc-contato-empresa" name="empresa" type="text" placeholder="Nome da empresa" autocomplete="organization" required/>
               </div>
               <div class="tc-contato-field">
-                <label for="tc-contato-regiao">Região</label>
+                <label for="tc-contato-regiao">Região *</label>
                 <select id="tc-contato-regiao" name="regiao" required>
                   <option value="" disabled selected>Selecione a região</option>
                   <option value="norte">Norte</option>
