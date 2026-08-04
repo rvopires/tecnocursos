@@ -212,6 +212,117 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
   .tc-loc-inner{grid-template-columns:1fr;gap:32px}
   .tc-contato-matao{grid-template-columns:1fr!important}
 }
+/* Contato — redesign alinhado ao DNA do site */
+.tc-contato-hero{position:relative;min-height:72vh;height:72vh;display:flex;align-items:center;overflow:hidden;background:#03060a}
+.tc-contato-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center;opacity:.95}
+.tc-contato-hero-overlay{position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%,rgba(3,6,12,.86) 0%,rgba(4,9,18,.55) 46%,rgba(4,9,18,.18) 100%);pointer-events:none}
+.tc-contato-hero-content{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.tc-contato-hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.tc-contato-main{position:relative;overflow:hidden;background:linear-gradient(165deg,#FFFFFF 0%,#F7FBF9 55%,#FFFFFF 100%);padding:clamp(56px,7vw,96px) 0 clamp(48px,5vw,72px)}
+.tc-contato-main::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 48% at 14% 28%,rgba(50,173,120,.06),transparent 68%),radial-gradient(42% 40% at 90% 75%,rgba(106,187,140,.05),transparent 70%)}
+.tc-contato-main-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:clamp(28px,4vw,48px);align-items:start}
+.tc-contato-form-card{background:#fff;border:1px solid rgba(50,173,120,.16);border-radius:20px;padding:clamp(24px,3vw,36px);box-shadow:0 18px 48px rgba(10,40,28,.08)}
+.tc-contato-form-card h2{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(22px,2.6vw,28px);font-weight:800;letter-spacing:-.03em;color:#1B2848;margin:0 0 8px}
+.tc-contato-form-card>p{font-size:15px;line-height:1.55;color:#64748b;margin:0 0 22px}
+.tc-contato-step{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#32AD78;margin:0 0 14px}
+.tc-contato-panel{display:none}
+.tc-contato-panel.is-active{display:block}
+.tc-contato-intent{margin:0;border:0;padding:0;min-width:0}
+.tc-contato-intent-legend{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(18px,2.2vw,22px);font-weight:800;letter-spacing:-.02em;color:#1B2848;margin:0 0 6px}
+.tc-contato-intent-hint{font-size:14px;line-height:1.5;color:#64748b;margin:0 0 14px}
+.tc-contato-options{display:flex;flex-direction:column;gap:10px;margin:0 0 18px;padding:0;border:0}
+.tc-contato-picked{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 18px;padding:12px 14px;border-radius:12px;background:rgba(50,173,120,.08);border:1px solid rgba(50,173,120,.22)}
+.tc-contato-picked strong{font-size:13.5px;font-weight:700;color:#1B2848}
+.tc-contato-picked span{display:block;font-size:12.5px;color:#64748b;margin-top:2px}
+.tc-contato-back{font-family:inherit;border:none;background:transparent;color:#32AD78;font-size:13px;font-weight:700;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+.tc-contato-back:hover{color:#218a5d}
+.tc-contato-next-btn{font-family:inherit;border:none;cursor:pointer;width:100%;background:#32AD78;color:#070F1E;font-size:16px;font-weight:700;padding:15px;border-radius:12px;box-shadow:0 10px 28px rgba(50,173,120,.28);transition:background .2s,transform .2s,box-shadow .2s,opacity .2s}
+.tc-contato-next-btn:hover:not(:disabled){background:#6ABB8C;transform:translateY(-2px);box-shadow:0 14px 32px rgba(50,173,120,.36)}
+.tc-contato-next-btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.tc-contato-option{position:relative;display:block;margin:0;cursor:pointer}
+.tc-contato-option input{position:absolute;opacity:0;pointer-events:none}
+.tc-contato-option-body{display:block;padding:14px 16px 14px 44px;border-radius:14px;border:1px solid rgba(27,40,72,.1);background:#F8FBFA;transition:border-color .2s,background .2s,box-shadow .2s,transform .2s}
+.tc-contato-option-body::before{content:"";position:absolute;left:16px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;border:2px solid rgba(27,40,72,.22);background:#fff;box-sizing:border-box;transition:border-color .2s,box-shadow .2s,background .2s}
+.tc-contato-option-body strong{display:block;font-size:14.5px;font-weight:700;color:#1B2848;margin:0 0 3px}
+.tc-contato-option-body span{display:block;font-size:13px;line-height:1.4;color:#64748b}
+.tc-contato-option:hover .tc-contato-option-body{border-color:rgba(50,173,120,.4);background:#fff;transform:translateY(-1px)}
+.tc-contato-option input:focus-visible+.tc-contato-option-body{outline:2px solid #32AD78;outline-offset:2px}
+.tc-contato-option input:checked+.tc-contato-option-body{border-color:#32AD78;background:rgba(50,173,120,.08);box-shadow:0 0 0 1px rgba(50,173,120,.25)}
+.tc-contato-option input:checked+.tc-contato-option-body::before{border-color:#32AD78;background:#32AD78;box-shadow:inset 0 0 0 3px #fff}
+.tc-contato-field{margin:0 0 16px}
+.tc-contato-field label{display:block;font-size:13px;font-weight:600;color:#2B3550;margin-bottom:7px}
+.tc-contato-field input,.tc-contato-field textarea,.tc-contato-field select{font-family:inherit;width:100%;padding:13px 15px;border:1px solid #D9E0E9;border-radius:10px;font-size:15px;background:#fff;color:#1B2848;transition:border-color .2s,box-shadow .2s}
+.tc-contato-field input:focus,.tc-contato-field textarea:focus,.tc-contato-field select:focus{outline:none;border-color:#32AD78;box-shadow:0 0 0 3px rgba(50,173,120,.18)}
+.tc-contato-field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer}
+.tc-contato-field textarea{resize:vertical;min-height:110px}
+.tc-contato-submit{font-family:inherit;border:none;cursor:pointer;width:100%;background:#32AD78;color:#070F1E;font-size:16px;font-weight:700;padding:15px;border-radius:12px;margin-top:4px;box-shadow:0 10px 28px rgba(50,173,120,.28);transition:background .2s,transform .2s,box-shadow .2s}
+.tc-contato-submit:hover{background:#6ABB8C;transform:translateY(-2px);box-shadow:0 14px 32px rgba(50,173,120,.36)}
+.tc-contato-aside{display:flex;flex-direction:column;gap:18px;padding-top:4px}
+.tc-contato-next{background:#fff;border:1px solid rgba(50,173,120,.16);border-radius:20px;padding:clamp(20px,2.5vw,28px);box-shadow:0 14px 36px rgba(10,40,28,.06)}
+.tc-contato-next h3{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:18px;font-weight:800;letter-spacing:-.02em;color:#1B2848;margin:0 0 16px}
+.tc-contato-next ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.tc-contato-next li{display:flex;gap:12px;align-items:flex-start}
+.tc-contato-next i{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:800;color:#fff;background:linear-gradient(135deg,#32AD78,#218a5d)}
+.tc-contato-next strong{display:block;font-size:14px;font-weight:700;color:#1B2848;margin:0 0 2px}
+.tc-contato-next span{display:block;font-size:13px;line-height:1.45;color:#64748b}
+.tc-contato-channels{display:flex;flex-direction:column;gap:10px}
+.tc-contato-channels-label{margin:4px 0 2px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#64748b}
+.tc-contato-channel{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:16px;background:#fff;border:1px solid rgba(50,173,120,.14);box-shadow:0 10px 28px rgba(10,40,28,.05);text-decoration:none;color:inherit;transition:transform .25s,border-color .25s,box-shadow .25s}
+.tc-contato-channel:hover{transform:translateY(-2px);border-color:rgba(50,173,120,.4);box-shadow:0 16px 36px rgba(10,40,28,.1)}
+.tc-contato-channel-ico{width:42px;height:42px;border-radius:12px;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.28);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:#32AD78;line-height:0}
+.tc-contato-channel-ico svg{display:block;flex-shrink:0}
+.tc-contato-channel > div{min-width:0;flex:1}
+.tc-contato-channel strong{display:block;font-size:15px;font-weight:700;color:#1B2848;margin-bottom:3px}
+.tc-contato-channel > div span{display:block;font-size:13.5px;line-height:1.45;color:#64748b}
+.tc-contato-sede{position:relative;overflow:hidden;background:#D5F0E4;padding:calc(clamp(64px,8vw,96px) + clamp(40px,5vw,64px)) 0 clamp(72px,9vw,120px);margin-top:0}
+.tc-contato-sede::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 60% at 18% 20%,rgba(50,173,120,.16),transparent 62%),radial-gradient(50% 55% at 82% 70%,rgba(106,187,140,.12),transparent 65%),radial-gradient(45% 50% at 50% 100%,rgba(50,173,120,.1),transparent 58%)}
+.tc-contato-sede.tc-has-wave-end{padding-bottom:calc(clamp(56px,7vw,88px) + clamp(48px,6vw,80px))}
+.tc-contato-sede > .tc-sec-wave:not(.tc-sec-wave--bottom){top:-1px}
+.tc-contato-sede > .tc-sec-wave--bottom{top:auto;bottom:-1px}
+.tc-contato-sede-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
+.tc-contato-sede-intro{max-width:540px;margin:0 0 clamp(22px,3vw,32px)}
+.tc-contato-sede-intro .tc-contato-step{margin-bottom:10px}
+.tc-contato-sede-intro h2{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(26px,3.4vw,36px);font-weight:800;color:#1B2848;margin:0 0 8px;letter-spacing:-.03em}
+.tc-contato-sede-intro p{font-size:15px;line-height:1.6;color:#4A6358;margin:0}
+.tc-contato-matao{display:grid;gap:0;grid-template-columns:minmax(0,1.2fr) minmax(280px,.9fr);align-items:stretch;background:#fff;border:1px solid rgba(50,173,120,.16);border-radius:24px;overflow:hidden;box-shadow:0 22px 56px rgba(10,40,28,.1)}
+.tc-contato-map{position:relative;min-height:360px;aspect-ratio:auto;border:0;border-radius:0;box-shadow:none;background:#dce8e1}
+.tc-contato-map iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:saturate(.92) contrast(1.02)}
+.tc-contato-map-badge{position:absolute;left:16px;top:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.94);border:1px solid rgba(50,173,120,.28);box-shadow:0 10px 28px rgba(10,40,28,.12);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1B2848;backdrop-filter:blur(8px)}
+.tc-contato-map-badge svg{color:#32AD78;flex-shrink:0}
+.tc-contato-sede-copy{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(24px,3vw,36px);background:linear-gradient(165deg,#fff 0%,#F7FBF9 100%)}
+.tc-contato-sede-copy h3{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(20px,2.4vw,24px);font-weight:800;color:#1B2848;margin:0;letter-spacing:-.02em}
+.tc-contato-sede-facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.tc-contato-sede-facts li{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(50,173,120,.06);border:1px solid rgba(50,173,120,.12)}
+.tc-contato-sede-facts i{flex-shrink:0;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(50,173,120,.14);border:1px solid rgba(50,173,120,.28);color:#32AD78}
+.tc-contato-sede-facts strong{display:block;font-size:13px;font-weight:700;color:#1B2848;margin:0 0 2px}
+.tc-contato-sede-facts span{display:block;font-size:13.5px;line-height:1.45;color:#64748b}
+.tc-contato-sede-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.tc-contato-sede-actions .tc-loc-btn--primary{border-radius:999px}
+.tc-contato-sede-actions .tc-loc-btn--ghost{border-radius:999px;color:#1B2848;border-color:rgba(27,40,72,.16);background:#fff}
+.tc-contato-sede-actions .tc-loc-btn--ghost:hover{border-color:rgba(50,173,120,.45);background:rgba(50,173,120,.08);color:#1B2848}
+.tc-wa-float{position:fixed;left:24px;bottom:24px;z-index:200;display:inline-flex;align-items:center;gap:12px;padding:14px 20px 14px 14px;border-radius:999px;background:#25D366;color:#fff;text-decoration:none;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;box-shadow:0 14px 36px rgba(37,211,102,.42),0 4px 12px rgba(0,0,0,.18);transition:transform .2s ease,box-shadow .2s ease,background .2s ease;animation:tcWaEntry .7s cubic-bezier(.22,.61,.36,1) .4s both}
+.tc-wa-float:hover{transform:translateY(-3px) scale(1.03);background:#1ebe57;box-shadow:0 18px 44px rgba(37,211,102,.5),0 6px 16px rgba(0,0,0,.2);color:#fff}
+.tc-wa-float-ico{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.2);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.tc-wa-float-ico svg{display:block}
+.tc-wa-float span{white-space:nowrap;padding-right:4px}
+.tc-wa-float::after{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid rgba(37,211,102,.45);animation:tcWaPulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes tcWaEntry{from{opacity:0;transform:translateY(18px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes tcWaPulse{0%{opacity:.85;transform:scale(1)}70%{opacity:0;transform:scale(1.12)}100%{opacity:0;transform:scale(1.12)}}
+@media(max-width:640px){
+  .tc-wa-float{left:16px;bottom:16px;padding:12px 16px 12px 12px;font-size:14px}
+  .tc-wa-float-ico{width:40px;height:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  .tc-wa-float,.tc-wa-float::after{animation:none}
+}
+@media(max-width:860px){
+  .tc-contato-hero{min-height:64vh;height:auto}
+  .tc-contato-main-inner{grid-template-columns:1fr;gap:24px}
+  .tc-contato-aside{order:-1}
+  .tc-contato-matao{grid-template-columns:1fr}
+  .tc-contato-map{min-height:280px}
+  .tc-contato-map iframe{min-height:280px}
+}
 @media(prefers-reduced-motion:reduce){.tc-loc-aurora-star{animation:none!important;opacity:.35}}
 /* NR detalhe — página editorial do treinamento */
 .tc-nr-detail-hero{position:relative;overflow:hidden;background:linear-gradient(165deg,#0a1830 0%,#0a1830 40%,#071426 100%);padding:clamp(48px,6vw,80px) 0 clamp(56px,7vw,96px);--aurora-color1:rgba(50,173,120,.18);--aurora-color2:rgba(40,110,180,.28)}
@@ -505,16 +616,16 @@ sc-for{display:contents}
 .tc-footer-social a:hover{background:rgba(50,173,120,.16)!important;border-color:rgba(50,173,120,.45)!important;color:#32AD78!important}
 .tc-nav-shell{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 20px 0;pointer-events:none;overflow:visible}
 .tc-nav-shell:has(.tc-nav-dd:hover),.tc-nav-shell:has(.tc-nav-dd:focus-within){pointer-events:auto}
-.tc-nav-pill{pointer-events:auto;max-width:1120px;margin:0 auto;height:64px;padding:0 12px 0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:linear-gradient(135deg,rgba(27,40,72,.88) 0%,rgba(0,92,139,.72) 55%,rgba(27,40,72,.9) 100%);border:1px solid rgba(106,187,140,.35);box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 10px rgba(0,92,139,.25),inset 0 1px 0 rgba(106,187,140,.28),inset 0 -1px 0 rgba(0,0,0,.2);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);overflow:visible}
-.tc-nav-link{position:relative;font-size:14.5px;font-weight:500;cursor:pointer;padding:8px 2px;color:rgba(255,255,255,.88);transition:color .2s ease}
+.tc-nav-pill{pointer-events:auto;max-width:1120px;margin:0 auto;height:74px;padding:0 14px 0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:linear-gradient(135deg,rgba(27,40,72,.88) 0%,rgba(0,92,139,.72) 55%,rgba(27,40,72,.9) 100%);border:1px solid rgba(106,187,140,.35);box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 10px rgba(0,92,139,.25),inset 0 1px 0 rgba(106,187,140,.28),inset 0 -1px 0 rgba(0,0,0,.2);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);overflow:visible}
+.tc-nav-link{position:relative;font-size:15.5px;font-weight:500;cursor:pointer;padding:10px 2px;color:rgba(255,255,255,.88);transition:color .2s ease}
 .tc-nav-link:hover{color:#6ABB8C!important}
-.tc-nav-cta{font-family:inherit;border:none;cursor:pointer;background:#32AD78;color:#FFFFFF;font-size:14px;font-weight:700;padding:11px 22px;border-radius:999px;box-shadow:0 6px 20px rgba(50,173,120,.4);transition:background .2s,transform .2s,box-shadow .2s}
+.tc-nav-cta{font-family:inherit;border:none;cursor:pointer;background:#32AD78;color:#FFFFFF;font-size:15px;font-weight:700;padding:13px 24px;border-radius:999px;box-shadow:0 6px 20px rgba(50,173,120,.4);transition:background .2s,transform .2s,box-shadow .2s}
 .tc-nav-cta:hover{background:#6ABB8C;transform:translateY(-1px);box-shadow:0 10px 28px rgba(50,173,120,.5)}
 .tc-nav-dd{position:relative;display:flex;align-items:center;height:100%;z-index:140}
 .tc-nav-dd-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;min-width:220px;padding:14px 0 0;border:none;background:transparent;box-shadow:none;display:flex;flex-direction:column;z-index:150;transition:opacity .18s ease,transform .18s ease,visibility .18s}
 .tc-nav-dd-panel::before{content:"";position:absolute;left:0;right:0;top:14px;bottom:0;border-radius:18px;background:linear-gradient(160deg,rgba(27,40,72,.98),rgba(0,92,139,.94));border:1px solid rgba(106,187,140,.35);box-shadow:0 16px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(106,187,140,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:0;pointer-events:none}
 .tc-nav-dd:hover .tc-nav-dd-panel,.tc-nav-dd:focus-within .tc-nav-dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.tc-nav-dd-item{position:relative;z-index:1;font-family:inherit;border:none;cursor:pointer;text-align:left;background:transparent;color:rgba(255,255,255,.9);font-size:14px;font-weight:600;padding:12px 14px;margin:0 10px;border-radius:12px;transition:background .18s,color .18s}
+.tc-nav-dd-item{position:relative;z-index:1;font-family:inherit;border:none;cursor:pointer;text-align:left;background:transparent;color:rgba(255,255,255,.9);font-size:15px;font-weight:600;padding:12px 14px;margin:0 10px;border-radius:12px;transition:background .18s,color .18s}
 .tc-nav-dd-item:first-child{margin-top:10px}
 .tc-nav-dd-item:last-child{margin-bottom:10px}
 .tc-nav-dd-item:hover{background:rgba(50,173,120,.18);color:#6ABB8C}
@@ -660,7 +771,7 @@ section[aria-labelledby="tc-partners-title"]::before{
   [data-navlinks]{display:none!important}
   [data-burger]{display:flex!important}
   .tc-nav-shell{padding:14px 14px 0}
-  .tc-nav-pill{height:58px;padding:0 10px 0 16px}
+  .tc-nav-pill{height:66px;padding:0 10px 0 16px}
 }
 @media(max-width:1100px){
   .tc-stats-cards{grid-template-columns:repeat(2,1fr)}
@@ -680,7 +791,7 @@ section[aria-labelledby="tc-partners-title"]::before{
   <header class="tc-nav-shell">
     <div class="tc-nav-pill">
       <div style="flex-shrink:0;min-width:148px;display:flex;align-items:center">
-        <img src="uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" onClick="{{ goHome }}" style="height:36px;width:auto;cursor:pointer"/>
+        <img src="uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" onClick="{{ goHome }}" style="height:42px;width:auto;cursor:pointer"/>
       </div>
       <nav data-navlinks style="display:flex;align-items:center;gap:32px;flex:1;justify-content:center">
         {{ navLinksNode }}
@@ -1416,51 +1527,197 @@ section[aria-labelledby="tc-partners-title"]::before{
 
   <!-- ===================== CONTATO ===================== -->
   <sc-if value="{{ contato }}">
-  <main style="padding-top:72px">
-    <section style="position:relative;overflow:hidden;background:linear-gradient(180deg,#0A1326,#0C1C36)">
-      <div style="position:absolute;inset:0;background:radial-gradient(68% 85% at 88% -8%,rgba(0,92,139,.52),transparent 58%),radial-gradient(58% 78% at 2% 110%,rgba(50,173,120,.32),transparent 58%),radial-gradient(46% 60% at 52% 46%,rgba(0,92,139,.2),transparent 66%);pointer-events:none"></div>
-      
-      <div style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,104px) 24px;display:grid;gap:56px;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr))">
-        <div>
-          <span style="display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#10ffcb;margin-bottom:16px">Contato</span>
-          <h1 style="font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:700;color:#fff;margin:0">Fale com a gente.</h1>
-          <p style="font-size:18px;line-height:1.6;color:rgba(255,255,255,.7);margin:18px 0 36px;max-width:420px">Conte sobre sua operação e mostramos como a TecnoCursos pode digitalizar seus treinamentos NR.</p>
-          <div style="display:flex;flex-direction:column;gap:20px">
-            <div style="display:flex;gap:14px;align-items:flex-start"><span style="width:42px;height:42px;border-radius:11px;background:rgba(50,173,120,.16);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10ffcb" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><div><div style="font-size:13px;color:rgba(255,255,255,.5)">E-mail</div><div style="font-size:16px;font-weight:600;color:#fff"><span>suporte</span><span>&#64;</span><span>escolatecnocursos.com.br</span></div></div></div>
-            <div style="display:flex;gap:14px;align-items:flex-start"><span style="width:42px;height:42px;border-radius:11px;background:rgba(0,92,139,.22);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3FA9D6" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span><div><div style="font-size:13px;color:rgba(255,255,255,.5)">Telefone</div><div style="font-size:16px;font-weight:600;color:#fff">(16) 99714-3932</div></div></div>
-            <div style="display:flex;gap:14px;align-items:flex-start"><span style="width:42px;height:42px;border-radius:11px;background:rgba(106,187,140,.18);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10ffcb" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><div style="font-size:13px;color:rgba(255,255,255,.5)">Endereço</div><div style="font-size:16px;font-weight:600;color:#fff">Av. Trolesi, 4495 · Parque Imperial</div><div style="font-size:14px;color:rgba(255,255,255,.6)">Matão · São Paulo</div></div></div>
-          </div>
-        </div>
-        <div style="background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:clamp(26px,4vw,38px);box-shadow:0 30px 70px rgba(0,0,0,.4)">
-          <div style="display:grid;gap:16px">
-            <div><label style="display:block;font-size:13px;font-weight:600;color:#2B3550;margin-bottom:7px">Nome</label><input placeholder="Seu nome" style="font-family:inherit;width:100%;padding:13px 15px;border:1px solid #D9E0E9;border-radius:10px;font-size:15px;background:#fff;color:#1B2848;transition:border-color .2s,box-shadow .2s"/></div>
-            <div><label style="display:block;font-size:13px;font-weight:600;color:#2B3550;margin-bottom:7px">E-mail corporativo</label><input placeholder="voce@empresa.com.br" style="font-family:inherit;width:100%;padding:13px 15px;border:1px solid #D9E0E9;border-radius:10px;font-size:15px;background:#fff;color:#1B2848;transition:border-color .2s,box-shadow .2s"/></div>
-            <div><label style="display:block;font-size:13px;font-weight:600;color:#2B3550;margin-bottom:7px">Empresa</label><input placeholder="Nome da empresa" style="font-family:inherit;width:100%;padding:13px 15px;border:1px solid #D9E0E9;border-radius:10px;font-size:15px;background:#fff;color:#1B2848;transition:border-color .2s,box-shadow .2s"/></div>
-            <div><label style="display:block;font-size:13px;font-weight:600;color:#2B3550;margin-bottom:7px">Mensagem</label><textarea placeholder="Como podemos ajudar?" rows="4" style="font-family:inherit;width:100%;padding:13px 15px;border:1px solid #D9E0E9;border-radius:10px;font-size:15px;background:#fff;color:#1B2848;resize:vertical;transition:border-color .2s,box-shadow .2s"></textarea></div>
-            <button style="font-family:inherit;border:none;cursor:pointer;background:#1B2848;color:#fff;font-size:16px;font-weight:600;padding:15px;border-radius:11px;margin-top:4px" style-hover="background:#005C8B">Enviar mensagem</button>
-          </div>
-        </div>
+  <main>
+    <section class="tc-contato-hero" aria-labelledby="contato-hero-title">
+      <img class="tc-contato-hero-img" src="img/capa%20-%20contato.png" alt="TecnoCursos — Contato" onerror="this.style.display='none'"/>
+      <div class="tc-contato-hero-overlay" aria-hidden="true"></div>
+      <div class="tc-contato-hero-content">
+        <span class="tc-spark-eyebrow">Contato</span>
+        <h1 id="contato-hero-title" class="tc-spark-title">Fale com a <span class="tc-spark-mark">TecnoCursos.</span></h1>
+        <p class="tc-spark-lead">Este formulário é o primeiro passo. Sua mensagem chega para a nossa equipe, escolha o que precisa e conte um pouco da operação.</p>
       </div>
+    </section>
 
-      <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px clamp(64px,8vw,96px)">
-        <div class="tc-contato-matao" style="display:grid;gap:28px;grid-template-columns:minmax(0,1fr) minmax(280px,.95fr);align-items:stretch">
-          <div style="border-radius:20px;overflow:hidden;min-height:320px;aspect-ratio:16/10;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 56px rgba(0,0,0,.35)">
+    <section class="tc-contato-main" aria-labelledby="contato-form-title">
+      <div class="tc-contato-main-inner">
+        <div id="contato-form" class="tc-contato-form-card" data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">
+          <p class="tc-contato-step" id="tc-contato-step-label">Passo 1 de 2</p>
+          <h2 id="contato-form-title">Cada conversa começa com a sua necessidade.</h2>
+          <p id="tc-contato-intro">Não é uma triagem automática. Sua mensagem chega para a nossa equipe — e respondemos em até 1 dia útil.</p>
+          <form id="tc-contato-form" action="#" method="post" onsubmit="return false;">
+            <div class="tc-contato-panel is-active" data-contato-step="1" role="group" aria-labelledby="contato-intent-title">
+              <fieldset class="tc-contato-intent">
+                <legend id="contato-intent-title" class="tc-contato-intent-legend">O que você precisa?</legend>
+                <p class="tc-contato-intent-hint">Escolha uma opção. No próximo passo, conte um pouco sobre você.</p>
+                <div class="tc-contato-options" role="radiogroup" aria-label="Solução de interesse">
+                  <label class="tc-contato-option">
+                    <input type="radio" name="motivo" value="plataforma-nr"/>
+                    <span class="tc-contato-option-body">
+                      <strong>Plataforma de NR</strong>
+                      <span>Turmas, validades, certificados e gestão completa dos treinamentos.</span>
+                    </span>
+                  </label>
+                  <label class="tc-contato-option">
+                    <input type="radio" name="motivo" value="lista-presenca"/>
+                    <span class="tc-contato-option-body">
+                      <strong>Lista de presença</strong>
+                      <span>Check-in digital, sem papel, com rastreio e auditoria prontos.</span>
+                    </span>
+                  </label>
+                  <label class="tc-contato-option">
+                    <input type="radio" name="motivo" value="ambos"/>
+                    <span class="tc-contato-option-body">
+                      <strong>Os dois juntos</strong>
+                      <span>Plataforma de NR + lista de presença no mesmo fluxo.</span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+              <button type="button" class="tc-contato-next-btn" id="tc-contato-to-step-2" disabled>Continuar</button>
+            </div>
+
+            <div class="tc-contato-panel" data-contato-step="2" hidden>
+              <div class="tc-contato-picked">
+                <div>
+                  <strong id="tc-contato-picked-title">Solução escolhida</strong>
+                  <span id="tc-contato-picked-desc"></span>
+                </div>
+                <button type="button" class="tc-contato-back" id="tc-contato-to-step-1">Trocar opção</button>
+              </div>
+              <div class="tc-contato-field">
+                <label for="tc-contato-nome">Nome</label>
+                <input id="tc-contato-nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name"/>
+              </div>
+              <div class="tc-contato-field">
+                <label for="tc-contato-email">E-mail corporativo</label>
+                <input id="tc-contato-email" name="email" type="email" placeholder="voce@empresa.com.br" autocomplete="email"/>
+              </div>
+              <div class="tc-contato-field">
+                <label for="tc-contato-empresa">Empresa</label>
+                <input id="tc-contato-empresa" name="empresa" type="text" placeholder="Nome da empresa" autocomplete="organization"/>
+              </div>
+              <div class="tc-contato-field">
+                <label for="tc-contato-regiao">Região</label>
+                <select id="tc-contato-regiao" name="regiao" required>
+                  <option value="" disabled selected>Selecione a região</option>
+                  <option value="norte">Norte</option>
+                  <option value="nordeste">Nordeste</option>
+                  <option value="centro-oeste">Centro-Oeste</option>
+                  <option value="sudeste">Sudeste</option>
+                  <option value="sul">Sul</option>
+                </select>
+              </div>
+              <div class="tc-contato-field">
+                <label for="tc-contato-msg">Mensagem</label>
+                <textarea id="tc-contato-msg" name="mensagem" rows="4" placeholder="Conte um pouco sobre a sua operação e o que busca."></textarea>
+              </div>
+              <button type="submit" class="tc-contato-submit">Enviar mensagem</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="tc-contato-aside" data-reveal data-delay="80" style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">
+          <div class="tc-contato-next">
+            <h3>O que acontece depois</h3>
+            <ol>
+              <li>
+                <i aria-hidden="true">01</i>
+                <div>
+                  <strong>Lemos sua mensagem</strong>
+                  <span>Em até 1 dia útil, alguém da equipe analisa o que você enviou.</span>
+                </div>
+              </li>
+              <li>
+                <i aria-hidden="true">02</i>
+                <div>
+                  <strong>Entramos em contato</strong>
+                  <span>Por WhatsApp, telefone ou e-mail — no canal que fizer mais sentido.</span>
+                </div>
+              </li>
+              <li>
+                <i aria-hidden="true">03</i>
+                <div>
+                  <strong>Alinhamos a solução</strong>
+                  <span>Entendemos a operação e indicamos o melhor caminho: tecnologia, treinamento ou segurança.</span>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <p class="tc-contato-channels-label">Outros canais</p>
+          <div class="tc-contato-channels">
+            <a class="tc-contato-channel" href="mailto:contato@tecnocursos.com.br">
+              <span class="tc-contato-channel-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>
+              <div>
+                <strong>E-mail</strong>
+                <span>contato@tecnocursos.com.br</span>
+              </div>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contato-sede" class="tc-contato-sede tc-has-wave-end" aria-labelledby="contato-sede-title">
+      <div class="tc-sec-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#fff" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+        </svg>
+      </div>
+      <div class="tc-contato-sede-inner">
+        <div class="tc-contato-sede-intro" data-reveal style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">
+          <p class="tc-contato-step">Sede</p>
+          <h2 id="contato-sede-title">Venha nos visitar em Matão.</h2>
+          <p>Estamos no Parque Imperial, prontos para receber sua equipe e falar sobre conformidade, presença e treinamentos.</p>
+        </div>
+        <div class="tc-contato-matao" data-reveal data-delay="80" style="opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)">
+          <div class="tc-contato-map">
+            <span class="tc-contato-map-badge" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Matão · SP
+            </span>
             <iframe
               src="https://www.google.com/maps?q=Avenida+Trolesi,+4495,+Parque+Imperial,+Mat%C3%A3o+-+SP&output=embed"
               loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              title="Localização da TecnoCursos em Matão-SP"
-              style="width:100%;height:100%;border:0;display:block;min-height:320px"></iframe>
+              title="Localização da TecnoCursos em Matão-SP"></iframe>
           </div>
-          <div style="display:flex;flex-direction:column;justify-content:center;gap:18px;padding:8px 0">
-            <span style="display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#32AD78;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.35);padding:7px 14px;border-radius:999px">Matão · SP</span>
-            <h2 style="font-size:clamp(24px,3.2vw,34px);font-weight:800;color:#fff;margin:0;letter-spacing:-.02em">Nossa sede</h2>
-            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.65);margin:0">Avenida Trolesi, 4495, Parque Imperial<br/>Matão · São Paulo</p>
-            <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.65);margin:0">Segunda a Sexta · 7h30 às 17h</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Trolesi,+4495,+Parque+Imperial,+Matão+-+SP" target="_blank" rel="noopener noreferrer" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:13px 22px;border-radius:12px;background:#32AD78;color:#fff;text-decoration:none;box-shadow:0 10px 28px rgba(50,173,120,.32)">Ver no Maps</a>
+          <div class="tc-contato-sede-copy">
+            <h3>Nossa sede</h3>
+            <ul class="tc-contato-sede-facts">
+              <li>
+                <i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></i>
+                <div>
+                  <strong>Endereço</strong>
+                  <span>Av. Trolesi, 4495 · Parque Imperial<br/>CEP 15.997-110 · Matão · SP</span>
+                </div>
+              </li>
+              <li>
+                <i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></i>
+                <div>
+                  <strong>Horário</strong>
+                  <span>Segunda a Sexta · 7h às 17h</span>
+                </div>
+              </li>
+            </ul>
+            <div class="tc-contato-sede-actions">
+              <a class="tc-loc-btn tc-loc-btn--primary" href="https://www.google.com/maps/search/?api=1&query=Avenida+Trolesi,+4495,+Parque+Imperial,+Matão+-+SP" target="_blank" rel="noopener noreferrer">Abrir no Maps</a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="tc-sec-wave tc-sec-wave--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#070F1E" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+        </svg>
+      </div>
     </section>
+
+    <a class="tc-wa-float" href="https://wa.me/5516997143932?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20TecnoCursos%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+      <span class="tc-wa-float-ico" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </span>
+      <span>Falar no WhatsApp</span>
+    </a>
   </main>
   </sc-if>
 
@@ -1613,7 +1870,7 @@ class Component extends DCLogic {
       { id: 'conteudo', chip: 'Onde encontro os conteúdos?', q: 'Onde encontro os conteúdos?', kw: ['conteúdo', 'conteudo', 'artigo', 'blog', 'vídeo', 'video', 'biblioteca', 'trilha', 'material'],
         a: 'Na Central de Conhecimento você encontra trilhas por NR, modalidades de treinamento e artigos sobre legislação e segurança do trabalho. Em breve, também treinamentos em vídeo.', follow: ['treinos', 'contato'], actions: [{ label: 'Abrir Central de Conhecimento', page: 'blog' }] },
       { id: 'contato', chip: 'Como entro em contato?', q: 'Como entro em contato?', kw: ['contato', 'email', 'e-mail', 'telefone', 'whats', 'falar', 'endereço', 'endereco', 'fone'],
-        a: 'Você fala com a gente por:\n• E-mail: suporte@escolatecnocursos.com.br\n• Telefone: (16) 99714-3932\n• Matão · São Paulo\nOu pelo formulário na página de Contato.', follow: ['atende', 'treinos'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
+        a: 'Você fala com a gente por:\n• E-mail: contato@tecnocursos.com.br\n• Telefone: (16) 99714-3932\n• Matão · São Paulo\nOu pelo formulário na página de Contato.', follow: ['atende', 'treinos'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
     ];
   }
 
@@ -3121,6 +3378,74 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function () {
+  var labels = {
+    'plataforma-nr': { title: 'Plataforma de NR', desc: 'Turmas, validades e certificados.' },
+    'lista-presenca': { title: 'Lista de presença', desc: 'Check-in digital sem papel.' },
+    'ambos': { title: 'Os dois juntos', desc: 'Plataforma de NR + lista de presença.' }
+  };
+
+  function selectedMotivo(form) {
+    var el = form.querySelector('input[name="motivo"]:checked');
+    return el ? el.value : '';
+  }
+
+  function goStep(form, step) {
+    if (!form) return;
+    var stepLabel = document.getElementById('tc-contato-step-label');
+    var intro = document.getElementById('tc-contato-intro');
+    var title = document.getElementById('contato-form-title');
+    var panel1 = form.querySelector('[data-contato-step="1"]');
+    var panel2 = form.querySelector('[data-contato-step="2"]');
+    var pickedTitle = document.getElementById('tc-contato-picked-title');
+    var pickedDesc = document.getElementById('tc-contato-picked-desc');
+    if (!panel1 || !panel2) return;
+
+    var is2 = step === 2;
+    panel1.classList.toggle('is-active', !is2);
+    panel2.classList.toggle('is-active', is2);
+    panel2.hidden = !is2;
+    if (stepLabel) stepLabel.textContent = is2 ? 'Passo 2 de 2' : 'Passo 1 de 2';
+    if (title) title.textContent = is2 ? 'Quase lá — conte um pouco sobre você.' : 'Cada conversa começa com a sua necessidade.';
+    if (intro) {
+      intro.textContent = is2
+        ? 'Com a opção escolhida, só falta nome, empresa, região e mensagem.'
+        : 'Não é uma triagem automática. Sua mensagem chega para a nossa equipe — e respondemos em até 1 dia útil.';
+    }
+    if (is2) {
+      var info = labels[selectedMotivo(form)] || { title: 'Solução escolhida', desc: '' };
+      if (pickedTitle) pickedTitle.textContent = info.title;
+      if (pickedDesc) pickedDesc.textContent = info.desc;
+      var nome = document.getElementById('tc-contato-nome');
+      if (nome) setTimeout(function () { nome.focus(); }, 30);
+    }
+  }
+
+  document.addEventListener('change', function (e) {
+    var t = e.target;
+    if (!t || t.name !== 'motivo') return;
+    var form = t.closest('#tc-contato-form');
+    if (!form) return;
+    var nextBtn = document.getElementById('tc-contato-to-step-2');
+    if (nextBtn) nextBtn.disabled = false;
+    goStep(form, 2);
+  });
+
+  document.addEventListener('click', function (e) {
+    var next = e.target.closest('#tc-contato-to-step-2');
+    if (next) {
+      var form = document.getElementById('tc-contato-form');
+      if (form && selectedMotivo(form)) goStep(form, 2);
+      return;
+    }
+    var back = e.target.closest('#tc-contato-to-step-1');
+    if (back) {
+      goStep(document.getElementById('tc-contato-form'), 1);
+    }
+  });
+})();
 </script>
 </body>
 </html>
