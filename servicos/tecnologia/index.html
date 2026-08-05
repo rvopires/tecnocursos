@@ -1946,19 +1946,19 @@
       width: 100%;
       max-width: 560px;
       margin: 0 auto;
-      padding-right: 56px;
+      padding-right: 64px;
     }
     @media (min-width: 1024px) {
       .presenca-dashboard-wrap {
         max-width: 600px;
         margin-left: auto;
         margin-right: 0;
-        padding-right: 80px;
+        padding-right: 96px;
       }
     }
     @media (min-width: 1366px) {
       .presenca-dashboard-wrap {
-        padding-right: 96px;
+        padding-right: 112px;
       }
     }
     .presenca-dashboard-aura {
@@ -2219,7 +2219,7 @@
     .presenca-dashboard-footer strong { color: #22c55e; }
     .presenca-qr-widget {
       position: absolute;
-      right: -16px;
+      right: -28px;
       top: 33%;
       z-index: 20;
       width: 176px;
@@ -2233,11 +2233,11 @@
       text-align: center;
     }
     @media (min-width: 1024px) {
-      .presenca-qr-widget { right: -40px; }
+      .presenca-qr-widget { right: -52px; }
     }
     /* Em telas largas há margem sobrando — empurra o QR mais para fora do card */
     @media (min-width: 1366px) {
-      .presenca-qr-widget { right: -72px; }
+      .presenca-qr-widget { right: -84px; }
     }
     .presenca-qr-img {
       display: block;
@@ -3249,6 +3249,7 @@
 .hero-tec-cover-overlay{position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%, rgba(3,6,12,.84) 0%, rgba(4,9,18,.5) 46%, rgba(4,9,18,.12) 100%)}
 .hero-tec-cover-content{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box}
 .hero-tec-cover-content .tc-spark-title,.hero-tec-cover-content .tc-spark-lead{max-width:none;margin-left:auto;margin-right:auto;text-align:center}
+.hero-tec-cover-content .tc-spark-title{font-style:normal}
 .tc-choice-meet{--meet:0;background:#F7F9FB;margin:0}
 .tc-choice-meet-track{height:220vh}
 .tc-choice-meet-sticky{
@@ -3413,8 +3414,8 @@
 .tc-show--soft{background:#F7F9FB;color:#1B2848}
 .tc-show-inner{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:0 24px}
 .tc-show-head{max-width:720px;margin:0 auto 36px;text-align:center}
-.tc-show-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#32AD78;margin-bottom:14px}
-.tc-show--soft .tc-show-eyebrow{color:#005C8B}
+.tc-show-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#32AD78;background:rgba(50,173,120,.12);border:1px solid rgba(106,187,140,.35);padding:7px 14px;border-radius:999px;margin-bottom:14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tc-show--soft .tc-show-eyebrow{color:#005C8B;background:rgba(0,92,139,.08);border-color:rgba(0,92,139,.28)}
 .tc-show-title{margin:0;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800}
 .tc-show--dark .tc-show-title{color:#fff}
 .tc-show--soft .tc-show-title{color:#1B2848}
@@ -3451,7 +3452,7 @@
 .tc-show--dark .tc-show-card-body p{color:rgba(255,255,255,.62)}
 .tc-show-bridge{position:relative;padding:clamp(40px,6vw,64px) 24px;text-align:center;background:linear-gradient(180deg,#0A1326 0%,#1B2848 50%,#F7F9FB 100%)}
 .tc-show-bridge p{margin:0 auto;max-width:28ch;font-size:clamp(22px,3.2vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff}
-.tc-show-bridge em{font-style:italic;color:#32AD78;font-weight:800}
+.tc-show-bridge strong{font-style:normal;color:#32AD78;font-weight:800}
 /* Ponte: multi-device → Lista de presença */
 .tc-feat-to-lista{
   position:relative;
@@ -3496,12 +3497,13 @@
 .tc-bridge-text em{font-style:italic;color:#10ffcb;font-weight:800}
 .tc-feat-to-lista-sub{
   position:relative;z-index:1;
-  display:block;margin:14px auto 0;max-width:36ch;
+  display:block;margin:14px auto 0;max-width:46ch;
   font-size:clamp(14px,1.4vw,16px);line-height:1.55;color:rgba(255,255,255,.72);font-weight:500;
   min-height:2.8em;
+  overflow:visible;
+  padding:0 4px;
 }
 .tc-feat-to-lista-sub .tc-bridge-char{
-  display:inline-block;
   opacity:0;
 }
 .tc-feat-to-lista.is-typed .tc-feat-to-lista-sub .tc-bridge-char{
@@ -3614,7 +3616,7 @@
   align-items:center;
 }
 .tc-live-eyebrow{
-  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ABB8C;margin-bottom:14px
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6ABB8C;background:rgba(50,173,120,.12);border:1px solid rgba(106,187,140,.35);padding:7px 14px;border-radius:999px;margin-bottom:14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)
 }
 .tc-live-title{
   margin:0;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:#fff
@@ -3782,12 +3784,12 @@
   display:flex;flex-direction:column;align-items:flex-start;
 }
 .tc-scene-eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6ABB8C;margin-bottom:16px
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6ABB8C;
+  background:rgba(50,173,120,.12);border:1px solid rgba(106,187,140,.35);padding:7px 14px;border-radius:999px;
+  margin-bottom:16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)
 }
-.tc-scene-eyebrow::before{
-  content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,#6ABB8C)
-}
+.tc-scene-eyebrow::before{display:none;content:none}
 .tc-scene-title{
   margin:0;max-width:14ch;
   font-size:clamp(34px,5.4vw,60px);line-height:1.02;letter-spacing:-.035em;font-weight:800;color:#fff;
@@ -3941,7 +3943,7 @@
   max-width:640px;margin:0 auto 36px;text-align:center;
 }
 .tc-report-eyebrow{
-  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#005C8B;margin-bottom:14px
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#005C8B;background:rgba(0,92,139,.08);border:1px solid rgba(0,92,139,.28);padding:7px 14px;border-radius:999px;margin-bottom:14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)
 }
 .tc-report-title{
   margin:0;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:#1B2848
@@ -4123,9 +4125,6 @@
 .tc-show-ops-row em.is-warn{color:#b45309}
 .tc-show-ops-row em.is-ok{color:#15803d}
 .tc-show-ops-row em.is-muted{color:#64748b}
-.tc-show-cta-row{display:flex;justify-content:center;margin-top:32px}
-.tc-show-cta{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:14.5px;font-weight:700;padding:13px 22px;border-radius:999px;text-decoration:none;border:none;cursor:pointer;background:#32AD78;color:#fff;box-shadow:0 10px 28px rgba(50,173,120,.35);transition:transform .2s,background .2s}
-.tc-show-cta:hover{background:#6ABB8C;transform:translateY(-2px);color:#fff}
 @media(max-width:900px){
   .tc-show-grid{grid-template-columns:1fr}
   .tc-show-ops{grid-template-columns:1fr}
@@ -4169,7 +4168,7 @@
 .tc-glare-card{position:relative;overflow:hidden;border-radius:24px;padding:36px 32px;background:radial-gradient(120% 140% at 15% 0%, rgba(50,173,120,.28), transparent 55%), radial-gradient(100% 120% at 100% 100%, rgba(0,92,139,.32), transparent 60%), #0A1326;box-shadow:0 30px 70px rgba(0,0,0,.4);min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:18px}
 .tc-glare-sweep{position:absolute;top:-40%;left:-60%;width:60%;height:180%;background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,.16) 45%, rgba(255,255,255,.22) 50%, rgba(255,255,255,.16) 55%, transparent 100%);transform:rotate(8deg);animation:tcGlareSweep 5s ease-in-out infinite;pointer-events:none}
 @keyframes tcGlareSweep{0%{left:-60%}45%{left:120%}100%{left:120%}}
-.tc-glare-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ABB8C}
+.tc-glare-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6ABB8C;background:rgba(50,173,120,.12);border:1px solid rgba(106,187,140,.35);padding:7px 14px;border-radius:999px;width:fit-content;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .tc-glare-stat{display:flex;align-items:baseline;gap:10px}
 .tc-glare-stat strong{font-size:clamp(48px,6vw,64px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1}
 .tc-glare-stat span{font-size:15px;color:rgba(255,255,255,.6)}
@@ -4308,8 +4307,8 @@
       <div class="hero-tec-cover-overlay" aria-hidden="true"></div>
       <div class="hero-tec-cover-content">
         <span class="tc-spark-eyebrow">Tecnologia</span>
-        <h1 id="hero-title" class="tc-spark-title">Tecnologia que <span class="tc-spark-mark">ensina</span>, comprova e protege.</h1>
-        <p class="tc-spark-lead">Plataforma de treinamentos e lista de presença digital — turmas, validades e certificados, tudo comprovado em um só lugar.</p>
+        <h1 id="hero-title" class="tc-spark-title">Tecnologia que ensina, comprova e protege.</h1>
+        <p class="tc-spark-lead">Plataforma de treinamentos e lista de presença digital, com turmas, validades e certificados centralizados em um único lugar.</p>
       </div>
       <div class="tc-tech-wave tc-tech-wave--bottom" aria-hidden="true">
         <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -4330,7 +4329,7 @@
           </div>
           <div class="tc-choice-meet-copy">
             <h3>Plataforma</h3>
-            <p>Trilhas, avaliações e certificados em um LMS só — organizado por função, risco ou unidade, com conteúdo alinhado às NRs.</p>
+            <p>Trilhas de aprendizagem, avaliações e certificados em um único LMS, organizados por função, risco ou unidade, com conteúdo alinhado às Normas Regulamentadoras (NRs)</p>
           </div>
           <span class="tc-choice-meet-arrow" aria-hidden="true">→</span>
         </a>
@@ -4340,7 +4339,7 @@
           </div>
           <div class="tc-choice-meet-copy">
             <h3>Lista de presença digital</h3>
-            <p>Autenticação, operação e relatórios prontos para auditoria — check-in por QR Code, controle de NoShow e conformidade com a LGPD.</p>
+            <p>Autenticação segura, check-in por QR Code, controle de No Show e relatórios prontos para auditorias, em conformidade com a LGPD.</p>
           </div>
           <span class="tc-choice-meet-arrow" aria-hidden="true">→</span>
         </a>
@@ -4362,7 +4361,7 @@
         <div class="tc-show-head reveal">
           <span class="tc-show-eyebrow">Trilhas · Avaliações</span>
           <h2 id="deep-trilhas-title" class="tc-show-title">Do caminho à nota, no mesmo fluxo.</h2>
-          <p class="tc-show-lead">Monte trilhas por função, libere módulos com pré-requisitos e meça o aprendizado com provas — o aluno evolui com clareza e o gestor vê quem precisa de reforço.</p>
+          <p class="tc-show-lead">Monte trilhas por função, libere módulos com pré-requisitos e acompanhe o aprendizado com avaliações. O aluno evolui com clareza e o gestor identifica quem precisa de reforço.</p>
         </div>
 
         <div class="tc-show-grid">
@@ -4373,7 +4372,7 @@
             <div class="tc-show-card-body">
               <span class="tc-show-card-tag">Trilha</span>
               <strong>Trilhas por NR e função</strong>
-              <p>Organize o caminho do aluno por risco, unidade ou cargo — com módulos na ordem certa.</p>
+              <p>Organize o caminho do aluno por risco, unidade ou cargo, definindo a sequência ideal dos módulos.</p>
             </div>
           </article>
           <article class="tc-show-card reveal">
@@ -4382,8 +4381,8 @@
             </div>
             <div class="tc-show-card-body">
               <span class="tc-show-card-tag">Progresso</span>
-              <strong>Pré-requisitos e avanço</strong>
-              <p>O conteúdo só libera quando o módulo anterior está concluído — sem pular etapa.</p>
+              <strong>Pré-requisitos e progresso</strong>
+              <p>Os módulos são liberados conforme o progresso do aluno, garantindo uma sequência lógica de aprendizagem.</p>
             </div>
           </article>
           <article class="tc-show-card reveal">
@@ -4393,21 +4392,16 @@
             <div class="tc-show-card-body">
               <span class="tc-show-card-tag">Avaliação</span>
               <strong>Provas com feedback na hora</strong>
-              <p>Correção automática e retorno imediato — o gestor vê quem precisa de reforço.</p>
+              <p>Correção automática e retorno imediato, permitindo ao gestor identificar quem precisa de reforço.</p>
             </div>
           </article>
         </div>
 
-        <div class="tc-show-cta-row reveal">
-          <a class="tc-show-cta" href="../../index.html#contato">Quero montar minhas trilhas
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9m0 0L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
       </div>
     </section>
 
     <div class="tc-show-bridge" aria-hidden="true">
-      <p>Ensinar na trilha → <em>comprovar</em> no certificado.</p>
+      <p>Ensinar na trilha, <strong>comprovar</strong> no certificado.</p>
     </div>
 
     <section class="tc-show tc-show--soft" aria-labelledby="deep-gestao-title">
@@ -4415,7 +4409,7 @@
         <div class="tc-show-head reveal">
           <span class="tc-show-eyebrow">Certificados · Gestão</span>
           <h2 id="deep-gestao-title" class="tc-show-title">Comprove e acompanhe sem planilha.</h2>
-          <p class="tc-show-lead">Certificado emitido na conclusão e painéis com progresso, validades e pendências — evidência pronta para auditoria.</p>
+          <p class="tc-show-lead">Certificados emitidos na conclusão dos treinamentos e painéis com progresso, vencimentos e pendências, facilitando auditorias e a gestão da conformidade.</p>
         </div>
 
         <div class="tc-show-cert-band reveal">
@@ -4437,7 +4431,7 @@
             <div class="tc-show-cert-copy">
               <span class="tc-show-card-tag">Emissão automática</span>
               <strong>Certificado na hora da conclusão</strong>
-              <p>Dados da NR, validade e rastreio — pronto para fiscalização e auditoria.</p>
+              <p>Com dados da NR, validade e rastreabilidade, prontos para fiscalizações e auditorias.</p>
             </div>
           </div>
         </div>
@@ -4485,7 +4479,7 @@
                 <strong>Painel com todos os indicadores</strong>
               </div>
             </div>
-            <p>Turmas ativas, conclusão e certificados emitidos — tudo em um só painel.</p>
+            <p>Turmas ativas, conclusões e certificados emitidos, tudo em um só painel.</p>
             <div class="tc-show-ops-rows" aria-hidden="true">
               <div class="tc-show-ops-row"><span>Turmas ativas</span><em class="is-ok">24</em></div>
               <div class="tc-show-ops-row"><span>Certificados emitidos</span><em class="is-muted">1.284</em></div>
@@ -4512,8 +4506,8 @@
         <div class="tc-feat-stars" data-feat-stars></div>
       </div>
       <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
-        <h2 id="tc-feat-title" class="tc-feat-title reveal" style="text-align:center;font-size:clamp(22px,3.2vw,40px);line-height:1.06;letter-spacing:-.03em;font-weight:800;color:#fff;margin:0 auto;max-width:720px">O aluno treina onde estiver — <span style="color:#10ffcb;font-style:italic">celular ou notebook</span></h2>
-        <p class="tc-feat-lead">A mesma plataforma, no campo ou no escritório.</p>
+        <h2 id="tc-feat-title" class="tc-feat-title reveal" style="text-align:center;font-size:clamp(22px,3.2vw,40px);line-height:1.06;letter-spacing:-.03em;font-weight:800;color:#fff;margin:0 auto;max-width:720px">O aluno treina onde estiver, pelo <span style="color:#10ffcb">celular</span> ou <span style="color:#10ffcb">computador</span>.</h2>
+        <p class="tc-feat-lead">A mesma plataforma, em casa, no escritório ou onde for necessário.</p>
 
         <div class="tc-feat-devices">
           <div class="tc-feat-laptop" data-laptop-float>
@@ -4574,22 +4568,22 @@
             <span class="tc-feat-icon-badge" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 00-4 0v5M14 10V4a2 2 0 00-4 0v7M10 10.5V6a2 2 0 00-4 0v8M18 8a2 2 0 014 0v6a8 8 0 01-8 8h-2a8 8 0 01-7-4l-2.5-4"/></svg>
             </span>
-            <strong>Inclusivo</strong>
+            <strong>Acessibilidade</strong>
             <span>Áudio, Libras e transcrição</span>
           </button>
           <button type="button" class="tc-feat-icon" data-feat-icon aria-pressed="false">
             <span class="tc-feat-icon-badge" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 9l2.5 2.5L7 14M13 14h4"/></svg>
             </span>
-            <strong>Games</strong>
-            <span>Práticas dentro do módulo</span>
+            <strong>Gamificação</strong>
+            <span>Práticas interativas durante o treinamento.</span>
           </button>
           <button type="button" class="tc-feat-icon" data-feat-icon aria-pressed="false">
             <span class="tc-feat-icon-badge" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><rect x="7" y="7" width="5" height="8" rx="1"/></svg>
             </span>
-            <strong>Multi-device</strong>
-            <span>Celular e notebook iguais</span>
+            <strong>Multi-dispositivo</strong>
+            <span>A mesma experiência pelo celular ou computador.</span>
           </button>
         </div>
       </div>
@@ -4598,10 +4592,10 @@
     <div class="tc-feat-to-lista" data-feat-bridge>
       <p class="tc-feat-to-lista-title">
         <span class="tc-bridge-reveal">
-          <span class="tc-bridge-text">Celular ou notebook → <em>lista digital</em></span>
+          <span class="tc-bridge-text">Da plataforma à <span style="color:#10ffcb">presença registrada</span></span>
         </span>
       </p>
-      <span class="tc-feat-to-lista-sub" data-bridge-sub>O aluno treina onde estiver. A presença comprova que ele esteve lá.</span>
+      <span class="tc-feat-to-lista-sub" data-bridge-sub>A presença é registrada de forma digital para garantir segurança e rastreabilidade.</span>
     </div>
 
     <!-- ========== BLOCO 03 — LISTA DE PRESENÇA DIGITAL (React + Framer Motion) ========== -->
@@ -4613,19 +4607,19 @@
         <div class="tc-adv-grid">
           <div class="tc-adv-chip reveal">
             <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h8m4-14v14a2 2 0 01-2 2h-2M14 3l6 6h-6z"/><path d="M4 4l16 16" stroke-width="2"/></svg></span>
-            <div><strong>Sem papel</strong><span>Elimina lista física e arquivo em pasta.</span></div>
+            <div><strong>Sem papel</strong><span>Substitua listas em papel por registros digitais.</span></div>
           </div>
           <div class="tc-adv-chip reveal">
             <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <div><strong>Auditoria em tempo real</strong><span>Relatório pronto quando pedirem.</span></div>
+            <div><strong>Pronto para auditorias</strong><span>Relatórios disponíveis sempre que necessário.</span></div>
           </div>
           <div class="tc-adv-chip reveal">
             <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-            <div><strong>Comprovação confiável</strong><span>Documento pronto para fiscalização.</span></div>
+            <div><strong>Evidências confiáveis</strong><span>Documentação pronta para auditorias e fiscalizações.</span></div>
           </div>
           <div class="tc-adv-chip reveal">
             <span class="tc-adv-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
-            <div><strong>Histórico rastreável</strong><span>Quem, quando e em qual turma.</span></div>
+            <div><strong>Histórico rastreável</strong><span>Saiba quem participou, quando e em qual turma.</span></div>
           </div>
         </div>
       </section>
@@ -5020,7 +5014,7 @@
           for (var i = 0; i < text.length; i++) {
             var span = document.createElement('span');
             span.className = 'tc-bridge-char';
-            span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+            span.textContent = text[i];
             el.appendChild(span);
           }
         }

@@ -39,8 +39,8 @@ const initialCheckins = [
 
 const highlightPills = [
   { label: 'Zero papel', Icon: FileX2 },
-  { label: 'Auditoria ao vivo', Icon: Radio },
-  { label: 'Rastreável e confiável', Icon: ShieldCheck },
+  { label: 'Pronto para auditorias', Icon: Radio },
+  { label: 'Rastreabilidade total', Icon: ShieldCheck },
 ];
 
 function formatCount(value) {
@@ -275,7 +275,7 @@ export function PresencaSection() {
               <span className="presenca-title-accent">Sem papel. Sem dúvida.</span>
             </h2>
             <p className="presenca-lead">
-              Check-ins ao vivo, QR Code e comprovação pronta para auditoria — a turma toda sob controle em um só painel.
+              Check-ins em tempo real, QR Code e registros prontos para auditorias. Toda a turma sob controle em um único painel.
             </p>
 
             <ul className="presenca-pills" aria-label="Diferenciais rápidos">
@@ -288,13 +288,6 @@ export function PresencaSection() {
                 </li>
               ))}
             </ul>
-
-            <a className="presenca-scroll-cta" href="#presenca-detalhes">
-              Ver como funciona
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M7 2.5v9m0 0L3.5 8M7 11.5L10.5 8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
           </div>
 
           <div className="presenca-dashboard-col">

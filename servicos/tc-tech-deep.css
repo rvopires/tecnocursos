@@ -34,9 +34,19 @@
   letter-spacing: .12em;
   text-transform: uppercase;
   color: #32AD78;
+  background: rgba(50, 173, 120, .12);
+  border: 1px solid rgba(106, 187, 140, .35);
+  padding: 7px 14px;
+  border-radius: 999px;
   margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
-.tc-deep--dark .tc-deep-eyebrow { color: #6ABB8C; }
+.tc-deep--dark .tc-deep-eyebrow {
+  color: #6ABB8C;
+  background: rgba(50, 173, 120, .12);
+  border-color: rgba(106, 187, 140, .35);
+}
 
 .tc-deep-title {
   margin: 0;
