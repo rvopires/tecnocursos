@@ -2333,16 +2333,16 @@
     }
     .tc-nav-shell{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 20px 0;pointer-events:none;overflow:visible;font-family:'Poppins',system-ui,sans-serif}
     .tc-nav-shell:has(.tc-nav-dd:hover),.tc-nav-shell:has(.tc-nav-dd:focus-within){pointer-events:auto}
-    .tc-nav-pill{pointer-events:auto;max-width:1120px;margin:0 auto;height:64px;padding:0 12px 0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:linear-gradient(135deg,rgba(27,40,72,.88) 0%,rgba(0,92,139,.72) 55%,rgba(27,40,72,.9) 100%);border:1px solid rgba(106,187,140,.35);box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 10px rgba(0,92,139,.25),inset 0 1px 0 rgba(106,187,140,.28),inset 0 -1px 0 rgba(0,0,0,.2);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);overflow:visible}
-    .tc-nav-link{position:relative;font-size:14.5px;font-weight:500;cursor:pointer;padding:8px 2px;color:rgba(255,255,255,.88);transition:color .2s ease}
+    .tc-nav-pill{pointer-events:auto;max-width:1120px;margin:0 auto;height:74px;padding:0 14px 0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:linear-gradient(135deg,rgba(27,40,72,.88) 0%,rgba(0,92,139,.72) 55%,rgba(27,40,72,.9) 100%);border:1px solid rgba(106,187,140,.35);box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 10px rgba(0,92,139,.25),inset 0 1px 0 rgba(106,187,140,.28),inset 0 -1px 0 rgba(0,0,0,.2);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);overflow:visible}
+    .tc-nav-link{position:relative;font-size:15.5px;font-weight:500;cursor:pointer;padding:10px 2px;color:rgba(255,255,255,.88);transition:color .2s ease}
     .tc-nav-link:hover{color:#6ABB8C!important}
-    .tc-nav-cta{font-family:inherit;border:none;cursor:pointer;background:#32AD78;color:#FFFFFF;font-size:14px;font-weight:700;padding:11px 22px;border-radius:999px;box-shadow:0 6px 20px rgba(50,173,120,.4);transition:background .2s,transform .2s,box-shadow .2s}
+    .tc-nav-cta{font-family:inherit;border:none;cursor:pointer;background:#32AD78;color:#FFFFFF;font-size:15px;font-weight:700;padding:13px 24px;border-radius:999px;box-shadow:0 6px 20px rgba(50,173,120,.4);transition:background .2s,transform .2s,box-shadow .2s}
     .tc-nav-cta:hover{background:#6ABB8C;transform:translateY(-1px);box-shadow:0 10px 28px rgba(50,173,120,.5)}
     .tc-nav-dd{position:relative;display:flex;align-items:center;height:100%;z-index:140}
     .tc-nav-dd-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;min-width:220px;padding:14px 0 0;border:none;background:transparent;box-shadow:none;display:flex;flex-direction:column;z-index:150;transition:opacity .18s ease,transform .18s ease,visibility .18s}
     .tc-nav-dd-panel::before{content:"";position:absolute;left:0;right:0;top:14px;bottom:0;border-radius:18px;background:linear-gradient(160deg,rgba(27,40,72,.98),rgba(0,92,139,.94));border:1px solid rgba(106,187,140,.35);box-shadow:0 16px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(106,187,140,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:0;pointer-events:none}
     .tc-nav-dd:hover .tc-nav-dd-panel,.tc-nav-dd:focus-within .tc-nav-dd-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-    .tc-nav-dd-item{position:relative;z-index:1;font-family:inherit;border:none;cursor:pointer;text-align:left;background:transparent;color:rgba(255,255,255,.9);font-size:14px;font-weight:600;padding:12px 14px;margin:0 10px;border-radius:12px;transition:background .18s,color .18s}
+    .tc-nav-dd-item{position:relative;z-index:1;font-family:inherit;border:none;cursor:pointer;text-align:left;background:transparent;color:rgba(255,255,255,.9);font-size:15px;font-weight:600;padding:12px 14px;margin:0 10px;border-radius:12px;transition:background .18s,color .18s}
     .tc-nav-dd-item:first-child{margin-top:10px}
     .tc-nav-dd-item:last-child{margin-bottom:10px}
 .tc-footer-social a{transition:background .2s,border-color .2s,color .2s}
@@ -2359,8 +2359,10 @@
 
   <header class="tc-nav-shell">
     <div class="tc-nav-pill">
-      <img src="../uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" onclick="location.href='../index.html'" style="height:36px;width:auto;cursor:pointer;flex-shrink:0"/>
-      <nav data-tc-navlinks style="display:flex;align-items:center;gap:28px;flex:1;justify-content:center">
+      <div style="flex-shrink:0;min-width:148px;display:flex;align-items:center">
+        <img src="../uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" onclick="location.href='../index.html'" style="height:42px;width:auto;cursor:pointer"/>
+      </div>
+      <nav data-tc-navlinks style="display:flex;align-items:center;gap:32px;flex:1;justify-content:center">
         <span class="tc-nav-link" onclick="location.href='../index.html'" style="color:rgba(255,255,255,.88);font-weight:500">Home</span>
         <span class="tc-nav-link" onclick="location.href='../index.html#sobre'" style="color:rgba(255,255,255,.88);font-weight:500">Sobre nós</span>
         <div class="tc-nav-dd">
@@ -2373,8 +2375,8 @@
         </div>
         <span class="tc-nav-link" onclick="location.href='../index.html#catalogo'" style="color:rgba(255,255,255,.88);font-weight:500">Catálogo</span>
       </nav>
-      <div data-tc-navlinks style="display:flex;align-items:center;flex-shrink:0">
-        <button class="tc-nav-cta" onclick="location.href='../index.html#contato'">Entre em contato</button>
+      <div data-tc-navlinks style="display:flex;align-items:center;justify-content:flex-end;flex-shrink:0;min-width:148px">
+        <button class="tc-nav-cta" onclick="location.href='../index.html#contato'">Vamos conversar?</button>
       </div>
       <button data-tc-burger onclick="var m=document.getElementById('tc-shared-mobile-menu');m.style.display=(m.style.display==='flex'?'none':'flex')" style="font-family:inherit;background:rgba(50,173,120,.15);border:1px solid rgba(106,187,140,.35);border-radius:999px;cursor:pointer;flex-direction:column;gap:5px;padding:10px 12px;margin-left:auto">
         <span style="width:18px;height:2px;background:#6ABB8C;border-radius:2px;display:block"></span>
@@ -2394,7 +2396,7 @@
       <span onclick="location.href='seguranca/';document.getElementById('tc-shared-mobile-menu').style.display='none'">Segurança</span>
     </div>
     <span onclick="location.href='../index.html#catalogo'" style="font-size:24px;font-weight:600;color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer">Catálogo</span>
-    <button onclick="location.href='../index.html#contato'" style="font-family:inherit;margin-top:24px;border:none;cursor:pointer;background:#32AD78;color:#fff;font-size:17px;font-weight:600;padding:16px;border-radius:12px">Entre em contato</button>
+    <button onclick="location.href='../index.html#contato'" style="font-family:inherit;margin-top:24px;border:none;cursor:pointer;background:#32AD78;color:#fff;font-size:17px;font-weight:600;padding:16px;border-radius:12px">Vamos conversar?</button>
   </div>
 
 
@@ -2592,8 +2594,7 @@
     <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:clamp(48px,6vw,68px) 24px 0">
       <div class="tc-footer-grid" style="display:grid;gap:48px;grid-template-columns:2fr 1fr 1.4fr;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)">
         <div>
-          <img src="../uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" style="height:28px;width:auto;margin-bottom:14px;display:block"/>
-          <p style="font-size:13.5px;line-height:1.65;color:rgba(255,255,255,.5);margin:0 0 22px;max-width:260px">Tecnologia, treinamento e segurança.</p>
+          <img src="../uploads/NOVA%20LOGO%20TECNOCURSOS%20BRANCO%20SEM%20SLOGAN%201.png" alt="TecnoCursos" style="height:44px;width:auto;margin-bottom:22px;display:block"/>
           <div class="tc-footer-social" style="display:flex;gap:12px;align-items:center">
             <a href="https://www.facebook.com/tecnocursosoficiall/" target="_blank" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.instagram.com/tecnocursosoficial/" target="_blank" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -2617,7 +2618,8 @@
           <div style="display:flex;flex-direction:column;gap:13px">
             <span style="font-size:14px;color:rgba(255,255,255,.62)">16 99714-3932</span>
             <span style="font-size:14px;color:rgba(255,255,255,.62)"><span>contato</span><span>&#64;</span><span>tecnocursos.com.br</span></span>
-            <span style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.5">Avenida Trolesi, 4495,<br/>Parque Imperial · Matão-SP</span>
+            <span style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.5">Avenida Trolesi, 4495 - Parque Imperial<br/>CEP: 15.997-110 | Matão (SP) | Brasil</span>
+            <span style="font-size:14px;color:rgba(255,255,255,.62);line-height:1.55;margin-top:4px"><strong style="display:block;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px">Horário de atendimento</strong>Segunda a Sexta: das 7h às 17h</span>
           </div>
         </div>
       </div>

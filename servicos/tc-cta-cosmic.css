@@ -130,10 +130,26 @@
 .tc-cta-cosmic .tc-cta-copy {
   position: relative;
   z-index: 5;
-  max-width: 780px;
+  max-width: 980px;
   margin: 0 auto;
   text-align: center;
   padding: clamp(72px, 10vw, 120px) 24px;
+}
+.tc-cta-cosmic .tc-cta-title-2l .tc-cta-line1,
+.tc-cta-cosmic .tc-cta-title-2l .tc-cta-line2 {
+  display: block;
+  white-space: nowrap;
+}
+.tc-cta-cosmic .tc-cta-title-2l .tc-cta-mob-extra {
+  display: none;
+}
+@media (max-width: 720px) {
+  .tc-cta-cosmic .tc-cta-title-2l .tc-cta-desk-extra {
+    display: none;
+  }
+  .tc-cta-cosmic .tc-cta-title-2l .tc-cta-mob-extra {
+    display: inline;
+  }
 }
 .tc-cta-cosmic .tc-cta-subparts {
   display: flex;
@@ -156,28 +172,67 @@
 .tc-cta-cosmic .tc-cta-subparts span:nth-child(3) {
   animation: animGo 8s ease-in-out var(--animation-iteration);
 }
+@keyframes tcCtaPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgba(16, 255, 203, .5),
+      0 14px 40px rgba(16, 255, 203, .42),
+      inset 0 1px 0 rgba(255, 255, 255, .45);
+  }
+  55% {
+    box-shadow:
+      0 0 0 16px rgba(16, 255, 203, 0),
+      0 18px 48px rgba(16, 255, 203, .5),
+      inset 0 1px 0 rgba(255, 255, 255, .45);
+  }
+}
 .tc-cta-cosmic .tc-cta-btn {
+  position: relative;
   font-family: inherit;
   border: none;
   cursor: pointer;
-  background: #10ffcb;
-  color: #070F1E;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 16px 30px;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #7dffd6 0%, #10ffcb 42%, #32AD78 100%);
+  color: #041018;
+  font-size: clamp(16px, 1.7vw, 19px);
+  font-weight: 800;
+  letter-spacing: .01em;
+  padding: 18px 38px;
+  border-radius: 999px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(68, 229, 231, .32);
-  transition: background .2s, transform .2s, box-shadow .2s;
+  gap: 10px;
+  box-shadow:
+    0 14px 40px rgba(16, 255, 203, .42),
+    inset 0 1px 0 rgba(255, 255, 255, .45);
+  transition: background .2s, transform .2s, box-shadow .2s, filter .2s;
+  animation: tcCtaPulse 2.6s ease-in-out infinite;
+}
+.tc-cta-cosmic .tc-cta-btn::after {
+  content: "→";
+  font-size: 1.05em;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .2s ease;
 }
 .tc-cta-cosmic .tc-cta-btn:hover {
-  background: #0de0b3;
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 16px 38px rgba(68, 229, 231, .4);
-  color: #070F1E;
+  background: linear-gradient(135deg, #9affe0 0%, #32f0c4 45%, #3dbc86 100%);
+  transform: translateY(-3px) scale(1.04);
+  filter: brightness(1.04);
+  box-shadow:
+    0 0 0 10px rgba(16, 255, 203, .12),
+    0 22px 52px rgba(16, 255, 203, .55),
+    inset 0 1px 0 rgba(255, 255, 255, .5);
+  color: #041018;
+  animation: none;
+}
+.tc-cta-cosmic .tc-cta-btn:hover::after {
+  transform: translateX(4px);
+}
+.tc-cta-cosmic .tc-cta-btn:focus-visible {
+  outline: 3px solid rgba(16, 255, 203, .85);
+  outline-offset: 4px;
 }
 @media (prefers-reduced-motion: reduce) {
   .tc-cta-cosmic .cosmic-stars,
@@ -186,7 +241,8 @@
   .tc-cta-cosmic .tc-cta-subparts span,
   .tc-cta-cosmic .tc-cta-earth,
   .tc-cta-cosmic .tc-cta-earth::before,
-  .tc-cta-cosmic .tc-cta-earth::after {
+  .tc-cta-cosmic .tc-cta-earth::after,
+  .tc-cta-cosmic .tc-cta-btn {
     animation: none !important;
     opacity: 1;
     transform: none;
