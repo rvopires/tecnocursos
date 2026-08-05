@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="TecnoCursos — Cultura de segurança através do conhecimento. NRs aplicadas e treinamento sob medida." />
+  <meta name="description" content="TecnoCursos — Cultura de segurança por meio do conhecimento. NRs aplicadas e treinamento sob medida." />
   <title>Segurança — TecnoCursos | Cultura de prevenção e NRs</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -2318,6 +2318,16 @@
   <link rel="stylesheet" href="../tc-spark-hero.css" />
   <link rel="stylesheet" href="../tc-cta-cosmic.css" />
   <style>
+    .tc-cta-cosmic .tc-cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;align-items:center}
+    .tc-cta-cosmic .tc-cta-btn--ghost{
+      font-family:inherit;font-size:clamp(15px,1.5vw,17px);font-weight:700;
+      color:#fff;text-decoration:none;padding:16px 28px;border-radius:999px;
+      border:1.5px solid rgba(255,255,255,.35);background:transparent;
+      transition:border-color .2s,background .2s,transform .2s;
+    }
+    .tc-cta-cosmic .tc-cta-btn--ghost:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+  </style>
+  <style>
 .hero.hero-tec-cover{
   position:relative;
   top:auto;
@@ -2670,10 +2680,43 @@ section.tc-seg-nrs{
   color:#6ABB8C;transform:translateY(-2px);
 }
 .tc-seg-nrs-more{
-  display:inline-flex;margin-top:28px;font-size:14px;font-weight:700;
-  color:#32AD78;text-decoration:none;align-items:center;gap:6px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:32px;
+  font-family:inherit;
+  font-size:clamp(15px,1.5vw,17px);font-weight:800;letter-spacing:.01em;
+  color:#041018;text-decoration:none;
+  padding:16px 32px;border-radius:999px;
+  background:linear-gradient(135deg,#7dffd6 0%,#10ffcb 42%,#32AD78 100%);
+  box-shadow:
+    0 14px 40px rgba(16,255,203,.35),
+    inset 0 1px 0 rgba(255,255,255,.45);
+  transition:transform .2s,box-shadow .2s,filter .2s,background .2s;
+  animation:tcSegNrsPulse 2.6s ease-in-out infinite;
 }
-.tc-seg-nrs-more:hover{color:#6ABB8C}
+.tc-seg-nrs-more::after{
+  content:"→";
+  font-size:1.05em;font-weight:700;line-height:1;
+  transition:transform .2s ease;
+}
+.tc-seg-nrs-more:hover{
+  background:linear-gradient(135deg,#9affe0 0%,#32f0c4 45%,#3dbc86 100%);
+  transform:translateY(-3px) scale(1.03);
+  filter:brightness(1.04);
+  box-shadow:
+    0 0 0 10px rgba(16,255,203,.1),
+    0 22px 52px rgba(16,255,203,.45),
+    inset 0 1px 0 rgba(255,255,255,.5);
+  color:#041018;
+  animation:none;
+}
+.tc-seg-nrs-more:hover::after{transform:translateX(4px)}
+@keyframes tcSegNrsPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(16,255,203,.45),0 14px 40px rgba(16,255,203,.35),inset 0 1px 0 rgba(255,255,255,.45)}
+  55%{box-shadow:0 0 0 14px rgba(16,255,203,0),0 18px 48px rgba(16,255,203,.45),inset 0 1px 0 rgba(255,255,255,.45)}
+}
+@media (prefers-reduced-motion:reduce){
+  .tc-seg-nrs-more{animation:none}
+}
 
 section.tc-seg-actions{
   position:relative;
@@ -2836,12 +2879,8 @@ section.tc-seg-actions{
       <div class="hero-tec-cover-overlay" aria-hidden="true"></div>
       <div class="hero-tec-cover-content">
         <span class="tc-spark-eyebrow">Segurança</span>
-        <h1 id="hero-title" class="tc-spark-title">Cultura de segurança através do <span class="tc-spark-mark">conhecimento</span>.</h1>
-        <p class="tc-spark-lead">Treinamentos alinhados às NRs e às necessidades da sua empresa — prevenção, prática e capacitação sob medida.</p>
-        <div class="tc-seg-hero-actions">
-          <a href="../../index.html#contato" class="tc-seg-hero-btn tc-seg-hero-btn--primary">Falar com um especialista</a>
-          <a href="../../index.html#catalogo" class="tc-seg-hero-btn tc-seg-hero-btn--ghost">Ver NRs do catálogo</a>
-        </div>
+        <h1 id="hero-title" class="tc-spark-title">Cultura de segurança por meio do conhecimento.</h1>
+        <p class="tc-spark-lead">Treinamentos alinhados às NRs e às necessidades da sua empresa, com foco em prevenção, prática e capacitação sob medida.</p>
       </div>
       <div class="tc-seg-wave tc-seg-wave--bottom" aria-hidden="true">
         <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -2867,26 +2906,26 @@ section.tc-seg-actions{
       </div>
       <div style="max-width:1200px;margin:0 auto 36px;text-align:center">
         <span class="tc-spark-eyebrow reveal" style="color:#218a5d;background:rgba(50,173,120,.12);border-color:rgba(50,173,120,.28)">O que oferecemos</span>
-        <h2 id="pilares-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#0F2A1F;letter-spacing:-.03em">Segurança na prática — não só no papel.</h2>
-        <p class="reveal" style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:#4A6358">Três frentes concretas para reduzir risco, cumprir a norma e formar equipes preparadas.</p>
+        <h2 id="pilares-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#0F2A1F;letter-spacing:-.03em">Segurança na prática, não só no papel.</h2>
+        <p class="reveal" style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:#4A6358">Três soluções para reduzir riscos, manter a conformidade e preparar equipes.</p>
       </div>
       <div class="tc-seg-grid">
         <a class="tc-seg-card reveal" href="../../index.html#catalogo">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div>
           <h3>NRs presenciais e online</h3>
-          <p>Capacitações nas principais Normas Regulamentadoras, com carga horária e formato alinhados à sua operação.</p>
+          <p>Capacitações nas principais Normas Regulamentadoras, com carga horária e formatos adequados à sua operação.</p>
           <span class="tc-seg-card-link">Ver catálogo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="tc-seg-card reveal" href="../../index.html#contato">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>Simulações e brigada</h3>
-          <p>Treinamentos práticos de emergência, resgate e combate a princípios de incêndio — preparação real para o dia a dia.</p>
+          <p>Treinamentos práticos de emergência, resgate e combate a princípios de incêndio, preparando equipes para situações reais.</p>
           <span class="tc-seg-card-link">Solicitar proposta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="tc-seg-card reveal" href="../../index.html#contato">
           <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
           <h3>Consultoria sob medida</h3>
-          <p>Diagnóstico, adequação e capacitação personalizada conforme os riscos e a realidade da sua empresa.</p>
+          <p>Diagnóstico, adequação e capacitação personalizados para a realidade e os riscos da sua empresa.</p>
           <span class="tc-seg-card-link">Falar conosco <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
@@ -2900,8 +2939,8 @@ section.tc-seg-actions{
       </div>
       <div class="tc-seg-nrs-inner">
         <span class="tc-spark-eyebrow reveal">Catálogo</span>
-        <h2 id="tc-nrs-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.8vw,42px);font-weight:800;color:#fff;letter-spacing:-.03em">Normas que capacitamos</h2>
-        <p class="reveal" style="margin:14px auto 0;max-width:520px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.62)">Escolha a NR e veja carga horária, objetivo, público e o conteúdo programático completo.</p>
+        <h2 id="tc-nrs-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.8vw,42px);font-weight:800;color:#fff;letter-spacing:-.03em">Conheça algumas das nossas capacitações em NRs.</h2>
+        <p class="reveal" style="margin:14px auto 0;max-width:520px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.62)">Escolha a NR para conhecer sua carga horária, objetivos, público-alvo e conteúdo programático.</p>
         <div class="tc-seg-nrs-chips">
           <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-05">NR-05 · CIPAA</a>
           <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-06">NR-06 · EPI</a>
@@ -2912,7 +2951,7 @@ section.tc-seg-actions{
           <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-33">NR-33 · Espaços confinados</a>
           <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-35">NR-35 · Altura</a>
         </div>
-        <a class="tc-seg-nrs-more reveal" href="../../index.html#catalogo">Ver todas no catálogo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="tc-seg-nrs-more reveal" href="../../index.html#catalogo">Ver catálogo completo</a>
       </div>
     </section>
 
@@ -2924,22 +2963,22 @@ section.tc-seg-actions{
       </div>
       <div class="tc-seg-actions-inner">
         <span class="tc-spark-eyebrow reveal">Como atuamos</span>
-        <h2 id="tc-actions-title" class="reveal">De ponta a ponta, transformando risco em segurança.</h2>
+        <h2 id="tc-actions-title" class="reveal">De ponta a ponta, transformamos risco em segurança.</h2>
         <div class="tc-seg-actions-grid">
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">01</span>
             <strong>Identificar</strong>
-            <p>Mapeamos riscos e oportunidades de melhoria em toda a operação.</p>
+            <p>Mapeamos riscos e identificamos oportunidades de melhoria em toda a operação.</p>
           </div>
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">02</span>
             <strong>Corrigir</strong>
-            <p>Tratamos não conformidades com ações práticas e mensuráveis.</p>
+            <p>Corrigimos não conformidades com ações práticas e mensuráveis.</p>
           </div>
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">03</span>
             <strong>Prevenir</strong>
-            <p>Treinamentos e cultura de segurança que evitam acidentes e protegem pessoas e resultados.</p>
+            <p>Promovemos treinamentos que fortalecem a cultura de segurança e ajudam a prevenir acidentes.</p>
           </div>
         </div>
       </div>
@@ -2954,14 +2993,13 @@ section.tc-seg-actions{
       <div class="tc-seg-mobile-inner">
         <div class="reveal">
           <span class="tc-spark-eyebrow" style="margin-bottom:16px">Suporte contínuo</span>
-          <h2 id="suporte-title">Acompanhamento próximo, do início à reciclagem.</h2>
-          <p>Segurança não é um treinamento pontual — é acompanhamento constante, com prazos sob controle e suporte disponível durante toda a vigência do contrato.</p>
-          <span class="tc-seg-badge">Instrutores em todo o Brasil</span>
+          <h2 id="suporte-title">Acompanhamento contínuo, do início à reciclagem.</h2>
+          <p>Treinamento é apenas o começo. Nossa equipe acompanha sua empresa durante toda a vigência do contrato, controlando prazos e oferecendo suporte sempre que precisar.</p>
         </div>
         <ul class="tc-seg-mobile-panel reveal">
-          <li><div><strong>Suporte dedicado</strong>WhatsApp e e-mail, com resposta em horas úteis durante toda a vigência do contrato.</div></li>
-          <li><div><strong>Controle de validade</strong>Aviso antecipado para reciclagens, sem perder o prazo.</div></li>
-          <li><div><strong>Instrutores no Brasil todo</strong>Disponíveis em diversas regiões para atendimento presencial.</div></li>
+          <li><div><strong>Suporte dedicado</strong>Atendimento por WhatsApp e e-mail durante toda a vigência do contrato com resposta em horário comercial.</div></li>
+          <li><div><strong>Controle de validade</strong>Monitoramento dos vencimentos com avisos antecipados para as reciclagens.</div></li>
+          <li><div><strong>Instrutores em todo o Brasil</strong>Atendimento presencial disponível em diversas regiões do país.</div></li>
         </ul>
       </div>
     </section>
@@ -2974,11 +3012,14 @@ section.tc-seg-actions{
       <div class="tc-cta-horizon" aria-hidden="true"><div class="tc-cta-horizon-glow"></div></div>
       <div class="tc-cta-earth" aria-hidden="true"></div>
       <div class="tc-cta-copy">
-        <h2 id="cta-cosmic-title" style="font-size:clamp(28px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0;text-shadow:0 2px 28px rgba(0,0,0,.55)">Quer fortalecer a cultura de segurança na sua empresa?</h2>
-        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:620px">Prevenção, NRs aplicadas e suporte contínuo — do diagnóstico à reciclagem.</p>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+        <h2 id="cta-cosmic-title" class="tc-cta-title-2l" style="font-size:clamp(22px,3.2vw,40px);line-height:1.12;letter-spacing:-.02em;font-weight:700;color:#fff;margin:0 auto;max-width:min(96vw,980px);text-shadow:0 2px 28px rgba(0,0,0,.55)">
+          <span class="tc-cta-line1">Fortaleça a cultura de segurança</span>
+          <span class="tc-cta-line2">da sua empresa.</span>
+        </h2>
+        <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.78);margin:20px auto 28px;max-width:520px">Ajudamos sua empresa a prevenir riscos, cumprir as NRs e manter os treinamentos sempre em dia, do diagnóstico à reciclagem.</p>
+        <div class="tc-cta-actions">
           <a class="tc-cta-btn" href="../../index.html#contato">Falar com um especialista</a>
-          <a href="../../index.html#catalogo" class="tc-seg-hero-btn tc-seg-hero-btn--ghost">Ver catálogo de NRs</a>
+          <a class="tc-cta-btn--ghost" href="../../index.html#catalogo">Ver catálogo de NRs</a>
         </div>
       </div>
     </section>
