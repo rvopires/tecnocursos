@@ -171,8 +171,11 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
   .tc-why-grid>div:last-child{border-bottom:none}
 }
 /* Trajetória — fundo mint (stats da home) */
-.tc-traj{position:relative;overflow:hidden;background:#D5F0E4;padding:clamp(64px,8vw,110px) 0;margin-top:-1px}
-.tc-traj::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 60% at 18% 20%,rgba(50,173,120,.16),transparent 62%),radial-gradient(50% 55% at 82% 70%,rgba(106,187,140,.12),transparent 65%),radial-gradient(45% 50% at 50% 100%,rgba(50,173,120,.1),transparent 58%)}
+.tc-traj{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#FAFDFB 10%,#F3FAF6 22%,#E6F5ED 38%,#D5F0E4 55%,#D5F0E4 100%);padding:clamp(64px,8vw,110px) 0;margin-top:-1px}
+.tc-traj::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 60% at 18% 28%,rgba(50,173,120,.16),transparent 62%),radial-gradient(50% 55% at 82% 70%,rgba(106,187,140,.12),transparent 65%),radial-gradient(45% 50% at 50% 100%,rgba(50,173,120,.1),transparent 58%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 110px);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 110px)}
+.tc-traj::after{content:"";position:absolute;top:0;left:0;right:0;height:clamp(100px,14vw,160px);pointer-events:none;z-index:1;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.65) 40%,rgba(213,240,228,0) 100%)}
 .tc-traj-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
 .tc-traj-panel{margin-top:clamp(36px,5vw,52px);padding:clamp(28px,4vw,40px);border-radius:24px;background:#fff;border:1px solid rgba(27,40,72,.08);box-shadow:0 16px 44px rgba(27,40,72,.08)}
 .tc-traj-year-ghost{position:absolute;font-size:clamp(72px,11vw,128px);font-weight:800;color:rgba(27,40,72,.06);letter-spacing:-.04em;user-select:none;line-height:1}
@@ -434,9 +437,11 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
   .tc-about-pf-card:hover{transform:none}
 }
 /* Evolução da marca — verde com gradiente branco */
-.tc-brand{position:relative;overflow:hidden;background:linear-gradient(165deg,#32AD78 0%,#6ABB8C 38%,#E8F7F0 72%,#fff 100%);padding:clamp(48px,6vw,80px) 0}
-.tc-brand::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 50% at 18% 22%,rgba(255,255,255,.45),transparent 68%),radial-gradient(48% 46% at 88% 78%,rgba(255,255,255,.35),transparent 70%)}
-.tc-brand::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,transparent 40%,rgba(255,255,255,.55) 100%)}
+.tc-brand{position:relative;overflow:hidden;background:linear-gradient(180deg,#32AD78 0%,#6ABB8C 26%,#A8DCC4 48%,#D5F0E4 66%,#EAF7F1 78%,#F7FBF9 88%,#fff 100%);padding:clamp(48px,6vw,80px) 0 calc(clamp(48px,6vw,80px) + clamp(36px,5vw,64px))}
+.tc-brand::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 50% at 18% 22%,rgba(255,255,255,.45),transparent 68%),radial-gradient(48% 46% at 88% 55%,rgba(255,255,255,.35),transparent 70%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 48%,transparent 90%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 48%,transparent 90%)}
+.tc-brand::after{content:"";position:absolute;left:0;right:0;bottom:0;height:clamp(120px,18vw,200px);pointer-events:none;z-index:1;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 45%,#fff 100%)}
 .tc-brand-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
 .tc-brand-head{text-align:center;max-width:640px;margin:0 auto clamp(28px,3.5vw,40px)}
 .tc-brand-copy{text-align:center;max-width:620px;margin:0 auto;font-size:16px;line-height:1.7;color:#1F3D32}
@@ -685,11 +690,12 @@ sc-for{display:contents}
 @media(prefers-reduced-motion:reduce){
   .tc-cta-cosmic .cosmic-stars,.tc-cta-cosmic .cosmic-stars-medium,.tc-cta-cosmic .cosmic-stars-large,.tc-cta-cosmic .tc-cta-subparts span,.tc-cta-cosmic .tc-cta-earth,.tc-cta-cosmic .tc-cta-earth::before,.tc-cta-cosmic .tc-cta-earth::after{animation:none!important;opacity:1;transform:none}
 }
-.tc-stats-section{position:relative;margin-top:-32px;margin-bottom:calc(clamp(64px,8vw,96px) * -0.42);padding:calc(clamp(72px,9vw,120px) + 32px) 0 calc(clamp(72px,9vw,120px) + clamp(28px,4vw,40px));background:#D5F0E4;overflow:visible;z-index:2}
+.tc-stats-section{position:relative;margin-top:-32px;margin-bottom:calc(clamp(64px,8vw,96px) * -0.42);padding:calc(clamp(72px,9vw,120px) + 32px) 0 calc(clamp(72px,9vw,120px) + clamp(28px,4vw,40px));background:linear-gradient(180deg,#D5F0E4 0%,#D5F0E4 48%,#E6F5ED 68%,#F3FAF6 82%,#FAFDFB 92%,#fff 100%);overflow:visible;z-index:2}
 .tc-stats-section::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;border-radius:0;background:
   radial-gradient(55% 60% at 18% 20%,rgba(50,173,120,.16),transparent 62%),
-  radial-gradient(50% 55% at 82% 70%,rgba(106,187,140,.12),transparent 65%),
-  radial-gradient(45% 50% at 50% 100%,rgba(50,173,120,.1),transparent 58%)}
+  radial-gradient(50% 55% at 82% 55%,rgba(106,187,140,.12),transparent 65%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 52%,transparent 92%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 52%,transparent 92%)}
 .tc-stats-section::after{
   content:"";
   position:absolute;
@@ -698,6 +704,14 @@ sc-for{display:contents}
   background:linear-gradient(180deg,#fff 0%,rgba(213,240,228,0) 100%);
   pointer-events:none;
   z-index:1;
+}
+.tc-stats-section .tc-stats-fade-end{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:clamp(120px,18vw,200px);
+  pointer-events:none;
+  z-index:1;
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 45%,#fff 100%);
 }
 .tc-stats-head{position:relative;z-index:2;max-width:720px;margin:0 auto 40px;padding:0 24px;text-align:center}
 .tc-stats-title{margin:0;font-size:clamp(26px,3.4vw,40px);line-height:1.12;letter-spacing:-.03em;font-weight:800;color:#1B2848}
@@ -922,6 +936,7 @@ section[aria-labelledby="tc-partners-title"]::before{
 
     <!-- NÚMEROS EM CARDS -->
     <section class="tc-stats-section" aria-labelledby="tc-stats-title">
+      <div class="tc-stats-fade-end" aria-hidden="true"></div>
 
       <div class="tc-stats-head">
         <span class="tc-stats-eyebrow" data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)">Em números</span>
@@ -978,7 +993,7 @@ section[aria-labelledby="tc-partners-title"]::before{
     <section class="tc-br-section" aria-labelledby="tc-br-title">
       <div class="tc-br-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#D5F0E4" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+          <path fill="#fff" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
             </div>
       <div class="tc-br-aurora" aria-hidden="true">
@@ -1254,7 +1269,7 @@ section[aria-labelledby="tc-partners-title"]::before{
       </div>
       <div class="tc-sec-wave tc-sec-wave--bottom" aria-hidden="true">
         <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#D5F0E4" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+          <path fill="#fff" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
         </svg>
       </div>
     </section>
@@ -1794,8 +1809,8 @@ section[aria-labelledby="tc-partners-title"]::before{
 
   </footer>
 
-  <!-- ===================== ASSISTENTE VIRTUAL ===================== -->
-  <button onClick="{{ toggleAssist }}" style="position:fixed;right:24px;bottom:24px;z-index:201;width:62px;height:62px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#0de0b3,#10ffcb);box-shadow:0 12px 34px rgba(16,255,203,.45);display:flex;align-items:center;justify-content:center;animation:tcChatEntry .75s cubic-bezier(.22,.61,.36,1) 1.2s both,tcChatAttention .85s cubic-bezier(.22,.61,.36,1) 3.8s both" style-hover="transform:translateY(-2px) scale(1.06)">
+  <!-- ===================== ATENDIMENTO ===================== -->
+  <button onClick="{{ toggleAssist }}" aria-label="Falar com o atendimento" style="position:fixed;right:24px;bottom:24px;z-index:201;width:62px;height:62px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#0de0b3,#10ffcb);box-shadow:0 12px 34px rgba(16,255,203,.45);display:flex;align-items:center;justify-content:center;animation:tcChatEntry .75s cubic-bezier(.22,.61,.36,1) 1.2s both" style-hover="transform:translateY(-2px) scale(1.06)">
     <sc-if value="{{ assistClosed }}" hint-placeholder-val="{{ true }}">
       <span style="position:absolute;inset:0;border-radius:50%;border:2px solid rgba(50,173,120,.5);animation:tcpulse 2.4s infinite"></span>
       <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/><path d="M9.5 10.5h.01M13.5 10.5h.01"/></svg>
@@ -1809,10 +1824,10 @@ section[aria-labelledby="tc-partners-title"]::before{
   <div style="position:fixed;right:24px;bottom:98px;z-index:201;width:min(384px,calc(100vw - 32px));height:min(580px,calc(100vh - 140px));display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#0B1426;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 70px rgba(0,0,0,.55);animation:tcpop .32s cubic-bezier(.22,.61,.36,1)">
     <!-- header -->
     <div style="display:flex;align-items:center;gap:12px;padding:16px 18px;background:linear-gradient(120deg,#0C1A30,#005C8B);border-bottom:1px solid rgba(255,255,255,.1)">
-      <span style="position:relative;width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#44e5e7,#73fbd3);display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 16px rgba(50,173,120,.4)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4.6L18.5 8l-3.5 3.2.9 4.8L12 13.7 8.1 16l.9-4.8L5.5 8l4.7-1.4z"/></svg></span>
+      <span style="position:relative;width:42px;height:42px;border-radius:50%;background:linear-gradient(145deg,#32AD78,#0a7fb8);display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 16px rgba(50,173,120,.35)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
       <div style="flex:1;min-width:0">
-        <div style="font-size:15px;font-weight:700;color:#fff">Assistente TecnoCursos</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.66);display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#32AD78;box-shadow:0 0 8px #32AD78"></span>Online · responde na hora</div>
+        <div style="font-size:15px;font-weight:700;color:#fff">Bia</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.66);display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#32AD78;box-shadow:0 0 8px #32AD78"></span>Atendimento · online agora</div>
       </div>
       <button onClick="{{ toggleAssist }}" style="font-family:inherit;background:rgba(255,255,255,.1);border:none;cursor:pointer;width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
@@ -1848,7 +1863,7 @@ section[aria-labelledby="tc-partners-title"]::before{
     </div>
     <!-- input -->
     <div style="padding:12px;border-top:1px solid rgba(255,255,255,.1);background:#0C1426;display:flex;gap:9px;align-items:center">
-      <input value="{{ draft }}" onInput="{{ setDraft }}" onKeyDown="{{ onAssistKey }}" placeholder="Escreva sua pergunta..." style="font-family:inherit;flex:1;min-width:0;background:#16233E;border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:12px 14px;font-size:14px;color:#fff"/>
+      <input value="{{ draft }}" onInput="{{ setDraft }}" onKeyDown="{{ onAssistKey }}" placeholder="Escreva sua mensagem..." style="font-family:inherit;flex:1;min-width:0;background:#16233E;border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:12px 14px;font-size:14px;color:#fff"/>
       <button onClick="{{ sendAssist }}" style="font-family:inherit;flex:0 0 auto;cursor:pointer;width:44px;height:44px;border-radius:11px;border:none;background:linear-gradient(135deg,#0de0b3,#10ffcb);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(16,255,203,.36)" style-hover="opacity:.92"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
     </div>
   </div>
@@ -1877,17 +1892,17 @@ class Component extends DCLogic {
   kb() {
     return [
       { id: 'quem', chip: 'Quem é a TecnoCursos?', q: 'Quem é a TecnoCursos?', kw: ['quem', 'sobre', 'empresa', 'história', 'historia', 'vocês são'],
-        a: 'Somos uma empresa de tecnologia e capacitação fundada em 2004, em Matão-SP. Unimos treinamento, plataforma digital e gestão para manter empresas em conformidade com as Normas Regulamentadoras.', follow: ['treinos', 'plataforma', 'contato'], actions: [{ label: 'Conhecer a empresa', page: 'sobre' }] },
+        a: 'A gente é da TecnoCursos — empresa de tecnologia e capacitação desde 2004, em Matão-SP. Unimos treinamento, plataforma digital e gestão pra ajudar empresas a ficarem em dia com as Normas Regulamentadoras.\n\nQuer que eu te mostre um pouco da nossa história?', follow: ['treinos', 'plataforma', 'contato'], actions: [{ label: 'Conhecer a empresa', page: 'sobre' }] },
       { id: 'treinos', chip: 'Quais treinamentos vocês oferecem?', q: 'Quais treinamentos vocês oferecem?', kw: ['treinamento', 'treino', 'curso', 'nr', 'norma', 'libras', 'simula', 'presencial', 'online', 'consultoria'],
-        a: 'Oferecemos treinamentos teóricos (online) e práticos (presenciais) nas principais NRs: NR-05, 06, 10, 11, 12, 13, 17, 18, 20, 23, 33, 34 e 35. Também temos suporte em Libras, simulações de emergência e resgate, e consultoria personalizada.', follow: ['plataforma', 'atende', 'contato'], actions: [{ label: 'Ver serviços', page: 'servicos' }] },
+        a: 'A gente faz teoria online e prática presencial nas principais NRs — NR-05, 06, 10, 11, 12, 13, 17, 18, 20, 23, 33, 34 e 35. Também temos suporte em Libras, simulações de emergência e resgate, e consultoria sob medida.\n\nMe conta o que você precisa que eu te oriento melhor.', follow: ['plataforma', 'atende', 'contato'], actions: [{ label: 'Ver serviços', page: 'servicos' }] },
       { id: 'plataforma', chip: 'Como funciona a lista de presença digital?', q: 'Como funciona a lista de presença digital?', kw: ['plataforma', 'lista', 'presença', 'presenca', 'digital', 'certificado', 'gestão', 'gestao', 'relatório', 'relatorio', 'validade'],
-        a: 'Nossa plataforma digitaliza toda a gestão dos treinamentos: lista de presença com assinatura digital, turmas organizadas, relatórios detalhados, controle de validade das capacitações e emissão de certificados — sem papel e sem planilha.', follow: ['treinos', 'conteudo', 'contato'], actions: [{ label: 'Ver a plataforma', page: 'servicos' }] },
+        a: 'Nossa plataforma cuida da gestão toda: lista de presença com assinatura digital, turmas organizadas, relatórios, controle de validade e emissão de certificados — sem papel e sem planilha.\n\nSe quiser, te mostro a página da plataforma.', follow: ['treinos', 'conteudo', 'contato'], actions: [{ label: 'Ver a plataforma', page: 'servicos' }] },
       { id: 'atende', chip: 'Vocês atendem minha empresa?', q: 'Vocês atendem minha empresa?', kw: ['atende', 'atendem', 'minha empresa', 'porte', 'região', 'regiao', 'brasil', 'cidade'],
-        a: 'Sim! Atendemos empresas de todos os portes — de pequenas a grandes multinacionais — em todo o Brasil, com treinamentos online e presenciais. Conte sua necessidade que retornamos rapidamente.', follow: ['contato', 'treinos'], actions: [{ label: 'Falar com a gente', page: 'contato' }] },
+        a: 'Sim! Atendemos empresas de todos os portes, em todo o Brasil — online e presencial.\n\nMe fala um pouco da sua necessidade que eu te indico o melhor caminho, ou te levo pro contato direto com a gente.', follow: ['contato', 'treinos'], actions: [{ label: 'Falar com a gente', page: 'contato' }] },
       { id: 'conteudo', chip: 'Onde encontro os conteúdos?', q: 'Onde encontro os conteúdos?', kw: ['conteúdo', 'conteudo', 'artigo', 'blog', 'vídeo', 'video', 'biblioteca', 'trilha', 'material'],
-        a: 'Na Central de Conhecimento você encontra trilhas por NR, modalidades de treinamento e artigos sobre legislação e segurança do trabalho. Em breve, também treinamentos em vídeo.', follow: ['treinos', 'contato'], actions: [{ label: 'Abrir Central de Conhecimento', page: 'blog' }] },
+        a: 'Na Central de Conhecimento você encontra trilhas por NR, modalidades de treinamento e artigos de legislação e SST. Em breve também teremos treinamentos em vídeo.\n\nQuer que eu abra pra você?', follow: ['treinos', 'contato'], actions: [{ label: 'Abrir Central de Conhecimento', page: 'blog' }] },
       { id: 'contato', chip: 'Como entro em contato?', q: 'Como entro em contato?', kw: ['contato', 'email', 'e-mail', 'telefone', 'whats', 'falar', 'endereço', 'endereco', 'fone'],
-        a: 'Você fala com a gente por:\n• E-mail: contato@tecnocursos.com.br\n• Telefone: (16) 99714-3932\n• Matão · São Paulo\nOu pelo formulário na página de Contato.', follow: ['atende', 'treinos'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
+        a: 'Pode falar com a gente por aqui:\n• E-mail: contato@tecnocursos.com.br\n• Telefone: (16) 99714-3932\n• Matão · São Paulo\n\nOu pelo formulário na página de Contato — a equipe responde rapidinho.', follow: ['atende', 'treinos'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
     ];
   }
 
@@ -1904,13 +1919,14 @@ class Component extends DCLogic {
     this.setState(s => ({ messages: s.messages.concat([{ role: 'user', text: userText }]), typing: true }));
     this.scrollChat();
     clearTimeout(this._typeT);
+    const delay = 780 + Math.floor(Math.random() * 720);
     this._typeT = setTimeout(() => {
       const ans = topic
         ? { role: 'bot', text: topic.a, chips: topic.follow, actions: topic.actions }
-        : { role: 'bot', text: 'Posso te ajudar com isso! Escolha um dos temas abaixo ou me diga com outras palavras 👇', chips: ['quem', 'treinos', 'plataforma', 'conteudo', 'contato'] };
+        : { role: 'bot', text: 'Não peguei bem — me conta de outro jeito? Ou escolhe um dos assuntos abaixo que eu te ajudo.', chips: ['quem', 'treinos', 'plataforma', 'conteudo', 'contato'] };
       this.setState(s => ({ messages: s.messages.concat([ans]), typing: false }));
       this.scrollChat();
-    }, 540);
+    }, delay);
   }
 
   scrollChat() {
@@ -2050,69 +2066,6 @@ class Component extends DCLogic {
     // Counter animation
     this.initCounters();
     this.initStatsGlow();
-
-    // Animated cursor demo — aparece perto do chat, clica pra abrir e depois fechar
-    (() => {
-      const W = window.innerWidth, H = window.innerHeight;
-      const BX = W - 55, BY = H - 55;   // centro do botão chat
-      const SX = W - 170, SY = H - 130; // ponto de aparição — acima/esquerda do botão
-
-      const cursorSVG = `<svg width="26" height="28" viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="acs" x="-40%" y="-30%" width="200%" height="200%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="1.4"/>
-            <feOffset dx="1" dy="1.5"/>
-            <feComponentTransfer><feFuncA type="linear" slope=".38"/></feComponentTransfer>
-            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <path d="M4 1 L4 22 L9 17 L14 27 L17 26 L12 16 L20 16 Z"
-              fill="white" stroke="rgba(0,0,0,.25)" stroke-width="0.7"
-              stroke-linejoin="round" stroke-linecap="round" filter="url(#acs)"/>
-      </svg>`;
-
-      const cur = document.createElement('div');
-      cur.style.cssText = 'position:fixed;z-index:9999;pointer-events:none;opacity:0;will-change:opacity,left,top,transform;transition:opacity .4s ease,left .75s cubic-bezier(.25,.46,.45,.94),top .75s cubic-bezier(.25,.46,.45,.94),transform .13s ease;left:' + SX + 'px;top:' + SY + 'px';
-      cur.innerHTML = cursorSVG;
-      document.body.appendChild(cur);
-
-      const click = (cb) => {
-        cur.style.transform = 'scale(.8)';
-        setTimeout(() => { cur.style.transform = 'scale(1)'; setTimeout(cb, 120); }, 140);
-      };
-
-      const resetPos = () => {
-        cur.style.transition = 'opacity .4s ease,transform .13s ease'; // sem animar posição
-        cur.style.left = SX + 'px'; cur.style.top = SY + 'px';
-        setTimeout(() => {
-          cur.style.transition = 'opacity .4s ease,left .75s cubic-bezier(.25,.46,.45,.94),top .75s cubic-bezier(.25,.46,.45,.94),transform .13s ease';
-        }, 40);
-      };
-
-      const openMsgs = [{ role:'bot', text:'Olá! 👋 Sou a assistente virtual da TecnoCursos. Posso explicar nossos treinamentos, a plataforma, contar quem somos e indicar os melhores caminhos. Como posso ajudar?', chips:['quem','treinos','plataforma','conteudo','contato'] }];
-
-      // FASE 1: brota perto do chat → move → clica → ABRE
-      setTimeout(() => { cur.style.opacity = '1'; }, 1800);
-      setTimeout(() => { cur.style.left = BX + 'px'; cur.style.top = BY + 'px'; }, 2150);
-      setTimeout(() => {
-        click(() => {
-          if (!this.state.assistOpen) {
-            this.setState({ assistOpen: true, messages: openMsgs });
-            setTimeout(() => this.scrollChat && this.scrollChat(), 80);
-          }
-        });
-        setTimeout(() => { cur.style.opacity = '0'; }, 500);
-      }, 3000);
-
-      // FASE 2: volta invisível ao ponto de início → rebrota → move → clica → FECHA
-      setTimeout(() => { resetPos(); }, 6200);
-      setTimeout(() => { cur.style.opacity = '1'; }, 6300);
-      setTimeout(() => { cur.style.left = BX + 'px'; cur.style.top = BY + 'px'; }, 6600);
-      setTimeout(() => {
-        click(() => { this.setState(s => s.assistOpen ? { assistOpen: false } : s); });
-        setTimeout(() => { cur.style.opacity = '0'; setTimeout(() => cur.remove(), 450); }, 500);
-      }, 7500);
-    })();
 
     this.initBrazilMap();
   }
@@ -3388,7 +3341,7 @@ class Component extends DCLogic {
         const open = !s.assistOpen;
         let messages = s.messages;
         if (open && messages.length === 0) {
-          messages = [{ role: 'bot', text: 'Olá! 👋 Sou a assistente virtual da TecnoCursos. Posso explicar nossos treinamentos, a plataforma, contar quem somos e indicar os melhores caminhos. Como posso ajudar?', chips: ['quem', 'treinos', 'plataforma', 'conteudo', 'contato'] }];
+          messages = [{ role: 'bot', text: 'Oi! Aqui é a Bia, do atendimento da TecnoCursos.\n\nPosso te ajudar com treinamentos, plataforma, quem somos e o melhor caminho pra sua empresa. Por onde a gente começa?', chips: ['quem', 'treinos', 'plataforma', 'conteudo', 'contato'] }];
         }
         if (open) this.scrollChat();
         return { assistOpen: open, messages };
