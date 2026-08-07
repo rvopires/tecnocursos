@@ -2559,76 +2559,156 @@ section.tc-seg-fact{
   width:100%;
   max-width:none;
   margin:0;
-  padding:clamp(72px,10vw,120px) 24px;
+  padding:clamp(80px,11vw,128px) 24px;
   text-align:center;
-  background:#0A1326;
+  background:#E8F5EF;
   overflow:hidden;
 }
-.tc-seg-fact::before{
+.tc-seg-fact::after{
   content:"";
   position:absolute;
-  left:50%;top:0;bottom:0;
-  width:2px;
-  transform:translateX(-50%);
-  background:linear-gradient(180deg,transparent,rgba(50,173,120,.45),transparent);
-  opacity:.35;
+  left:50%;top:42%;
+  width:min(720px,92vw);height:280px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse at center,rgba(50,173,120,.1) 0%,transparent 70%);
   pointer-events:none;
 }
 .tc-seg-fact-inner{
   position:relative;z-index:1;
-  max-width:720px;margin:0 auto;
-  padding-left:28px;
-  border-left:3px solid #32AD78;
-  text-align:left;
+  max-width:760px;margin:0 auto;
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;
 }
 .tc-seg-fact-eyebrow{
   display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;
-  text-transform:uppercase;color:#6ABB8C;background:rgba(50,173,120,.12);border:1px solid rgba(106,187,140,.35);
-  padding:7px 14px;border-radius:999px;margin-bottom:16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  text-transform:uppercase;color:#218a5d;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.28);
+  padding:7px 14px;border-radius:999px;margin-bottom:22px;
 }
 .tc-seg-fact-inner h2{
-  font-size:clamp(22px,3.2vw,34px);font-weight:700;color:#fff;
-  line-height:1.35;margin:0 0 16px;letter-spacing:-.02em;
+  font-size:clamp(24px,3.4vw,36px);font-weight:800;color:#0F2A1F;
+  line-height:1.32;margin:0 0 18px;letter-spacing:-.03em;
 }
 .tc-seg-fact-inner h2::before{
   content:"“";
   display:block;
-  font-size:clamp(48px,6vw,72px);line-height:.7;color:#32AD78;
-  font-weight:800;margin-bottom:8px;opacity:.85;
+  font-size:clamp(52px,7vw,80px);line-height:.65;color:#32AD78;
+  font-weight:800;margin:0 auto 10px;opacity:.55;
 }
-.tc-seg-fact-note{font-size:15px;color:rgba(255,255,255,.72);margin:0 0 20px;line-height:1.55}
-.tc-seg-fact-source{display:block;font-size:12px;color:rgba(255,255,255,.4);font-style:italic}
+.tc-seg-fact-source{
+  display:block;font-size:12px;color:#7A9288;font-style:italic;
+  max-width:48ch;line-height:1.5;margin-top:8px;
+}
 
 .tc-seg-section#pilares{
-  background:linear-gradient(165deg,#FFFFFF 0%,#F7FBF9 55%,#F2F8F5 100%);
+  position:relative;
+  isolation:isolate;
+  background:linear-gradient(180deg,#0A1F18 0%,#0C241C 40%,#071210 100%);
   padding-top:clamp(72px,9vw,120px);
+  padding-bottom:clamp(80px,10vw,128px);
+  overflow:hidden;
+}
+.tc-seg-section#pilares .tc-seg-pilares-ambient{
+  position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+.tc-seg-section#pilares .tc-seg-pilares-spot{
+  position:absolute;left:50%;top:42%;
+  width:min(720px,92vw);height:min(420px,55vw);
+  transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse at center,rgba(106,187,140,.38) 0%,rgba(50,173,120,.18) 42%,transparent 72%);
+  filter:blur(8px);
+}
+.tc-seg-section#pilares .tc-seg-pilares-head{
+  max-width:720px;margin:0 auto 44px;text-align:center;position:relative;z-index:2;
+}
+.tc-seg-section#pilares .tc-seg-pilares-head .tc-spark-eyebrow{
+  color:#6ABB8C;background:rgba(50,173,120,.14);border-color:rgba(106,187,140,.35);
+  box-shadow:none;
+}
+.tc-seg-section#pilares .tc-seg-pilares-head h2{
+  margin:16px 0 0;font-size:clamp(28px,3.6vw,42px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.15;
+}
+.tc-seg-section#pilares .tc-seg-pilares-head h2 .tc-seg-accent{color:#10ffcb}
+.tc-seg-section#pilares .tc-seg-pilares-head p{
+  margin:14px auto 0;max-width:520px;font-size:15px;line-height:1.6;color:rgba(255,255,255,.62);
+}
+.tc-seg-section#pilares .tc-seg-grid{
+  position:relative;z-index:2;gap:clamp(16px,2vw,22px);
 }
 .tc-seg-section#pilares .tc-seg-card{
+  position:relative;
   background:#fff;
-  border:1px solid rgba(50,173,120,.16);
-  border-radius:18px;
-  box-shadow:0 14px 40px rgba(10,40,28,.08);
-  padding:clamp(22px,2.8vw,28px);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:22px;
+  box-shadow:
+    0 4px 0 rgba(15,92,61,.06),
+    0 18px 44px rgba(10,60,40,.12);
+  padding:clamp(26px,3vw,34px) clamp(22px,2.6vw,28px);
   display:flex;
   flex-direction:column;
   gap:0;
   text-decoration:none;
   color:inherit;
-  transition:transform .3s ease,border-color .3s,box-shadow .3s;
+  overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .35s;
+}
+.tc-seg-section#pilares .tc-seg-card::before{
+  content:"";
+  position:absolute;inset:0 auto auto 0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#32AD78,#218a5d);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
 }
 .tc-seg-section#pilares .tc-seg-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(50,173,120,.4);
-  box-shadow:0 22px 52px rgba(10,40,28,.12);
+  transform:translateY(-8px);
+  border-color:rgba(50,173,120,.35);
+  box-shadow:
+    0 8px 0 rgba(15,92,61,.05),
+    0 28px 56px rgba(10,60,40,.16);
+}
+.tc-seg-section#pilares .tc-seg-card:hover::before{transform:scaleX(1)}
+.tc-seg-section#pilares .tc-seg-card:focus-visible{
+  outline:3px solid #32AD78;outline-offset:3px;
+}
+.tc-seg-section#pilares .tc-seg-card h3{
+  margin:0 0 10px;font-size:clamp(17px,1.6vw,19px);font-weight:750;color:#0F2A1F;letter-spacing:-.02em;
+}
+.tc-seg-section#pilares .tc-seg-card p{
+  margin:0;font-size:14.5px;line-height:1.6;color:#4A6358;flex:1;
 }
 .tc-seg-section#pilares .tc-seg-card-icon{
-  width:48px;height:48px;border-radius:14px;margin-bottom:18px;
+  width:56px;height:56px;border-radius:16px;margin-bottom:20px;
+  background:rgba(50,173,120,.12);
+  border:1px solid rgba(50,173,120,.28);
+  color:#218a5d;
+  display:flex;align-items:center;justify-content:center;
+  transition:
+    transform .4s cubic-bezier(.34,1.4,.64,1),
+    background .3s,
+    border-color .3s,
+    color .3s,
+    box-shadow .3s;
 }
-.tc-seg-card-link{
-  display:inline-flex;align-items:center;gap:6px;margin-top:18px;
-  font-size:13.5px;font-weight:700;color:#218a5d;text-decoration:none;
+.tc-seg-section#pilares .tc-seg-card-icon svg{
+  transition:transform .4s cubic-bezier(.34,1.4,.64,1);
 }
-.tc-seg-card:hover .tc-seg-card-link{color:#32AD78}
+.tc-seg-section#pilares .tc-seg-card:hover .tc-seg-card-icon{
+  background:linear-gradient(145deg,#32AD78,#218a5d);
+  border-color:transparent;
+  color:#fff;
+  transform:translateY(-2px) rotate(-6deg) scale(1.06);
+  box-shadow:0 12px 28px rgba(50,173,120,.35);
+}
+.tc-seg-section#pilares .tc-seg-card:hover .tc-seg-card-icon svg{
+  transform:scale(1.08);
+}
+@media (prefers-reduced-motion:reduce){
+  .tc-seg-section#pilares .tc-seg-card,
+  .tc-seg-section#pilares .tc-seg-card-icon,
+  .tc-seg-section#pilares .tc-seg-card-icon svg,
+  .tc-seg-section#pilares .tc-seg-card::before{transition:none}
+  .tc-seg-section#pilares .tc-seg-card:hover{transform:none}
+  .tc-seg-section#pilares .tc-seg-card:hover .tc-seg-card-icon{transform:none}
+}
 
 .tc-seg-hero-actions{
   display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px;
@@ -2659,29 +2739,152 @@ section.tc-seg-fact{
 
 section.tc-seg-nrs{
   position:relative;overflow:hidden;
-  background:linear-gradient(165deg,#0a1830 0%,#0a1830 40%,#071426 100%);
-  padding:clamp(64px,8vw,110px) 24px;
+  background:
+    radial-gradient(ellipse 55% 42% at 50% 35%, rgba(16,255,203,.1) 0%, transparent 58%),
+    radial-gradient(ellipse 40% 35% at 12% 80%, rgba(50,173,120,.1) 0%, transparent 55%),
+    linear-gradient(165deg,#081426 0%,#0a1830 45%,#07101c 100%);
+  padding:clamp(72px,9vw,120px) 24px clamp(88px,11vw,132px);
   font-family:'Plus Jakarta Sans',system-ui,sans-serif;
 }
-.tc-seg-nrs-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;text-align:center}
+.tc-seg-nrs-fade-end{
+  position:absolute;left:0;right:0;bottom:0;
+  height:clamp(72px,9vw,110px);
+  pointer-events:none;z-index:3;
+  background:linear-gradient(
+    180deg,
+    rgba(7,16,28,0) 0%,
+    rgba(7,16,28,.35) 45%,
+    #07101c 100%
+  );
+}
+.tc-seg-nrs-ambient{
+  position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+.tc-seg-nrs-orb{
+  position:absolute;border-radius:50%;filter:blur(50px);opacity:.5;
+}
+.tc-seg-nrs-orb--a{
+  width:300px;height:300px;left:-40px;top:18%;
+  background:rgba(16,255,203,.22);
+  animation:tcSegNrsOrbA 18s ease-in-out infinite;
+}
+.tc-seg-nrs-orb--b{
+  width:340px;height:340px;right:-60px;bottom:10%;
+  background:rgba(50,173,120,.2);
+  animation:tcSegNrsOrbB 22s ease-in-out infinite;
+}
+@keyframes tcSegNrsOrbA{
+  0%,100%{transform:translate(0,0)}
+  50%{transform:translate(28px,22px)}
+}
+@keyframes tcSegNrsOrbB{
+  0%,100%{transform:translate(0,0)}
+  50%{transform:translate(-24px,-30px)}
+}
+.tc-seg-nrs-inner{position:relative;z-index:2;max-width:920px;margin:0 auto;text-align:center}
+.tc-seg-nrs-inner .tc-spark-eyebrow{
+  color:#10ffcb;background:rgba(16,255,203,.1);border-color:rgba(16,255,203,.32);
+}
+.tc-seg-nrs-inner h2{
+  margin:14px 0 0;font-size:clamp(28px,3.8vw,42px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.15;
+}
+.tc-seg-nrs-inner h2 .tc-seg-accent{color:#10ffcb}
+.tc-seg-nrs-inner > p{
+  margin:14px auto 0;max-width:48ch;font-size:16px;line-height:1.6;color:rgba(255,255,255,.62);
+}
+.tc-seg-nrs-tray{
+  margin:clamp(36px,5vw,52px) auto 0;
+  padding:clamp(22px,3vw,32px) clamp(18px,2.8vw,28px);
+  border-radius:28px;
+  background:linear-gradient(160deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.025) 100%);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
 .tc-seg-nrs-chips{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
-  margin:clamp(28px,4vw,40px) auto 0;max-width:900px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  max-width:760px;
+  margin:0 auto;
 }
 .tc-seg-nr-chip{
-  font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;
-  color:#fff;text-decoration:none;
-  padding:10px 16px;border-radius:999px;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
-  transition:background .2s,border-color .2s,transform .2s,color .2s;
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:inherit;
+  text-decoration:none;
+  padding:13px 18px;
+  border-radius:999px;
+  background:rgba(7,16,28,.45);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 8px 22px rgba(0,0,0,.2);
+  overflow:hidden;
+  transition:
+    border-color .28s ease,
+    transform .3s cubic-bezier(.22,1,.36,1),
+    box-shadow .3s ease,
+    background .28s ease;
+}
+.tc-seg-nr-chip::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(16,255,203,.18),transparent 60%);
+  opacity:0;
+  transition:opacity .28s;
+  pointer-events:none;
+}
+.tc-seg-nr-chip .tc-seg-nr-code{
+  position:relative;z-index:1;
+  font-size:13px;font-weight:800;letter-spacing:.06em;
+  color:#10ffcb;
+  text-shadow:0 0 16px rgba(16,255,203,.35);
+  transition:color .28s,text-shadow .28s;
+}
+.tc-seg-nr-chip .tc-seg-nr-dot{
+  position:relative;z-index:1;
+  width:4px;height:4px;border-radius:50%;
+  background:rgba(255,255,255,.28);
+  flex-shrink:0;
+}
+.tc-seg-nr-chip .tc-seg-nr-name{
+  position:relative;z-index:1;
+  font-size:14px;font-weight:600;
+  color:rgba(255,255,255,.88);
+  transition:color .28s;
 }
 .tc-seg-nr-chip:hover{
-  background:rgba(50,173,120,.18);border-color:rgba(50,173,120,.5);
-  color:#6ABB8C;transform:translateY(-2px);
+  transform:translateY(-3px) scale(1.04);
+  border-color:rgba(16,255,203,.5);
+  background:rgba(16,255,203,.1);
+  box-shadow:
+    0 0 0 1px rgba(16,255,203,.15),
+    0 0 28px rgba(16,255,203,.2),
+    0 14px 32px rgba(0,0,0,.28);
+}
+.tc-seg-nr-chip:hover::before{opacity:1}
+.tc-seg-nr-chip:hover .tc-seg-nr-code{
+  color:#9affe0;
+  text-shadow:0 0 22px rgba(16,255,203,.55);
+}
+.tc-seg-nr-chip:hover .tc-seg-nr-dot{background:#10ffcb}
+.tc-seg-nr-chip:hover .tc-seg-nr-name{color:#fff}
+.tc-seg-nr-chip:focus-visible{
+  outline:2px solid #10ffcb;outline-offset:3px;
+}
+@media (prefers-reduced-motion:reduce){
+  .tc-seg-nr-chip{transition:none}
+  .tc-seg-nr-chip:hover{transform:none}
+  .tc-seg-nrs-orb--a,.tc-seg-nrs-orb--b{animation:none}
 }
 .tc-seg-nrs-more{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  margin-top:32px;
+  margin-top:36px;
   font-family:inherit;
   font-size:clamp(15px,1.5vw,17px);font-weight:800;letter-spacing:.01em;
   color:#041018;text-decoration:none;
@@ -2723,59 +2926,93 @@ section.tc-seg-actions{
   width:100%;
   max-width:none;
   margin:0;
-  padding:clamp(72px,9vw,110px) 24px;
+  padding:clamp(80px,10vw,128px) 24px;
   text-align:center;
-  background:#D5F0E4;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(50,173,120,.14) 0%, transparent 60%),
+    linear-gradient(180deg,#EAF7F1 0%,#F4FBF7 45%,#E8F5EF 100%);
 }
-.tc-seg-actions-inner{max-width:1100px;margin:0 auto}
+.tc-seg-actions-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto}
 .tc-seg-actions-inner .tc-spark-eyebrow{
   color:#218a5d;
   background:rgba(50,173,120,.12);
   border-color:rgba(50,173,120,.28);
 }
 .tc-seg-actions-inner h2{
-  font-size:clamp(24px,3.2vw,36px);font-weight:800;color:#0F2A1F;
-  margin:14px 0 48px;letter-spacing:-.03em;
+  font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#0F2A1F;
+  margin:16px auto 0;letter-spacing:-.03em;line-height:1.15;max-width:18ch;
+}
+.tc-seg-actions-inner h2 .tc-seg-accent{color:#218a5d}
+.tc-seg-actions-lead{
+  margin:14px auto 0;max-width:46ch;font-size:15.5px;line-height:1.6;color:#4A6358;
 }
 .tc-seg-actions-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:0;text-align:left;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  margin-top:clamp(40px,5vw,56px);
+  text-align:left;
   position:relative;
 }
 .tc-seg-actions-grid::before{
   content:"";
-  position:absolute;left:8%;right:8%;top:28px;height:2px;
-  background:linear-gradient(90deg,#32AD78,#218a5d,#32AD78);
-  opacity:.45;pointer-events:none;
+  position:absolute;left:12%;right:12%;top:42px;height:2px;
+  background:linear-gradient(90deg,rgba(50,173,120,.15),#32AD78,rgba(50,173,120,.15));
+  pointer-events:none;z-index:0;
 }
 .tc-seg-actions-step{
-  position:relative;
-  background:transparent;border:none;border-radius:0;
-  padding:0 20px 8px;
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;
+  background:#fff;
+  border:1px solid rgba(50,173,120,.16);
+  border-radius:22px;
+  padding:28px 24px 26px;
+  box-shadow:0 16px 40px rgba(10,60,40,.08);
+  overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s,border-color .3s;
+}
+.tc-seg-actions-step::after{
+  content:"";
+  position:absolute;right:-24px;bottom:-24px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(50,173,120,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.tc-seg-actions-step:hover{
+  transform:translateY(-6px);
+  border-color:rgba(50,173,120,.4);
+  box-shadow:0 24px 52px rgba(10,60,40,.12);
 }
 .tc-seg-actions-num{
   display:flex;align-items:center;justify-content:center;
-  width:56px;height:56px;margin:0 auto 18px;border-radius:50%;
-  font-size:18px;font-weight:800;color:#fff;
-  background:linear-gradient(135deg,#32AD78,#218a5d);
-  box-shadow:0 10px 28px rgba(50,173,120,.28);
+  width:56px;height:56px;margin:0 0 22px;border-radius:50%;
+  font-size:17px;font-weight:800;color:#fff;
+  background:linear-gradient(145deg,#32AD78,#1f8f5c);
+  box-shadow:0 10px 28px rgba(50,173,120,.32);
   position:relative;z-index:1;
 }
 .tc-seg-actions-step strong{
-  display:block;font-size:17px;color:#0F2A1F;margin-bottom:8px;text-align:center;
+  display:block;font-size:20px;color:#0F2A1F;margin:0 0 10px;
+  letter-spacing:-.02em;font-weight:800;
 }
 .tc-seg-actions-step p{
-  font-size:14px;line-height:1.55;color:#4A6358;margin:0;text-align:center;
+  font-size:14.5px;line-height:1.6;color:#4A6358;margin:0;
 }
 @media(max-width:860px){
-  .tc-seg-actions-grid{grid-template-columns:1fr;gap:28px}
+  .tc-seg-actions-grid{grid-template-columns:1fr;gap:16px}
   .tc-seg-actions-grid::before{
-    left:27px;right:auto;top:0;bottom:0;width:2px;height:auto;
+    left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto;
   }
-  .tc-seg-actions-step{display:grid;grid-template-columns:56px 1fr;gap:4px 16px;align-items:start;padding:0}
-  .tc-seg-actions-num{margin:0;grid-row:1 / span 2}
-  .tc-seg-actions-step strong,.tc-seg-actions-step p{text-align:left}
-  .tc-seg-fact-inner{border-left:none;padding-left:0;text-align:center}
-  .tc-seg-fact::before{display:none}
+  .tc-seg-actions-step{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    grid-template-rows:auto auto;
+    gap:6px 16px;
+    align-items:start;
+    padding:22px 20px;
+  }
+  .tc-seg-actions-num{margin:0;grid-row:1 / span 2;align-self:start}
+  .tc-seg-actions-step strong{margin:0}
+  .tc-seg-actions-inner h2{max-width:none}
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2884,7 +3121,7 @@ section.tc-seg-actions{
       </div>
       <div class="tc-seg-wave tc-seg-wave--bottom" aria-hidden="true">
         <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#0A1326" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+          <path fill="#E8F5EF" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
         </svg>
       </div>
     </section>
@@ -2893,40 +3130,39 @@ section.tc-seg-actions{
       <div class="tc-seg-fact-inner reveal">
         <span class="tc-seg-fact-eyebrow">Você sabia?</span>
         <h2 id="tc-fact-title">Grande parte dos acidentes de trabalho pode ser evitada com prevenção, treinamentos adequados e gestão eficiente de riscos.</h2>
-        <p class="tc-seg-fact-note">Uma soma que ninguém vê, até faltar.</p>
-        <span class="tc-seg-fact-source">Fonte: Observatório de Segurança e Saúde no Trabalho, iniciativa SmartLab de Trabalho Decente, coordenada pelo MPT e pela OIT.</span>
+        <span class="tc-seg-fact-source">Fonte: Observatório de Segurança e Saúde no Trabalho, iniciativa SmartLab de Trabalho Decente, coordenada pelo MPT e pela OIT (2022).</span>
       </div>
     </section>
 
     <section class="tc-seg-section tc-seg-has-wave" id="pilares" aria-labelledby="pilares-title">
       <div class="tc-seg-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#0A1326" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+          <path fill="#E8F5EF" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
       </div>
-      <div style="max-width:1200px;margin:0 auto 36px;text-align:center">
-        <span class="tc-spark-eyebrow reveal" style="color:#218a5d;background:rgba(50,173,120,.12);border-color:rgba(50,173,120,.28)">O que oferecemos</span>
-        <h2 id="pilares-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.6vw,40px);font-weight:800;color:#0F2A1F;letter-spacing:-.03em">Segurança na prática, não só no papel.</h2>
-        <p class="reveal" style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:#4A6358">Três soluções para reduzir riscos, manter a conformidade e preparar equipes.</p>
+      <div class="tc-seg-pilares-ambient" aria-hidden="true">
+        <div class="tc-seg-pilares-spot"></div>
+      </div>
+      <div class="tc-seg-pilares-head">
+        <span class="tc-spark-eyebrow reveal">O que oferecemos</span>
+        <h2 id="pilares-title" class="reveal">Segurança na <span class="tc-seg-accent">prática</span>, não só no papel.</h2>
+        <p class="reveal">Três soluções para reduzir riscos, manter a conformidade e preparar equipes.</p>
       </div>
       <div class="tc-seg-grid">
         <a class="tc-seg-card reveal" href="../../index.html#catalogo">
-          <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div>
+          <div class="tc-seg-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div>
           <h3>NRs presenciais e online</h3>
           <p>Capacitações nas principais Normas Regulamentadoras, com carga horária e formatos adequados à sua operação.</p>
-          <span class="tc-seg-card-link">Ver catálogo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="tc-seg-card reveal" href="../../index.html#contato">
-          <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="tc-seg-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>Simulações e brigada</h3>
           <p>Treinamentos práticos de emergência, resgate e combate a princípios de incêndio, preparando equipes para situações reais.</p>
-          <span class="tc-seg-card-link">Solicitar proposta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="tc-seg-card reveal" href="../../index.html#contato">
-          <div class="tc-seg-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div class="tc-seg-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
           <h3>Consultoria sob medida</h3>
           <p>Diagnóstico, adequação e capacitação personalizados para a realidade e os riscos da sua empresa.</p>
-          <span class="tc-seg-card-link">Falar conosco <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
     </section>
@@ -2934,51 +3170,59 @@ section.tc-seg-actions{
     <section class="tc-seg-nrs tc-seg-has-wave" aria-labelledby="tc-nrs-title">
       <div class="tc-seg-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#F2F8F5" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+          <path fill="#071210" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
+      </div>
+      <div class="tc-seg-nrs-ambient" aria-hidden="true">
+        <div class="tc-seg-nrs-orb tc-seg-nrs-orb--a"></div>
+        <div class="tc-seg-nrs-orb tc-seg-nrs-orb--b"></div>
       </div>
       <div class="tc-seg-nrs-inner">
         <span class="tc-spark-eyebrow reveal">Catálogo</span>
-        <h2 id="tc-nrs-title" class="reveal" style="margin:14px 0 0;font-size:clamp(28px,3.8vw,42px);font-weight:800;color:#fff;letter-spacing:-.03em">Conheça algumas das nossas capacitações em NRs.</h2>
-        <p class="reveal" style="margin:14px auto 0;max-width:520px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.62)">Escolha a NR para conhecer sua carga horária, objetivos, público-alvo e conteúdo programático.</p>
-        <div class="tc-seg-nrs-chips">
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-05">NR-05 · CIPAA</a>
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-06">NR-06 · EPI</a>
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-10">NR-10 · Eletricidade</a>
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-12">NR-12 · Máquinas</a>
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-18">NR-18 · Construção</a>
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-23">NR-23 · Incêndio</a>
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-33">NR-33 · Espaços confinados</a>
-          <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-35">NR-35 · Altura</a>
+        <h2 id="tc-nrs-title" class="reveal">Conheça algumas das nossas capacitações em <span class="tc-seg-accent">NRs</span>.</h2>
+        <p class="reveal">Escolha a NR para conhecer sua carga horária, objetivos, público-alvo e conteúdo programático.</p>
+        <div class="tc-seg-nrs-tray">
+          <div class="tc-seg-nrs-chips">
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-05"><span class="tc-seg-nr-code">NR-05</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">CIPAA</span></a>
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-06"><span class="tc-seg-nr-code">NR-06</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">EPI</span></a>
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-10"><span class="tc-seg-nr-code">NR-10</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">Eletricidade</span></a>
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-12"><span class="tc-seg-nr-code">NR-12</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">Máquinas</span></a>
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-18"><span class="tc-seg-nr-code">NR-18</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">Construção</span></a>
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-23"><span class="tc-seg-nr-code">NR-23</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">Incêndio</span></a>
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-33"><span class="tc-seg-nr-code">NR-33</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">Espaços confinados</span></a>
+            <a class="tc-seg-nr-chip reveal" href="../../index.html#nr-35"><span class="tc-seg-nr-code">NR-35</span><span class="tc-seg-nr-dot" aria-hidden="true"></span><span class="tc-seg-nr-name">Altura</span></a>
+          </div>
         </div>
         <a class="tc-seg-nrs-more reveal" href="../../index.html#catalogo">Ver catálogo completo</a>
       </div>
+      <div class="tc-seg-nrs-fade-end" aria-hidden="true"></div>
     </section>
 
     <section class="tc-seg-actions tc-seg-has-wave" aria-labelledby="tc-actions-title">
       <div class="tc-seg-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#071426" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+          <path fill="#07101c" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
       </div>
       <div class="tc-seg-actions-inner">
         <span class="tc-spark-eyebrow reveal">Como atuamos</span>
-        <h2 id="tc-actions-title" class="reveal">De ponta a ponta, transformamos risco em segurança.</h2>
+        <h2 id="tc-actions-title" class="reveal">De ponta a ponta, transformamos risco em <span class="tc-seg-accent">segurança</span>.</h2>
+        <p class="tc-seg-actions-lead reveal">Um processo claro em três etapas para reduzir exposição e fortalecer a cultura de prevenção.</p>
         <div class="tc-seg-actions-grid">
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">01</span>
             <strong>Identificar</strong>
-            <p>Mapeamos riscos e identificamos oportunidades de melhoria em toda a operação.</p>
+            <p>Mapeamos riscos e oportunidades de melhoria em toda a operação, com olhar técnico e prático.</p>
           </div>
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">02</span>
             <strong>Corrigir</strong>
-            <p>Corrigimos não conformidades com ações práticas e mensuráveis.</p>
+            <p>Atuamos nas não conformidades com ações objetivas, mensuráveis e alinhadas à sua realidade.</p>
           </div>
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">03</span>
             <strong>Prevenir</strong>
-            <p>Promovemos treinamentos que fortalecem a cultura de segurança e ajudam a prevenir acidentes.</p>
+            <p>Capacitamos equipes para sustentar a cultura de segurança e reduzir a chance de novos incidentes.</p>
           </div>
         </div>
       </div>
@@ -2987,7 +3231,7 @@ section.tc-seg-actions{
     <section class="tc-seg-mobile tc-seg-has-wave" aria-labelledby="suporte-title">
       <div class="tc-seg-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#D5F0E4" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+          <path fill="#E8F5EF" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
       </div>
       <div class="tc-seg-mobile-inner">
