@@ -18,6 +18,7 @@
 .tc-spark-title{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(32px,4.6vw,54px);line-height:1.05;letter-spacing:-.03em;font-weight:800;color:#fff;max-width:16ch}
 .tc-spark-mark{position:relative;display:inline-block;color:#fff;font-style:italic;letter-spacing:-.04em}
 .tc-spark-mark::after{content:"";position:absolute;left:-6%;right:-8%;top:4%;bottom:-2%;border:2.5px solid #32AD78;border-radius:50% 45% 55% 48%;transform:rotate(-4deg);box-shadow:0 0 18px rgba(50,173,120,.35);pointer-events:none}
+.tc-spark-mark--plain::after{display:none}
 .tc-spark-lead{margin:18px 0 0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(15px,1.5vw,17px);line-height:1.65;color:rgba(255,255,255,.72);max-width:42ch}
 .tc-spark-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;justify-content:center}
 .tc-spark-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14.5px;font-weight:700;padding:13px 22px;border-radius:999px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s}
@@ -1279,7 +1280,7 @@ section[aria-labelledby="tc-partners-title"]::before{
       <div style="position:absolute;inset:0;background:radial-gradient(125% 95% at 16% 42%, rgba(3,6,12,.84) 0%, rgba(4,9,18,.5) 46%, rgba(4,9,18,.12) 100%)" aria-hidden="true"></div>
       <div class="hero-tec-cover-content" style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:130px 24px 72px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif">
         <span class="tc-spark-eyebrow">Sobre nós</span>
-        <h1 id="sobre-hero-title" class="tc-spark-title">Uma jornada de <span class="tc-spark-mark">evolução</span>.</h1>
+        <h1 id="sobre-hero-title" class="tc-spark-title">Uma jornada de <span class="tc-spark-mark tc-spark-mark--plain">evolução</span>.</h1>
         <p class="tc-spark-lead">Desde 2004, transformamos a forma como empresas gerenciam as Normas Regulamentadoras, combinando tecnologia, treinamento e segurança em um único ecossistema de soluções.</p>
       </div>
     </section>
