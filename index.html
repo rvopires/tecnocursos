@@ -232,7 +232,7 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-contato-grid{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.14;background-image:linear-gradient(rgba(106,187,140,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(106,187,140,.14) 1px,transparent 1px);background-size:52px 52px;-webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 72%)}
 @keyframes tcContatoOrb{0%,100%{transform:translate(0,0) scale(1);opacity:.55}50%{transform:translate(2%,3%) scale(1.06);opacity:.7}}
 .tc-contato-stars{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.tc-contato-wave{position:absolute;left:0;right:0;bottom:0;height:clamp(56px,7vw,88px);z-index:3;pointer-events:none;line-height:0}
+.tc-contato-wave{position:absolute;left:0;right:0;bottom:-1px;height:clamp(56px,7vw,88px);z-index:3;pointer-events:none;line-height:0}
 .tc-contato-wave svg{display:block;width:100%;height:100%}
 .tc-contato-main-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.9fr);gap:clamp(22px,3vw,36px);align-items:start}
 .tc-contato-form-card{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.98) 0%,rgba(247,251,249,.96) 100%);border:1px solid rgba(106,187,140,.35);border-radius:22px;padding:clamp(24px,3vw,36px);box-shadow:0 24px 60px rgba(0,0,0,.35),0 0 0 1px rgba(50,173,120,.08),inset 0 1px 0 rgba(255,255,255,.9)}
@@ -301,8 +301,9 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 @media(prefers-reduced-motion:reduce){
   .tc-contato-ambient::before,.tc-contato-ambient::after{animation:none}
 }
-.tc-contato-sede{position:relative;z-index:1;overflow:hidden;background:#D5F0E4;padding:clamp(48px,6vw,80px) 0 clamp(64px,8vw,110px);margin-top:0}
-.tc-contato-sede::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 60% at 18% 20%,rgba(50,173,120,.16),transparent 62%),radial-gradient(50% 55% at 82% 70%,rgba(106,187,140,.12),transparent 65%),radial-gradient(45% 50% at 50% 100%,rgba(50,173,120,.1),transparent 58%)}
+.tc-contato-sede{position:relative;z-index:1;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#FAFDFB 10%,#F3FAF6 22%,#E6F5ED 38%,#D5F0E4 55%,#D5F0E4 100%);padding:clamp(64px,8vw,110px) 0 clamp(64px,8vw,110px);margin-top:-1px}
+.tc-contato-sede::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 60% at 18% 20%,rgba(50,173,120,.16),transparent 62%),radial-gradient(50% 55% at 82% 70%,rgba(106,187,140,.12),transparent 65%),radial-gradient(45% 50% at 50% 100%,rgba(50,173,120,.1),transparent 58%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 110px);mask-image:linear-gradient(180deg,transparent 0%,#000 110px)}
+.tc-contato-sede::after{content:"";position:absolute;top:0;left:0;right:0;height:clamp(100px,14vw,160px);pointer-events:none;z-index:1;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.65) 40%,rgba(213,240,228,0) 100%)}
 .tc-contato-sede-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
 .tc-contato-sede-intro{max-width:540px;margin:0 0 clamp(22px,3vw,32px)}
 .tc-contato-sede-intro .tc-contato-step{margin-bottom:10px}
@@ -1812,7 +1813,7 @@ section[aria-labelledby="tc-partners-title"]::before{
       </div>
       <div class="tc-contato-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#D5F0E4" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
+          <path fill="#fff" d="M0,88 L1440,88 L1440,28 C1200,78 960,88 720,58 C480,28 240,8 0,48 Z"></path>
         </svg>
       </div>
     </section>
@@ -1941,7 +1942,9 @@ section[aria-labelledby="tc-partners-title"]::before{
   <div style="position:fixed;right:24px;bottom:98px;z-index:201;width:min(384px,calc(100vw - 32px));height:min(580px,calc(100vh - 140px));display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#0B1426;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 70px rgba(0,0,0,.55);animation:tcpop .32s cubic-bezier(.22,.61,.36,1)">
     <!-- header -->
     <div style="display:flex;align-items:center;gap:12px;padding:16px 18px;background:linear-gradient(120deg,#0C1A30,#005C8B);border-bottom:1px solid rgba(255,255,255,.1)">
-      <span style="position:relative;width:42px;height:42px;border-radius:50%;background:linear-gradient(145deg,#32AD78,#0a7fb8);display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 16px rgba(50,173,120,.35);font-size:16px;font-weight:800;color:#fff;letter-spacing:-.02em">B</span>
+      <span style="position:relative;width:42px;height:42px;border-radius:50%;overflow:hidden;flex:0 0 auto;box-shadow:0 6px 16px rgba(50,173,120,.35);border:2px solid rgba(16,255,203,.45);background:#0C1A30">
+        <img src="img/bia.png" alt="Bia" width="42" height="42" style="width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block"/>
+      </span>
       <div style="flex:1;min-width:0">
         <div style="font-size:15px;font-weight:700;color:#fff">Bia</div>
         <div style="font-size:12px;color:rgba(255,255,255,.66);display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#32AD78;box-shadow:0 0 8px #32AD78"></span>Respondo na hora · time no WhatsApp</div>
@@ -2026,28 +2029,36 @@ class Component extends DCLogic {
 
   kb() {
     return [
-      { id: 'quem', chip: 'Quem é a TecnoCursos?', q: 'Quem é a TecnoCursos?', kw: ['quem', 'sobre', 'empresa', 'história', 'historia', 'vocês são', 'voces sao'],
-        a: 'Somos a TecnoCursos — tecnologia e capacitação desde 2004, em Matão-SP. Treinamento + plataforma pra empresas ficarem em dia com as NRs.\n\nQuer ver a história ou já ir pros treinamentos?', follow: ['treinos', 'plataforma', 'whats'], actions: [{ label: 'Conhecer a empresa', page: 'sobre' }] },
-      { id: 'treinos', chip: 'Quais treinamentos oferecem?', q: 'Quais treinamentos vocês oferecem?', kw: ['treinamento', 'treino', 'curso', 'nr-', 'norma', 'libras', 'simula', 'presencial', 'online', 'consultoria', 'nrs'],
-        a: 'Fazemos teoria online e prática presencial nas principais NRs (05, 06, 10 a 13, 17, 18, 20, 23, 33 a 35). Também Libras, simulações e consultoria sob medida.\n\nÉ pra qual área — ou prefere que eu te ajude a escolher?', follow: ['contratar', 'preco', 'whats'], actions: [{ label: 'Ver serviços', page: 'servicos' }] },
-      { id: 'plataforma', chip: 'Como funciona a plataforma?', q: 'Como funciona a lista de presença digital?', kw: ['plataforma', 'lista', 'presença', 'presenca', 'digital', 'gestão', 'gestao', 'relatório', 'relatorio', 'validade', 'assinatura'],
-        a: 'A plataforma cuida da gestão: lista com assinatura digital, turmas, relatórios, validade e certificados — sem papel.\n\nQuer que eu abra a página pra você?', follow: ['certificado', 'treinos', 'whats'], actions: [{ label: 'Ver a plataforma', page: 'servicos' }] },
-      { id: 'atende', chip: 'Atendem minha empresa?', q: 'Vocês atendem minha empresa?', kw: ['atende', 'atendem', 'minha empresa', 'porte', 'região', 'regiao', 'brasil', 'cidade', 'unidade móvel', 'unidade movel'],
-        a: 'Sim — empresas de todos os portes, em todo o Brasil, online e presencial.\n\nMe conta a necessidade ou chama no WhatsApp que o time te orienta.', follow: ['whats', 'contratar', 'treinos'], actions: [{ label: 'Falar no WhatsApp', href: 'wa' }] },
-      { id: 'conteudo', chip: 'Onde vejo os conteúdos?', q: 'Onde encontro os conteúdos?', kw: ['conteúdo', 'conteudo', 'artigo', 'blog', 'vídeo', 'video', 'biblioteca', 'trilha', 'material', 'conhecimento'],
-        a: 'Na Central de Conhecimento: trilhas por NR, modalidades e artigos de legislação/SST. Em breve, vídeos também.\n\nAbro pra você?', follow: ['treinos', 'whats'], actions: [{ label: 'Abrir Central', page: 'blog' }] },
-      { id: 'preco', chip: 'Quanto custa?', q: 'Quanto custa?', kw: ['preço', 'preco', 'valor', 'custa', 'orçamento', 'orcamento', 'quanto', 'tabela', 'investimento'],
-        a: 'O valor depende da NR, do tamanho da turma e se é online, presencial ou misto.\n\nMe fala o treinamento e quantas pessoas — ou já pede o orçamento no WhatsApp.', follow: ['whats', 'contratar', 'treinos'], actions: [{ label: 'Pedir orçamento no WhatsApp', href: 'wa' }] },
-      { id: 'prazo', chip: 'Qual o prazo?', q: 'Qual o prazo?', kw: ['prazo', 'demora', 'quando', 'agendar', 'agenda', 'início', 'inicio', 'data', 'urgente'],
-        a: 'Dá pra organizar com agilidade — o prazo varia com a NR, a modalidade e a turma.\n\nTem uma data em mente? Me conta ou fala com o time no WhatsApp.', follow: ['whats', 'contratar', 'treinos'], actions: [{ label: 'Combinar no WhatsApp', href: 'wa' }] },
+      { id: 'quem', chip: 'Quem é a TecnoCursos?', q: 'Quem é a TecnoCursos?', kw: ['quem', 'sobre', 'empresa', 'história', 'historia', 'vocês são', 'voces sao', 'fundação', 'fundacao'],
+        a: 'A TecnoCursos une tecnologia, treinamento e segurança desde 2004, com sede em Matão-SP. Ajudamos empresas a ficarem em dia com as NRs — com capacitação e gestão digital.\n\nQuer conhecer a história ou ver as soluções?', follow: ['produtos', 'treinos', 'contato'], actions: [{ label: 'Conhecer a empresa', page: 'sobre' }] },
+      { id: 'produtos', chip: 'Quais são as soluções?', q: 'Quais são as soluções?', kw: ['produto', 'produtos', 'solução', 'solucao', 'soluções', 'solucoes', 'duas soluções', 'duas solucoes', 'o que vocês fazem', 'o que voces fazem', 'serviços', 'servicos', 'oferecem'],
+        a: 'Temos duas soluções principais:\n• Plataforma de NR — gestão de treinamentos, turmas, certificados e validades num só lugar\n• Lista de presença — check-in digital, sem papel, com rastreabilidade e auditoria\n\nDá pra contratar uma ou as duas juntas. Também atuamos em Treinamento e Segurança. Qual te interessa?', follow: ['plataforma', 'lista', 'treinos'], actions: [{ label: 'Ver Tecnologia', href: 'servicos/tecnologia/' }] },
+      { id: 'plataforma', chip: 'Como funciona a Plataforma de NR?', q: 'Como funciona a Plataforma de NR?', kw: ['plataforma', 'plataforma de nr', 'gestão de treinamento', 'gestao de treinamento', 'turma', 'turmas', 'validade', 'validades', 'indicador', 'relatório', 'relatorio', 'gamifica'],
+        a: 'A Plataforma de NR centraliza a gestão: turmas, progresso, validades, relatórios e certificados — sem papel e sem planilha. Tem também Libras, áudio e recursos que facilitam o aprendizado.\n\nQuer ver a página de Tecnologia ou falar do valor com o time?', follow: ['lista', 'certificado', 'preco', 'contato'], actions: [{ label: 'Ver a plataforma', href: 'servicos/tecnologia/' }] },
+      { id: 'lista', chip: 'Como funciona a Lista de presença?', q: 'Como funciona a Lista de presença?', kw: ['lista', 'presença', 'presenca', 'check-in', 'checkin', 'assinatura digital', 'papel', 'auditoria', 'rastreabil'],
+        a: 'A Lista de presença é digital: check-in sem papel, com rastreabilidade e auditoria. Funciona sozinha ou integrada à Plataforma de NR, num único fluxo.\n\nQuer que eu abra a página de Tecnologia?', follow: ['plataforma', 'produtos', 'contato'], actions: [{ label: 'Ver Tecnologia', href: 'servicos/tecnologia/' }] },
+      { id: 'treinos', chip: 'Quais treinamentos oferecem?', q: 'Quais treinamentos vocês oferecem?', kw: ['treinamento', 'treino', 'curso', 'nr-', 'norma', 'libras', 'simula', 'presencial', 'online', 'consultoria', 'nrs', 'brigada', 'altura', 'espaço confinado', 'espaco confinado'],
+        a: 'Fazemos teoria online na plataforma e prática presencial na sua empresa, alinhados às principais NRs (05, 06, 10 a 13, 17, 18, 20, 23, 33, 34 e 35). Também tem Libras, simulações de emergência/resgate e consultoria sob medida.\n\nQuer ver o catálogo ou montar com o time?', follow: ['produtos', 'catalogo', 'contato'], actions: [{ label: 'Ver catálogo', page: 'catalogo' }, { label: 'Ver Treinamento', href: 'servicos/treinamento/' }] },
+      { id: 'catalogo', chip: 'Ver catálogo de NRs', q: 'Quero ver o catálogo de NRs', kw: ['catálogo', 'catalogo', 'quais nrs', 'lista de nr'],
+        a: 'No catálogo você encontra as NRs que capacitamos, com objetivo, público e conteúdo programático. Também montamos treino sob medida para a realidade da operação.\n\nAbro o catálogo pra você?', follow: ['treinos', 'contratar', 'contato'], actions: [{ label: 'Abrir catálogo', page: 'catalogo' }] },
+      { id: 'seguranca', chip: 'Como atuam em Segurança?', q: 'Como atuam em Segurança?', kw: ['segurança', 'seguranca', 'conformidade', 'sst', 'cipa', 'não conformidade', 'nao conformidade', 'cultura de segurança'],
+        a: 'Em Segurança a gente apoia a conformidade e a cultura de prevenção: mapear riscos, tratar não conformidades e capacitar o time — com gestão das capacitações.\n\nQuer ver a página de Segurança?', follow: ['treinos', 'produtos', 'contato'], actions: [{ label: 'Ver Segurança', href: 'servicos/seguranca/' }] },
+      { id: 'atende', chip: 'Atendem minha empresa?', q: 'Vocês atendem minha empresa?', kw: ['atende', 'atendem', 'minha empresa', 'porte', 'região', 'regiao', 'brasil', 'cidade', 'unidade móvel', 'unidade movel', 'nacional'],
+        a: 'Sim — de pequenas empresas a multinacionais, em todo o Brasil, com instrutores nas regiões e também Unidade Móvel para práticas (como NR-23, 33 e 35).\n\nSe quiser seguir, use o botão verde de WhatsApp aqui embaixo ou o formulário de Contato.', follow: ['contratar', 'contato', 'treinos'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
+      { id: 'conteudo', chip: 'Onde vejo os conteúdos?', q: 'Onde encontro os conteúdos?', kw: ['conteúdo', 'conteudo', 'artigo', 'blog', 'vídeo', 'video', 'biblioteca', 'trilha', 'material', 'conhecimento', 'central'],
+        a: 'Na Central de Conhecimento: trilhas por NR, modalidades e artigos de legislação/SST. Em breve, também treinamentos em vídeo.\n\nAbro pra você?', follow: ['treinos', 'catalogo', 'contato'], actions: [{ label: 'Abrir Central', page: 'blog' }] },
+      { id: 'preco', chip: 'Quanto custa?', q: 'Quanto custa?', kw: ['preço', 'preco', 'preços', 'precos', 'valor', 'custa', 'orçamento', 'orcamento', 'quanto custa', 'quanto fica', 'tabela', 'investimento', 'cotação', 'cotacao'],
+        a: 'Por aqui eu não passo valor. O investimento é montado sob medida — Plataforma de NR, Lista de presença ou as duas — e o time analisa a melhor opção pra sua operação.\n\nPra isso, use o botão verde de WhatsApp aqui embaixo ou o formulário de Contato. A equipe responde em até 1 dia útil.', follow: ['produtos', 'contato'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
+      { id: 'prazo', chip: 'Qual o prazo?', q: 'Qual o prazo?', kw: ['prazo', 'demora', 'quando começa', 'agendar', 'agenda', 'início', 'inicio', 'data', 'urgente', 'quanto tempo'],
+        a: 'O prazo depende da solução e da operação de vocês. O time confirma datas e a melhor forma de implantação quando você entra em contato — pelo WhatsApp (botão verde abaixo) ou pelo Contato.', follow: ['contratar', 'produtos', 'contato'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
       { id: 'certificado', chip: 'Tem certificado?', q: 'Tem certificado?', kw: ['certificado', 'certificação', 'certificacao', 'diploma', 'comprovante', 'emissão', 'emissao'],
-        a: 'Sim. Ao concluir, emitimos o certificado e você acompanha validade e turmas pela plataforma.\n\nQuer saber do treinamento ou da gestão digital?', follow: ['plataforma', 'treinos', 'whats'] },
-      { id: 'contratar', chip: 'Como contratar?', q: 'Como contratar?', kw: ['contratar', 'contratação', 'contratacao', 'fechar', 'montar turma', 'proposta', 'fechar turma'],
-        a: 'Simples: me diga a NR (ou a necessidade), quantas pessoas e se preferem online ou presencial.\n\nAí te levo ao WhatsApp ou ao formulário pra o time fechar com você.', follow: ['whats', 'preco', 'treinos'], actions: [{ label: 'Falar no WhatsApp', href: 'wa' }, { label: 'Ir para Contato', page: 'contato' }] },
+        a: 'Sim. Na plataforma, após a conclusão/aprovação, o certificado pode ser emitido com controle de validade e rastreio — sem planilha.\n\nQuer saber mais da Plataforma ou dos treinamentos?', follow: ['plataforma', 'treinos', 'contato'] },
+      { id: 'contratar', chip: 'Como contratar?', q: 'Como contratar?', kw: ['contratar', 'contratação', 'contratacao', 'fechar', 'montar turma', 'proposta', 'fechar turma', 'como faço', 'como faco'],
+        a: 'É só entrar em contato com o time e contar o que você precisa — Plataforma de NR, Lista de presença, as duas, ou um treinamento específico.\n\nUse o botão verde de WhatsApp aqui embaixo, ou o formulário na página de Contato.', follow: ['produtos', 'contato'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
       { id: 'whats', chip: 'Falar no WhatsApp', q: 'Quero falar no WhatsApp', kw: ['whatsapp', 'whats', 'zap', 'wpp'],
-        a: 'Perfeito — no botão verde abaixo você já cai no WhatsApp com uma mensagem pronta.\n\nO time responde no horário comercial (seg–sex, 7h–17h).', follow: ['treinos', 'preco', 'contato'], actions: [{ label: 'Abrir WhatsApp', href: 'wa' }] },
-      { id: 'contato', chip: 'Outros contatos', q: 'Como entro em contato?', kw: ['contato', 'email', 'e-mail', 'telefone', 'falar', 'endereço', 'endereco', 'fone'],
-        a: 'Pode falar com a gente assim:\n• WhatsApp/tel: (16) 99714-3932\n• E-mail: contato@tecnocursos.com.br\n• Matão · SP\n\nOu pelo formulário na página de Contato.', follow: ['whats', 'atende', 'treinos'], actions: [{ label: 'Abrir WhatsApp', href: 'wa' }, { label: 'Ir para Contato', page: 'contato' }] },
+        a: 'Pode usar o botão verde bem aqui embaixo — ele já abre o WhatsApp com uma mensagem pronta.\n\nO time responde no horário comercial (seg–sex, 7h–17h).', follow: ['produtos', 'contato', 'treinos'] },
+      { id: 'contato', chip: 'Outros contatos', q: 'Como entro em contato?', kw: ['contato', 'email', 'e-mail', 'telefone', 'falar', 'endereço', 'endereco', 'fone', 'formulário', 'formulario'],
+        a: 'Pode falar com a gente assim:\n• WhatsApp: use o botão verde aqui embaixo · (16) 99714-3932\n• E-mail: contato@tecnocursos.com.br\n• Sede: Av. Trolesi, 4495 · Matão-SP\n• Horário: seg–sex, 7h às 17h\n\nPelo formulário de Contato a equipe analisa e responde em até 1 dia útil.', follow: ['produtos', 'atende'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
     ];
   }
 
@@ -2055,24 +2066,24 @@ class Component extends DCLogic {
     const page = this.state.page;
     const nr = this.state.selectedNr;
     if (page === 'nrDetail' && nr) {
-      return { text: `Vi que você está na ${nr}. Quer entender o treinamento, como contratar ou falar com o time?`, chips: ['treinos', 'contratar', 'whats'] };
+      return { text: `Vi que você está na ${nr}. Posso te ajudar com o treinamento, as soluções (Plataforma e Lista de presença) ou te passar pro Contato.`, chips: ['treinos', 'produtos', 'contato'] };
     }
     if (page === 'catalogo') {
-      return { text: 'Vi que você está no catálogo. Quer ajuda pra escolher um treinamento ou já prefere falar com a gente?', chips: ['treinos', 'contratar', 'whats'] };
+      return { text: 'Vi que você está no catálogo. Quer ajuda com alguma NR, entender as soluções ou falar com o time?', chips: ['treinos', 'produtos', 'contato'] };
     }
     if (page === 'servicos') {
-      return { text: 'Você está em Serviços. Quer saber de treinamentos, da plataforma ou de como contratar?', chips: ['treinos', 'plataforma', 'contratar'] };
+      return { text: 'Você está em Serviços. Quer saber da Plataforma de NR, da Lista de presença ou dos treinamentos?', chips: ['plataforma', 'lista', 'treinos'] };
     }
     if (page === 'sobre') {
-      return { text: 'Que bom conhecer a gente por aqui. Quer um resumo rápido ou já ir pra treinamentos e contato?', chips: ['quem', 'treinos', 'whats'] };
+      return { text: 'Que bom conhecer a gente por aqui. Quer um resumo da empresa, das soluções ou já ir pro Contato?', chips: ['quem', 'produtos', 'contato'] };
     }
     if (page === 'contato') {
-      return { text: 'Já está em Contato — se quiser, te mando direto pro WhatsApp. Ou tiro uma dúvida rápida antes.', chips: ['whats', 'preco', 'treinos'] };
+      return { text: 'Já está em Contato — se preferir o WhatsApp, use o botão verde aqui embaixo. Ou tiro uma dúvida rápida sobre as soluções.', chips: ['produtos', 'preco', 'treinos'] };
     }
     if (page === 'blog') {
-      return { text: 'Está na Central de Conhecimento. Quer que eu te indique um caminho ou falamos de treinamentos?', chips: ['conteudo', 'treinos', 'whats'] };
+      return { text: 'Está na Central de Conhecimento. Quer que eu te indique um caminho ou falamos das soluções e treinamentos?', chips: ['conteudo', 'produtos', 'treinos'] };
     }
-    return { text: 'Posso te ajudar com treinamentos, plataforma ou o melhor caminho pra sua empresa. Por onde a gente começa?', chips: ['treinos', 'plataforma', 'contratar', 'whats'] };
+    return { text: 'Posso te ajudar com as soluções (Plataforma de NR e Lista de presença), treinamentos ou o melhor caminho pro time. Por onde a gente começa?', chips: ['produtos', 'treinos', 'contato'] };
   }
 
   startAssistGreeting() {
@@ -2135,7 +2146,7 @@ class Component extends DCLogic {
     this._typeT = setTimeout(() => {
       const ans = topic
         ? { role: 'bot', text: topic.a, chips: topic.follow, actions: topic.actions }
-        : { role: 'bot', text: draftText, chips: ['treinos', 'preco', 'contratar', 'whats', 'contato'] };
+        : { role: 'bot', text: draftText, chips: ['produtos', 'treinos', 'contato'] };
       this.setState(s => ({ messages: s.messages.concat([ans]), typing: false }));
       this.scrollChat();
     }, delay);
@@ -3505,13 +3516,26 @@ class Component extends DCLogic {
     this.kb().forEach(t => { chipLabel[t.id] = t.chip; });
     const asked = this.state.askedTopics || [];
     const mkChips = (ids) => (ids || [])
-      .filter(id => id === 'whats' || id === 'contato' || id === 'contratar' || !asked.includes(id))
+      .filter(id => id !== 'whats')
+      .filter(id => id === 'contato' || id === 'contratar' || !asked.includes(id))
       .map(id => ({ label: chipLabel[id] || id, onClick: () => this.ask(id) }));
     const resolveAction = (a) => ({
       label: a.label,
-      onClick: (a.href === 'wa' || (a.href && String(a.href).indexOf('http') === 0))
-        ? () => window.open(a.href === 'wa' ? this.waLink() : a.href, '_blank', 'noopener,noreferrer')
-        : () => this.go(a.page),
+      onClick: () => {
+        if (a.href === 'wa') {
+          window.open(this.waLink(), '_blank', 'noopener,noreferrer');
+          return;
+        }
+        if (a.href && String(a.href).indexOf('http') === 0) {
+          window.open(a.href, '_blank', 'noopener,noreferrer');
+          return;
+        }
+        if (a.href) {
+          window.location.href = a.href;
+          return;
+        }
+        if (a.page) this.go(a.page);
+      },
     });
     const assistMessages = (this.state.messages || []).map(m => ({
       isBot: m.role === 'bot', isUser: m.role === 'user', text: m.text,
