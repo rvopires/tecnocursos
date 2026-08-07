@@ -347,14 +347,19 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 }
 @media(prefers-reduced-motion:reduce){.tc-loc-aurora-star{animation:none!important;opacity:.35}}
 /* NR detalhe — página editorial do treinamento */
-.tc-nr-detail-hero{position:relative;overflow:hidden;background:linear-gradient(165deg,#0a1830 0%,#0a1830 40%,#071426 100%);padding:clamp(48px,6vw,80px) 0 clamp(56px,7vw,96px);--aurora-color1:rgba(50,173,120,.18);--aurora-color2:rgba(40,110,180,.28)}
-.tc-nr-detail-hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 60% at 82% 18%,rgba(0,92,139,.35),transparent 68%),radial-gradient(48% 50% at 12% 88%,rgba(50,173,120,.2),transparent 70%)}
+.tc-nr-detail-main{padding-top:0;background:#050A12}
+.tc-nr-detail-hero{position:relative;overflow:hidden;background:linear-gradient(165deg,#050A12 0%,#070F1E 42%,#0A1424 100%);padding:clamp(112px,14vw,148px) 0 clamp(56px,7vw,96px);--aurora-color1:rgba(50,173,120,.16);--aurora-color2:rgba(0,92,139,.22)}
+.tc-nr-detail-hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(55% 58% at 84% 22%,rgba(0,92,139,.28),transparent 68%),radial-gradient(48% 50% at 12% 88%,rgba(50,173,120,.16),transparent 70%)}
+.tc-nr-detail-hero::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:120px;pointer-events:none;z-index:1;
+  background:linear-gradient(180deg,rgba(5,10,18,.55) 0%,transparent 100%);
+}
 .tc-nr-detail-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1.05fr);gap:clamp(32px,5vw,56px);align-items:center}
 .tc-nr-detail-back{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:#fff;cursor:pointer;margin-bottom:28px;font-family:inherit;padding:12px 18px 12px 14px;border-radius:999px;border:1px solid rgba(50,173,120,.45);background:rgba(50,173,120,.18);box-shadow:0 8px 24px rgba(0,0,0,.22),inset 0 0 0 1px rgba(255,255,255,.06);transition:background .2s,border-color .2s,transform .2s,box-shadow .2s,color .2s}
 .tc-nr-detail-back svg{flex-shrink:0;width:18px;height:18px}
 .tc-nr-detail-back:hover{color:#070F1E;background:#32AD78;border-color:#32AD78;transform:translateY(-2px);box-shadow:0 12px 28px rgba(50,173,120,.35)}
 .tc-nr-detail-back:focus-visible{outline:2px solid #32AD78;outline-offset:3px}
-.tc-nr-detail-code{display:block;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(52px,9vw,96px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:#32AD78;margin:0 0 16px;text-shadow:0 0 60px rgba(50,173,120,.25)}
+.tc-nr-detail-code{display:block;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(52px,9vw,96px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:#32AD78;margin:0 0 16px;text-shadow:0 0 60px rgba(50,173,120,.25);white-space:nowrap}
 .tc-nr-detail-label{font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;margin:0;letter-spacing:-.02em;line-height:1.15}
 .tc-nr-detail-full{font-size:16px;line-height:1.65;color:rgba(255,255,255,.62);margin:14px 0 0;max-width:480px}
 .tc-nr-detail-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
@@ -376,20 +381,114 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-nr-detail-about-item dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#32AD78;margin:0 0 10px}
 .tc-nr-detail-about-item dd{font-size:16px;line-height:1.65;color:#3D4F47;margin:0}
 .tc-nr-detail-about-item dd.tc-nr-detail-hours{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;color:#0F2A1F;line-height:1.1}
-.tc-nr-detail-topics{position:relative;overflow:hidden;background:#D5F0E4;padding:clamp(64px,8vw,110px) 0}
-.tc-nr-detail-topics.tc-has-wave{padding-top:calc(clamp(64px,8vw,110px) + clamp(48px,6vw,72px))}
-.tc-nr-detail-topics-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px}
-.tc-nr-detail-topic-list{display:flex;flex-direction:column;gap:0;margin-top:clamp(28px,4vw,40px);position:relative}
-.tc-nr-detail-topic-list::before{content:"";position:absolute;left:22px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(50,173,120,.35),rgba(50,173,120,.15));border-radius:2px}
-.tc-nr-detail-topic{display:flex;gap:20px;align-items:flex-start;padding:18px 0;position:relative}
-.tc-nr-detail-topic-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;background:linear-gradient(135deg,#32AD78,#218a5d);box-shadow:0 0 0 4px rgba(213,240,228,1),0 8px 20px rgba(50,173,120,.28);position:relative;z-index:1}
-.tc-nr-detail-topic-text{font-size:16px;line-height:1.55;color:#1B2848;padding-top:10px;font-weight:500}
-.tc-nr-detail-cta{position:relative;overflow:hidden;background:linear-gradient(165deg,#0a1830 0%,#0a1830 38%,#071426 100%);padding:clamp(64px,8vw,110px) 0;--aurora-color1:rgba(50,173,120,.18);--aurora-color2:rgba(40,110,180,.28)}
-.tc-nr-detail-cta.tc-has-wave{padding-top:calc(clamp(64px,8vw,110px) + clamp(48px,6vw,72px))}
-.tc-nr-detail-cta-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 24px;text-align:center}
-.tc-nr-detail-cta h2{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(26px,3.8vw,42px);font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.03em;line-height:1.15}
-.tc-nr-detail-cta p{font-size:16px;line-height:1.65;color:rgba(255,255,255,.62);margin:0 0 28px}
-.tc-nr-detail-cta .tc-nr-detail-actions{justify-content:center}
+.tc-nr-detail-topics{position:relative;overflow:hidden;background:
+  radial-gradient(ellipse 55% 45% at 88% 20%, rgba(16,255,203,.1) 0%, transparent 55%),
+  radial-gradient(ellipse 45% 40% at 8% 78%, rgba(50,173,120,.12) 0%, transparent 55%),
+  linear-gradient(165deg,#0a1830 0%,#0a1830 45%,#071426 100%);
+  padding:clamp(72px,9vw,120px) 0}
+.tc-nr-detail-topics.tc-has-wave{padding-top:calc(clamp(72px,9vw,120px) + clamp(48px,6vw,72px))}
+.tc-nr-detail-topics-ambient{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.tc-nr-detail-topics-orb{position:absolute;border-radius:50%;filter:blur(52px);opacity:.5}
+.tc-nr-detail-topics-orb--a{width:280px;height:280px;left:-50px;top:18%;background:rgba(16,255,203,.2)}
+.tc-nr-detail-topics-orb--b{width:320px;height:320px;right:-70px;bottom:12%;background:rgba(40,110,180,.22)}
+.tc-nr-detail-topics-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 24px}
+.tc-nr-detail-topics-inner .tc-stats-eyebrow{color:#10ffcb;background:rgba(16,255,203,.1);border-color:rgba(16,255,203,.32)}
+.tc-nr-detail-topics-inner h2{color:#fff}
+.tc-nr-detail-topics-inner h2 .tc-nr-detail-accent{color:#10ffcb}
+.tc-nr-detail-topics-lead{margin:14px 0 0;max-width:42ch;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.62)}
+.tc-nr-detail-topic-list{display:flex;flex-direction:column;gap:10px;margin-top:clamp(36px,5vw,52px);position:relative;padding-left:0}
+.tc-nr-detail-topic-list::before{content:"";position:absolute;left:31px;top:18px;bottom:18px;width:1px;background:linear-gradient(180deg,rgba(16,255,203,.06),rgba(16,255,203,.45) 20%,rgba(16,255,203,.45) 80%,rgba(16,255,203,.06));border-radius:1px;z-index:0}
+.tc-nr-detail-topic{display:grid;grid-template-columns:48px 1fr auto;gap:8px 18px;align-items:center;padding:16px 16px 16px 8px;position:relative;border:1px solid transparent;border-radius:16px;background:transparent;transition:background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s cubic-bezier(.22,1,.36,1)}
+.tc-nr-detail-topic:hover{
+  background:rgba(16,255,203,.06);
+  border-color:rgba(16,255,203,.22);
+  box-shadow:0 0 0 1px rgba(16,255,203,.06),0 14px 36px rgba(0,0,0,.22);
+  transform:translateX(4px);
+}
+.tc-nr-detail-topic-num{flex-shrink:0;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;letter-spacing:.02em;color:#041018;background:#10ffcb;border:1px solid rgba(16,255,203,.55);box-shadow:0 0 0 6px rgba(10,24,48,.92),0 8px 22px rgba(16,255,203,.22);position:relative;z-index:1;transition:transform .3s cubic-bezier(.34,1.4,.64,1),box-shadow .3s}
+.tc-nr-detail-topic:hover .tc-nr-detail-topic-num{
+  transform:scale(1.06);
+  box-shadow:0 0 0 6px rgba(10,24,48,.92),0 0 28px rgba(16,255,203,.35);
+}
+.tc-nr-detail-topic-body{position:relative;z-index:1;min-width:0;padding-top:0}
+.tc-nr-detail-topic-ghost{position:absolute;right:28px;top:50%;transform:translateY(-55%);font-size:clamp(48px,8vw,76px);font-weight:800;letter-spacing:-.06em;line-height:1;color:rgba(255,255,255,.035);pointer-events:none;user-select:none;z-index:0}
+.tc-nr-detail-topic-text{position:relative;z-index:1;display:block;font-size:clamp(15.5px,1.55vw,17.5px);line-height:1.5;color:rgba(255,255,255,.9);font-weight:600;letter-spacing:-.015em;transition:color .25s}
+.tc-nr-detail-topic:hover .tc-nr-detail-topic-text{color:#fff}
+.tc-nr-detail-topic-chev{
+  position:relative;z-index:1;
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#10ffcb;opacity:0;transform:translateX(-6px);
+  transition:opacity .28s,transform .3s cubic-bezier(.22,1,.36,1);
+}
+.tc-nr-detail-topic:hover .tc-nr-detail-topic-chev{opacity:1;transform:translateX(0)}
+.tc-nr-detail-topic-chev svg{display:block}
+@media (prefers-reduced-motion:reduce){
+  .tc-nr-detail-topic,.tc-nr-detail-topic-num,.tc-nr-detail-topic-chev,.tc-nr-detail-topic-text{transition:none}
+  .tc-nr-detail-topic:hover{transform:none}
+  .tc-nr-detail-topic:hover .tc-nr-detail-topic-num{transform:none}
+}
+.tc-nr-detail-cta{position:relative;overflow:hidden;background:
+  radial-gradient(ellipse 50% 45% at 85% 20%, rgba(16,255,203,.14) 0%, transparent 55%),
+  radial-gradient(ellipse 45% 40% at 10% 80%, rgba(50,173,120,.16) 0%, transparent 55%),
+  linear-gradient(180deg,#EAF7F1 0%,#D5F0E4 55%,#C8EBD9 100%);
+  padding:clamp(80px,10vw,128px) 0}
+.tc-nr-detail-cta.tc-has-wave{padding-top:calc(clamp(80px,10vw,128px) + clamp(48px,6vw,72px))}
+.tc-nr-detail-cta-ambient{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.tc-nr-detail-cta-orb{position:absolute;border-radius:50%;filter:blur(48px);opacity:.55}
+.tc-nr-detail-cta-orb--a{width:260px;height:260px;left:-40px;top:20%;background:rgba(16,255,203,.28)}
+.tc-nr-detail-cta-orb--b{width:300px;height:300px;right:-60px;bottom:10%;background:rgba(50,173,120,.26)}
+.tc-nr-detail-cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto;padding:0 24px;text-align:center}
+.tc-nr-detail-cta-card{background:transparent;border:none;padding:0;box-shadow:none}
+.tc-nr-detail-cta-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#0F5C3D;background:rgba(255,255,255,.65);border:1px solid rgba(50,173,120,.3);
+  padding:8px 14px;border-radius:999px;margin-bottom:18px;
+  box-shadow:0 8px 22px rgba(10,60,40,.08);
+}
+.tc-nr-detail-cta-eyebrow > i{
+  width:8px;height:8px;border-radius:50%;background:#32AD78;
+  box-shadow:0 0 0 0 rgba(50,173,120,.5);
+  animation:tcNrCtaDot 1.8s ease-out infinite;
+}
+@keyframes tcNrCtaDot{
+  0%{box-shadow:0 0 0 0 rgba(50,173,120,.5)}
+  70%{box-shadow:0 0 0 10px rgba(50,173,120,0)}
+  100%{box-shadow:0 0 0 0 rgba(50,173,120,0)}
+}
+.tc-nr-detail-cta h2{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.8vw,42px);font-weight:800;color:#0A1F18;margin:0 0 14px;letter-spacing:-.035em;line-height:1.15}
+.tc-nr-detail-cta h2 .tc-nr-detail-accent{color:#0F5C3D;white-space:nowrap;display:inline}
+.tc-nr-detail-cta h2 .tc-nr-detail-nr-keep{white-space:nowrap}
+.tc-nr-detail-cta p{font-size:16.5px;line-height:1.65;color:#3D5A4A;margin:0 0 28px;max-width:38ch;margin-left:auto;margin-right:auto}
+.tc-nr-detail-cta .tc-nr-detail-actions{justify-content:center;gap:12px;margin-top:0;flex-direction:column;align-items:center}
+.tc-nr-detail-cta .tc-nr-detail-btn--primary{
+  width:100%;max-width:380px;justify-content:center;
+  font-size:clamp(16px,1.7vw,18px);font-weight:800;padding:18px 34px;border-radius:999px;color:#041018;
+  background:linear-gradient(135deg,#7dffd6 0%,#10ffcb 40%,#32AD78 100%);
+  box-shadow:0 14px 40px rgba(16,255,203,.4),inset 0 1px 0 rgba(255,255,255,.45);
+  animation:tcNrCtaPulse 2.4s ease-in-out infinite;
+}
+.tc-nr-detail-cta .tc-nr-detail-btn--primary::after{content:"→";margin-left:8px;font-weight:700;transition:transform .2s ease}
+.tc-nr-detail-cta .tc-nr-detail-btn--primary:hover{
+  background:linear-gradient(135deg,#9affe0 0%,#32f0c4 45%,#3dbc86 100%);
+  transform:translateY(-3px) scale(1.02);filter:brightness(1.03);color:#041018;animation:none;
+  box-shadow:0 0 0 10px rgba(16,255,203,.12),0 22px 52px rgba(16,255,203,.45),inset 0 1px 0 rgba(255,255,255,.5);
+}
+.tc-nr-detail-cta .tc-nr-detail-btn--primary:hover::after{transform:translateX(4px)}
+.tc-nr-detail-cta .tc-nr-detail-btn--ghost{
+  background:transparent;color:#3D5A4A;border:none;padding:10px 16px;border-radius:999px;
+  font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(61,90,74,.35);
+}
+.tc-nr-detail-cta .tc-nr-detail-btn--ghost:hover{background:transparent;border:none;color:#0A1F18;transform:none;text-decoration-color:#0A1F18}
+.tc-nr-detail-cta .tc-br-aurora{display:none}
+@keyframes tcNrCtaPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(16,255,203,.4),0 14px 40px rgba(16,255,203,.35),inset 0 1px 0 rgba(255,255,255,.45)}
+  55%{box-shadow:0 0 0 14px rgba(16,255,203,0),0 18px 48px rgba(16,255,203,.45),inset 0 1px 0 rgba(255,255,255,.45)}
+}
+@media (prefers-reduced-motion:reduce){
+  .tc-nr-detail-cta .tc-nr-detail-btn--primary,.tc-nr-detail-cta-eyebrow > i{animation:none}
+}
 @media(max-width:900px){
   .tc-nr-detail-hero-inner{grid-template-columns:1fr;gap:28px}
   .tc-nr-detail-media{max-width:640px}
@@ -398,8 +497,10 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 @media(max-width:640px){
   .tc-nr-detail-media{max-width:100%;order:-1}
   .tc-nr-detail-hero-inner{display:flex;flex-direction:column}
-  .tc-nr-detail-topic-list::before{left:18px}
-  .tc-nr-detail-topic-num{width:36px;height:36px;font-size:12px}
+  .tc-nr-detail-topic-list::before{left:27px}
+  .tc-nr-detail-topic{grid-template-columns:40px 1fr auto;gap:6px 12px;padding:14px 10px 14px 4px}
+  .tc-nr-detail-topic-num{width:38px;height:38px;font-size:12px;box-shadow:0 0 0 5px rgba(10,24,48,.92),0 6px 16px rgba(16,255,203,.18)}
+  .tc-nr-detail-topic-ghost{font-size:44px;right:16px}
 }
 /* About — layout creative portfolio (foto no canto + card) */
 .tc-about-pf{position:relative;overflow:hidden;background:linear-gradient(165deg,#FFFFFF 0%,#F7FBF9 55%,#F2F8F5 100%);padding:clamp(56px,7vw,96px) 0}
@@ -1387,7 +1488,7 @@ section[aria-labelledby="tc-partners-title"]::before{
 
   <!-- ===================== TREINAMENTO NR (DETALHE) ===================== -->
   <sc-if value="{{ nrDetail }}">
-  <main style="padding-top:72px">
+  <main class="tc-nr-detail-main">
     <section class="tc-nr-detail-hero" aria-labelledby="tc-nr-detail-title">
       <div class="tc-br-aurora" aria-hidden="true">
         <div class="tc-br-aurora-pulse"></div>
@@ -1443,14 +1544,25 @@ section[aria-labelledby="tc-partners-title"]::before{
           <path fill="#F2F8F5" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
       </div>
+      <div class="tc-nr-detail-topics-ambient" aria-hidden="true">
+        <div class="tc-nr-detail-topics-orb tc-nr-detail-topics-orb--a"></div>
+        <div class="tc-nr-detail-topics-orb tc-nr-detail-topics-orb--b"></div>
+      </div>
       <div class="tc-nr-detail-topics-inner">
         <span data-reveal="left" class="tc-stats-eyebrow" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Conteúdo programático</span>
-        <h2 id="tc-nr-topics-title" data-pop-text class="tc-shine-text" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;margin:14px 0 0;letter-spacing:-.03em;opacity:0">O que você vai aprender</h2>
+        <h2 id="tc-nr-topics-title" data-pop-text class="tc-shine-text" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(28px,3.8vw,44px);font-weight:800;margin:14px 0 0;letter-spacing:-.03em;opacity:0;max-width:16ch">O que você vai <span class="tc-nr-detail-accent">aprender</span></h2>
+        <p data-reveal data-delay="80" class="tc-nr-detail-topics-lead" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Tópicos alinhados à norma, na ordem em que a capacitação acontece.</p>
         <div class="tc-nr-detail-topic-list">
           <sc-for list="{{ nrTopicos }}" as="t" hint-placeholder-count="5">
             <div data-reveal="left" data-delay="{{ t.delay }}" class="tc-nr-detail-topic" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">
               <span class="tc-nr-detail-topic-num" aria-hidden="true">{{ t.num }}</span>
-              <span class="tc-nr-detail-topic-text">{{ t.text }}</span>
+              <div class="tc-nr-detail-topic-body">
+                <span class="tc-nr-detail-topic-ghost" aria-hidden="true">{{ t.num }}</span>
+                <span class="tc-nr-detail-topic-text">{{ t.text }}</span>
+              </div>
+              <span class="tc-nr-detail-topic-chev" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </span>
             </div>
           </sc-for>
         </div>
@@ -1460,23 +1572,22 @@ section[aria-labelledby="tc-partners-title"]::before{
     <section class="tc-nr-detail-cta tc-has-wave" aria-labelledby="tc-nr-cta-title">
       <div class="tc-sec-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#D5F0E4" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+          <path fill="#071426" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
       </div>
-      <div class="tc-br-aurora" aria-hidden="true">
-        <div class="tc-br-aurora-pulse"></div>
-        <div class="tc-br-aurora-blobs">
-          <span class="tc-br-aurora-blob tc-br-aurora-blob--a"></span>
-          <span class="tc-br-aurora-blob tc-br-aurora-blob--b"></span>
-          <span class="tc-br-aurora-blob tc-br-aurora-blob--c"></span>
-        </div>
+      <div class="tc-nr-detail-cta-ambient" aria-hidden="true">
+        <div class="tc-nr-detail-cta-orb tc-nr-detail-cta-orb--a"></div>
+        <div class="tc-nr-detail-cta-orb tc-nr-detail-cta-orb--b"></div>
       </div>
       <div class="tc-nr-detail-cta-inner">
-        <h2 id="tc-nr-cta-title" data-reveal="blur" style="transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1),filter .85s cubic-bezier(.22,.61,.36,1)">Quer capacitar sua equipe na {{ selectedNrData.code }}?</h2>
-        <p data-reveal data-delay="80" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Fale com a TecnoCursos e monte o treinamento no formato certo para a sua operação.</p>
-        <div data-reveal-pop data-delay="140" class="tc-nr-detail-actions">
-          <button type="button" class="tc-nr-detail-btn tc-nr-detail-btn--primary" onClick="{{ goContato }}">Solicitar proposta</button>
-          <button type="button" class="tc-nr-detail-btn tc-nr-detail-btn--ghost" onClick="{{ goCatalogo }}">Ver outros treinamentos</button>
+        <div class="tc-nr-detail-cta-card">
+          <span class="tc-nr-detail-cta-eyebrow"><i aria-hidden="true"></i> Disponível agora</span>
+          <h2 id="tc-nr-cta-title" data-reveal="blur" style="transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1),filter .85s cubic-bezier(.22,.61,.36,1)">Quer capacitar sua equipe <span class="tc-nr-detail-nr-keep">na <span class="tc-nr-detail-accent">{{ selectedNrData.code }}</span>?</span></h2>
+          <p data-reveal data-delay="80" style="transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)">Fale com a TecnoCursos e monte o treinamento no formato certo para a sua operação.</p>
+          <div data-reveal-pop data-delay="140" class="tc-nr-detail-actions">
+            <button type="button" class="tc-nr-detail-btn tc-nr-detail-btn--primary" onClick="{{ goContato }}">Falar com um especialista</button>
+            <button type="button" class="tc-nr-detail-btn tc-nr-detail-btn--ghost" onClick="{{ goCatalogo }}">Ver outros treinamentos</button>
+          </div>
         </div>
       </div>
     </section>

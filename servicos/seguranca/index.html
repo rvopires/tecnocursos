@@ -2926,93 +2926,207 @@ section.tc-seg-actions{
   width:100%;
   max-width:none;
   margin:0;
-  padding:clamp(80px,10vw,128px) 24px;
-  text-align:center;
+  padding:clamp(80px,10vw,128px) 24px clamp(88px,11vw,132px);
+  text-align:left;
   overflow:hidden;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(50,173,120,.14) 0%, transparent 60%),
-    linear-gradient(180deg,#EAF7F1 0%,#F4FBF7 45%,#E8F5EF 100%);
+    linear-gradient(180deg,#F9FBFA 0%,#FFFFFF 48%,#F4F8F6 100%);
 }
-.tc-seg-actions-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto}
+.tc-seg-actions-inner{
+  position:relative;z-index:2;
+  max-width:640px;margin:0 auto;
+}
 .tc-seg-actions-inner .tc-spark-eyebrow{
   color:#218a5d;
-  background:rgba(50,173,120,.12);
+  background:rgba(50,173,120,.1);
   border-color:rgba(50,173,120,.28);
 }
 .tc-seg-actions-inner h2{
-  font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#0F2A1F;
-  margin:16px auto 0;letter-spacing:-.03em;line-height:1.15;max-width:18ch;
+  font-size:clamp(28px,3.6vw,42px);font-weight:800;color:#0A1F18;
+  margin:18px 0 0;letter-spacing:-.035em;line-height:1.12;max-width:14ch;
 }
 .tc-seg-actions-inner h2 .tc-seg-accent{color:#218a5d}
 .tc-seg-actions-lead{
-  margin:14px auto 0;max-width:46ch;font-size:15.5px;line-height:1.6;color:#4A6358;
+  margin:16px 0 0;max-width:38ch;font-size:16px;line-height:1.65;color:#4A6358;
 }
 .tc-seg-actions-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-  margin-top:clamp(40px,5vw,56px);
-  text-align:left;
+  display:flex;flex-direction:column;gap:0;
+  margin-top:clamp(44px,6vw,72px);
   position:relative;
+  padding-left:0;
 }
 .tc-seg-actions-grid::before{
   content:"";
-  position:absolute;left:12%;right:12%;top:42px;height:2px;
-  background:linear-gradient(90deg,rgba(50,173,120,.15),#32AD78,rgba(50,173,120,.15));
-  pointer-events:none;z-index:0;
-}
-.tc-seg-actions-step{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;
-  background:#fff;
-  border:1px solid rgba(50,173,120,.16);
-  border-radius:22px;
-  padding:28px 24px 26px;
-  box-shadow:0 16px 40px rgba(10,60,40,.08);
-  overflow:hidden;
-  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s,border-color .3s;
-}
-.tc-seg-actions-step::after{
-  content:"";
-  position:absolute;right:-24px;bottom:-24px;
-  width:120px;height:120px;border-radius:50%;
-  background:radial-gradient(circle,rgba(50,173,120,.12) 0%,transparent 70%);
+  position:absolute;left:28px;top:18px;bottom:18px;width:1px;
+  background:linear-gradient(180deg,rgba(50,173,120,.15),#32AD78 20%,#32AD78 80%,rgba(50,173,120,.15));
   pointer-events:none;
 }
-.tc-seg-actions-step:hover{
-  transform:translateY(-6px);
-  border-color:rgba(50,173,120,.4);
-  box-shadow:0 24px 52px rgba(10,60,40,.12);
+.tc-seg-actions-step{
+  position:relative;
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:4px 28px;
+  align-items:start;
+  padding:clamp(28px,3.5vw,40px) 0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  overflow:visible;
+  transition:none;
 }
+.tc-seg-actions-step + .tc-seg-actions-step{
+  border-top:1px solid rgba(15,42,31,.08);
+}
+.tc-seg-actions-step::after{display:none}
+.tc-seg-actions-step:hover{transform:none;box-shadow:none;border-color:transparent}
 .tc-seg-actions-num{
   display:flex;align-items:center;justify-content:center;
-  width:56px;height:56px;margin:0 0 22px;border-radius:50%;
-  font-size:17px;font-weight:800;color:#fff;
-  background:linear-gradient(145deg,#32AD78,#1f8f5c);
-  box-shadow:0 10px 28px rgba(50,173,120,.32);
+  width:56px;height:56px;margin:0;border-radius:50%;
+  font-size:15px;font-weight:800;color:#0A1F18;
+  background:#fff;
+  border:1px solid rgba(50,173,120,.35);
+  box-shadow:0 0 0 6px rgba(249,251,250,.95),0 8px 22px rgba(10,60,40,.08);
   position:relative;z-index:1;
 }
+.tc-seg-actions-body{position:relative;z-index:1;min-width:0}
 .tc-seg-actions-step strong{
-  display:block;font-size:20px;color:#0F2A1F;margin:0 0 10px;
-  letter-spacing:-.02em;font-weight:800;
+  display:block;font-size:clamp(22px,2.6vw,28px);color:#0A1F18;margin:4px 0 12px;
+  letter-spacing:-.03em;font-weight:800;line-height:1.1;
+  position:relative;
 }
 .tc-seg-actions-step p{
-  font-size:14.5px;line-height:1.6;color:#4A6358;margin:0;
+  font-size:15.5px;line-height:1.65;color:#4A6358;margin:0;max-width:36ch;
+}
+.tc-seg-actions-step .tc-seg-actions-ghost{
+  position:absolute;right:0;top:50%;
+  transform:translateY(-52%);
+  font-size:clamp(72px,12vw,120px);font-weight:800;letter-spacing:-.06em;
+  color:rgba(15,42,31,.05);line-height:1;pointer-events:none;user-select:none;
+  z-index:0;
 }
 @media(max-width:860px){
-  .tc-seg-actions-grid{grid-template-columns:1fr;gap:16px}
-  .tc-seg-actions-grid::before{
-    left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto;
-  }
-  .tc-seg-actions-step{
-    display:grid;
-    grid-template-columns:56px 1fr;
-    grid-template-rows:auto auto;
-    gap:6px 16px;
-    align-items:start;
-    padding:22px 20px;
-  }
-  .tc-seg-actions-num{margin:0;grid-row:1 / span 2;align-self:start}
-  .tc-seg-actions-step strong{margin:0}
+  .tc-seg-actions-grid::before{left:22px}
+  .tc-seg-actions-step{grid-template-columns:44px 1fr;gap:2px 18px;padding:24px 0}
+  .tc-seg-actions-num{width:44px;height:44px;font-size:13px}
+  .tc-seg-actions-step .tc-seg-actions-ghost{font-size:64px;opacity:.9}
   .tc-seg-actions-inner h2{max-width:none}
+}
+
+section.tc-seg-mobile.tc-seg-support{
+  background:
+    radial-gradient(ellipse 50% 45% at 82% 38%, rgba(16,200,210,.12) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 8% 72%, rgba(20,120,140,.14) 0%, transparent 55%),
+    linear-gradient(180deg,#061A1F 0%,#0A2428 45%,#041418 100%);
+  color:#fff;
+  padding:clamp(88px,11vw,136px) 24px clamp(88px,10vw,128px);
+}
+.tc-seg-support .tc-seg-mobile-inner{
+  grid-template-columns:1.05fr .95fr;
+  max-width:1100px;
+  gap:clamp(36px,5vw,64px);
+  align-items:center;
+}
+.tc-seg-support .tc-spark-eyebrow{
+  color:#10ffcb;
+  background:rgba(16,255,203,.1);
+  border-color:rgba(16,255,203,.32);
+  margin-bottom:18px;
+}
+.tc-seg-support h2{
+  color:#fff;
+  max-width:15ch;
+  font-size:clamp(30px,3.8vw,44px);
+  line-height:1.08;
+  letter-spacing:-.035em;
+}
+.tc-seg-support h2 .tc-seg-accent{color:#10ffcb}
+.tc-seg-support .tc-seg-support-copy > p{
+  color:rgba(255,255,255,.72);
+  max-width:40ch;
+  margin-top:18px;
+  font-size:16.5px;
+  line-height:1.65;
+}
+.tc-seg-support-list{
+  list-style:none;
+  margin:0;
+  padding:clamp(10px,1.4vw,14px);
+  border-radius:24px;
+  background:linear-gradient(160deg,rgba(255,255,255,.09) 0%,rgba(255,255,255,.035) 100%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:
+    0 24px 56px rgba(0,0,0,.38),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+}
+.tc-seg-support-list li{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:16px;
+  align-items:start;
+  padding:18px 16px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  background:transparent;
+  border-radius:16px;
+  box-shadow:none;
+  backdrop-filter:none;
+  transition:background .3s ease,box-shadow .3s ease,transform .3s cubic-bezier(.22,1,.36,1);
+}
+.tc-seg-support-list li:last-child{border-bottom:none}
+.tc-seg-support-list li:hover{
+  background:rgba(16,255,203,.07);
+  box-shadow:0 0 0 1px rgba(16,255,203,.14),0 12px 28px rgba(0,0,0,.2);
+  transform:translateY(-2px);
+}
+.tc-seg-support-list .tc-seg-support-icon{
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(16,255,203,.1);
+  border:1px solid rgba(16,255,203,.32);
+  color:#10ffcb;
+  flex-shrink:0;
+  transition:background .3s,border-color .3s,box-shadow .3s,transform .3s cubic-bezier(.34,1.4,.64,1);
+}
+.tc-seg-support-list li:hover .tc-seg-support-icon{
+  background:rgba(16,255,203,.18);
+  border-color:rgba(16,255,203,.5);
+  box-shadow:0 0 22px rgba(16,255,203,.28);
+  transform:scale(1.05);
+}
+.tc-seg-support-list .tc-seg-support-icon svg{display:block}
+.tc-seg-support-list strong{
+  display:block;
+  color:#fff;
+  font-size:clamp(17px,1.8vw,19px);
+  font-weight:700;
+  letter-spacing:-.02em;
+  margin:2px 0 8px;
+}
+.tc-seg-support-list p{
+  margin:0;
+  font-size:15px;
+  line-height:1.6;
+  color:rgba(255,255,255,.68);
+}
+@media (prefers-reduced-motion:reduce){
+  .tc-seg-support-list li,
+  .tc-seg-support-list .tc-seg-support-icon{transition:none}
+  .tc-seg-support-list li:hover{transform:none}
+  .tc-seg-support-list li:hover .tc-seg-support-icon{transform:none}
+}
+@media (max-width:900px){
+  .tc-seg-support .tc-seg-mobile-inner{grid-template-columns:1fr;gap:28px}
+  .tc-seg-support h2{max-width:none}
+  .tc-seg-support-list li{grid-template-columns:44px 1fr;padding:16px 12px}
+  .tc-seg-support-list .tc-seg-support-icon{width:44px;height:44px;border-radius:12px}
+}
+
+.tc-seg-actions-fade-end{
+  position:absolute;left:0;right:0;bottom:0;
+  height:clamp(64px,8vw,96px);
+  pointer-events:none;z-index:3;
+  background:linear-gradient(180deg,rgba(244,248,246,0) 0%,#F4F8F6 100%);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -3211,39 +3325,73 @@ section.tc-seg-actions{
         <div class="tc-seg-actions-grid">
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">01</span>
-            <strong>Identificar</strong>
-            <p>Mapeamos riscos e oportunidades de melhoria em toda a operação, com olhar técnico e prático.</p>
+            <div class="tc-seg-actions-body">
+              <span class="tc-seg-actions-ghost" aria-hidden="true">01</span>
+              <strong>Identificar</strong>
+              <p>Mapeamos riscos e oportunidades de melhoria em toda a operação, com olhar técnico e prático.</p>
+            </div>
           </div>
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">02</span>
-            <strong>Corrigir</strong>
-            <p>Atuamos nas não conformidades com ações objetivas, mensuráveis e alinhadas à sua realidade.</p>
+            <div class="tc-seg-actions-body">
+              <span class="tc-seg-actions-ghost" aria-hidden="true">02</span>
+              <strong>Corrigir</strong>
+              <p>Atuamos nas não conformidades com ações objetivas, mensuráveis e alinhadas à sua realidade.</p>
+            </div>
           </div>
           <div class="tc-seg-actions-step reveal">
             <span class="tc-seg-actions-num">03</span>
-            <strong>Prevenir</strong>
-            <p>Capacitamos equipes para sustentar a cultura de segurança e reduzir a chance de novos incidentes.</p>
+            <div class="tc-seg-actions-body">
+              <span class="tc-seg-actions-ghost" aria-hidden="true">03</span>
+              <strong>Prevenir</strong>
+              <p>Capacitamos equipes para sustentar a cultura de segurança e reduzir a chance de novos incidentes.</p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="tc-seg-actions-fade-end" aria-hidden="true"></div>
     </section>
 
-    <section class="tc-seg-mobile tc-seg-has-wave" aria-labelledby="suporte-title">
+    <section class="tc-seg-mobile tc-seg-support tc-seg-has-wave" aria-labelledby="suporte-title">
       <div class="tc-seg-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#E8F5EF" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
+          <path fill="#F4F8F6" d="M0,0 L1440,0 L1440,42 C1180,78 980,88 720,58 C460,28 240,32 0,52 L0,0 Z"></path>
         </svg>
       </div>
       <div class="tc-seg-mobile-inner">
-        <div class="reveal">
-          <span class="tc-spark-eyebrow" style="margin-bottom:16px">Suporte contínuo</span>
-          <h2 id="suporte-title">Acompanhamento contínuo, do início à reciclagem.</h2>
+        <div class="tc-seg-support-copy reveal">
+          <span class="tc-spark-eyebrow">Suporte contínuo</span>
+          <h2 id="suporte-title">Acompanhamento contínuo, do início à <span class="tc-seg-accent">reciclagem</span>.</h2>
           <p>Treinamento é apenas o começo. Nossa equipe acompanha sua empresa durante toda a vigência do contrato, controlando prazos e oferecendo suporte sempre que precisar.</p>
         </div>
-        <ul class="tc-seg-mobile-panel reveal">
-          <li><div><strong>Suporte dedicado</strong>Atendimento por WhatsApp e e-mail durante toda a vigência do contrato com resposta em horário comercial.</div></li>
-          <li><div><strong>Controle de validade</strong>Monitoramento dos vencimentos com avisos antecipados para as reciclagens.</div></li>
-          <li><div><strong>Instrutores em todo o Brasil</strong>Atendimento presencial disponível em diversas regiões do país.</div></li>
+        <ul class="tc-seg-support-list reveal">
+          <li>
+            <span class="tc-seg-support-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg>
+            </span>
+            <div>
+              <strong>Suporte dedicado</strong>
+              <p>Atendimento por WhatsApp e e-mail durante toda a vigência do contrato, com resposta em horário comercial.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tc-seg-support-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <strong>Controle de validade</strong>
+              <p>Monitoramento dos vencimentos com avisos antecipados para as reciclagens.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tc-seg-support-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.5 7-11a7 7 0 10-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <div>
+              <strong>Instrutores em todo o Brasil</strong>
+              <p>Atendimento presencial disponível em diversas regiões do país.</p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
