@@ -180,6 +180,8 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-traj-panel{margin-top:clamp(36px,5vw,52px);padding:clamp(28px,4vw,40px);border-radius:24px;background:#fff;border:1px solid rgba(27,40,72,.08);box-shadow:0 16px 44px rgba(27,40,72,.08)}
 .tc-traj-year-ghost{position:absolute;font-size:clamp(72px,11vw,128px);font-weight:800;color:rgba(27,40,72,.06);letter-spacing:-.04em;user-select:none;line-height:1}
 .tc-traj-icon{position:relative;width:64px;height:64px;border-radius:18px;background:rgba(50,173,120,.12);border:1px solid rgba(50,173,120,.28);display:flex;align-items:center;justify-content:center;color:#32AD78}
+.tc-traj-photo{position:relative;z-index:1;margin:0;width:100%;max-width:340px;border-radius:18px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(27,40,72,.1);box-shadow:0 18px 44px rgba(27,40,72,.14);background:#EEF2F0}
+.tc-traj-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .tc-traj-year{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:clamp(36px,4.6vw,56px);font-weight:800;letter-spacing:-.03em;color:#32AD78;line-height:1}
 .tc-traj-title{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:20px;font-weight:700;color:#1B2848;margin:0 0 12px}
 .tc-traj-desc{font-size:15px;line-height:1.75;color:#64748b;margin:0 0 28px;max-width:480px}
@@ -398,35 +400,32 @@ input:focus,textarea:focus{border-color:#32AD78!important;box-shadow:0 0 0 3px r
 .tc-nr-detail-topics-lead{margin:14px 0 0;max-width:42ch;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.62)}
 .tc-nr-detail-topic-list{display:flex;flex-direction:column;gap:10px;margin-top:clamp(36px,5vw,52px);position:relative;padding-left:0}
 .tc-nr-detail-topic-list::before{content:"";position:absolute;left:31px;top:18px;bottom:18px;width:1px;background:linear-gradient(180deg,rgba(16,255,203,.06),rgba(16,255,203,.45) 20%,rgba(16,255,203,.45) 80%,rgba(16,255,203,.06));border-radius:1px;z-index:0}
-.tc-nr-detail-topic{display:grid;grid-template-columns:48px 1fr auto;gap:8px 18px;align-items:center;padding:16px 16px 16px 8px;position:relative;border:1px solid transparent;border-radius:16px;background:transparent;transition:background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s cubic-bezier(.22,1,.36,1)}
+.tc-nr-detail-topic{display:grid;grid-template-columns:48px 1fr auto;gap:8px 18px;align-items:center;padding:16px 16px 16px 8px;position:relative;border:1px solid transparent;border-radius:16px;background:transparent;transition:background .18s ease,border-color .18s ease,box-shadow .18s ease}
+.tc-nr-detail-topic[data-revealed="1"]{transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,opacity .18s ease !important}
 .tc-nr-detail-topic:hover{
-  background:rgba(16,255,203,.06);
-  border-color:rgba(16,255,203,.22);
-  box-shadow:0 0 0 1px rgba(16,255,203,.06),0 14px 36px rgba(0,0,0,.22);
-  transform:translateX(4px);
+  background:rgba(16,255,203,.07);
+  border-color:rgba(16,255,203,.26);
+  box-shadow:0 0 0 1px rgba(16,255,203,.05),0 10px 28px rgba(0,0,0,.18);
 }
-.tc-nr-detail-topic-num{flex-shrink:0;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;letter-spacing:.02em;color:#041018;background:#10ffcb;border:1px solid rgba(16,255,203,.55);box-shadow:0 0 0 6px rgba(10,24,48,.92),0 8px 22px rgba(16,255,203,.22);position:relative;z-index:1;transition:transform .3s cubic-bezier(.34,1.4,.64,1),box-shadow .3s}
+.tc-nr-detail-topic-num{flex-shrink:0;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;letter-spacing:.02em;color:#041018;background:#10ffcb;border:1px solid rgba(16,255,203,.55);box-shadow:0 0 0 6px rgba(10,24,48,.92),0 8px 22px rgba(16,255,203,.22);position:relative;z-index:1;transition:box-shadow .18s ease}
 .tc-nr-detail-topic:hover .tc-nr-detail-topic-num{
-  transform:scale(1.06);
-  box-shadow:0 0 0 6px rgba(10,24,48,.92),0 0 28px rgba(16,255,203,.35);
+  box-shadow:0 0 0 6px rgba(10,24,48,.92),0 0 22px rgba(16,255,203,.32);
 }
 .tc-nr-detail-topic-body{position:relative;z-index:1;min-width:0;padding-top:0}
 .tc-nr-detail-topic-ghost{position:absolute;right:28px;top:50%;transform:translateY(-55%);font-size:clamp(48px,8vw,76px);font-weight:800;letter-spacing:-.06em;line-height:1;color:rgba(255,255,255,.035);pointer-events:none;user-select:none;z-index:0}
-.tc-nr-detail-topic-text{position:relative;z-index:1;display:block;font-size:clamp(15.5px,1.55vw,17.5px);line-height:1.5;color:rgba(255,255,255,.9);font-weight:600;letter-spacing:-.015em;transition:color .25s}
+.tc-nr-detail-topic-text{position:relative;z-index:1;display:block;font-size:clamp(15.5px,1.55vw,17.5px);line-height:1.5;color:rgba(255,255,255,.9);font-weight:600;letter-spacing:-.015em;transition:color .18s ease}
 .tc-nr-detail-topic:hover .tc-nr-detail-topic-text{color:#fff}
 .tc-nr-detail-topic-chev{
   position:relative;z-index:1;
   width:28px;height:28px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  color:#10ffcb;opacity:0;transform:translateX(-6px);
-  transition:opacity .28s,transform .3s cubic-bezier(.22,1,.36,1);
+  color:#10ffcb;opacity:0;
+  transition:opacity .15s ease;
 }
-.tc-nr-detail-topic:hover .tc-nr-detail-topic-chev{opacity:1;transform:translateX(0)}
+.tc-nr-detail-topic:hover .tc-nr-detail-topic-chev{opacity:1}
 .tc-nr-detail-topic-chev svg{display:block}
 @media (prefers-reduced-motion:reduce){
   .tc-nr-detail-topic,.tc-nr-detail-topic-num,.tc-nr-detail-topic-chev,.tc-nr-detail-topic-text{transition:none}
-  .tc-nr-detail-topic:hover{transform:none}
-  .tc-nr-detail-topic:hover .tc-nr-detail-topic-num{transform:none}
 }
 .tc-nr-detail-cta{position:relative;overflow:hidden;background:
   radial-gradient(ellipse 50% 45% at 85% 20%, rgba(16,255,203,.14) 0%, transparent 55%),
@@ -1383,10 +1382,17 @@ section[aria-labelledby="tc-partners-title"]::before{
         <p style="font-size:16px;line-height:1.6;color:#4A6358;margin:0 0 8px;max-width:560px">Explore os principais marcos da história da TecnoCursos, desde sua fundação em 2004 até as conquistas que moldaram nossa trajetória.</p>
 
         <div data-reveal="scale" data-delay="200" class="tc-traj-panel" style="transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.34,1.18,.64,1)">
-          <div class="tc-tl-grid" style="display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:clamp(28px,4vw,56px);align-items:center;min-height:280px">
-            <div style="position:relative;display:flex;align-items:center;justify-content:center;min-height:220px">
+          <div class="tc-tl-grid" style="display:grid;grid-template-columns:minmax(240px,340px) 1fr;gap:clamp(28px,4vw,56px);align-items:center;min-height:300px">
+            <div style="position:relative;display:flex;align-items:center;justify-content:center;min-height:260px">
               <span class="tc-traj-year-ghost">{{ tlActive.year }}</span>
-              <div data-svg="{{ tlActive.icon }}" class="tc-traj-icon"></div>
+              <sc-if value="{{ tlActive.hasImg }}">
+                <figure class="tc-traj-photo">
+                  <img src="{{ tlActive.img }}" alt="{{ tlActive.imgAlt }}" loading="lazy"/>
+                </figure>
+              </sc-if>
+              <sc-if value="{{ tlActive.showIcon }}">
+                <div data-svg="{{ tlActive.icon }}" class="tc-traj-icon"></div>
+              </sc-if>
             </div>
             <div>
               <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
@@ -1935,10 +1941,10 @@ section[aria-labelledby="tc-partners-title"]::before{
   <div style="position:fixed;right:24px;bottom:98px;z-index:201;width:min(384px,calc(100vw - 32px));height:min(580px,calc(100vh - 140px));display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#0B1426;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 70px rgba(0,0,0,.55);animation:tcpop .32s cubic-bezier(.22,.61,.36,1)">
     <!-- header -->
     <div style="display:flex;align-items:center;gap:12px;padding:16px 18px;background:linear-gradient(120deg,#0C1A30,#005C8B);border-bottom:1px solid rgba(255,255,255,.1)">
-      <span style="position:relative;width:42px;height:42px;border-radius:50%;background:linear-gradient(145deg,#32AD78,#0a7fb8);display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 16px rgba(50,173,120,.35)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+      <span style="position:relative;width:42px;height:42px;border-radius:50%;background:linear-gradient(145deg,#32AD78,#0a7fb8);display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 16px rgba(50,173,120,.35);font-size:16px;font-weight:800;color:#fff;letter-spacing:-.02em">B</span>
       <div style="flex:1;min-width:0">
         <div style="font-size:15px;font-weight:700;color:#fff">Bia</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.66);display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#32AD78;box-shadow:0 0 8px #32AD78"></span>Atendimento · online agora</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.66);display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#32AD78;box-shadow:0 0 8px #32AD78"></span>Respondo na hora · time no WhatsApp</div>
       </div>
       <button onClick="{{ toggleAssist }}" style="font-family:inherit;background:rgba(255,255,255,.1);border:none;cursor:pointer;width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
@@ -1972,8 +1978,14 @@ section[aria-labelledby="tc-partners-title"]::before{
         <div style="background:#16233E;border:1px solid rgba(255,255,255,.08);padding:13px 15px;border-radius:4px 14px 14px 14px;display:flex;gap:5px;align-self:flex-start"><span style="width:7px;height:7px;border-radius:50%;background:#6ABB8C;animation:tcblink 1s infinite"></span><span style="width:7px;height:7px;border-radius:50%;background:#6ABB8C;animation:tcblink 1s infinite .2s"></span><span style="width:7px;height:7px;border-radius:50%;background:#6ABB8C;animation:tcblink 1s infinite .4s"></span></div>
       </sc-if>
     </div>
-    <!-- input -->
-    <div style="padding:12px;border-top:1px solid rgba(255,255,255,.1);background:#0C1426;display:flex;gap:9px;align-items:center">
+    <!-- whatsapp + input -->
+    <div style="padding:10px 12px 0;border-top:1px solid rgba(255,255,255,.1);background:#0C1426">
+      <a href="{{ assistWaHref }}" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;text-decoration:none;font-size:13px;font-weight:700;color:#fff;background:#1FAF5A;border-radius:10px;padding:10px 14px;margin-bottom:10px" style-hover="filter:brightness(1.06)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 004.1 17.3L3 21l3.8-1A11 11 0 0020.5 3.5zm-8.5 17a9 9 0 01-4.6-1.3l-.3-.2-2.3.6.6-2.2-.2-.3A9 9 0 1112 20.5zm5-6.7c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 01-2.2-1.3 8.2 8.2 0 01-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.1-.3c0-.1 0-.3-.1-.4s-.6-1.4-.8-1.9-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.2.9 2.3a9.5 9.5 0 003.6 3.1c.5.2.9.4 1.2.5.5.2 1 .2 1.3.1.4-.1 1.6-.7 1.8-1.3s.2-1.1.1-1.2-.2-.2-.5-.3z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+    <div style="padding:0 12px 12px;background:#0C1426;display:flex;gap:9px;align-items:center">
       <input value="{{ draft }}" onInput="{{ setDraft }}" onKeyDown="{{ onAssistKey }}" placeholder="Escreva sua mensagem..." style="font-family:inherit;flex:1;min-width:0;background:#16233E;border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:12px 14px;font-size:14px;color:#fff"/>
       <button onClick="{{ sendAssist }}" style="font-family:inherit;flex:0 0 auto;cursor:pointer;width:44px;height:44px;border-radius:11px;border:none;background:linear-gradient(135deg,#0de0b3,#10ffcb);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(16,255,203,.36)" style-hover="opacity:.92"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
     </div>
@@ -1984,7 +1996,7 @@ section[aria-labelledby="tc-partners-title"]::before{
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { page: Component.getPageFromUrl(), selectedNr: Component.getNrFromUrl(), menu: false, cat: 'Todos', assistOpen: false, messages: [], typing: false, draft: '', aboutTlIndex: 0, videoOpen: false, aboutStack: 0, catalogSearch: '' };
+  state = { page: Component.getPageFromUrl(), selectedNr: Component.getNrFromUrl(), menu: false, cat: 'Todos', assistOpen: false, messages: [], typing: false, draft: '', askedTopics: [], aboutTlIndex: 0, videoOpen: false, aboutStack: 0, catalogSearch: '' };
 
   static getPageFromUrl() {
     const valid = ['home', 'sobre', 'servicos', 'catalogo', 'blog', 'contato'];
@@ -2000,21 +2012,104 @@ class Component extends DCLogic {
     return 'NR-' + h.slice(3).toUpperCase();
   }
 
+  waLink(extra) {
+    const base = 'Olá! Vim pelo site da TecnoCursos';
+    const nr = this.state.selectedNr;
+    const page = this.state.page;
+    let ctx = '';
+    if (nr) ctx = ` Estou interessado(a) na ${nr}.`;
+    else if (page === 'catalogo') ctx = ' Estou no catálogo de treinamentos.';
+    else if (page === 'servicos') ctx = ' Estou olhando os serviços.';
+    const more = extra ? ` ${extra}` : '';
+    return `https://wa.me/5516997143932?text=${encodeURIComponent(base + ctx + more + ' Gostaria de conversar.')}`;
+  }
+
   kb() {
     return [
-      { id: 'quem', chip: 'Quem é a TecnoCursos?', q: 'Quem é a TecnoCursos?', kw: ['quem', 'sobre', 'empresa', 'história', 'historia', 'vocês são'],
-        a: 'A gente é da TecnoCursos — empresa de tecnologia e capacitação desde 2004, em Matão-SP. Unimos treinamento, plataforma digital e gestão pra ajudar empresas a ficarem em dia com as Normas Regulamentadoras.\n\nQuer que eu te mostre um pouco da nossa história?', follow: ['treinos', 'plataforma', 'contato'], actions: [{ label: 'Conhecer a empresa', page: 'sobre' }] },
-      { id: 'treinos', chip: 'Quais treinamentos vocês oferecem?', q: 'Quais treinamentos vocês oferecem?', kw: ['treinamento', 'treino', 'curso', 'nr', 'norma', 'libras', 'simula', 'presencial', 'online', 'consultoria'],
-        a: 'A gente faz teoria online e prática presencial nas principais NRs — NR-05, 06, 10, 11, 12, 13, 17, 18, 20, 23, 33, 34 e 35. Também temos suporte em Libras, simulações de emergência e resgate, e consultoria sob medida.\n\nMe conta o que você precisa que eu te oriento melhor.', follow: ['plataforma', 'atende', 'contato'], actions: [{ label: 'Ver serviços', page: 'servicos' }] },
-      { id: 'plataforma', chip: 'Como funciona a lista de presença digital?', q: 'Como funciona a lista de presença digital?', kw: ['plataforma', 'lista', 'presença', 'presenca', 'digital', 'certificado', 'gestão', 'gestao', 'relatório', 'relatorio', 'validade'],
-        a: 'Nossa plataforma cuida da gestão toda: lista de presença com assinatura digital, turmas organizadas, relatórios, controle de validade e emissão de certificados — sem papel e sem planilha.\n\nSe quiser, te mostro a página da plataforma.', follow: ['treinos', 'conteudo', 'contato'], actions: [{ label: 'Ver a plataforma', page: 'servicos' }] },
-      { id: 'atende', chip: 'Vocês atendem minha empresa?', q: 'Vocês atendem minha empresa?', kw: ['atende', 'atendem', 'minha empresa', 'porte', 'região', 'regiao', 'brasil', 'cidade'],
-        a: 'Sim! Atendemos empresas de todos os portes, em todo o Brasil — online e presencial.\n\nMe fala um pouco da sua necessidade que eu te indico o melhor caminho, ou te levo pro contato direto com a gente.', follow: ['contato', 'treinos'], actions: [{ label: 'Falar com a gente', page: 'contato' }] },
-      { id: 'conteudo', chip: 'Onde encontro os conteúdos?', q: 'Onde encontro os conteúdos?', kw: ['conteúdo', 'conteudo', 'artigo', 'blog', 'vídeo', 'video', 'biblioteca', 'trilha', 'material'],
-        a: 'Na Central de Conhecimento você encontra trilhas por NR, modalidades de treinamento e artigos de legislação e SST. Em breve também teremos treinamentos em vídeo.\n\nQuer que eu abra pra você?', follow: ['treinos', 'contato'], actions: [{ label: 'Abrir Central de Conhecimento', page: 'blog' }] },
-      { id: 'contato', chip: 'Como entro em contato?', q: 'Como entro em contato?', kw: ['contato', 'email', 'e-mail', 'telefone', 'whats', 'falar', 'endereço', 'endereco', 'fone'],
-        a: 'Pode falar com a gente por aqui:\n• E-mail: contato@tecnocursos.com.br\n• Telefone: (16) 99714-3932\n• Matão · São Paulo\n\nOu pelo formulário na página de Contato — a equipe responde rapidinho.', follow: ['atende', 'treinos'], actions: [{ label: 'Ir para Contato', page: 'contato' }] },
+      { id: 'quem', chip: 'Quem é a TecnoCursos?', q: 'Quem é a TecnoCursos?', kw: ['quem', 'sobre', 'empresa', 'história', 'historia', 'vocês são', 'voces sao'],
+        a: 'Somos a TecnoCursos — tecnologia e capacitação desde 2004, em Matão-SP. Treinamento + plataforma pra empresas ficarem em dia com as NRs.\n\nQuer ver a história ou já ir pros treinamentos?', follow: ['treinos', 'plataforma', 'whats'], actions: [{ label: 'Conhecer a empresa', page: 'sobre' }] },
+      { id: 'treinos', chip: 'Quais treinamentos oferecem?', q: 'Quais treinamentos vocês oferecem?', kw: ['treinamento', 'treino', 'curso', 'nr-', 'norma', 'libras', 'simula', 'presencial', 'online', 'consultoria', 'nrs'],
+        a: 'Fazemos teoria online e prática presencial nas principais NRs (05, 06, 10 a 13, 17, 18, 20, 23, 33 a 35). Também Libras, simulações e consultoria sob medida.\n\nÉ pra qual área — ou prefere que eu te ajude a escolher?', follow: ['contratar', 'preco', 'whats'], actions: [{ label: 'Ver serviços', page: 'servicos' }] },
+      { id: 'plataforma', chip: 'Como funciona a plataforma?', q: 'Como funciona a lista de presença digital?', kw: ['plataforma', 'lista', 'presença', 'presenca', 'digital', 'gestão', 'gestao', 'relatório', 'relatorio', 'validade', 'assinatura'],
+        a: 'A plataforma cuida da gestão: lista com assinatura digital, turmas, relatórios, validade e certificados — sem papel.\n\nQuer que eu abra a página pra você?', follow: ['certificado', 'treinos', 'whats'], actions: [{ label: 'Ver a plataforma', page: 'servicos' }] },
+      { id: 'atende', chip: 'Atendem minha empresa?', q: 'Vocês atendem minha empresa?', kw: ['atende', 'atendem', 'minha empresa', 'porte', 'região', 'regiao', 'brasil', 'cidade', 'unidade móvel', 'unidade movel'],
+        a: 'Sim — empresas de todos os portes, em todo o Brasil, online e presencial.\n\nMe conta a necessidade ou chama no WhatsApp que o time te orienta.', follow: ['whats', 'contratar', 'treinos'], actions: [{ label: 'Falar no WhatsApp', href: 'wa' }] },
+      { id: 'conteudo', chip: 'Onde vejo os conteúdos?', q: 'Onde encontro os conteúdos?', kw: ['conteúdo', 'conteudo', 'artigo', 'blog', 'vídeo', 'video', 'biblioteca', 'trilha', 'material', 'conhecimento'],
+        a: 'Na Central de Conhecimento: trilhas por NR, modalidades e artigos de legislação/SST. Em breve, vídeos também.\n\nAbro pra você?', follow: ['treinos', 'whats'], actions: [{ label: 'Abrir Central', page: 'blog' }] },
+      { id: 'preco', chip: 'Quanto custa?', q: 'Quanto custa?', kw: ['preço', 'preco', 'valor', 'custa', 'orçamento', 'orcamento', 'quanto', 'tabela', 'investimento'],
+        a: 'O valor depende da NR, do tamanho da turma e se é online, presencial ou misto.\n\nMe fala o treinamento e quantas pessoas — ou já pede o orçamento no WhatsApp.', follow: ['whats', 'contratar', 'treinos'], actions: [{ label: 'Pedir orçamento no WhatsApp', href: 'wa' }] },
+      { id: 'prazo', chip: 'Qual o prazo?', q: 'Qual o prazo?', kw: ['prazo', 'demora', 'quando', 'agendar', 'agenda', 'início', 'inicio', 'data', 'urgente'],
+        a: 'Dá pra organizar com agilidade — o prazo varia com a NR, a modalidade e a turma.\n\nTem uma data em mente? Me conta ou fala com o time no WhatsApp.', follow: ['whats', 'contratar', 'treinos'], actions: [{ label: 'Combinar no WhatsApp', href: 'wa' }] },
+      { id: 'certificado', chip: 'Tem certificado?', q: 'Tem certificado?', kw: ['certificado', 'certificação', 'certificacao', 'diploma', 'comprovante', 'emissão', 'emissao'],
+        a: 'Sim. Ao concluir, emitimos o certificado e você acompanha validade e turmas pela plataforma.\n\nQuer saber do treinamento ou da gestão digital?', follow: ['plataforma', 'treinos', 'whats'] },
+      { id: 'contratar', chip: 'Como contratar?', q: 'Como contratar?', kw: ['contratar', 'contratação', 'contratacao', 'fechar', 'montar turma', 'proposta', 'fechar turma'],
+        a: 'Simples: me diga a NR (ou a necessidade), quantas pessoas e se preferem online ou presencial.\n\nAí te levo ao WhatsApp ou ao formulário pra o time fechar com você.', follow: ['whats', 'preco', 'treinos'], actions: [{ label: 'Falar no WhatsApp', href: 'wa' }, { label: 'Ir para Contato', page: 'contato' }] },
+      { id: 'whats', chip: 'Falar no WhatsApp', q: 'Quero falar no WhatsApp', kw: ['whatsapp', 'whats', 'zap', 'wpp'],
+        a: 'Perfeito — no botão verde abaixo você já cai no WhatsApp com uma mensagem pronta.\n\nO time responde no horário comercial (seg–sex, 7h–17h).', follow: ['treinos', 'preco', 'contato'], actions: [{ label: 'Abrir WhatsApp', href: 'wa' }] },
+      { id: 'contato', chip: 'Outros contatos', q: 'Como entro em contato?', kw: ['contato', 'email', 'e-mail', 'telefone', 'falar', 'endereço', 'endereco', 'fone'],
+        a: 'Pode falar com a gente assim:\n• WhatsApp/tel: (16) 99714-3932\n• E-mail: contato@tecnocursos.com.br\n• Matão · SP\n\nOu pelo formulário na página de Contato.', follow: ['whats', 'atende', 'treinos'], actions: [{ label: 'Abrir WhatsApp', href: 'wa' }, { label: 'Ir para Contato', page: 'contato' }] },
     ];
+  }
+
+  greetForPage() {
+    const page = this.state.page;
+    const nr = this.state.selectedNr;
+    if (page === 'nrDetail' && nr) {
+      return { text: `Vi que você está na ${nr}. Quer entender o treinamento, como contratar ou falar com o time?`, chips: ['treinos', 'contratar', 'whats'] };
+    }
+    if (page === 'catalogo') {
+      return { text: 'Vi que você está no catálogo. Quer ajuda pra escolher um treinamento ou já prefere falar com a gente?', chips: ['treinos', 'contratar', 'whats'] };
+    }
+    if (page === 'servicos') {
+      return { text: 'Você está em Serviços. Quer saber de treinamentos, da plataforma ou de como contratar?', chips: ['treinos', 'plataforma', 'contratar'] };
+    }
+    if (page === 'sobre') {
+      return { text: 'Que bom conhecer a gente por aqui. Quer um resumo rápido ou já ir pra treinamentos e contato?', chips: ['quem', 'treinos', 'whats'] };
+    }
+    if (page === 'contato') {
+      return { text: 'Já está em Contato — se quiser, te mando direto pro WhatsApp. Ou tiro uma dúvida rápida antes.', chips: ['whats', 'preco', 'treinos'] };
+    }
+    if (page === 'blog') {
+      return { text: 'Está na Central de Conhecimento. Quer que eu te indique um caminho ou falamos de treinamentos?', chips: ['conteudo', 'treinos', 'whats'] };
+    }
+    return { text: 'Posso te ajudar com treinamentos, plataforma ou o melhor caminho pra sua empresa. Por onde a gente começa?', chips: ['treinos', 'plataforma', 'contratar', 'whats'] };
+  }
+
+  startAssistGreeting() {
+    clearTimeout(this._greetT);
+    clearTimeout(this._greetT2);
+    clearTimeout(this._typeT);
+    this.setState({ messages: [], typing: true, askedTopics: [] });
+    this.scrollChat();
+    this._greetT = setTimeout(() => {
+      this.setState({ typing: false, messages: [{ role: 'bot', text: 'Oi! Aqui é a Bia, do atendimento da TecnoCursos.' }] });
+      this.scrollChat();
+      this._greetT2 = setTimeout(() => {
+        this.setState({ typing: true });
+        this.scrollChat();
+        const beat = 640 + Math.floor(Math.random() * 320);
+        this._typeT = setTimeout(() => {
+          const ctx = this.greetForPage();
+          this.setState(s => ({
+            typing: false,
+            messages: s.messages.concat([{ role: 'bot', text: ctx.text, chips: ctx.chips }]),
+          }));
+          this.scrollChat();
+        }, beat);
+      }, 420);
+    }, 520 + Math.floor(Math.random() * 220));
+  }
+
+  matchTopic(input) {
+    const low = String(input || '').toLowerCase();
+    let best = null;
+    let bestScore = 0;
+    this.kb().forEach((t) => {
+      let score = 0;
+      (t.kw || []).forEach((k) => { if (low.includes(k)) score += k.length; });
+      if (score > bestScore) { bestScore = score; best = t; }
+    });
+    return bestScore > 0 ? best : null;
   }
 
   ask(input) {
@@ -2024,17 +2119,23 @@ class Component extends DCLogic {
     if (byId) { topic = byId; userText = byId.q; }
     else {
       userText = input;
-      const low = String(input).toLowerCase();
-      topic = topics.find(t => t.kw.some(k => low.includes(k)));
+      topic = this.matchTopic(input);
     }
-    this.setState(s => ({ messages: s.messages.concat([{ role: 'user', text: userText }]), typing: true }));
+    this.setState(s => ({
+      messages: s.messages.concat([{ role: 'user', text: userText }]),
+      typing: true,
+      askedTopics: topic ? Array.from(new Set([...(s.askedTopics || []), topic.id])) : (s.askedTopics || []),
+    }));
     this.scrollChat();
     clearTimeout(this._typeT);
-    const delay = 780 + Math.floor(Math.random() * 720);
+    const draftText = topic
+      ? topic.a
+      : 'Não peguei bem — me conta de outro jeito? Ou escolhe um assunto abaixo que eu te ajudo.';
+    const delay = Math.min(2100, Math.max(620, 380 + draftText.length * 11)) + Math.floor(Math.random() * 260);
     this._typeT = setTimeout(() => {
       const ans = topic
         ? { role: 'bot', text: topic.a, chips: topic.follow, actions: topic.actions }
-        : { role: 'bot', text: 'Não peguei bem — me conta de outro jeito? Ou escolhe um dos assuntos abaixo que eu te ajudo.', chips: ['quem', 'treinos', 'plataforma', 'conteudo', 'contato'] };
+        : { role: 'bot', text: draftText, chips: ['treinos', 'preco', 'contratar', 'whats', 'contato'] };
       this.setState(s => ({ messages: s.messages.concat([ans]), typing: false }));
       this.scrollChat();
     }, delay);
@@ -3317,7 +3418,7 @@ class Component extends DCLogic {
     ];
 
     const timeline = [
-      { year: '2004', title: 'Primeiros Treinamentos', desc: 'Em Américo Brasiliense (SP), iniciamos nossa trajetória com treinamentos de solda e calderaria, dando os primeiros passos no propósito de ajudar empresas a manterem-se em conformidade e promover ambientes de trabalho mais seguros.', icon: 'flag', grad: 'linear-gradient(150deg,#1B2848,#005C8B)' },
+      { year: '2004', title: 'Primeiros Treinamentos', desc: 'Em Américo Brasiliense (SP), iniciamos nossa trajetória com treinamentos de solda e calderaria, dando os primeiros passos no propósito de ajudar empresas a manterem-se em conformidade e promover ambientes de trabalho mais seguros.', icon: 'flag', img: 'img/2004.png', imgAlt: 'Placa da Escola Tecno-Cursos em 2004 — matriz em Américo Brasiliense e filial em Matão', grad: 'linear-gradient(150deg,#1B2848,#005C8B)' },
       { year: '2005–2008', title: 'Construindo a Base', desc: 'João acumulava funções, criava conteúdos, ministrava treinamentos diversos e brigada de incêndio. Alessandra cuidava da logística, do financeiro e da emissão dos certificados.', icon: 'treino', grad: 'linear-gradient(150deg,#005C8B,#1B2848)' },
       { year: '2009', title: 'Formalização da Empresa', desc: 'Com a criação do CNPJ, a TecnoCursos passa a atuar oficialmente como empresa, consolidando uma nova etapa de sua trajetória. Esse importante passo amplia horizontes e abre caminho para um crescimento mais estruturado nos anos seguintes.', icon: 'law', grad: 'linear-gradient(150deg,#0C1A30,#6a4bb5)' },
       { year: '2010', title: 'Primeiros Passos em Matão', desc: 'João, que atendia a cidade de Américo Brasiliense (SP), visita Matão (SP) em busca de parcerias, novos clientes e da possibilidade de estabelecer a empresa na cidade.', icon: 'users', grad: 'linear-gradient(150deg,#0C1A30,#218a5d)' },
@@ -3334,7 +3435,14 @@ class Component extends DCLogic {
     const tlLen = timeline.length;
     const tlIndex = Math.min(Math.max(this.state.aboutTlIndex || 0, 0), tlLen - 1);
     const tlGoTo = (i) => this.setState({ aboutTlIndex: ((i % tlLen) + tlLen) % tlLen });
-    const tlActive = timeline[tlIndex];
+    const tlActiveRaw = timeline[tlIndex];
+    const tlActive = {
+      ...tlActiveRaw,
+      hasImg: !!tlActiveRaw.img,
+      showIcon: !tlActiveRaw.img,
+      img: tlActiveRaw.img || '',
+      imgAlt: tlActiveRaw.imgAlt || '',
+    };
     const tlProgress = (tlLen > 1 ? (tlIndex / (tlLen - 1)) * 100 : 0) + '%';
     const tlDots = timeline.map((t, i) => {
       const active = i === tlIndex;
@@ -3395,12 +3503,21 @@ class Component extends DCLogic {
     // ---- Assistente virtual ----
     const chipLabel = {};
     this.kb().forEach(t => { chipLabel[t.id] = t.chip; });
-    const mkChips = (ids) => (ids || []).map(id => ({ label: chipLabel[id] || id, onClick: () => this.ask(id) }));
+    const asked = this.state.askedTopics || [];
+    const mkChips = (ids) => (ids || [])
+      .filter(id => id === 'whats' || id === 'contato' || id === 'contratar' || !asked.includes(id))
+      .map(id => ({ label: chipLabel[id] || id, onClick: () => this.ask(id) }));
+    const resolveAction = (a) => ({
+      label: a.label,
+      onClick: (a.href === 'wa' || (a.href && String(a.href).indexOf('http') === 0))
+        ? () => window.open(a.href === 'wa' ? this.waLink() : a.href, '_blank', 'noopener,noreferrer')
+        : () => this.go(a.page),
+    });
     const assistMessages = (this.state.messages || []).map(m => ({
       isBot: m.role === 'bot', isUser: m.role === 'user', text: m.text,
       chips: m.role === 'bot' ? mkChips(m.chips) : [],
-      hasChips: m.role === 'bot' && (m.chips || []).length > 0,
-      actions: m.role === 'bot' ? (m.actions || []).map(a => ({ label: a.label, onClick: () => this.go(a.page) })) : [],
+      hasChips: m.role === 'bot' && mkChips(m.chips).length > 0,
+      actions: m.role === 'bot' ? (m.actions || []).map(resolveAction) : [],
       hasActions: m.role === 'bot' && (m.actions || []).length > 0,
     }));
 
@@ -3447,16 +3564,20 @@ class Component extends DCLogic {
       cats, filteredPosts, featuredPosts: allPosts.slice(0, 3),
       featured, rails,
       assistOpen: this.state.assistOpen, assistClosed: !this.state.assistOpen, typing: this.state.typing, draft: this.state.draft || '',
-      assistMessages,
-      toggleAssist: () => this.setState(s => {
-        const open = !s.assistOpen;
-        let messages = s.messages;
-        if (open && messages.length === 0) {
-          messages = [{ role: 'bot', text: 'Oi! Aqui é a Bia, do atendimento da TecnoCursos.\n\nPosso te ajudar com treinamentos, plataforma, quem somos e o melhor caminho pra sua empresa. Por onde a gente começa?', chips: ['quem', 'treinos', 'plataforma', 'conteudo', 'contato'] }];
+      assistMessages, assistWaHref: this.waLink(),
+      toggleAssist: () => {
+        const open = !this.state.assistOpen;
+        if (!open) {
+          clearTimeout(this._greetT);
+          clearTimeout(this._greetT2);
+          clearTimeout(this._typeT);
+          this.setState({ assistOpen: false, typing: false });
+          return;
         }
-        if (open) this.scrollChat();
-        return { assistOpen: open, messages };
-      }),
+        this.setState({ assistOpen: true });
+        if ((this.state.messages || []).length === 0) this.startAssistGreeting();
+        else this.scrollChat();
+      },
       setDraft: (e) => this.setState({ draft: e.target.value }),
       onAssistKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); const t = (this.state.draft || '').trim(); if (t) { this.ask(t); this.setState({ draft: '' }); } } },
       sendAssist: () => { const t = (this.state.draft || '').trim(); if (t) { this.ask(t); this.setState({ draft: '' }); } },
